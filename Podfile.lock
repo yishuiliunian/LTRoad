@@ -1,1 +1,43 @@
+PODS:
+  - CocoaLumberjack (2.0.0):
+    - CocoaLumberjack/Default (= 2.0.0)
+    - CocoaLumberjack/Extensions (= 2.0.0)
+  - CocoaLumberjack/Core (2.0.0)
+  - CocoaLumberjack/Default (2.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0):
+    - CocoaLumberjack/Default
+  - DZProgrameDefines (1.0.0)
+  - DZQQLib (2.8.1)
+  - DZSinglonFactory (1.0.2)
+  - DZWeChatLib (1.5.0)
+  - JSONModel (1.0.2)
+  - MagicalRecord (2.2):
+    - MagicalRecord/Core (= 2.2)
+  - MagicalRecord/Core (2.2)
+  - NSString-UrlEncode (2.0.0)
+  - SAAuth (0.1.1):
+    - DZQQLib
+    - DZWeChatLib
+    - JSONModel
+
+DEPENDENCIES:
+  - CocoaLumberjack
+  - DZProgrameDefines
+  - DZSinglonFactory
+  - MagicalRecord
+  - NSString-UrlEncode
+  - SAAuth
+
+SPEC CHECKSUMS:
+  CocoaLumberjack: fd2b1031c6c4e0f08b5ea928ef677fa0a5de517d
+  DZProgrameDefines: 8c89ec3a8d9aa5ef705438690ec6fa496eb2b6d5
+  DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
+  DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
+  DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
+  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
+  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
+  NSString-UrlEncode: 884ff989b77aeec0fe25474edc32ad7e31ffc5ff
+  SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
+
 COCOAPODS: 0.35.0.rc2

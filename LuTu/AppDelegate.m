@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LTGlobalViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    float locScale = [UIScreen mainScreen].scale;
+    LTGlobalViewController* globalVC = [LTGlobalViewController new];
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = globalVC;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -4,7 +4,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LuTu' do
-
+  pod 'SAAuth'
+  pod 'DZSinglonFactory'
+  pod 'CocoaLumberjack'
+  pod 'DZProgrameDefines'
+  pod 'NSString-UrlEncode'
+  pod "MagicalRecord"
 end
 
 target 'LuTuTests' do
