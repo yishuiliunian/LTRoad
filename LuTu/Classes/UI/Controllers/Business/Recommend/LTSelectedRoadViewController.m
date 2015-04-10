@@ -15,18 +15,24 @@
 @end
 @implementation LTSelectedRoadViewController
 
+- (void) configureView
+{
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self configureView];
     NSMutableArray* array = [NSMutableArray new];
     
     for (int i = 0 ; i < 10; i++) {
         LTRecommendLine* line = [LTRecommendLine new];
         line.createDate =  [NSDate date];
-        line.tagBadgeItems = @[LTCreateBadgeItemWithText(@"路上")];
+        NSString* str = [@(i) stringValue];
+        line.tagBadgeItems = @[LTCreateBadgeItemWithText(str)];
         line.distance = @"3.5KM";
         line.likeCount = 2;
+        line.backgroudImageURL = [NSURL URLWithString:@"https://www.baidu.com/img/bdlogo.png"];
         
         [array addObject:line];
     }
@@ -54,5 +60,9 @@
     LTRecommendLine* line = _recommondLines[indexPath.row];
     cell.line = line;
     return cell;
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
 }
 @end

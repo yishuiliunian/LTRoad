@@ -17,6 +17,7 @@ DEFINE_PROPERTY_STRONG_UIImageView(backgroundImageView);
 DEFINE_PROPERTY_STRONG_UILabel(dateLabel);
 DEFINE_PROPERTY_STRONG_UILabel(distanceLabel);
 DEFINE_PROPERTY_STRONG(LTLikeButton*, likeButton);
+DEFINE_PROPERTY_STRONG(UIImageView*, distanceIconImageView);
 DEFINE_PROPERTY_STRONG(LTBadgeContentView*, badgesView);
 @end
 

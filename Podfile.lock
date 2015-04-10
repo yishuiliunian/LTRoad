@@ -12,6 +12,7 @@ PODS:
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
   - DZWeChatLib (1.5.0)
+  - Haneke (1.0.1)
   - JSONModel (1.0.2)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - DZGeometryTools
   - DZProgrameDefines
   - DZSinglonFactory
+  - Haneke (~> 1.0)
   - MagicalRecord
   - NSString-UrlEncode
   - SAAuth
@@ -38,6 +40,7 @@ SPEC CHECKSUMS:
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
+  Haneke: d60be8b96b228633b24708dd153169d6849d6f78
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c

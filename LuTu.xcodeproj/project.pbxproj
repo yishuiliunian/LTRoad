@@ -48,6 +48,7 @@
 		65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD201AD54C2F00CBF695 /* LTBadgeView.m */; };
 		65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD241AD54C3D00CBF695 /* LTBadgeItem.m */; };
 		65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */; };
+		65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		65D9CD261AD54C4B00CBF695 /* LTBadgeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeContentView.h; sourceTree = "<group>"; };
 		65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBadgeContentView.m; sourceTree = "<group>"; };
 		65D9CD291AD5502100CBF695 /* LTBadgeView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeView_Private.h; sourceTree = "<group>"; };
+		65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHaneke.h; sourceTree = "<group>"; };
+		65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHaneke.m; sourceTree = "<group>"; };
 		B31DE014AADD645AC513307D /* Pods-LuTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.release.xcconfig"; sourceTree = "<group>"; };
 		DFA8AA5136737BE7B1D5383B /* Pods-LuTu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -312,6 +315,8 @@
 				652FB96E1AD27FBA0082894E /* LTColors.m */,
 				65D9CD161AD5475D00CBF695 /* LTFont.h */,
 				65D9CD171AD5475D00CBF695 /* LTFont.m */,
+				65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */,
+				65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */,
 			);
 			path = Appearence;
 			sourceTree = "<group>";
@@ -709,6 +714,7 @@
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
 				65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */,
+				65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */,
 				652FB9271AD23EB60082894E /* MSVerifyAuthorRequest.m in Sources */,
 				652FB9411AD269E90082894E /* LTServiceStatusManager.m in Sources */,
 				652FB95E1AD279EA0082894E /* LTDataBase.m in Sources */,

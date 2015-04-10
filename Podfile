@@ -11,6 +11,7 @@ target 'LuTu' do
   pod 'NSString-UrlEncode'
   pod "MagicalRecord"
   pod 'DZGeometryTools'
+  pod 'Haneke', '~> 1.0'
 end
 
 
