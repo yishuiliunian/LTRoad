@@ -7,6 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - DZGeometryTools (1.0.4)
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
@@ -23,6 +24,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - DZGeometryTools
   - DZProgrameDefines
   - DZSinglonFactory
   - MagicalRecord
@@ -30,14 +32,15 @@ DEPENDENCIES:
   - SAAuth
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: fd2b1031c6c4e0f08b5ea928ef677fa0a5de517d
-  DZProgrameDefines: 8c89ec3a8d9aa5ef705438690ec6fa496eb2b6d5
+  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  DZGeometryTools: a9f18f2dc1e0137c2af06ff540d5ebd2b9257e6e
+  DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
-  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
-  NSString-UrlEncode: 884ff989b77aeec0fe25474edc32ad7e31ffc5ff
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
 COCOAPODS: 0.35.0.rc2

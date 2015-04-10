@@ -10,9 +10,10 @@ target 'LuTu' do
   pod 'DZProgrameDefines'
   pod 'NSString-UrlEncode'
   pod "MagicalRecord"
+  pod 'DZGeometryTools'
 end
+
 
 target 'LuTuTests' do
 
 end
-

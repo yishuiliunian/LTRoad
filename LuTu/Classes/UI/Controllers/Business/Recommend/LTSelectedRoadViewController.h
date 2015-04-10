@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTSelectedRoadViewController : UIViewController
+@interface LTSelectedRoadViewController : UITableViewController
 
 @end

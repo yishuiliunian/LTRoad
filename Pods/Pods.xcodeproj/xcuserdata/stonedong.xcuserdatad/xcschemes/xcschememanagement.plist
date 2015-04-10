@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DZGeometryTools.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>DZQQLib.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -15,6 +20,11 @@
 			<false/>
 		</dict>
 		<key>Pods-LuTu-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-LuTu-DZGeometryTools.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,67 +82,77 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5EE42CC0B0CABB4FAE7B802A</key>
+		<key>0465E6E63977212750F7C6B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>628AAA122E2A84439289586E</key>
+		<key>0E53977230B9BDAA11640994</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FD8B9E8E0C8D53C4EAAF006</key>
+		<key>18672FDE35A3092C367FA342</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7A24783FECC305A1C0070E90</key>
+		<key>19EFF7BA2526642956295B99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>828DBA59363C18676CE97542</key>
+		<key>23A01DA5400F16F011F048EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88C0DFDA435F24A13AB9D4BD</key>
+		<key>29DE655D12438326282E9B5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8E958724B825370C9916AE70</key>
+		<key>2A6A53AA040577CB49B3D904</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6BC7069B2AC448877F075A7</key>
+		<key>40C0A3AE1B2D4D3B83AE38D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BD7004FE46B1CCDE1ED5FBF6</key>
+		<key>738FB2F33D551CBBB8D156AA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0A8A41A11618620B40C7B01</key>
+		<key>78D29D8345590962A7C7A7BD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E1B65D550920CCCE60AA039E</key>
+		<key>7B29F867FCF865A7F2C7FEDB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5D1B231F3F269A8107D14FC</key>
+		<key>7EBAD3F451492738F79B2CBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F209973E0FBFC97C3A5F1DAC</key>
+		<key>BFC1366C310137814AABDADC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CA07DE9E1F6AE3C6BB592858</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E21C53752ABDB34B6E63AF91</key>
 		<dict>
 			<key>primary</key>
 			<true/>
