@@ -7,10 +7,18 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
+  - DZCache (1.0.8):
+    - DZCDNFiles
+    - DZGeometryTools
+    - DZSinglonFactory
+  - DZCDNFiles (1.0.1):
+    - DZSinglonFactory
+  - DZGeometryTools (1.0.5)
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
   - DZWeChatLib (1.5.0)
+  - Haneke (1.0.1)
   - JSONModel (1.0.2)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
@@ -23,21 +31,28 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - DZCache
+  - DZGeometryTools
   - DZProgrameDefines
   - DZSinglonFactory
+  - Haneke (~> 1.0)
   - MagicalRecord
   - NSString-UrlEncode
   - SAAuth
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: fd2b1031c6c4e0f08b5ea928ef677fa0a5de517d
-  DZProgrameDefines: 8c89ec3a8d9aa5ef705438690ec6fa496eb2b6d5
+  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
+  DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
+  DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
+  DZGeometryTools: 041db19a4edc67c993b5bae16fdaf7a7b5ff9900
+  DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
-  JSONModel: cbdef0fdff1cc70e913a860861d3072860efd3a1
-  MagicalRecord: 2b471584fc9e3137f3d0a56967917baa4979e224
-  NSString-UrlEncode: 884ff989b77aeec0fe25474edc32ad7e31ffc5ff
+  Haneke: d60be8b96b228633b24708dd153169d6849d6f78
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.36.3
