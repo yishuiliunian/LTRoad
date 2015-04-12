@@ -38,7 +38,7 @@
 }
 - (void) prepareReuse
 {
-    _textLabel.text = nil;
+//    _textLabel.text = nil;
 }
 - (void) layoutSubviews
 {

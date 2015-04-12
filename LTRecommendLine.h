@@ -9,8 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "LTBadgeItem.h"
 @interface LTRecommendLine : NSObject
+@property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSURL* backgroudImageURL;
 @property (nonatomic, strong) NSDate* createDate;
+@property (nonatomic, strong) NSString* createDateString;
 @property (nonatomic, strong) NSString* distance;
 @property (nonatomic, strong) NSArray* tagBadgeItems;
 @property (nonatomic, assign, readonly) double distanceUIWidth;
