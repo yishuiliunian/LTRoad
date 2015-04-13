@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "LTGlobalViewController.h"
+#import "LTConfigure.h"
+#import <DZImageCache.h>
 @interface AppDelegate ()
 
 @end
@@ -17,10 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    LTApplicationSetup();
     LTGlobalViewController* globalVC = [LTGlobalViewController new];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = globalVC;
+    //
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:DZCachedImageByName(@"bg")];
+    imageView.frame = self.window.bounds;
+    [self.window insertSubview:imageView atIndex:0];
+    //
     [self.window makeKeyAndVisible];
     return YES;
 }

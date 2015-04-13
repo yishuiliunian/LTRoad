@@ -7,7 +7,13 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
-  - DZGeometryTools (1.0.4)
+  - DZCache (1.0.8):
+    - DZCDNFiles
+    - DZGeometryTools
+    - DZSinglonFactory
+  - DZCDNFiles (1.0.1):
+    - DZSinglonFactory
+  - DZGeometryTools (1.0.5)
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
@@ -25,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - CocoaLumberjack
+  - DZCache
   - DZGeometryTools
   - DZProgrameDefines
   - DZSinglonFactory
@@ -35,7 +42,9 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  DZGeometryTools: a9f18f2dc1e0137c2af06ff540d5ebd2b9257e6e
+  DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
+  DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
+  DZGeometryTools: 041db19a4edc67c993b5bae16fdaf7a7b5ff9900
   DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
@@ -46,4 +55,4 @@ SPEC CHECKSUMS:
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.36.3

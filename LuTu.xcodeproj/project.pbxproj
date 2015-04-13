@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B4C9A237264EFE02FF51C91 /* libPods-LuTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D07AF18EA69C166263FAB /* libPods-LuTu.a */; };
+		6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510E2E81AD9508E0036C767 /* LTConfigure.m */; };
 		652FB9111AD23DF50082894E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652FB9101AD23DF50082894E /* libc++.dylib */; };
 		652FB9231AD23EB60082894E /* MSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9141AD23EB60082894E /* MSRequest.m */; };
 		652FB9241AD23EB60082894E /* MSRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9161AD23EB60082894E /* MSRouter.m */; };
@@ -63,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		181D07AF18EA69C166263FAB /* libPods-LuTu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuTu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6510E2E71AD9508E0036C767 /* LTConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTConfigure.h; sourceTree = "<group>"; };
+		6510E2E81AD9508E0036C767 /* LTConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTConfigure.m; sourceTree = "<group>"; };
 		652FB9101AD23DF50082894E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		652FB9131AD23EB60082894E /* MSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRequest.h; sourceTree = "<group>"; };
 		652FB9141AD23EB60082894E /* MSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRequest.m; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 		659D4B471AC3A232007C2DAF /* Configure */ = {
 			isa = PBXGroup;
 			children = (
+				6510E2E71AD9508E0036C767 /* LTConfigure.h */,
+				6510E2E81AD9508E0036C767 /* LTConfigure.m */,
 				652FB9691AD27F950082894E /* Appearence */,
 			);
 			path = Configure;
@@ -712,6 +717,7 @@
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
 				652FB9281AD23EB60082894E /* MSRequestOperation.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
+				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
 				65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */,
 				65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */,

@@ -29,6 +29,7 @@
     INIT_SUBVIEW(self.contentView, LTLikeButton, _likeButton);
     INIT_SUBVIEW(self.contentView, LTBadgeContentView, _badgesView);
     INIT_SUBVIEW(self.contentView, UIImageView, _distanceIconImageView);
+    INIT_SUBVIEW(self.contentView, UILabel, _titleBabel);
     //
     _backgroundImageView.hnk_cacheFormat = LTHanekeCacheFormatFeedBackground();
     _backgroundImageView.layer.masksToBounds = YES;
@@ -46,6 +47,9 @@
 - (void) decoreateContent
 {
     _badgesView.badgeItems = _line.tagBadgeItems;
+    _titleBabel.text = _line.title;
+    _dateLabel.text = _line.createDateString;
+    _distanceLabel.text = _line.distance;
     [_backgroundImageView hnk_setImageFromURL:_line.backgroudImageURL];
     [self setNeedsLayout];
 }
@@ -67,6 +71,12 @@
     CGRect badgeFrame = CGRectOffset(_distanceLabel.frame, CGRectGetWidth(_distanceLabel.frame) + xSpace, 0);
     badgeFrame.size.width = maxWidth - CGRectGetMaxX(_distanceLabel.frame) - xSpace;
     _badgesView.frame = badgeFrame;
+    //
+    
+    CGFloat dateHeight = 30;
+    _dateLabel.frame = CGRectMake(xSpace, CGRectGetMinY(_distanceIconImageView.frame) - dateHeight,  maxWidth, dateHeight);
+    CGFloat titleHeight = 30;
+    _titleBabel.frame = CGRectMake(xSpace, CGRectGetMinY(_dateLabel.frame) - titleHeight, maxWidth, titleHeight);
     
 }
 @end

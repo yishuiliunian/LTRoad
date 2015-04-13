@@ -12,6 +12,7 @@ target 'LuTu' do
   pod "MagicalRecord"
   pod 'DZGeometryTools'
   pod 'Haneke', '~> 1.0'
+  pod 'DZCache'
 end
 
 
