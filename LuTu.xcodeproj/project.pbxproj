@@ -42,7 +42,9 @@
 		65D1F07B1AC28B34006525D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D1F07A1AC28B34006525D0 /* Images.xcassets */; };
 		65D1F07E1AC28B34006525D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D1F07C1AC28B34006525D0 /* LaunchScreen.xib */; };
 		65D1F08A1AC28B34006525D0 /* LuTuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1F0891AC28B34006525D0 /* LuTuTests.m */; };
-		65D9CD121AD5457100CBF695 /* LTRecommendLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD111AD5457100CBF695 /* LTRecommendLine.m */; };
+		65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1FC9D1ADBAF2000CB90F9 /* DZExpandSwipViewController.m */; };
+		65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1FCA01ADBB29E00CB90F9 /* LTUICarMeet.m */; };
+		65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1FCA31ADBB32100CB90F9 /* LTCarMeetFeedViewController.m */; };
 		65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD141AD5461B00CBF695 /* LTRecommondLineCell.m */; };
 		65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD171AD5475D00CBF695 /* LTFont.m */; };
 		65D9CD1B1AD54A8200CBF695 /* LTLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD1A1AD54A8200CBF695 /* LTLikeButton.m */; };
@@ -50,6 +52,19 @@
 		65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD241AD54C3D00CBF695 /* LTBadgeItem.m */; };
 		65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */; };
 		65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */; };
+		65FD64BD1ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */; };
+		65FD64BE1ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */; };
+		65FD64BF1ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */; };
+		65FD64C01ADB5F0F00FC94E0 /* CInterpolator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */; };
+		65FD64C11ADB5F0F00FC94E0 /* CReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */; };
+		65FD64C21ADB5F0F00FC94E0 /* Interpolator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */; };
+		65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */; };
+		65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */; };
+		65FD64CD1ADB61C800FC94E0 /* LTUIDiscoverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64CC1ADB61C800FC94E0 /* LTUIDiscoverItem.m */; };
+		65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D01ADB82C600FC94E0 /* DZExpandCollectionView.m */; };
+		65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D31ADB87D400FC94E0 /* DZexpandCollectionViewController.m */; };
+		65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */; };
+		65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,8 +145,12 @@
 		65D1F0831AC28B34006525D0 /* LuTuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuTuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D1F0881AC28B34006525D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65D1F0891AC28B34006525D0 /* LuTuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LuTuTests.m; sourceTree = "<group>"; };
-		65D9CD101AD5457100CBF695 /* LTRecommendLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommendLine.h; sourceTree = SOURCE_ROOT; };
-		65D9CD111AD5457100CBF695 /* LTRecommendLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommendLine.m; sourceTree = SOURCE_ROOT; };
+		65D1FC9C1ADBAF2000CB90F9 /* DZExpandSwipViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZExpandSwipViewController.h; sourceTree = "<group>"; };
+		65D1FC9D1ADBAF2000CB90F9 /* DZExpandSwipViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZExpandSwipViewController.m; sourceTree = "<group>"; };
+		65D1FC9F1ADBB29E00CB90F9 /* LTUICarMeet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUICarMeet.h; sourceTree = "<group>"; };
+		65D1FCA01ADBB29E00CB90F9 /* LTUICarMeet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUICarMeet.m; sourceTree = "<group>"; };
+		65D1FCA21ADBB32100CB90F9 /* LTCarMeetFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetFeedViewController.h; sourceTree = "<group>"; };
+		65D1FCA31ADBB32100CB90F9 /* LTCarMeetFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetFeedViewController.m; sourceTree = "<group>"; };
 		65D9CD131AD5461B00CBF695 /* LTRecommondLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommondLineCell.h; sourceTree = "<group>"; };
 		65D9CD141AD5461B00CBF695 /* LTRecommondLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommondLineCell.m; sourceTree = "<group>"; };
 		65D9CD161AD5475D00CBF695 /* LTFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFont.h; sourceTree = "<group>"; };
@@ -147,6 +166,32 @@
 		65D9CD291AD5502100CBF695 /* LTBadgeView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeView_Private.h; sourceTree = "<group>"; };
 		65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHaneke.h; sourceTree = "<group>"; };
 		65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHaneke.m; sourceTree = "<group>"; };
+		65FD64B11ADB5F0F00FC94E0 /* CBetterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewCell.h; sourceTree = "<group>"; };
+		65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewCell.m; sourceTree = "<group>"; };
+		65FD64B31ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
+		65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
+		65FD64B51ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCoverflowCollectionViewLayout.h; sourceTree = "<group>"; };
+		65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCoverflowCollectionViewLayout.m; sourceTree = "<group>"; };
+		65FD64B71ADB5F0F00FC94E0 /* CInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CInterpolator.h; sourceTree = "<group>"; };
+		65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CInterpolator.mm; sourceTree = "<group>"; };
+		65FD64B91ADB5F0F00FC94E0 /* CReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CReflectionView.h; sourceTree = "<group>"; };
+		65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CReflectionView.m; sourceTree = "<group>"; };
+		65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interpolator.cpp; sourceTree = "<group>"; };
+		65FD64BC1ADB5F0F00FC94E0 /* Interpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpolator.h; sourceTree = "<group>"; };
+		65FD64C31ADB605300FC94E0 /* LTDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDiscoverCell.h; sourceTree = "<group>"; };
+		65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDiscoverCell.m; sourceTree = "<group>"; };
+		65FD64C81ADB61AF00FC94E0 /* LTRecommendLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommendLine.h; sourceTree = "<group>"; };
+		65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommendLine.m; sourceTree = "<group>"; };
+		65FD64CB1ADB61C800FC94E0 /* LTUIDiscoverItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIDiscoverItem.h; sourceTree = "<group>"; };
+		65FD64CC1ADB61C800FC94E0 /* LTUIDiscoverItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIDiscoverItem.m; sourceTree = "<group>"; };
+		65FD64CF1ADB82C600FC94E0 /* DZExpandCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZExpandCollectionView.h; sourceTree = "<group>"; };
+		65FD64D01ADB82C600FC94E0 /* DZExpandCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZExpandCollectionView.m; sourceTree = "<group>"; };
+		65FD64D21ADB87D400FC94E0 /* DZexpandCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZexpandCollectionViewController.h; sourceTree = "<group>"; };
+		65FD64D31ADB87D400FC94E0 /* DZexpandCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZexpandCollectionViewController.m; sourceTree = "<group>"; };
+		65FD64D51ADB89B100FC94E0 /* DZExpandCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZExpandCollectionViewCell.h; sourceTree = "<group>"; };
+		65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZExpandCollectionViewCell.m; sourceTree = "<group>"; };
+		65FD64D81ADB9A2E00FC94E0 /* LTCarMeetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetCell.h; sourceTree = "<group>"; };
+		65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetCell.m; sourceTree = "<group>"; };
 		B31DE014AADD645AC513307D /* Pods-LuTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.release.xcconfig"; sourceTree = "<group>"; };
 		DFA8AA5136737BE7B1D5383B /* Pods-LuTu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +292,10 @@
 			children = (
 				652FB9561AD277A50082894E /* LTCarMeetViewController.h */,
 				652FB9571AD277A50082894E /* LTCarMeetViewController.m */,
+				65FD64D81ADB9A2E00FC94E0 /* LTCarMeetCell.h */,
+				65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */,
+				65D1FCA21ADBB32100CB90F9 /* LTCarMeetFeedViewController.h */,
+				65D1FCA31ADBB32100CB90F9 /* LTCarMeetFeedViewController.m */,
 			);
 			path = CarFriend;
 			sourceTree = "<group>";
@@ -256,6 +305,8 @@
 			children = (
 				652FB9531AD277750082894E /* LTDiscoverViewController.h */,
 				652FB9541AD277750082894E /* LTDiscoverViewController.m */,
+				65FD64C31ADB605300FC94E0 /* LTDiscoverCell.h */,
+				65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -327,12 +378,12 @@
 		659D4B451AC3A232007C2DAF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				65FD64C61ADB61AF00FC94E0 /* Models */,
 				659D4B541AC3A293007C2DAF /* ThirdLib */,
 				659D4B531AC3A283007C2DAF /* Auth */,
 				659D4B461AC3A232007C2DAF /* Cache */,
 				659D4B471AC3A232007C2DAF /* Configure */,
 				659D4B481AC3A232007C2DAF /* LocalDatas */,
-				659D4B491AC3A232007C2DAF /* Models */,
 				659D4B4A1AC3A232007C2DAF /* Network */,
 				659D4B4B1AC3A232007C2DAF /* UI */,
 				659D4B501AC3A232007C2DAF /* Utilities */,
@@ -364,15 +415,6 @@
 				652FB95D1AD279EA0082894E /* LTDataBase.m */,
 			);
 			path = LocalDatas;
-			sourceTree = "<group>";
-		};
-		659D4B491AC3A232007C2DAF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				65D9CD101AD5457100CBF695 /* LTRecommendLine.h */,
-				65D9CD111AD5457100CBF695 /* LTRecommendLine.m */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		659D4B4A1AC3A232007C2DAF /* Network */ = {
@@ -428,6 +470,8 @@
 		659D4B4F1AC3A232007C2DAF /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				65D1FC9B1ADBAEF600CB90F9 /* ExpandSwip */,
+				65FD64CE1ADB827E00FC94E0 /* ExpandCollection */,
 				65D9CD1F1AD54BFD00CBF695 /* Badge */,
 				652FB9651AD27ED90082894E /* Common */,
 			);
@@ -437,6 +481,7 @@
 		659D4B501AC3A232007C2DAF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				65FD64AF1ADB5F0F00FC94E0 /* frameworks */,
 				652FB9341AD240F40082894E /* errors */,
 				659D4B511AC3A232007C2DAF /* Globlas */,
 			);
@@ -535,6 +580,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		65D1FC9B1ADBAEF600CB90F9 /* ExpandSwip */ = {
+			isa = PBXGroup;
+			children = (
+				65D1FC9C1ADBAF2000CB90F9 /* DZExpandSwipViewController.h */,
+				65D1FC9D1ADBAF2000CB90F9 /* DZExpandSwipViewController.m */,
+			);
+			path = ExpandSwip;
+			sourceTree = "<group>";
+		};
 		65D9CD1F1AD54BFD00CBF695 /* Badge */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +601,67 @@
 				65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		65FD64AF1ADB5F0F00FC94E0 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65FD64B01ADB5F0F00FC94E0 /* Coverflow */,
+			);
+			path = frameworks;
+			sourceTree = "<group>";
+		};
+		65FD64B01ADB5F0F00FC94E0 /* Coverflow */ = {
+			isa = PBXGroup;
+			children = (
+				65FD64B11ADB5F0F00FC94E0 /* CBetterCollectionViewCell.h */,
+				65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */,
+				65FD64B31ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.h */,
+				65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */,
+				65FD64B51ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.h */,
+				65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */,
+				65FD64B71ADB5F0F00FC94E0 /* CInterpolator.h */,
+				65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */,
+				65FD64B91ADB5F0F00FC94E0 /* CReflectionView.h */,
+				65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */,
+				65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */,
+				65FD64BC1ADB5F0F00FC94E0 /* Interpolator.h */,
+			);
+			path = Coverflow;
+			sourceTree = "<group>";
+		};
+		65FD64C61ADB61AF00FC94E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				65FD64C71ADB61AF00FC94E0 /* UIModels */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65FD64C71ADB61AF00FC94E0 /* UIModels */ = {
+			isa = PBXGroup;
+			children = (
+				65FD64C81ADB61AF00FC94E0 /* LTRecommendLine.h */,
+				65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */,
+				65FD64CB1ADB61C800FC94E0 /* LTUIDiscoverItem.h */,
+				65FD64CC1ADB61C800FC94E0 /* LTUIDiscoverItem.m */,
+				65D1FC9F1ADBB29E00CB90F9 /* LTUICarMeet.h */,
+				65D1FCA01ADBB29E00CB90F9 /* LTUICarMeet.m */,
+			);
+			path = UIModels;
+			sourceTree = "<group>";
+		};
+		65FD64CE1ADB827E00FC94E0 /* ExpandCollection */ = {
+			isa = PBXGroup;
+			children = (
+				65FD64CF1ADB82C600FC94E0 /* DZExpandCollectionView.h */,
+				65FD64D01ADB82C600FC94E0 /* DZExpandCollectionView.m */,
+				65FD64D21ADB87D400FC94E0 /* DZexpandCollectionViewController.h */,
+				65FD64D31ADB87D400FC94E0 /* DZexpandCollectionViewController.m */,
+				65FD64D51ADB89B100FC94E0 /* DZExpandCollectionViewCell.h */,
+				65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */,
+			);
+			path = ExpandCollection;
 			sourceTree = "<group>";
 		};
 		EC9FC8B69BF65BF6E0F2FAAD /* Frameworks */ = {
@@ -703,20 +818,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
 				652FB9241AD23EB60082894E /* MSRouter.m in Sources */,
 				652FB9261AD23EB60082894E /* MSTokenManager.m in Sources */,
 				652FB92F1AD23EF50082894E /* MSAccount.m in Sources */,
 				652FB93A1AD246B50082894E /* LTTokenReq.m in Sources */,
 				652FB9331AD23F730082894E /* MSLog.m in Sources */,
+				65FD64BD1ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m in Sources */,
 				652FB9441AD26C870082894E /* MSRecommondRoadReq.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
 				652FB96F1AD27FBA0082894E /* LTColors.m in Sources */,
 				652FB95B1AD277D40082894E /* LTSelectedRoadViewController.m in Sources */,
+				65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */,
 				65D9CD1B1AD54A8200CBF695 /* LTLikeButton.m in Sources */,
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
+				65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */,
+				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,
 				652FB9281AD23EB60082894E /* MSRequestOperation.m in Sources */,
+				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
+				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
+				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
+				65FD64BE1ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
 				65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */,
@@ -728,16 +852,22 @@
 				652FB9551AD277750082894E /* LTDiscoverViewController.m in Sources */,
 				652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */,
 				652FB9521AD277650082894E /* LTMineViewController.m in Sources */,
-				65D9CD121AD5457100CBF695 /* LTRecommendLine.m in Sources */,
+				65FD64BF1ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m in Sources */,
+				65FD64CD1ADB61C800FC94E0 /* LTUIDiscoverItem.m in Sources */,
+				65FD64C21ADB5F0F00FC94E0 /* Interpolator.cpp in Sources */,
 				65D1F0731AC28B34006525D0 /* AppDelegate.m in Sources */,
 				65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */,
 				652FB9641AD27E860082894E /* LTAuthViewController.m in Sources */,
 				652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */,
+				65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */,
+				65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */,
 				65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */,
 				65D1F0701AC28B34006525D0 /* main.m in Sources */,
 				652FB9371AD241030082894E /* LTError.m in Sources */,
 				652FB9301AD23EF50082894E /* MSAccountManager.m in Sources */,
+				65FD64C11ADB5F0F00FC94E0 /* CReflectionView.m in Sources */,
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,
+				65FD64C01ADB5F0F00FC94E0 /* CInterpolator.mm in Sources */,
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
 			);

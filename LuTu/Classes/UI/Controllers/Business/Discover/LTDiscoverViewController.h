@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LTDiscoverViewController : UIViewController
-
+typedef enum {
+    LTLayoutTypeGrid,
+    LTLayoutTypeCover
+}LTLayoutType;
+@interface LTDiscoverViewController : UICollectionViewController
+- (instancetype) initWithLayoutType:(LTLayoutType)type;
 @end

@@ -34,7 +34,10 @@
     _backgroundImageView.hnk_cacheFormat = LTHanekeCacheFormatFeedBackground();
     _backgroundImageView.layer.masksToBounds = YES;
     _backgroundImageView.layer.cornerRadius = 5;
+    //
+    self.backgroundColor = [UIColor clearColor];
 }
+
 
 - (void) setLine:(LTRecommendLine *)line
 {
