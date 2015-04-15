@@ -13,6 +13,7 @@
 #import "LTMineViewController.h"
 #import "LTSelectedRoadViewController.h"
 #import "MSAccountManager.h"
+#import "LTNavigationController.h"
 #import <DZImageCache.h>
 
 @interface LTGlobalViewController ()
@@ -65,10 +66,24 @@
     mineVC.tabBarItem.selectedImage = DZCachedImageByName(@"user_click");
     
     LTMainViewController* mainVC = [[LTMainViewController alloc] init];
-    mainVC.viewControllers  = @[selectedVC, discoverVC, carMeetVC, mineVC];
+    
+    LTNavigationController*(^NavigationWithRootVC)(UIViewController* vc) = ^(UIViewController* vc) {
+        return [[LTNavigationController alloc] initWithRootViewController:vc];
+    };
+    mainVC.viewControllers  = @[NavigationWithRootVC(selectedVC),
+                                NavigationWithRootVC(discoverVC),
+                                NavigationWithRootVC(carMeetVC),
+                                NavigationWithRootVC(mineVC)];
     
     [self changeMainVC:mainVC];
     mineVC.tabBarController.tabBar.barTintColor = [UIColor blackColor];
     
 }
+
+- (void) viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+
+}
+
 @end

@@ -97,6 +97,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
+    
     [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
     [self reloadAllData];
 }
@@ -117,6 +118,18 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     LTUIDiscoverItem* item = _discoverItems[indexPath.row];
     cell.discoverItem = item;
     return cell;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if(section==0)
+    {
+        return UIEdgeInsetsMake(35, 25, 15, 25);
+    }
+    else
+    {
+        return UIEdgeInsetsMake(15, 15, 15, 15);
+    }
 }
 
 @end

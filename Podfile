@@ -13,6 +13,7 @@ target 'LuTu' do
   pod 'DZGeometryTools'
   pod 'Haneke', '~> 1.0'
   pod 'DZCache'
+  pod 'LTNavigationBar'
 end
 
 

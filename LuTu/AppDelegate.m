@@ -24,9 +24,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = globalVC;
     //
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:DZCachedImageByName(@"bg")];
-    imageView.frame = self.window.bounds;
-    [self.window insertSubview:imageView atIndex:0];
     //
     [self.window makeKeyAndVisible];
     return YES;

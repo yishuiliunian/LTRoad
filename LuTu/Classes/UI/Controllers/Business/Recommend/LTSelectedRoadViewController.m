@@ -8,6 +8,7 @@
 
 #import "LTSelectedRoadViewController.h"
 #import "LTRecommondLineCell.h"
+#import "LTColors.h"
 @interface LTSelectedRoadViewController()
 {
     NSArray* _recommondLines;
@@ -18,6 +19,8 @@
 - (void) configureView
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.view.backgroundColor = [UIColor clearColor];
+    
 }
 - (void) viewDidLoad
 {

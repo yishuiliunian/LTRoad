@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0B4C9A237264EFE02FF51C91 /* libPods-LuTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D07AF18EA69C166263FAB /* libPods-LuTu.a */; };
 		6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510E2E81AD9508E0036C767 /* LTConfigure.m */; };
+		652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED11ADE0AEF00570768 /* LTNavigationController.m */; };
+		652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */; };
+		652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4EDA1ADE100500570768 /* LTNavigationBar.m */; };
+		652C4EDE1ADE12B400570768 /* LTNavigationTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4EDD1ADE12B400570768 /* LTNavigationTitleView.m */; };
+		652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4EE01ADE141300570768 /* UIViewController+LTNavigationBar.m */; };
 		652FB9111AD23DF50082894E /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 652FB9101AD23DF50082894E /* libc++.dylib */; };
 		652FB9231AD23EB60082894E /* MSRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9141AD23EB60082894E /* MSRequest.m */; };
 		652FB9241AD23EB60082894E /* MSRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9161AD23EB60082894E /* MSRouter.m */; };
@@ -81,6 +86,16 @@
 		181D07AF18EA69C166263FAB /* libPods-LuTu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuTu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6510E2E71AD9508E0036C767 /* LTConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTConfigure.h; sourceTree = "<group>"; };
 		6510E2E81AD9508E0036C767 /* LTConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTConfigure.m; sourceTree = "<group>"; };
+		652C4ED01ADE0AEF00570768 /* LTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNavigationController.h; path = LuTu/Classes/UI/CustomUI/LTNavigationController.h; sourceTree = SOURCE_ROOT; };
+		652C4ED11ADE0AEF00570768 /* LTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTNavigationController.m; path = LuTu/Classes/UI/CustomUI/LTNavigationController.m; sourceTree = SOURCE_ROOT; };
+		652C4ED61ADE0C4200570768 /* UIViewController+MethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MethodSwizzling.h"; sourceTree = "<group>"; };
+		652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+MethodSwizzling.m"; sourceTree = "<group>"; };
+		652C4ED91ADE100500570768 /* LTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNavigationBar.h; sourceTree = "<group>"; };
+		652C4EDA1ADE100500570768 /* LTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNavigationBar.m; sourceTree = "<group>"; };
+		652C4EDC1ADE12B400570768 /* LTNavigationTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNavigationTitleView.h; sourceTree = "<group>"; };
+		652C4EDD1ADE12B400570768 /* LTNavigationTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNavigationTitleView.m; sourceTree = "<group>"; };
+		652C4EDF1ADE141300570768 /* UIViewController+LTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LTNavigationBar.h"; sourceTree = "<group>"; };
+		652C4EE01ADE141300570768 /* UIViewController+LTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LTNavigationBar.m"; sourceTree = "<group>"; };
 		652FB9101AD23DF50082894E /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		652FB9131AD23EB60082894E /* MSRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRequest.h; sourceTree = "<group>"; };
 		652FB9141AD23EB60082894E /* MSRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRequest.m; sourceTree = "<group>"; };
@@ -463,6 +478,8 @@
 		659D4B4E1AC3A232007C2DAF /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				652C4ED01ADE0AEF00570768 /* LTNavigationController.h */,
+				652C4ED11ADE0AEF00570768 /* LTNavigationController.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -470,6 +487,14 @@
 		659D4B4F1AC3A232007C2DAF /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				652C4ED61ADE0C4200570768 /* UIViewController+MethodSwizzling.h */,
+				652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */,
+				652C4ED91ADE100500570768 /* LTNavigationBar.h */,
+				652C4EDA1ADE100500570768 /* LTNavigationBar.m */,
+				652C4EDC1ADE12B400570768 /* LTNavigationTitleView.h */,
+				652C4EDD1ADE12B400570768 /* LTNavigationTitleView.m */,
+				652C4EDF1ADE141300570768 /* UIViewController+LTNavigationBar.h */,
+				652C4EE01ADE141300570768 /* UIViewController+LTNavigationBar.m */,
 				65D1FC9B1ADBAEF600CB90F9 /* ExpandSwip */,
 				65FD64CE1ADB827E00FC94E0 /* ExpandCollection */,
 				65D9CD1F1AD54BFD00CBF695 /* Badge */,
@@ -818,6 +843,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
 				652FB9241AD23EB60082894E /* MSRouter.m in Sources */,
@@ -833,12 +859,14 @@
 				65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */,
 				65D9CD1B1AD54A8200CBF695 /* LTLikeButton.m in Sources */,
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
+				652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */,
 				65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */,
 				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,
 				652FB9281AD23EB60082894E /* MSRequestOperation.m in Sources */,
 				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
+				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
 				65FD64BE1ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
@@ -855,6 +883,7 @@
 				65FD64BF1ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m in Sources */,
 				65FD64CD1ADB61C800FC94E0 /* LTUIDiscoverItem.m in Sources */,
 				65FD64C21ADB5F0F00FC94E0 /* Interpolator.cpp in Sources */,
+				652C4EDE1ADE12B400570768 /* LTNavigationTitleView.m in Sources */,
 				65D1F0731AC28B34006525D0 /* AppDelegate.m in Sources */,
 				65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */,
 				652FB9641AD27E860082894E /* LTAuthViewController.m in Sources */,
@@ -869,6 +898,7 @@
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,
 				65FD64C01ADB5F0F00FC94E0 /* CInterpolator.mm in Sources */,
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
+				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
