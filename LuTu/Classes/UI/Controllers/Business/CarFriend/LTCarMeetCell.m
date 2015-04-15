@@ -26,7 +26,8 @@
     INIT_SUBVIEW_UILabel(self.contentView, _titleLabel);
     _emblemImageView.hnk_cacheFormat = LTHanekeCacheFormatCarMeet();
     _emblemImageView.layer.masksToBounds = YES;
-    
+    _titleLabel.textColor = [UIColor whiteColor];
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
 #if DEBUG
     self.contentView.backgroundColor = [UIColor redColor];
     INIT_SELF_SUBVIEW(UIView, _menuView);

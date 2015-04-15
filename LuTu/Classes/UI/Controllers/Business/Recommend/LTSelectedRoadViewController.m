@@ -9,6 +9,8 @@
 #import "LTSelectedRoadViewController.h"
 #import "LTRecommondLineCell.h"
 #import "LTColors.h"
+#import <DZImageCache.h>
+#import "UIViewController+Additions.h"
 @interface LTSelectedRoadViewController()
 {
     NSArray* _recommondLines;
@@ -20,6 +22,19 @@
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = [UIColor clearColor];
+    
+    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"address") style:UIBarButtonItemStyleDone target:self action:@selector(locateTheAddress)];
+    self.navigationItem.leftBarButtonItem = left;
+    
+    [self loadNavigationBarSearchItem];
+    
+}
+- (void) search
+{
+    
+}
+- (void) locateTheAddress
+{
     
 }
 - (void) viewDidLoad

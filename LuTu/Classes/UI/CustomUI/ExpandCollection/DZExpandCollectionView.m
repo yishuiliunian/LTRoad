@@ -8,13 +8,30 @@
 
 #import "DZExpandCollectionView.h"
 #import "DZExpandCollectionViewCell.h"
+@class DZExpandCollectionView;
 @interface DZExpandCollectionViewTouchDelegate : NSObject <UIGestureRecognizerDelegate>
-@property (nonatomic, weak) UICollectionView* collectionView;
+@property (nonatomic, weak) DZExpandCollectionView* collectionView;
 @end
 
 @implementation DZExpandCollectionViewTouchDelegate
 
+- (BOOL) gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
 
+- (BOOL) gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) {
+        UITapGestureRecognizer* tap = (UITapGestureRecognizer*)gestureRecognizer;
+        if (tap.numberOfTapsRequired == 2) {
+            return !self.collectionView.expanded;
+        } else if (tap.numberOfTapsRequired == 1) {
+            return self.collectionView.expanded;
+        }
+    }
+    return YES;
+}
 @end
 
 
@@ -45,6 +62,7 @@
     tapGestrure.numberOfTapsRequired = 2;
     tapGestrure.numberOfTouchesRequired = 1;
     self.touchDelegate = [DZExpandCollectionViewTouchDelegate new];
+    //
     tapGestrure.delegate = self.touchDelegate;
     [self addGestureRecognizer:tapGestrure];
     
@@ -53,6 +71,7 @@
     singleTap.numberOfTapsRequired = 1;
     singleTap.numberOfTouchesRequired = 1;
     tapGestrure.delegate = self.touchDelegate;
+    [singleTap requireGestureRecognizerToFail:tapGestrure];
     [self addGestureRecognizer:singleTap];
     
     self.backgroundColor = [UIColor clearColor];

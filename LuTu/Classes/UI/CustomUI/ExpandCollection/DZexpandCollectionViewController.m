@@ -18,6 +18,7 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
 - (void) loadView
 {
     UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.itemSize = CGSizeMake(100, 150);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     _expandCollectionView = [[DZExpandCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     _expandCollectionView.delegate = self;
@@ -60,5 +61,12 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
     }
 }
 
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTUICarMeet* carmeet = _items[indexPath.row];
+    if ([self.delegate respondsToSelector:@selector(expandViewController:didSelectItem:)]) {
+        [self.delegate expandViewController:self didSelectItem:carmeet];
+    }
+}
 
 @end

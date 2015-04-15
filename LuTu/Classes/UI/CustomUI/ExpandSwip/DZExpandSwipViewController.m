@@ -10,7 +10,7 @@
 #import "DZexpandCollectionViewController.h"
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
-@interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
 @property (nonatomic, strong) NSMutableDictionary* viewControllersMap;
@@ -30,6 +30,7 @@
 {
     [super viewDidLoad];
     _expandCollectioViewController = [[DZexpandCollectionViewController alloc] init];
+    _expandCollectioViewController.delegate = self;
     NSMutableArray* array = [NSMutableArray new];
     for (int i = 0; i < 100; i++) {
         LTUICarMeet* carMeet = [LTUICarMeet new];
@@ -44,13 +45,20 @@
     _pageViewController.delegate = self;
     _pageViewController.dataSource = self;
     [self lt_addViewController:_pageViewController];
-    [_pageViewController setViewControllers:@[[self viewControllerAtIndex:0]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    [self scrollToPageViewControllerAtIndex:0];
 }
-
+- (void) scrollToPageViewControllerAtIndex:(NSInteger)index
+{
+    if (index >= _expandCollectioViewController.items.count) {
+        return ;
+    }
+    [_pageViewController setViewControllers:@[[self viewControllerAtIndex:index]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+ 
+}
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    _expandCollectioViewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 100);
+    _expandCollectioViewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 200);
     _pageViewController.view.frame = CGRectMake(0, CGRectGetMaxY(_expandCollectioViewController.view.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetMaxY(_expandCollectioViewController.view.frame));
 }
 - (UIViewController*) viewControllerAtIndex:(NSInteger) index
@@ -74,22 +82,34 @@
     return carMeetVC;
     
 }
-
+- (NSInteger) indexOfCarMeet:(LTUICarMeet*)carmeet
+{
+    for (int i = 0; i < _expandCollectioViewController.items.count; i++) {
+        LTUICarMeet* carMeet = _expandCollectioViewController.items[i];
+        if ([carMeet.key isEqualToString:carmeet.key]) {
+            return i;
+        }
+    }
+    return NSNotFound;
+}
 - (NSInteger) indexOfViewController:(UIViewController*)vc
 {
     if (![vc isKindOfClass:[LTCarMeetFeedViewController class]]) {
         return NSNotFound;
     }
     LTUICarMeet* currentCarMeet =[ (LTCarMeetFeedViewController*)vc carMeet];
-    for (int i = 0; i < _expandCollectioViewController.items.count; i++) {
-        LTUICarMeet* carMeet = _expandCollectioViewController.items[i];
-        if ([carMeet.key isEqualToString:currentCarMeet.key]) {
-            return i;
-        }
-    }
-    return NSNotFound;
+    return [self indexOfCarMeet:currentCarMeet];
     
 }
+- (void) expandViewController:(DZexpandCollectionViewController *)vc didSelectItem:(LTUICarMeet *)carmett
+{
+    NSInteger index = [self indexOfCarMeet:carmett];
+    if (index == NSNotFound) {
+        return;
+    }
+    [self scrollToPageViewControllerAtIndex:index];
+}
+#pragma mark PageViewControlller
 - (UIViewController*) pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController
 {
     NSInteger index = [self indexOfViewController:viewController];

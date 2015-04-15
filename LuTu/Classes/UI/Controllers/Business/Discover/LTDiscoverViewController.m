@@ -12,7 +12,8 @@
 #import "LTUIDiscoverItem.h"
 #import <DZProgramDefines.h>
 #import <DZGeometryTools.h>
-
+#import <DZImageCache.h>
+#import "UIViewController+Additions.h"
 INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 @interface LTDiscoverViewController ()
 {
@@ -84,7 +85,9 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
     if (_layoutType != layoutType) {
         _layoutType = layoutType;
-        self.collectionView.collectionViewLayout= [LTDiscoverViewController layoutWithType:_layoutType];
+        [self.collectionView setCollectionViewLayout:[LTDiscoverViewController layoutWithType:_layoutType] animated:YES completion:^(BOOL finished) {
+            
+        }];
         [self.collectionView reloadData];
     }
 }
@@ -93,15 +96,23 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     LTLayoutType aimType = _layoutType == LTLayoutTypeGrid ? LTLayoutTypeCover : LTLayoutTypeGrid;
     [self setLayoutType:aimType];
 }
+
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    //
+    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"address") style:UIBarButtonItemStyleDone target:self action:@selector(changeLayoutType)];
+    self.navigationItem.leftBarButtonItem = left;
+    [self loadNavigationBarSearchItem];
     self.view.backgroundColor = [UIColor clearColor];
-    
     [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
     [self reloadAllData];
 }
-
+- (void) search
+{
+    
+}
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
@@ -120,16 +131,16 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     return cell;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    if(section==0)
-    {
-        return UIEdgeInsetsMake(35, 25, 15, 25);
-    }
-    else
-    {
-        return UIEdgeInsetsMake(15, 15, 15, 15);
-    }
-}
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+//{
+//    if(section==0)
+//    {
+//        return UIEdgeInsetsMake(35, 25, 15, 25);
+//    }
+//    else
+//    {
+//        return UIEdgeInsetsMake(15, 15, 15, 15);
+//    }
+//}
 
 @end

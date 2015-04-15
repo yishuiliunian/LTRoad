@@ -50,7 +50,7 @@
     carMeetVC.tabBarItem.image = DZCachedImageByName(@"car_normal");
     carMeetVC.tabBarItem.selectedImage = DZCachedImageByName(@"car_click");
     
-    LTDiscoverViewController* discoverVC = [[LTDiscoverViewController alloc] initWithLayoutType:LTLayoutTypeGrid];
+    LTDiscoverViewController* discoverVC = [[LTDiscoverViewController alloc] initWithLayoutType:LTLayoutTypeCover];
     discoverVC.tabBarItem.title = @"发现";
     discoverVC.tabBarItem.image = DZCachedImageByName(@"discovery_normal");
     discoverVC.tabBarItem.selectedImage = DZCachedImageByName(@"discovery_click");
