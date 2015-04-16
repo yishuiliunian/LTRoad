@@ -12,5 +12,6 @@
 @property (nonatomic, strong) NSString* key;
 @property (nonatomic, strong) NSURL* emblemURL;
 @property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong) NSString* detail;
 @end
 

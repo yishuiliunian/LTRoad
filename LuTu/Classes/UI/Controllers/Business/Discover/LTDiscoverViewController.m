@@ -68,6 +68,12 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     return (UICollectionViewFlowLayout*)layout;
 }
 
++ (UICollectionView*) collectionViewWithType:(LTLayoutType)type
+{
+    UICollectionViewLayout* layout = [self layoutWithType:type];
+    UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:CGRectLoadViewFrame collectionViewLayout:layout];
+    return collectionView;
+}
 - (void) reloadAllData
 {
     NSMutableArray* array = [NSMutableArray new];
@@ -85,9 +91,13 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
     if (_layoutType != layoutType) {
         _layoutType = layoutType;
-        [self.collectionView setCollectionViewLayout:[LTDiscoverViewController layoutWithType:_layoutType] animated:YES completion:^(BOOL finished) {
-            
-        }];
+        UICollectionView* currentCollectionView = self.collectionView;
+        UICollectionView* aimCollectionView = [LTDiscoverViewController collectionViewWithType:layoutType];
+        aimCollectionView.frame = currentCollectionView.frame;
+        self.collectionView = aimCollectionView;
+        [currentCollectionView.superview addSubview:aimCollectionView];
+        [currentCollectionView removeFromSuperview];
+         [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
         [self.collectionView reloadData];
     }
 }

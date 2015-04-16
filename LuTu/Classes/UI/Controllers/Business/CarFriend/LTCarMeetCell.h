@@ -9,9 +9,10 @@
 #import "DZExpandCollectionViewCell.h"
 #import <DZProgramDefines.h>
 #import "LTUICarMeet.h"
+#import "LTCarMeetMenuView.h"
 @interface LTCarMeetCell : DZExpandCollectionViewCell
 @property (nonatomic, strong) LTUICarMeet* carMeet;
-DEFINE_PROPERTY_STRONG(UIView*, menuView);
+DEFINE_PROPERTY_STRONG(LTCarMeetMenuView*, menuView);
 DEFINE_PROPERTY_STRONG_UIImageView(emblemImageView);
 DEFINE_PROPERTY_STRONG_UILabel(titleLabel);
 @end

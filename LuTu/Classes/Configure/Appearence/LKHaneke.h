@@ -15,3 +15,4 @@
 EXTERN_LTHNKShareCacheFormat(FeedBackground)
 EXTERN_LTHNKShareCacheFormat(DiscoverBackground)
 EXTERN_LTHNKShareCacheFormat(CarMeet)
+EXTERN_LTHNKShareCacheFormat(Avatar)

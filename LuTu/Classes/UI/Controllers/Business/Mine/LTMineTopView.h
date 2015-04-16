@@ -12,6 +12,7 @@
 #import "LTBottomLabelButton.h"
 #import "LTBackButton.h"
 @interface LTMineTopView : UIView
+@property (nonatomic, assign, readonly) CGFloat minHeight;
 DEFINE_PROPERTY_STRONG_UIImageView(backgroundImageView);
 DEFINE_PROPERTY_STRONG_UIImageView(avatarImageView);
 DEFINE_PROPERTY_STRONG(LTBottomLabelButton*, messageButton);
@@ -19,4 +20,5 @@ DEFINE_PROPERTY_STRONG(LTBottomLabelButton*, settingButton);
 DEFINE_PROPERTY_STRONG(LTBackButton*, favarateButton);
 DEFINE_PROPERTY_STRONG(LTBackButton*, feedButton);
 DEFINE_PROPERTY_STRONG(LTBackButton*, carFriendButton);
+DEFINE_PROPERTY_STRONG_UILabel(nickNameLabel);
 @end

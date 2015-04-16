@@ -8,7 +8,6 @@
 
 #import "LTCarMeetCell.h"
 #import "LKHaneke.h"
-
 @interface LTCarMeetCell ()
 {
     CGRect _unexpandedFrame;
@@ -30,7 +29,7 @@
     _titleLabel.textAlignment = NSTextAlignmentCenter;
 #if DEBUG
     self.contentView.backgroundColor = [UIColor redColor];
-    INIT_SELF_SUBVIEW(UIView, _menuView);
+    INIT_SELF_SUBVIEW(LTCarMeetMenuView, _menuView);
     _menuView.backgroundColor = [UIColor greenColor];
 #endif
     return self;
@@ -47,6 +46,7 @@
 {
     [_emblemImageView hnk_setImageFromURL:_carMeet.emblemURL];
     _titleLabel.text = _carMeet.title;
+    _menuView.detailTextLabel.text = _carMeet.detail;
 }
 - (void) layoutSubviews
 {
@@ -59,7 +59,7 @@
     _emblemImageView.frame = CGRectMake(0, 0, width, width);
     _titleLabel.frame = CGRectMake(0, CGRectGetMaxY(_emblemImageView.frame), width, CGRectGetHeight(self.contentView.frame) - width);
     
-
+    _menuView.hidden = !self.expanded;
     if (self.expanded) {
         CGRect rect = CGRectZero;
         rect.origin.x = CGRectGetMaxX(_unexpandedFrame) + 10;

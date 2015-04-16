@@ -37,3 +37,4 @@ HNKCacheFormat* HNKCreateCacheFormatWithSize(CGSize size, NSString* key)  {
 LTHNKShareCacheFormat(CGCurrentScreenSize().width, 300, FeedBackground)
 LTHNKShareCacheFormat(200, 300, DiscoverBackground)
 LTHNKShareCacheFormat(100, 100, CarMeet)
+LTHNKShareCacheFormat(100, 100, Avatar)
