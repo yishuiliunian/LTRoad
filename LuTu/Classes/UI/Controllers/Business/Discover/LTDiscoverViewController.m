@@ -7,13 +7,13 @@
 //
 
 #import "LTDiscoverViewController.h"
-#import "CCoverflowCollectionViewLayout.h"
 #import "LTDiscoverCell.h"
 #import "LTUIDiscoverItem.h"
 #import <DZProgramDefines.h>
 #import <DZGeometryTools.h>
 #import <DZImageCache.h>
 #import "UIViewController+Additions.h"
+#import "LTCoverFlowLayout.h"
 INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 @interface LTDiscoverViewController ()
 {
@@ -64,16 +64,16 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 
 + (UICollectionViewFlowLayout*) coverLayout
 {
-    CCoverflowCollectionViewLayout* layout = [[CCoverflowCollectionViewLayout alloc] init];
+    LTCoverFlowLayout* layout = [[LTCoverFlowLayout alloc] init];
+    CGSize screenSize = CGCurrentScreenSize();
+    CGFloat width = screenSize.width - 100;
+    CGFloat height = 200;
+    layout.itemSize = CGSizeMake(width, height);
+    layout.scrollDirection =UICollectionViewScrollDirectionHorizontal;
     return (UICollectionViewFlowLayout*)layout;
 }
 
-+ (UICollectionView*) collectionViewWithType:(LTLayoutType)type
-{
-    UICollectionViewLayout* layout = [self layoutWithType:type];
-    UICollectionView* collectionView = [[UICollectionView alloc] initWithFrame:CGRectLoadViewFrame collectionViewLayout:layout];
-    return collectionView;
-}
+
 - (void) reloadAllData
 {
     NSMutableArray* array = [NSMutableArray new];
@@ -91,13 +91,9 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
     if (_layoutType != layoutType) {
         _layoutType = layoutType;
-        UICollectionView* currentCollectionView = self.collectionView;
-        UICollectionView* aimCollectionView = [LTDiscoverViewController collectionViewWithType:layoutType];
-        aimCollectionView.frame = currentCollectionView.frame;
-        self.collectionView = aimCollectionView;
-        [currentCollectionView.superview addSubview:aimCollectionView];
-        [currentCollectionView removeFromSuperview];
-         [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
+        [self.collectionView setCollectionViewLayout:[LTDiscoverViewController layoutWithType:_layoutType] animated:YES completion:^(BOOL finished) {
+            
+        }];
         [self.collectionView reloadData];
     }
 }
@@ -116,6 +112,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     self.navigationItem.leftBarButtonItem = left;
     [self loadNavigationBarSearchItem];
     self.view.backgroundColor = [UIColor clearColor];
+    self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
     [self reloadAllData];
 }
@@ -141,16 +138,16 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     return cell;
 }
 
-//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-//{
-//    if(section==0)
-//    {
-//        return UIEdgeInsetsMake(35, 25, 15, 25);
-//    }
-//    else
-//    {
-//        return UIEdgeInsetsMake(15, 15, 15, 15);
-//    }
-//}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    if(section==0)
+    {
+        return UIEdgeInsetsMake(35, 25, 15, 25);
+    }
+    else
+    {
+        return UIEdgeInsetsMake(15, 15, 15, 15);
+    }
+}
 
 @end

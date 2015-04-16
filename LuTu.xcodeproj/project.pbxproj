@@ -49,6 +49,7 @@
 		657D6FF81ADF799800AA5EBA /* LTActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FF71ADF799800AA5EBA /* LTActionItem.m */; };
 		657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */; };
 		657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */; };
+		657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */; };
 		65C224241ADE35A800BE26FA /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C224231ADE35A800BE26FA /* UIViewController+Additions.m */; };
 		65C224271ADE77D800BE26FA /* LTUICarMeetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */; };
 		65C2242B1ADE784300BE26FA /* LTCarMeetFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2242A1ADE784300BE26FA /* LTCarMeetFeedCell.m */; };
@@ -67,12 +68,6 @@
 		65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD241AD54C3D00CBF695 /* LTBadgeItem.m */; };
 		65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */; };
 		65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */; };
-		65FD64BD1ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */; };
-		65FD64BE1ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */; };
-		65FD64BF1ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */; };
-		65FD64C01ADB5F0F00FC94E0 /* CInterpolator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */; };
-		65FD64C11ADB5F0F00FC94E0 /* CReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */; };
-		65FD64C21ADB5F0F00FC94E0 /* Interpolator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */; };
 		65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */; };
 		65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */; };
 		65FD64CD1ADB61C800FC94E0 /* LTUIDiscoverItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64CC1ADB61C800FC94E0 /* LTUIDiscoverItem.m */; };
@@ -174,6 +169,8 @@
 		657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTActionCell.m; sourceTree = "<group>"; };
 		657D6FFC1ADF7CEB00AA5EBA /* LTCarMeetMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetMenuView.h; sourceTree = "<group>"; };
 		657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetMenuView.m; sourceTree = "<group>"; };
+		657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = ../../../UI/CustomUI/LTCoverFlowLayout.h; sourceTree = "<group>"; };
+		657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = ../../../UI/CustomUI/LTCoverFlowLayout.m; sourceTree = "<group>"; };
 		65C224221ADE35A800BE26FA /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
 		65C224231ADE35A800BE26FA /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
 		65C224251ADE77D800BE26FA /* LTUICarMeetFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUICarMeetFeed.h; sourceTree = "<group>"; };
@@ -211,18 +208,6 @@
 		65D9CD291AD5502100CBF695 /* LTBadgeView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeView_Private.h; sourceTree = "<group>"; };
 		65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHaneke.h; sourceTree = "<group>"; };
 		65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHaneke.m; sourceTree = "<group>"; };
-		65FD64B11ADB5F0F00FC94E0 /* CBetterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewCell.h; sourceTree = "<group>"; };
-		65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewCell.m; sourceTree = "<group>"; };
-		65FD64B31ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBetterCollectionViewLayoutAttributes.h; sourceTree = "<group>"; };
-		65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBetterCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
-		65FD64B51ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCoverflowCollectionViewLayout.h; sourceTree = "<group>"; };
-		65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCoverflowCollectionViewLayout.m; sourceTree = "<group>"; };
-		65FD64B71ADB5F0F00FC94E0 /* CInterpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CInterpolator.h; sourceTree = "<group>"; };
-		65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CInterpolator.mm; sourceTree = "<group>"; };
-		65FD64B91ADB5F0F00FC94E0 /* CReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CReflectionView.h; sourceTree = "<group>"; };
-		65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CReflectionView.m; sourceTree = "<group>"; };
-		65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Interpolator.cpp; sourceTree = "<group>"; };
-		65FD64BC1ADB5F0F00FC94E0 /* Interpolator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpolator.h; sourceTree = "<group>"; };
 		65FD64C31ADB605300FC94E0 /* LTDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDiscoverCell.h; sourceTree = "<group>"; };
 		65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTDiscoverCell.m; sourceTree = "<group>"; };
 		65FD64C81ADB61AF00FC94E0 /* LTRecommendLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommendLine.h; sourceTree = "<group>"; };
@@ -703,18 +688,8 @@
 		65FD64B01ADB5F0F00FC94E0 /* Coverflow */ = {
 			isa = PBXGroup;
 			children = (
-				65FD64B11ADB5F0F00FC94E0 /* CBetterCollectionViewCell.h */,
-				65FD64B21ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m */,
-				65FD64B31ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.h */,
-				65FD64B41ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m */,
-				65FD64B51ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.h */,
-				65FD64B61ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m */,
-				65FD64B71ADB5F0F00FC94E0 /* CInterpolator.h */,
-				65FD64B81ADB5F0F00FC94E0 /* CInterpolator.mm */,
-				65FD64B91ADB5F0F00FC94E0 /* CReflectionView.h */,
-				65FD64BA1ADB5F0F00FC94E0 /* CReflectionView.m */,
-				65FD64BB1ADB5F0F00FC94E0 /* Interpolator.cpp */,
-				65FD64BC1ADB5F0F00FC94E0 /* Interpolator.h */,
+				657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */,
+				657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */,
 			);
 			path = Coverflow;
 			sourceTree = "<group>";
@@ -912,12 +887,12 @@
 				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
+				657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */,
 				652FB9241AD23EB60082894E /* MSRouter.m in Sources */,
 				652FB9261AD23EB60082894E /* MSTokenManager.m in Sources */,
 				652FB92F1AD23EF50082894E /* MSAccount.m in Sources */,
 				652FB93A1AD246B50082894E /* LTTokenReq.m in Sources */,
 				652FB9331AD23F730082894E /* MSLog.m in Sources */,
-				65FD64BD1ADB5F0F00FC94E0 /* CBetterCollectionViewCell.m in Sources */,
 				652FB9441AD26C870082894E /* MSRecommondRoadReq.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
 				657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */,
@@ -938,7 +913,6 @@
 				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,
-				65FD64BE1ADB5F0F00FC94E0 /* CBetterCollectionViewLayoutAttributes.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
 				65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */,
@@ -950,9 +924,7 @@
 				652FB9551AD277750082894E /* LTDiscoverViewController.m in Sources */,
 				652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */,
 				652FB9521AD277650082894E /* LTMineViewController.m in Sources */,
-				65FD64BF1ADB5F0F00FC94E0 /* CCoverflowCollectionViewLayout.m in Sources */,
 				65FD64CD1ADB61C800FC94E0 /* LTUIDiscoverItem.m in Sources */,
-				65FD64C21ADB5F0F00FC94E0 /* Interpolator.cpp in Sources */,
 				652C4EDE1ADE12B400570768 /* LTNavigationTitleView.m in Sources */,
 				65D1F0731AC28B34006525D0 /* AppDelegate.m in Sources */,
 				65C2242B1ADE784300BE26FA /* LTCarMeetFeedCell.m in Sources */,
@@ -966,11 +938,9 @@
 				65D1F0701AC28B34006525D0 /* main.m in Sources */,
 				652FB9371AD241030082894E /* LTError.m in Sources */,
 				652FB9301AD23EF50082894E /* MSAccountManager.m in Sources */,
-				65FD64C11ADB5F0F00FC94E0 /* CReflectionView.m in Sources */,
 				65C224241ADE35A800BE26FA /* UIViewController+Additions.m in Sources */,
 				657D6FF41ADF642C00AA5EBA /* UIButton+decorate.m in Sources */,
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,
-				65FD64C01ADB5F0F00FC94E0 /* CInterpolator.mm in Sources */,
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
