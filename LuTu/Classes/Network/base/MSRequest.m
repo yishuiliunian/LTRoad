@@ -29,10 +29,16 @@
 {
     return [_paramters copy];
 }
-
+- (void) addParamterNumber:(NSNumber*)paramter forKey:(NSString *)key
+{
+    [self addParamter:[paramter stringValue] forKey:key];
+}
 - (void) addParamter:(id)paramter forKey:(NSString*)key
 {
-    if (!paramter || !key) {
+    if (!key) {
+        return;
+    }
+    if (!paramter) {
         return;
     }
     if ([paramter isKindOfClass:[NSString class]]) {
@@ -78,19 +84,19 @@
     [self loadParamters:&error];
     MSRequestOnErrorAndReturn(error);
     
-    NSString* baseURL = MSDefaultServerURL;
-    NSString* urlStr = [baseURL stringByAppendingPathComponent:self.method] ;
-    NSURL* url = [NSURL URLWithString:urlStr];
-    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:HttpMethodPOST];
+    NSURL* url = MSDefaultServerURL;
+    NSString* method = self.method;
+    NSParameterAssert(method);
     
     NSString* paramterstr = [self requestParamtersAppendingURL];
-    NSData* paramData = [paramterstr dataUsingEncoding:NSUTF8StringEncoding];
-    [request setHTTPBody:paramData];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[@([paramData length]) stringValue] forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"*/*" forHTTPHeaderField:@"Accept"];
-   
+    NSString* urlStr = [NSString stringWithFormat:@"%@%@?%@", url.absoluteString,method,  paramterstr];
+
+    url = [NSURL URLWithString:urlStr];
+
+
+
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
+    [request setHTTPMethod:HttpMethodGET];
     NSURLResponse* response ;
     NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     MSRequestOnErrorAndReturn(error);
@@ -111,7 +117,7 @@
         error = [NSError ltErrorWithCode:ret message:message];
         MSRequestOnErrorAndReturn(error);
     }
-    id retData = dic[@"data"];
+    id retData = dic[@"result"];
     [self onSuccess:retData];
     return YES;
 }

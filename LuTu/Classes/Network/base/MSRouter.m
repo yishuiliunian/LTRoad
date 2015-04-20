@@ -24,7 +24,7 @@ NSString* const HttpMethodGET = @"GET";
     if (!self) {
         return self;
     }
-    _baseURL = @"http://112.124.28.224:8080/";
+    _baseURL = [NSURL URLWithString:@"http://112.124.28.224:8080"];
     return self;
 }
 @end

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0B4C9A237264EFE02FF51C91 /* libPods-LuTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D07AF18EA69C166263FAB /* libPods-LuTu.a */; };
+		65035FD81AE495B900BBEDEB /* LTRoteListReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FD71AE495B900BBEDEB /* LTRoteListReq.m */; };
+		65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FDA1AE4969A00BBEDEB /* LTNetworkConfigure.m */; };
+		65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FDE1AE4A77600BBEDEB /* LTPageDataController.m */; };
+		65035FE21AE4AB7E00BBEDEB /* LTRecommondReadDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FE11AE4AB7E00BBEDEB /* LTRecommondReadDataController.m */; };
+		65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */; };
 		6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510E2E81AD9508E0036C767 /* LTConfigure.m */; };
 		652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED11ADE0AEF00570768 /* LTNavigationController.m */; };
 		652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */; };
@@ -29,7 +34,7 @@
 		652FB93A1AD246B50082894E /* LTTokenReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9391AD246B50082894E /* LTTokenReq.m */; };
 		652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB93C1AD268CE0082894E /* LTCheckServiceReq.m */; };
 		652FB9411AD269E90082894E /* LTServiceStatusManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9401AD269E90082894E /* LTServiceStatusManager.m */; };
-		652FB9441AD26C870082894E /* MSRecommondRoadReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9431AD26C870082894E /* MSRecommondRoadReq.m */; };
+		652FB9441AD26C870082894E /* LTRecommondRoadReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9431AD26C870082894E /* LTRecommondRoadReq.m */; };
 		652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9461AD276520082894E /* LTGlobalViewController.m */; };
 		652FB94F1AD277500082894E /* LTMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB94E1AD277500082894E /* LTMainViewController.m */; };
 		652FB9521AD277650082894E /* LTMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9511AD277650082894E /* LTMineViewController.m */; };
@@ -89,6 +94,16 @@
 
 /* Begin PBXFileReference section */
 		181D07AF18EA69C166263FAB /* libPods-LuTu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuTu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65035FD61AE495B900BBEDEB /* LTRoteListReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRoteListReq.h; sourceTree = "<group>"; };
+		65035FD71AE495B900BBEDEB /* LTRoteListReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRoteListReq.m; sourceTree = "<group>"; };
+		65035FD91AE4969A00BBEDEB /* LTNetworkConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNetworkConfigure.h; path = ../threads/LTNetworkConfigure.h; sourceTree = "<group>"; };
+		65035FDA1AE4969A00BBEDEB /* LTNetworkConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTNetworkConfigure.m; path = ../threads/LTNetworkConfigure.m; sourceTree = "<group>"; };
+		65035FDD1AE4A77600BBEDEB /* LTPageDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTPageDataController.h; sourceTree = "<group>"; };
+		65035FDE1AE4A77600BBEDEB /* LTPageDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTPageDataController.m; sourceTree = "<group>"; };
+		65035FE01AE4AB7E00BBEDEB /* LTRecommondReadDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommondReadDataController.h; sourceTree = "<group>"; };
+		65035FE11AE4AB7E00BBEDEB /* LTRecommondReadDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommondReadDataController.m; sourceTree = "<group>"; };
+		65035FE31AE4AE2D00BBEDEB /* LTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGlobals.h; sourceTree = "<group>"; };
+		65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGlobals.m; sourceTree = "<group>"; };
 		6510E2E71AD9508E0036C767 /* LTConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTConfigure.h; sourceTree = "<group>"; };
 		6510E2E81AD9508E0036C767 /* LTConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTConfigure.m; sourceTree = "<group>"; };
 		652C4ED01ADE0AEF00570768 /* LTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNavigationController.h; path = LuTu/Classes/UI/CustomUI/LTNavigationController.h; sourceTree = SOURCE_ROOT; };
@@ -130,8 +145,8 @@
 		652FB93C1AD268CE0082894E /* LTCheckServiceReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCheckServiceReq.m; sourceTree = "<group>"; };
 		652FB93F1AD269E90082894E /* LTServiceStatusManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTServiceStatusManager.h; sourceTree = "<group>"; };
 		652FB9401AD269E90082894E /* LTServiceStatusManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTServiceStatusManager.m; sourceTree = "<group>"; };
-		652FB9421AD26C870082894E /* MSRecommondRoadReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSRecommondRoadReq.h; sourceTree = "<group>"; };
-		652FB9431AD26C870082894E /* MSRecommondRoadReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRecommondRoadReq.m; sourceTree = "<group>"; };
+		652FB9421AD26C870082894E /* LTRecommondRoadReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRecommondRoadReq.h; sourceTree = "<group>"; };
+		652FB9431AD26C870082894E /* LTRecommondRoadReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommondRoadReq.m; sourceTree = "<group>"; };
 		652FB9451AD276520082894E /* LTGlobalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGlobalViewController.h; sourceTree = "<group>"; };
 		652FB9461AD276520082894E /* LTGlobalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGlobalViewController.m; sourceTree = "<group>"; };
 		652FB94D1AD277500082894E /* LTMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMainViewController.h; sourceTree = "<group>"; };
@@ -247,9 +262,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65035FDC1AE4A74E00BBEDEB /* DataController */ = {
+			isa = PBXGroup;
+			children = (
+				65035FE01AE4AB7E00BBEDEB /* LTRecommondReadDataController.h */,
+				65035FE11AE4AB7E00BBEDEB /* LTRecommondReadDataController.m */,
+				65035FDD1AE4A77600BBEDEB /* LTPageDataController.h */,
+				65035FDE1AE4A77600BBEDEB /* LTPageDataController.m */,
+			);
+			path = DataController;
+			sourceTree = "<group>";
+		};
 		652FB9121AD23EB60082894E /* base */ = {
 			isa = PBXGroup;
 			children = (
+				65035FD91AE4969A00BBEDEB /* LTNetworkConfigure.h */,
+				65035FDA1AE4969A00BBEDEB /* LTNetworkConfigure.m */,
 				652FB9131AD23EB60082894E /* MSRequest.h */,
 				652FB9141AD23EB60082894E /* MSRequest.m */,
 				652FB9151AD23EB60082894E /* MSRouter.h */,
@@ -271,8 +299,10 @@
 				652FB9391AD246B50082894E /* LTTokenReq.m */,
 				652FB93B1AD268CE0082894E /* LTCheckServiceReq.h */,
 				652FB93C1AD268CE0082894E /* LTCheckServiceReq.m */,
-				652FB9421AD26C870082894E /* MSRecommondRoadReq.h */,
-				652FB9431AD26C870082894E /* MSRecommondRoadReq.m */,
+				652FB9421AD26C870082894E /* LTRecommondRoadReq.h */,
+				652FB9431AD26C870082894E /* LTRecommondRoadReq.m */,
+				65035FD61AE495B900BBEDEB /* LTRoteListReq.h */,
+				65035FD71AE495B900BBEDEB /* LTRoteListReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -480,6 +510,7 @@
 		659D4B4B1AC3A232007C2DAF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				65035FDC1AE4A74E00BBEDEB /* DataController */,
 				659D4B4C1AC3A232007C2DAF /* Controllers */,
 				659D4B4F1AC3A232007C2DAF /* CustomUI */,
 			);
@@ -556,6 +587,8 @@
 			children = (
 				652FB9311AD23F730082894E /* MSLog.h */,
 				652FB9321AD23F730082894E /* MSLog.m */,
+				65035FE31AE4AE2D00BBEDEB /* LTGlobals.h */,
+				65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */,
 			);
 			path = Globlas;
 			sourceTree = "<group>";
@@ -884,16 +917,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65035FD81AE495B900BBEDEB /* LTRoteListReq.m in Sources */,
 				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
 				657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */,
+				65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */,
 				652FB9241AD23EB60082894E /* MSRouter.m in Sources */,
 				652FB9261AD23EB60082894E /* MSTokenManager.m in Sources */,
 				652FB92F1AD23EF50082894E /* MSAccount.m in Sources */,
 				652FB93A1AD246B50082894E /* LTTokenReq.m in Sources */,
 				652FB9331AD23F730082894E /* MSLog.m in Sources */,
-				652FB9441AD26C870082894E /* MSRecommondRoadReq.m in Sources */,
+				652FB9441AD26C870082894E /* LTRecommondRoadReq.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
 				657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */,
 				652FB96F1AD27FBA0082894E /* LTColors.m in Sources */,
@@ -910,6 +945,8 @@
 				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
+				65035FE21AE4AB7E00BBEDEB /* LTRecommondReadDataController.m in Sources */,
+				65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */,
 				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,
@@ -944,6 +981,7 @@
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
+				65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */,
 				657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */,
 				657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */,
 			);

@@ -14,6 +14,6 @@ extern NSString* const HttpMethodPOST;
 extern NSString* const HttpMethodGET;
 
 @interface MSRouter : NSObject
-@property (nonatomic, copy) NSString* baseURL;
+@property (nonatomic, copy) NSURL* baseURL;
 + (MSRouter*) shareRouter;
 @end

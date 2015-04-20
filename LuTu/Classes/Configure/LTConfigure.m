@@ -8,8 +8,10 @@
 
 #import "LTConfigure.h"
 #import <DZImageCache.h>
+#import "LTRoteListReq.h"
 
  void LTApplicationSetup()
 {
     [DZImageShareCache setupAssetsSourceType];
+    
 }

@@ -37,4 +37,11 @@
     [_operationQueue addOperation:operation];
     return operation.queueID;
 }
+
+- (int) performRequest:(MSRequest *)request withUIDelegate:(id<MSRequestUIDelegate>)delegate
+{
+    request.uidelegate = delegate;
+    return [self performRequest:request];
+    
+}
 @end

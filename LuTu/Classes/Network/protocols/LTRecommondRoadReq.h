@@ -8,7 +8,7 @@
 
 #import "MSRequest.h"
 
-@interface MSRecommondRoadReq : MSRequest
+@interface LTRecommondRoadReq : MSRequest
 @property (nonatomic, strong) NSString* city;
 @property (nonatomic, strong) NSString* keyword;
 @property (nonatomic, assign) int pageID;

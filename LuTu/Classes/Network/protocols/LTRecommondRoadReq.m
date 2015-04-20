@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 Road.Inc. All rights reserved.
 //
 
-#import "MSRecommondRoadReq.h"
+#import "LTRecommondRoadReq.h"
 
-@implementation MSRecommondRoadReq
+@implementation LTRecommondRoadReq
 
 - (instancetype) init
 {
