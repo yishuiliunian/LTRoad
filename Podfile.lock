@@ -19,12 +19,14 @@ PODS:
   - DZSinglonFactory (1.0.2)
   - DZWeChatLib (1.5.0)
   - Haneke (1.0.1)
+  - HexColors (2.2.1)
   - JSONModel (1.0.2)
   - LTNavigationBar (2.0.1)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
   - NSString-UrlEncode (2.0.0)
+  - ProtobufObjC (0.0.1)
   - SAAuth (0.1.1):
     - DZQQLib
     - DZWeChatLib
@@ -37,9 +39,11 @@ DEPENDENCIES:
   - DZProgrameDefines
   - DZSinglonFactory
   - Haneke (~> 1.0)
+  - HexColors
   - LTNavigationBar
   - MagicalRecord
   - NSString-UrlEncode
+  - ProtobufObjC
   - SAAuth
 
 SPEC CHECKSUMS:
@@ -52,10 +56,12 @@ SPEC CHECKSUMS:
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
   Haneke: d60be8b96b228633b24708dd153169d6849d6f78
+  HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   LTNavigationBar: 6cfc0d3628e925d519130018a15c296cefaf0db3
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
+  ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
 COCOAPODS: 0.35.0.rc2
