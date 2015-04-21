@@ -1,4 +1,5 @@
 PODS:
+  - Baidu-Maps-iOS-SDK (2.6.0)
   - CocoaLumberjack (2.0.0):
     - CocoaLumberjack/Default (= 2.0.0)
     - CocoaLumberjack/Extensions (= 2.0.0)
@@ -25,6 +26,9 @@ PODS:
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
+  - Mantle (2.0):
+    - Mantle/extobjc (= 2.0)
+  - Mantle/extobjc (2.0)
   - NSString-UrlEncode (2.0.0)
   - ProtobufObjC (0.0.1)
   - SAAuth (0.1.1):
@@ -33,6 +37,7 @@ PODS:
     - JSONModel
 
 DEPENDENCIES:
+  - Baidu-Maps-iOS-SDK
   - CocoaLumberjack
   - DZCache
   - DZGeometryTools
@@ -42,11 +47,13 @@ DEPENDENCIES:
   - HexColors
   - LTNavigationBar
   - MagicalRecord
+  - Mantle
   - NSString-UrlEncode
   - ProtobufObjC
   - SAAuth
 
 SPEC CHECKSUMS:
+  Baidu-Maps-iOS-SDK: 260447c2270b44470d7c0d49a7f1a154b4703973
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
@@ -60,6 +67,7 @@ SPEC CHECKSUMS:
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   LTNavigationBar: 6cfc0d3628e925d519130018a15c296cefaf0db3
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
+  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83

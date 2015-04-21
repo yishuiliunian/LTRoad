@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define LTExternColor(name) FOUNDATION_EXTERN UIColor* LTColor##name ();
 #define LTColorFunction(name) LTColor##name ()
@@ -32,3 +33,4 @@ LTExternColor(BalckAlpha2)
 LTExternColor(White)
 LTExternColor(WhiteAlpha7)
 LTExternColor(WhiteSmoke)
+LTExternColor(TagDefault)

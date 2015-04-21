@@ -10,6 +10,7 @@
 #import <DZProgramDefines.h>
 #import "LTBadgeView_Private.h"
 #import "LTFont.h"
+#import "LTTagColorManager.h"
 @interface LTBadgeView()
 @property (nonatomic, strong, readonly) UILabel* textLabel;
 @end
@@ -25,7 +26,7 @@
     _textLabel.adjustsFontSizeToFitWidth = YES;
     _textLabel.textAlignment = NSTextAlignmentCenter;
     self.layer.cornerRadius = 4;
-    self.backgroundColor = [UIColor orangeColor];
+    self.backgroundColor = LTColorTagDefault();
     return self;
 }
 - (void) setItem:(LTBadgeItem *)item
@@ -33,6 +34,7 @@
     if (_item != item) {
         _item = item;
         _textLabel.text = _item.text;
+        self.backgroundColor = [[LTTagColorManager shareInstance] colorForKey:_item.text];
         [self setNeedsLayout];
     }
 }

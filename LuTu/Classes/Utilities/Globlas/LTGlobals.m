@@ -12,3 +12,12 @@
 NSString* LTCellIdentifierFromClass(Class cla) {
     return NSStringFromClass(cla);
 }
+
+
+
+static NSString* const kLTSeperateKey = @",";
+
+NSArray* LTSpereateStringToArray(NSString* str) {
+    NSArray* array = [str componentsSeparatedByString:kLTSeperateKey];
+    return array;
+}

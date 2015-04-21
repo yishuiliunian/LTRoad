@@ -13,6 +13,12 @@
 		65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FDE1AE4A77600BBEDEB /* LTPageDataController.m */; };
 		65035FE21AE4AB7E00BBEDEB /* LTRecommondReadDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FE11AE4AB7E00BBEDEB /* LTRecommondReadDataController.m */; };
 		65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */; };
+		650C0C3E1AE5EE25008FC2B8 /* LTRouteDetailReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */; };
+		650C0C421AE5EED9008FC2B8 /* LTRouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C411AE5EED9008FC2B8 /* LTRouteDetailViewController.m */; };
+		650C0C451AE5F19A008FC2B8 /* PMRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C441AE5F19A008FC2B8 /* PMRoute.m */; };
+		650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C471AE60EF7008FC2B8 /* PMLine.m */; };
+		650C0C4B1AE60F43008FC2B8 /* PMLinePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */; };
+		650C0C4E1AE60F8C008FC2B8 /* PMNoticePOI.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */; };
 		6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510E2E81AD9508E0036C767 /* LTConfigure.m */; };
 		652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED11ADE0AEF00570768 /* LTNavigationController.m */; };
 		652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */; };
@@ -47,6 +53,7 @@
 		652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9671AD27EE80082894E /* LTBackgroundImageView.m */; };
 		652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96B1AD27FA60082894E /* LTAppearenceTools.m */; };
 		652FB96F1AD27FBA0082894E /* LTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96E1AD27FBA0082894E /* LTColors.m */; };
+		6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */; };
 		657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE61ADE82B800AA5EBA /* LTMineTopView.m */; };
 		657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE91ADE832E00AA5EBA /* LTBottomLabelButton.m */; };
 		657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FEC1ADE83D100AA5EBA /* LTBackButton.m */; };
@@ -55,6 +62,10 @@
 		657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */; };
 		657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */; };
 		657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */; };
+		65BCE6E11AE6262900482360 /* LTLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E01AE6262900482360 /* LTLine.m */; };
+		65BCE6E41AE626EB00482360 /* LTRoutePOIReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E31AE626EB00482360 /* LTRoutePOIReq.m */; };
+		65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E71AE6278C00482360 /* PMPoiInfo.m */; };
+		65BD573F1AE506C50059DE8E /* PMRecommondLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD573E1AE506C50059DE8E /* PMRecommondLine.m */; };
 		65C224241ADE35A800BE26FA /* UIViewController+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C224231ADE35A800BE26FA /* UIViewController+Additions.m */; };
 		65C224271ADE77D800BE26FA /* LTUICarMeetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */; };
 		65C2242B1ADE784300BE26FA /* LTCarMeetFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2242A1ADE784300BE26FA /* LTCarMeetFeedCell.m */; };
@@ -104,6 +115,18 @@
 		65035FE11AE4AB7E00BBEDEB /* LTRecommondReadDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRecommondReadDataController.m; sourceTree = "<group>"; };
 		65035FE31AE4AE2D00BBEDEB /* LTGlobals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGlobals.h; sourceTree = "<group>"; };
 		65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGlobals.m; sourceTree = "<group>"; };
+		650C0C3C1AE5EE25008FC2B8 /* LTRouteDetailReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRouteDetailReq.h; sourceTree = "<group>"; };
+		650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRouteDetailReq.m; sourceTree = "<group>"; };
+		650C0C401AE5EED9008FC2B8 /* LTRouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRouteDetailViewController.h; sourceTree = "<group>"; };
+		650C0C411AE5EED9008FC2B8 /* LTRouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRouteDetailViewController.m; sourceTree = "<group>"; };
+		650C0C431AE5F19A008FC2B8 /* PMRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRoute.h; sourceTree = "<group>"; };
+		650C0C441AE5F19A008FC2B8 /* PMRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRoute.m; sourceTree = "<group>"; };
+		650C0C461AE60EF7008FC2B8 /* PMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLine.h; sourceTree = "<group>"; };
+		650C0C471AE60EF7008FC2B8 /* PMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLine.m; sourceTree = "<group>"; };
+		650C0C491AE60F43008FC2B8 /* PMLinePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLinePoint.h; sourceTree = "<group>"; };
+		650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLinePoint.m; sourceTree = "<group>"; };
+		650C0C4C1AE60F8C008FC2B8 /* PMNoticePOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNoticePOI.h; sourceTree = "<group>"; };
+		650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMNoticePOI.m; sourceTree = "<group>"; };
 		6510E2E71AD9508E0036C767 /* LTConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTConfigure.h; sourceTree = "<group>"; };
 		6510E2E81AD9508E0036C767 /* LTConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTConfigure.m; sourceTree = "<group>"; };
 		652C4ED01ADE0AEF00570768 /* LTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNavigationController.h; path = LuTu/Classes/UI/CustomUI/LTNavigationController.h; sourceTree = SOURCE_ROOT; };
@@ -170,6 +193,8 @@
 		652FB96B1AD27FA60082894E /* LTAppearenceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAppearenceTools.m; sourceTree = "<group>"; };
 		652FB96D1AD27FBA0082894E /* LTColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTColors.h; sourceTree = "<group>"; };
 		652FB96E1AD27FBA0082894E /* LTColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTColors.m; sourceTree = "<group>"; };
+		6562C5891AE5E7F9004713E7 /* LTTagColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTagColorManager.h; sourceTree = "<group>"; };
+		6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTagColorManager.m; sourceTree = "<group>"; };
 		657D6FE51ADE82B800AA5EBA /* LTMineTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMineTopView.h; sourceTree = "<group>"; };
 		657D6FE61ADE82B800AA5EBA /* LTMineTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMineTopView.m; sourceTree = "<group>"; };
 		657D6FE81ADE832E00AA5EBA /* LTBottomLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBottomLabelButton.h; sourceTree = "<group>"; };
@@ -186,6 +211,14 @@
 		657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetMenuView.m; sourceTree = "<group>"; };
 		657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = ../../../UI/CustomUI/LTCoverFlowLayout.h; sourceTree = "<group>"; };
 		657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = ../../../UI/CustomUI/LTCoverFlowLayout.m; sourceTree = "<group>"; };
+		65BCE6DF1AE6262900482360 /* LTLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLine.h; sourceTree = "<group>"; };
+		65BCE6E01AE6262900482360 /* LTLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLine.m; sourceTree = "<group>"; };
+		65BCE6E21AE626EB00482360 /* LTRoutePOIReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTRoutePOIReq.h; path = ../LTRoutePOIReq.h; sourceTree = "<group>"; };
+		65BCE6E31AE626EB00482360 /* LTRoutePOIReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTRoutePOIReq.m; path = ../LTRoutePOIReq.m; sourceTree = "<group>"; };
+		65BCE6E61AE6278C00482360 /* PMPoiInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMPoiInfo.h; sourceTree = "<group>"; };
+		65BCE6E71AE6278C00482360 /* PMPoiInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMPoiInfo.m; sourceTree = "<group>"; };
+		65BD573D1AE506C50059DE8E /* PMRecommondLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRecommondLine.h; sourceTree = "<group>"; };
+		65BD573E1AE506C50059DE8E /* PMRecommondLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRecommondLine.m; sourceTree = "<group>"; };
 		65C224221ADE35A800BE26FA /* UIViewController+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Additions.h"; sourceTree = "<group>"; };
 		65C224231ADE35A800BE26FA /* UIViewController+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Additions.m"; sourceTree = "<group>"; };
 		65C224251ADE77D800BE26FA /* LTUICarMeetFeed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUICarMeetFeed.h; sourceTree = "<group>"; };
@@ -273,6 +306,15 @@
 			path = DataController;
 			sourceTree = "<group>";
 		};
+		650C0C3F1AE5EEC1008FC2B8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				650C0C401AE5EED9008FC2B8 /* LTRouteDetailViewController.h */,
+				650C0C411AE5EED9008FC2B8 /* LTRouteDetailViewController.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		652FB9121AD23EB60082894E /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +337,7 @@
 		652FB91D1AD23EB60082894E /* protocols */ = {
 			isa = PBXGroup;
 			children = (
+				65BCE6E51AE6271600482360 /* poi */,
 				652FB9381AD246B50082894E /* LTTokenReq.h */,
 				652FB9391AD246B50082894E /* LTTokenReq.m */,
 				652FB93B1AD268CE0082894E /* LTCheckServiceReq.h */,
@@ -303,6 +346,8 @@
 				652FB9431AD26C870082894E /* LTRecommondRoadReq.m */,
 				65035FD61AE495B900BBEDEB /* LTRoteListReq.h */,
 				65035FD71AE495B900BBEDEB /* LTRoteListReq.m */,
+				650C0C3C1AE5EE25008FC2B8 /* LTRouteDetailReq.h */,
+				650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -439,6 +484,8 @@
 				65D9CD171AD5475D00CBF695 /* LTFont.m */,
 				65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */,
 				65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */,
+				6562C5891AE5E7F9004713E7 /* LTTagColorManager.h */,
+				6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */,
 			);
 			path = Appearence;
 			sourceTree = "<group>";
@@ -530,6 +577,7 @@
 		659D4B4D1AC3A232007C2DAF /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				650C0C3F1AE5EEC1008FC2B8 /* Details */,
 				652FB9611AD27E710082894E /* Auth */,
 				652FB9481AD276FB0082894E /* CarFriend */,
 				652FB9491AD276FB0082894E /* Discover */,
@@ -615,6 +663,43 @@
 			children = (
 			);
 			path = ThirdLib;
+			sourceTree = "<group>";
+		};
+		65BCE6DE1AE6261A00482360 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				65BCE6DF1AE6262900482360 /* LTLine.h */,
+				65BCE6E01AE6262900482360 /* LTLine.m */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		65BCE6E51AE6271600482360 /* poi */ = {
+			isa = PBXGroup;
+			children = (
+				65BCE6E21AE626EB00482360 /* LTRoutePOIReq.h */,
+				65BCE6E31AE626EB00482360 /* LTRoutePOIReq.m */,
+				65BCE6E61AE6278C00482360 /* PMPoiInfo.h */,
+				65BCE6E71AE6278C00482360 /* PMPoiInfo.m */,
+			);
+			path = poi;
+			sourceTree = "<group>";
+		};
+		65BD573C1AE5068D0059DE8E /* ProtocolModels */ = {
+			isa = PBXGroup;
+			children = (
+				65BD573D1AE506C50059DE8E /* PMRecommondLine.h */,
+				65BD573E1AE506C50059DE8E /* PMRecommondLine.m */,
+				650C0C461AE60EF7008FC2B8 /* PMLine.h */,
+				650C0C471AE60EF7008FC2B8 /* PMLine.m */,
+				650C0C431AE5F19A008FC2B8 /* PMRoute.h */,
+				650C0C441AE5F19A008FC2B8 /* PMRoute.m */,
+				650C0C491AE60F43008FC2B8 /* PMLinePoint.h */,
+				650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */,
+				650C0C4C1AE60F8C008FC2B8 /* PMNoticePOI.h */,
+				650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */,
+			);
+			path = ProtocolModels;
 			sourceTree = "<group>";
 		};
 		65C224281ADE782D00BE26FA /* Feeds */ = {
@@ -730,6 +815,7 @@
 		65FD64C61ADB61AF00FC94E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65BD573C1AE5068D0059DE8E /* ProtocolModels */,
 				65FD64C71ADB61AF00FC94E0 /* UIModels */,
 			);
 			path = Models;
@@ -738,6 +824,7 @@
 		65FD64C71ADB61AF00FC94E0 /* UIModels */ = {
 			isa = PBXGroup;
 			children = (
+				65BCE6DE1AE6261A00482360 /* Details */,
 				65FD64C81ADB61AF00FC94E0 /* LTRecommendLine.h */,
 				65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */,
 				65FD64CB1ADB61C800FC94E0 /* LTUIDiscoverItem.h */,
@@ -918,6 +1005,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65035FD81AE495B900BBEDEB /* LTRoteListReq.m in Sources */,
+				6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */,
 				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
@@ -927,6 +1015,7 @@
 				652FB9261AD23EB60082894E /* MSTokenManager.m in Sources */,
 				652FB92F1AD23EF50082894E /* MSAccount.m in Sources */,
 				652FB93A1AD246B50082894E /* LTTokenReq.m in Sources */,
+				650C0C4B1AE60F43008FC2B8 /* PMLinePoint.m in Sources */,
 				652FB9331AD23F730082894E /* MSLog.m in Sources */,
 				652FB9441AD26C870082894E /* LTRecommondRoadReq.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
@@ -942,6 +1031,7 @@
 				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,
 				652FB9281AD23EB60082894E /* MSRequestOperation.m in Sources */,
 				657D6FF81ADF799800AA5EBA /* LTActionItem.m in Sources */,
+				65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */,
 				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
@@ -949,15 +1039,19 @@
 				65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */,
 				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
+				650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,
+				65BD573F1AE506C50059DE8E /* PMRecommondLine.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
+				650C0C421AE5EED9008FC2B8 /* LTRouteDetailViewController.m in Sources */,
 				65D9CD151AD5461B00CBF695 /* LTRecommondLineCell.m in Sources */,
 				65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */,
 				652FB9271AD23EB60082894E /* MSVerifyAuthorRequest.m in Sources */,
 				652FB9411AD269E90082894E /* LTServiceStatusManager.m in Sources */,
 				652FB95E1AD279EA0082894E /* LTDataBase.m in Sources */,
 				652FB9581AD277A50082894E /* LTCarMeetViewController.m in Sources */,
+				650C0C3E1AE5EE25008FC2B8 /* LTRouteDetailReq.m in Sources */,
 				652FB9551AD277750082894E /* LTDiscoverViewController.m in Sources */,
 				652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */,
 				652FB9521AD277650082894E /* LTMineViewController.m in Sources */,
@@ -970,6 +1064,7 @@
 				652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */,
 				657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */,
 				65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */,
+				65BCE6E11AE6262900482360 /* LTLine.m in Sources */,
 				65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */,
 				65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */,
 				65D1F0701AC28B34006525D0 /* main.m in Sources */,
@@ -977,12 +1072,15 @@
 				652FB9301AD23EF50082894E /* MSAccountManager.m in Sources */,
 				65C224241ADE35A800BE26FA /* UIViewController+Additions.m in Sources */,
 				657D6FF41ADF642C00AA5EBA /* UIButton+decorate.m in Sources */,
+				650C0C451AE5F19A008FC2B8 /* PMRoute.m in Sources */,
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
+				65BCE6E41AE626EB00482360 /* LTRoutePOIReq.m in Sources */,
 				65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */,
 				657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */,
+				650C0C4E1AE60F8C008FC2B8 /* PMNoticePOI.m in Sources */,
 				657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

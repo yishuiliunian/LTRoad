@@ -16,6 +16,8 @@ target 'LuTu' do
   pod 'LTNavigationBar'
   pod 'HexColors'
   pod 'ProtobufObjC'
+  pod 'Mantle'
+  pod 'Baidu-Maps-iOS-SDK'
 end
 
 

@@ -8,6 +8,7 @@
 
 #import "LTRoteListReq.h"
 #import "LTRecommendLine.h"
+#import "PMRecommondLine.h"
 @implementation LTRoteListReq
 
 - (instancetype) init
@@ -38,20 +39,21 @@
 
 - (void) onSuccess:(id)retObject
 {
+    NSArray* routeDics = [retObject objectForKey:@"routes"];
+    NSError* error = nil;
+
+    NSArray* protocolModels = [MTLJSONAdapter modelsOfClass:[PMRecommondLine class] fromJSONArray:routeDics error:&error];
+
     NSMutableArray* array = [NSMutableArray new];
-    for (int i = 0 ; i < 10; i++) {
-        LTRecommendLine* line = [LTRecommendLine new];
-        line.createDate =  [NSDate date];
-        NSString* str = [@(i) stringValue];
-        line.tagBadgeItems = @[LTCreateBadgeItemWithText(str), LTCreateBadgeItemWithText(str), LTCreateBadgeItemWithText(str)];
-        line.distance = @"3.5KM";
-        line.likeCount = 2;
-        line.backgroudImageURL = [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
-        line.title = @"一直在路上，庐山";
-        line.createDateString = @"2/14";
-        
-        [array addObject:line];
+    for (PMRecommondLine* line in protocolModels) {
+        LTRecommendLine* rLine = [[LTRecommendLine alloc] initWithNetworkModel:line];
+        [array addObject:rLine];
     }
+#ifdef DEBUG
+    for (int i = 0; i < 100; i++) {
+        [array addObject:array.firstObject];
+    }
+#endif
     [self doUIOnSuccced:array];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import "LTColors.h"
 #import <HexColor.h>
-
+#import <Mantle.h>
 #define LTColorDefine(name , hex, a) UIColor* LTColor##name()\
 {\
 static UIColor* pinkColor = nil;\
@@ -44,3 +44,5 @@ LTColorDefine(BalckAlpha2, 000000, 0.2)
 
 LTColorDefine(WhiteSmoke, f7f7f7, 1);
 LTColorDefine(WhiteAlpha7, ffffff, 0.7)
+
+LTColorDefine(TagDefault, 333333, 1)

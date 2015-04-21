@@ -36,6 +36,7 @@
     _backgroundImageView.layer.cornerRadius = 5;
     //
     self.backgroundColor = [UIColor clearColor];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 
