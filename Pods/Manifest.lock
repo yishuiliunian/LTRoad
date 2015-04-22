@@ -18,6 +18,7 @@ PODS:
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
+  - DZSwipeViewController (0.1.6)
   - DZWeChatLib (1.5.0)
   - Haneke (1.0.1)
   - HexColors (2.2.1)
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - DZGeometryTools
   - DZProgrameDefines
   - DZSinglonFactory
+  - DZSwipeViewController
   - Haneke (~> 1.0)
   - HexColors
   - LTNavigationBar
@@ -63,6 +65,7 @@ SPEC CHECKSUMS:
   DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
+  DZSwipeViewController: c4c02b12deb354b02086500600c60fa5cdc7060c
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
   Haneke: d60be8b96b228633b24708dd153169d6849d6f78
   HexColors: abfd172e329dab59888614ccba6f216cec59289d

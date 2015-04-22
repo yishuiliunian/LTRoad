@@ -32,7 +32,15 @@
     INIT_SELF_SUBVIEW(LTCarMeetMenuView, _menuView);
     _menuView.backgroundColor = [UIColor greenColor];
 #endif
+    [_menuView.interButton addTarget:self action:@selector(didTapMenu:) forControlEvents:UIControlEventTouchUpInside];
     return self;
+}
+
+- (void) didTapMenu:(id)sender
+{
+    if ([self.delegate respondsToSelector:@selector(carMeetCell:didTapOnMenuItem:)]) {
+        [self.delegate carMeetCell:self didTapOnMenuItem:sender];
+    }
 }
 - (void) setCarMeet:(LTUICarMeet *)carMeet
 {

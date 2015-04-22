@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DZExpandCollectionViewCell.h"
 @interface DZExpandCollectionView : UICollectionView
 @property (nonatomic, assign ,readonly) BOOL expanded;
+- (void) closeExpand:(DZExpandCollectionViewCell*)tapCell;
 @end

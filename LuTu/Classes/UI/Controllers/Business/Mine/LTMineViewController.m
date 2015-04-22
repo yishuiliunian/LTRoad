@@ -10,9 +10,11 @@
 #import "LTMineTopView.h"
 #import "LTActionItem.h"
 #import "LTActionCell.h"
+#import "LTEditUserInfoViewController.h"
 @interface LTMineViewController ()
 {
     NSArray* _allActions;
+    LTMineTopView* _topView;
 }
 @end
 @implementation LTMineViewController
@@ -22,13 +24,25 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
-    LTMineTopView* topView = [LTMineTopView new];
-    topView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), topView.minHeight);
-    self.tableView.tableHeaderView = topView;
+    _topView = [LTMineTopView new];
+    _topView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), _topView.minHeight);
+    self.tableView.tableHeaderView = _topView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[LTActionCell class] forCellReuseIdentifier:kCellIdentifier];
-    
+   
+    UITapGestureRecognizer* tapG = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestrue:)];
+    tapG.numberOfTapsRequired = 1;
+    tapG.numberOfTouchesRequired =1;
+    [_topView.avatarImageView addGestureRecognizer:tapG];
     [self reloadAllData];
+}
+
+- (void) handleTapGestrue:(UITapGestureRecognizer*)tap
+{
+    if (tap.state == UIGestureRecognizerStateRecognized) {
+        LTEditUserInfoViewController* editUserInfoVC = [LTEditUserInfoViewController new];
+        [self.navigationController pushViewController:editUserInfoVC animated:YES];
+    }
 }
 
 - (void) reloadAllData

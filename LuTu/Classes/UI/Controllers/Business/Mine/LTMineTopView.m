@@ -37,6 +37,7 @@
     INIT_SELF_SUBVIEW(LTBackButton, _feedButton);
     INIT_SELF_SUBVIEW(LTBackButton, _carFriendButton);
     INIT_SELF_SUBVIEW_UILabel(_nickNameLabel);
+    _avatarImageView.userInteractionEnabled = YES;
     //
      topOffset = 40;
      xContentInsetH = 15;

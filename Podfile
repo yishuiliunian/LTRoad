@@ -19,6 +19,7 @@ target 'LuTu' do
   pod 'Mantle'
   pod 'Baidu-Maps-iOS-SDK'
   pod 'Masonry'
+  pod 'DZSwipeViewController'
 end
 
 

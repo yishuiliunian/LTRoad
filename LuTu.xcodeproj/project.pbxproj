@@ -29,6 +29,12 @@
 		6517E78E1AE79C2B004F71BC /* LTLinePointView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E78D1AE79C2B004F71BC /* LTLinePointView.m */; };
 		6517E7941AE7ACCF004F71BC /* LTUIPoi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7931AE7ACCF004F71BC /* LTUIPoi.m */; };
 		6517E7971AE7ADE9004F71BC /* LTLinePoiCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7961AE7ADE9004F71BC /* LTLinePoiCell.m */; };
+		6517E79B1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E79A1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m */; };
+		6517E79F1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E79E1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m */; };
+		6517E7A21AE7C42C004F71BC /* LTCarMeetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7A11AE7C42C004F71BC /* LTCarMeetInfoViewController.m */; };
+		6517E7A61AE7C559004F71BC /* LTCarMeetTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7A51AE7C559004F71BC /* LTCarMeetTopView.m */; };
+		6517E7AA1AE7C7C2004F71BC /* LTEditUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7A81AE7C7C2004F71BC /* LTEditUserInfoViewController.m */; };
+		6517E7AF1AE7CC53004F71BC /* LTUserInfoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6517E7AE1AE7CC53004F71BC /* LTUserInfoItem.m */; };
 		652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED11ADE0AEF00570768 /* LTNavigationController.m */; };
 		652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4ED71ADE0C4200570768 /* UIViewController+MethodSwizzling.m */; };
 		652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 652C4EDA1ADE100500570768 /* LTNavigationBar.m */; };
@@ -156,6 +162,18 @@
 		6517E7931AE7ACCF004F71BC /* LTUIPoi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIPoi.m; sourceTree = "<group>"; };
 		6517E7951AE7ADE9004F71BC /* LTLinePoiCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLinePoiCell.h; sourceTree = "<group>"; };
 		6517E7961AE7ADE9004F71BC /* LTLinePoiCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLinePoiCell.m; sourceTree = "<group>"; };
+		6517E7991AE7C0BA004F71BC /* LTCarMeetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetDetailViewController.h; sourceTree = "<group>"; };
+		6517E79A1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetDetailViewController.m; sourceTree = "<group>"; };
+		6517E79D1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCatMeetMemberTableViewController.h; sourceTree = "<group>"; };
+		6517E79E1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCatMeetMemberTableViewController.m; sourceTree = "<group>"; };
+		6517E7A01AE7C42C004F71BC /* LTCarMeetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetInfoViewController.h; sourceTree = "<group>"; };
+		6517E7A11AE7C42C004F71BC /* LTCarMeetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetInfoViewController.m; sourceTree = "<group>"; };
+		6517E7A41AE7C559004F71BC /* LTCarMeetTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetTopView.h; sourceTree = "<group>"; };
+		6517E7A51AE7C559004F71BC /* LTCarMeetTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetTopView.m; sourceTree = "<group>"; };
+		6517E7A71AE7C7C2004F71BC /* LTEditUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTEditUserInfoViewController.h; sourceTree = "<group>"; };
+		6517E7A81AE7C7C2004F71BC /* LTEditUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTEditUserInfoViewController.m; sourceTree = "<group>"; };
+		6517E7AD1AE7CC53004F71BC /* LTUserInfoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUserInfoItem.h; sourceTree = "<group>"; };
+		6517E7AE1AE7CC53004F71BC /* LTUserInfoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUserInfoItem.m; sourceTree = "<group>"; };
 		652C4ED01ADE0AEF00570768 /* LTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNavigationController.h; path = LuTu/Classes/UI/CustomUI/LTNavigationController.h; sourceTree = SOURCE_ROOT; };
 		652C4ED11ADE0AEF00570768 /* LTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTNavigationController.m; path = LuTu/Classes/UI/CustomUI/LTNavigationController.m; sourceTree = SOURCE_ROOT; };
 		652C4ED61ADE0C4200570768 /* UIViewController+MethodSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+MethodSwizzling.h"; sourceTree = "<group>"; };
@@ -400,6 +418,48 @@
 			name = POI;
 			sourceTree = "<group>";
 		};
+		6517E7981AE7C09E004F71BC /* details */ = {
+			isa = PBXGroup;
+			children = (
+				6517E7A31AE7C54D004F71BC /* views */,
+				6517E79C1AE7C3A4004F71BC /* viewContollers */,
+				6517E7991AE7C0BA004F71BC /* LTCarMeetDetailViewController.h */,
+				6517E79A1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m */,
+			);
+			name = details;
+			sourceTree = "<group>";
+		};
+		6517E79C1AE7C3A4004F71BC /* viewContollers */ = {
+			isa = PBXGroup;
+			children = (
+				6517E79D1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.h */,
+				6517E79E1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m */,
+				6517E7A01AE7C42C004F71BC /* LTCarMeetInfoViewController.h */,
+				6517E7A11AE7C42C004F71BC /* LTCarMeetInfoViewController.m */,
+			);
+			name = viewContollers;
+			sourceTree = "<group>";
+		};
+		6517E7A31AE7C54D004F71BC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				6517E7A41AE7C559004F71BC /* LTCarMeetTopView.h */,
+				6517E7A51AE7C559004F71BC /* LTCarMeetTopView.m */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		6517E7AC1AE7CC42004F71BC /* edit */ = {
+			isa = PBXGroup;
+			children = (
+				6517E7A71AE7C7C2004F71BC /* LTEditUserInfoViewController.h */,
+				6517E7A81AE7C7C2004F71BC /* LTEditUserInfoViewController.m */,
+				6517E7AD1AE7CC53004F71BC /* LTUserInfoItem.h */,
+				6517E7AE1AE7CC53004F71BC /* LTUserInfoItem.m */,
+			);
+			name = edit;
+			sourceTree = "<group>";
+		};
 		652FB9121AD23EB60082894E /* base */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,6 +540,7 @@
 		652FB9481AD276FB0082894E /* CarFriend */ = {
 			isa = PBXGroup;
 			children = (
+				6517E7981AE7C09E004F71BC /* details */,
 				65C224281ADE782D00BE26FA /* Feeds */,
 				652FB9561AD277A50082894E /* LTCarMeetViewController.h */,
 				652FB9571AD277A50082894E /* LTCarMeetViewController.m */,
@@ -514,6 +575,7 @@
 		652FB94B1AD276FB0082894E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				6517E7AC1AE7CC42004F71BC /* edit */,
 				657D6FF51ADF790D00AA5EBA /* items */,
 				652FB9501AD277650082894E /* LTMineViewController.h */,
 				652FB9511AD277650082894E /* LTMineViewController.m */,
@@ -1104,6 +1166,7 @@
 				650C0C4B1AE60F43008FC2B8 /* PMLinePoint.m in Sources */,
 				652FB9331AD23F730082894E /* MSLog.m in Sources */,
 				652FB9441AD26C870082894E /* LTRecommondRoadReq.m in Sources */,
+				6517E7A61AE7C559004F71BC /* LTCarMeetTopView.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
 				657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */,
 				652FB96F1AD27FBA0082894E /* LTColors.m in Sources */,
@@ -1113,6 +1176,7 @@
 				65C224271ADE77D800BE26FA /* LTUICarMeetFeed.m in Sources */,
 				6517E7831AE788A6004F71BC /* LTShowContentView.m in Sources */,
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
+				6517E7AA1AE7C7C2004F71BC /* LTEditUserInfoViewController.m in Sources */,
 				6517E7801AE78811004F71BC /* LTTopShowTextView.m in Sources */,
 				652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */,
 				65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */,
@@ -1126,14 +1190,18 @@
 				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				6517E7861AE78EC3004F71BC /* LTLineHeaderView.m in Sources */,
+				6517E79F1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
+				6517E7AF1AE7CC53004F71BC /* LTUserInfoItem.m in Sources */,
 				65035FE21AE4AB7E00BBEDEB /* LTRecommondReadDataController.m in Sources */,
 				65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */,
 				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
 				650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */,
+				6517E7A21AE7C42C004F71BC /* LTCarMeetInfoViewController.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,
 				65BD573F1AE506C50059DE8E /* PMRecommondLine.m in Sources */,
+				6517E79B1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
 				65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */,
 				650C0C421AE5EED9008FC2B8 /* LTRouteDetailViewController.m in Sources */,

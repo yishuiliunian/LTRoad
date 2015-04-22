@@ -10,7 +10,8 @@
 #import <DZProgramDefines.h>
 #import "LTCarMeetCell.h"
 #import "LTUICarMeet.h"
-@interface DZexpandCollectionViewController ()
+#import "LTCarMeetDetailViewController.h"
+@interface DZexpandCollectionViewController () <LTCarMeetCellDelegate>
 
 @end
 INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
@@ -44,6 +45,7 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
 {
     LTCarMeetCell* cell = (LTCarMeetCell*)[collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
     LTUICarMeet* carmeet = _items[indexPath.row];
+    cell.delegate = self;
     cell.carMeet = carmeet;
     return cell;
 }
@@ -68,5 +70,10 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
         [self.delegate expandViewController:self didSelectItem:carmeet];
     }
 }
-
+- (void) carMeetCell:(LTCarMeetCell *)cell didTapOnMenuItem:(id)sender
+{
+    LTCarMeetDetailViewController* detailVC = [LTCarMeetDetailViewController new];
+    [self.navigationController pushViewController:detailVC animated:YES];
+    [self.expandCollectionView closeExpand:cell];
+}
 @end

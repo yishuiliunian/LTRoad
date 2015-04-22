@@ -21,6 +21,7 @@
         return self;
     }
     _color = LTColorPointGray();
+    self.backgroundColor = [UIColor clearColor];
     return self;
 }
 
