@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
-
+#import "LTColors.h"
+#import "LTFont.h"
 
 FOUNDATION_EXTERN NSString* LTCellIdentifierFromClass(Class cla);
 

@@ -18,6 +18,7 @@ target 'LuTu' do
   pod 'ProtobufObjC'
   pod 'Mantle'
   pod 'Baidu-Maps-iOS-SDK'
+  pod 'Masonry'
 end
 
 

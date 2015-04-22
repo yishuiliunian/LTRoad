@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/Network/base/MSRequest.m"
@@ -217,28 +217,28 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/Details/LTRouteDetailViewController.m"
-            timestampString = "451291764.192556"
+            filePath = "LuTu/Classes/UI/Controllers/Business/Details/LTTopShowTextView.m"
+            timestampString = "451385946.759574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "-initWithFrame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/UI/Controllers/Business/Details/LTRouteDetailViewController.m"
-            timestampString = "451291764.192556"
+            timestampString = "451394131.630141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "-onHandleRemotePOIS:"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,16 +246,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/Details/LTRouteDetailViewController.m"
-            timestampString = "451291764.192556"
+            filePath = "LuTu/Classes/Network/protocols/LTRoutePOIReq.m"
+            timestampString = "451393708.903776"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-onHandleRemoteRoteDetail:"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-onSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

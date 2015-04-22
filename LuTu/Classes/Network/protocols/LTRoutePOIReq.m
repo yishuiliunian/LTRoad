@@ -8,6 +8,7 @@
 
 #import "LTRoutePOIReq.h"
 #import "PMPoiInfo.h"
+#import "LTUIPoi.h"
 @implementation LTRoutePOIReq
 - (NSString*) method
 {
@@ -30,7 +31,12 @@
         [self doUIOnError:error];
         return;
     }
+    NSMutableArray* uipois = [NSMutableArray new];
+    for (PMPoiInfo* info in pois) {
+        LTUIPoi* p = [[LTUIPoi alloc] initWithPOI:info];
+        [uipois addObject:p];
+    }
     
-    [self doUIOnSuccced:pois];
+    [self doUIOnSuccced:uipois];
 }
 @end

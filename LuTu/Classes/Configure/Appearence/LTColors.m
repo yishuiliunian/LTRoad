@@ -34,6 +34,8 @@ LTColorDefine(GrayF4, f4f4f4, 1)
 LTColorDefine(GrayBB, bbbbbb, 1)
 LTColorDefine(GrayBC, bcbcbc, 1)
 
+LTColorDefine(GrayNormal, a6a6a6, 1)
+
 LTColorDefine(BalckAlpha8, 000000, 0.8)
 LTColorDefine(BalckAlpha7, 000000, 0.7)
 LTColorDefine(BalckAlpha6, 000000, 0.6)
@@ -46,3 +48,6 @@ LTColorDefine(WhiteSmoke, f7f7f7, 1);
 LTColorDefine(WhiteAlpha7, ffffff, 0.7)
 
 LTColorDefine(TagDefault, 333333, 1)
+
+LTColorDefine(BackgroundGray, f0f3f8, 1)
+LTColorDefine(PointGray, dfdee4, 1)
