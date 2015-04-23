@@ -80,6 +80,7 @@
 		65A3F6811AE8CF4100BD6B1F /* LTAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F67F1AE8CF4100BD6B1F /* LTAuthViewController.m */; };
 		65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */; };
 		65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */; };
+		65A3F6901AE8E34C00BD6B1F /* PMToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F68F1AE8E34C00BD6B1F /* PMToken.m */; };
 		65BCE6E11AE6262900482360 /* LTLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E01AE6262900482360 /* LTLine.m */; };
 		65BCE6E41AE626EB00482360 /* LTRoutePOIReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E31AE626EB00482360 /* LTRoutePOIReq.m */; };
 		65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E71AE6278C00482360 /* PMPoiInfo.m */; };
@@ -264,6 +265,8 @@
 		65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTAuthViewController.xib; sourceTree = "<group>"; };
 		65A3F6841AE8D05000BD6B1F /* LTGuideContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGuideContainerViewController.h; sourceTree = "<group>"; };
 		65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGuideContainerViewController.m; sourceTree = "<group>"; };
+		65A3F68E1AE8E34C00BD6B1F /* PMToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMToken.h; sourceTree = "<group>"; };
+		65A3F68F1AE8E34C00BD6B1F /* PMToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMToken.m; sourceTree = "<group>"; };
 		65BCE6DF1AE6262900482360 /* LTLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLine.h; sourceTree = "<group>"; };
 		65BCE6E01AE6262900482360 /* LTLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLine.m; sourceTree = "<group>"; };
 		65BCE6E21AE626EB00482360 /* LTRoutePOIReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTRoutePOIReq.h; path = ../LTRoutePOIReq.h; sourceTree = "<group>"; };
@@ -866,6 +869,8 @@
 				650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */,
 				650C0C4C1AE60F8C008FC2B8 /* PMNoticePOI.h */,
 				650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */,
+				65A3F68E1AE8E34C00BD6B1F /* PMToken.h */,
+				65A3F68F1AE8E34C00BD6B1F /* PMToken.m */,
 			);
 			path = ProtocolModels;
 			sourceTree = "<group>";
@@ -1207,6 +1212,7 @@
 				6517E7941AE7ACCF004F71BC /* LTUIPoi.m in Sources */,
 				65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */,
 				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,
+				65A3F6901AE8E34C00BD6B1F /* PMToken.m in Sources */,
 				6517E78E1AE79C2B004F71BC /* LTLinePointView.m in Sources */,
 				6517E77A1AE783CB004F71BC /* LTTopShowView.m in Sources */,
 				652FB9281AD23EB60082894E /* MSRequestOperation.m in Sources */,

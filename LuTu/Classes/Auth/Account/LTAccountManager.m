@@ -32,7 +32,7 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
 
 - (void) storeAccountToStorage:(LTAccount*)account
 {
-    NSDictionary* dic = [account toDictionary];
+    NSDictionary* dic = [account dictionaryValue];
     if (!dic) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kMSStorageAccount];
         return;
@@ -56,6 +56,7 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
 {
     _currentAccount = account;
     if (_currentAccount) {
+        
     }
     [self storeAccountToStorage:_currentAccount];
 }

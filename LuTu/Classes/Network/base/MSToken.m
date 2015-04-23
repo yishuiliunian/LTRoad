@@ -9,6 +9,20 @@
 #import "MSToken.h"
 
 @implementation MSToken
++ (NSDateFormatter *)dateFormatter {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
+    return dateFormatter;
+}
++ (NSValueTransformer *)experiedDateJSONTransformer {
+    return [MTLValueTransformer reversibleTransformerWithForwardBlock:^(NSString *str) {
+        return [self.dateFormatter dateFromString:str];
+    } reverseBlock:^(NSDate *date) {
+        return [self.dateFormatter stringFromDate:date];
+    }];
+}
+
 - (instancetype) initWithToken:(NSString *)token account:(NSString *)account
 {
     self = [super init];
@@ -20,4 +34,5 @@
     _experiedDate = [NSDate dateWithTimeIntervalSinceNow:60*10];
     return self;
 }
+
 @end

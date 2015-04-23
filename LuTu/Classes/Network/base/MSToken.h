@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@interface MSToken : NSObject
+#import <Mantle.h>
+@interface MSToken : MTLModel
 @property (nonatomic, strong) NSString* account;
 @property (nonatomic, strong) NSString* token;
 @property (nonatomic, strong) NSDate* experiedDate;

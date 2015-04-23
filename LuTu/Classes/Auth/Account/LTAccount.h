@@ -7,12 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JSONModelLib.h>
-@interface LTAccount : JSONModel
+#import <Mantle.h>
+@interface LTAccount : MTLModel
 @property (nonatomic, strong) NSString* accountID;
-@property (nonatomic, strong) NSString<Optional>* nickName;
-@property (nonatomic, strong) NSString* password;
-@property (nonatomic, strong) NSString<Optional>* email;
-@property (nonatomic, strong) NSString* phoneNumber;
-@property (nonatomic, strong) NSString<Optional>* uid;
+@property (nonatomic, strong) NSString* openId;
+@property (nonatomic, strong) NSString* openAccessToken;
 @end

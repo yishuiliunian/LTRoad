@@ -20,6 +20,7 @@ target 'LuTu' do
   pod 'Baidu-Maps-iOS-SDK'
   pod 'Masonry'
   pod 'DZSwipeViewController'
+  pod 'libextobjc'
 end
 
 

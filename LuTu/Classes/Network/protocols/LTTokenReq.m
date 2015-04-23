@@ -7,15 +7,16 @@
 //
 
 #import "LTTokenReq.h"
-
-
+#import "PMToken.h"
+#import "MSToken.h"
+#import "MSTokenManager.h"
 NSString* LTTokenTypeKey(SATokenType type) {
     switch (type) {
         case SATokenQQ:
-            return @"QQ";
+            return @"1";
             break;
         case SATokenWechat:
-            return @"WeChat";
+            return @"2";
             break;
     }
     return @"";
@@ -34,7 +35,19 @@ NSString* LTTokenTypeKey(SATokenType type) {
     
     [self addParamter:self.openID forKey:@"openId"];
     [self addParamter:self.accessToken forKey:@"accessToken"];
-    [self addParamter:LTTokenTypeKey(self.type) forKey:@"OAuthType"];
+    [self addParamter:LTTokenTypeKey(self.type) forKey:@"oauthType"];
     return YES;
+}
+- (void) onSuccess:(id)retObject
+{
+    NSError* error;
+    PMToken* token = [[PMToken alloc] initWithDictionary:retObject error:&error];
+    if (error) {
+        [self doUIOnError:error];
+        return;
+    }
+    MSToken* serverToken = [[MSToken alloc] initWithToken:token.access_token account:_openID];
+    serverToken.experiedDate = [NSDate dateWithTimeIntervalSince1970:token.expiration/1000];
+    [self doUIOnSuccced:serverToken];
 }
 @end

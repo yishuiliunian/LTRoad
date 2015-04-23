@@ -9,9 +9,52 @@
 #import "MSTokenManager.h"
 #import <DZSingletonFactory.h>
 #import "LTAccountManager.h"
+#import "LTAccountManager.h"
 @implementation MSTokenManager
 + (MSTokenManager*) shareManager {
     return DZSingleForClass([self class]);
+}
+- (MSToken*) loadTokenForAccount:(LTAccount*)ac
+{
+    NSDictionary* dic =[[NSUserDefaults standardUserDefaults] objectForKey:ac.accountID];
+    if (dic) {
+        MSToken* token = [[MSToken alloc] initWithDictionary:dic error:nil];
+        if (token) {
+            return token;
+        }
+    }
+    return nil;
+    
+}
+
+- (void) storeTokenToLocalForAccount:(LTAccount*)ac
+{
+    NSDictionary* dic = [_token dictionaryValue];
+    if (dic && ac) {
+        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ac.accountID];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+- (instancetype) init
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    LTAccount* account = LTCurrentAccount;
+    if (account) {
+        [self loadTokenForAccount:account];
+    }
+    return self;
+}
+
+
+- (void) cacheToken:(MSToken *)token forAccount:(id)ac
+{
+    NSParameterAssert(token);
+    NSParameterAssert(ac);
+    _token = token;
+    [self storeTokenToLocalForAccount:ac];
 }
 
 - (BOOL) isTokenVaild

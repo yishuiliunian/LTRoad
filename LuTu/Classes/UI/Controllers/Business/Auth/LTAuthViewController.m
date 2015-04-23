@@ -8,7 +8,11 @@
 
 #import "LTAuthViewController.h"
 #import <SAReqManager.h>
-@interface LTAuthViewController ()
+#import "LTTokenReq.h"
+#import <extobjc.h>
+#import "MSTokenManager.h"
+#import "LTAccountManager.h"
+@interface LTAuthViewController () <MSRequestUIDelegate>
 
 @end
 
@@ -31,9 +35,33 @@
     
 }
 - (IBAction)handleWeixinAction:(id)sender {
+    
+    @weakify(self);
     [[SAReqManager shareManager] requestWeiXinAuth:^(SAToken *token, NSError *error) {
-        
+        @strongify(self);
+        if (error) {
+            return ;
+        }
+        LTTokenReq* req = [LTTokenReq new];
+        req.accessToken = token.token;
+        req.openID = token.openID;
+        MSPerformRequestWithDelegateSelf(req);
     }];
 }
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    LTTokenReq* req = (LTTokenReq*)request;
+    MSToken* token = (MSToken*)object;
+    LTAccount* account = [[LTAccount alloc] init];
+    account.accountID = token.account;
+    account.openId = req.openID;
+    account.openAccessToken = req.accessToken;
+    [[LTAccountManager shareManager] reloadAccount:account];
+    [MSShareTokenManager cacheToken:token forAccount:account];
+}
 
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
+}
 @end
