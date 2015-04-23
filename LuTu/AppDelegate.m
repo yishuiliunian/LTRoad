@@ -10,6 +10,7 @@
 #import "LTGlobalViewController.h"
 #import "LTConfigure.h"
 #import <DZImageCache.h>
+#import <SAAuth/SAReqManager.h>
 @interface AppDelegate ()
 
 @end
@@ -51,4 +52,21 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL) application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    if ([[SAReqManager shareManager] canHandleURL]) {
+        [[SAReqManager shareManager] handleURL:url];
+    }
+    
+    return YES;
+}
+
+- (BOOL) application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    if ([[SAReqManager shareManager] canHandleURL]) {
+        [[SAReqManager shareManager] handleURL:url];
+    }
+    
+    return YES;
+}
 @end

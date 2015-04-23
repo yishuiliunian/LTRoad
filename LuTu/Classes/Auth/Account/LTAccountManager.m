@@ -1,36 +1,36 @@
 //
-//  MSAccountManager.m
+//  LTAccountManager.m
 //  MoShang
 //
 //  Created by stonedong on 15/2/7.
 //  Copyright (c) 2015年 stonedong. All rights reserved.
 //
 
-#import "MSAccountManager.h"
+#import "LTAccountManager.h"
 #import <DZSingletonFactory.h>
 #import <DZProgramDefines.h>
 
-@interface MSAccountManager ()
+@interface LTAccountManager ()
 @property (nonatomic, assign) int reloadTokenCount;
 @end
-@implementation MSAccountManager
+@implementation LTAccountManager
 
-+ (MSAccountManager*) shareManager
++ (LTAccountManager*) shareManager
 {
-    return DZSingleForClass([MSAccountManager class]);
+    return DZSingleForClass([LTAccountManager class]);
 }
 
 INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
-- (MSAccount*) loadAccountFromStorage
+- (LTAccount*) loadAccountFromStorage
 {
     NSDictionary* dic = [[NSUserDefaults standardUserDefaults] objectForKey:kMSStorageAccount];
     if (!dic) {
         return nil;
     }
-    return [[MSAccount alloc] initWithDictionary:dic error:nil];
+    return [[LTAccount alloc] initWithDictionary:dic error:nil];
 }
 
-- (void) storeAccountToStorage:(MSAccount*)account
+- (void) storeAccountToStorage:(LTAccount*)account
 {
     NSDictionary* dic = [account toDictionary];
     if (!dic) {
@@ -52,7 +52,7 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
     return self;
 }
 
-- (void) reloadAccount:(MSAccount *)account
+- (void) reloadAccount:(LTAccount *)account
 {
     _currentAccount = account;
     if (_currentAccount) {

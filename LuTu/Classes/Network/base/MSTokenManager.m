@@ -8,7 +8,7 @@
 
 #import "MSTokenManager.h"
 #import <DZSingletonFactory.h>
-#import "MSAccountManager.h"
+#import "LTAccountManager.h"
 @implementation MSTokenManager
 + (MSTokenManager*) shareManager {
     return DZSingleForClass([self class]);
@@ -39,7 +39,7 @@
         return YES;
     }
     
-    MSAccount* currentAccount = MSCurrentAccount;
+    LTAccount* currentAccount = LTCurrentAccount;
 //    if (!currentAccount) {
 //        *error = [NSError ms_errorWithMessage:@"未登录任何账号" code:-9999];
 //        return NO;

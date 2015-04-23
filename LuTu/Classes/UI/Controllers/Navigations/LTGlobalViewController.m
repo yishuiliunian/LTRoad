@@ -12,8 +12,9 @@
 #import "LTDiscoverViewController.h"
 #import "LTMineViewController.h"
 #import "LTSelectedRoadViewController.h"
-#import "MSAccountManager.h"
+#import "LTAccountManager.h"
 #import "LTNavigationController.h"
+#import "LTGuideContainerViewController.h"
 #import <DZImageCache.h>
 
 @interface LTGlobalViewController ()
@@ -25,8 +26,10 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    if (!MSCurrentAccount) {
+    if (LTCurrentAccount) {
         [self loadApplicationMainVC];
+    } else {
+        [self loadGuideViewController];
     }
 }
 
@@ -42,6 +45,12 @@
 - (void) changeMainVC:(UIViewController*)vc
 {
     [self lt_addViewController:vc];
+}
+
+- (void) loadGuideViewController
+{
+    LTGuideContainerViewController* guidVC = [LTGuideContainerViewController new];
+    [self changeMainVC:guidVC];
 }
 - (void) loadApplicationMainVC
 {

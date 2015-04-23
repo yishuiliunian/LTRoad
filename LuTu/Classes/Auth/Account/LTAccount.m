@@ -1,13 +1,13 @@
 //
-//  MSAccount.m
+//  LTAccount.m
 //  MoShang
 //
 //  Created by stonedong on 15/2/7.
 //  Copyright (c) 2015年 stonedong. All rights reserved.
 //
 
-#import "MSAccount.h"
+#import "LTAccount.h"
 
-@implementation MSAccount
+@implementation LTAccount
 
 @end

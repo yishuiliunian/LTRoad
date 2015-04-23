@@ -1,5 +1,5 @@
 //
-//  MSAccount.h
+//  LTAccount.h
 //  MoShang
 //
 //  Created by stonedong on 15/2/7.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <JSONModelLib.h>
-@interface MSAccount : JSONModel
+@interface LTAccount : JSONModel
 @property (nonatomic, strong) NSString* accountID;
 @property (nonatomic, strong) NSString<Optional>* nickName;
 @property (nonatomic, strong) NSString* password;
