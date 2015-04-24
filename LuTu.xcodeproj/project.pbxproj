@@ -76,6 +76,8 @@
 		657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */; };
 		657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */; };
 		657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */; };
+		6581A34E1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6581A34C1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m */; };
+		6581A34F1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6581A34D1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib */; };
 		65A3F6751AE8C55500BD6B1F /* LTUserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6741AE8C55500BD6B1F /* LTUserDataManager.m */; };
 		65A3F6811AE8CF4100BD6B1F /* LTAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F67F1AE8CF4100BD6B1F /* LTAuthViewController.m */; };
 		65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */; };
@@ -258,6 +260,9 @@
 		657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetMenuView.m; sourceTree = "<group>"; };
 		657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = ../../../UI/CustomUI/LTCoverFlowLayout.h; sourceTree = "<group>"; };
 		657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = ../../../UI/CustomUI/LTCoverFlowLayout.m; sourceTree = "<group>"; };
+		6581A34B1AE8FDFD008C965A /* LTAddUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAddUserInfoTableViewController.h; sourceTree = "<group>"; };
+		6581A34C1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAddUserInfoTableViewController.m; sourceTree = "<group>"; };
+		6581A34D1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTAddUserInfoTableViewController.xib; sourceTree = "<group>"; };
 		65A3F6731AE8C55500BD6B1F /* LTUserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUserDataManager.h; sourceTree = "<group>"; };
 		65A3F6741AE8C55500BD6B1F /* LTUserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUserDataManager.m; sourceTree = "<group>"; };
 		65A3F67E1AE8CF4100BD6B1F /* LTAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAuthViewController.h; sourceTree = "<group>"; };
@@ -823,6 +828,9 @@
 				65A3F67E1AE8CF4100BD6B1F /* LTAuthViewController.h */,
 				65A3F67F1AE8CF4100BD6B1F /* LTAuthViewController.m */,
 				65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */,
+				6581A34B1AE8FDFD008C965A /* LTAddUserInfoTableViewController.h */,
+				6581A34C1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m */,
+				6581A34D1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1125,6 +1133,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6581A34F1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib in Resources */,
 				65D1F07E1AC28B34006525D0 /* LaunchScreen.xib in Resources */,
 				65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */,
 				65D1F07B1AC28B34006525D0 /* Images.xcassets in Resources */,
@@ -1257,6 +1266,7 @@
 				65BCE6E11AE6262900482360 /* LTLine.m in Sources */,
 				65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */,
 				65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */,
+				6581A34E1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m in Sources */,
 				65D1F0701AC28B34006525D0 /* main.m in Sources */,
 				652FB9371AD241030082894E /* LTError.m in Sources */,
 				652FB9301AD23EF50082894E /* LTAccountManager.m in Sources */,

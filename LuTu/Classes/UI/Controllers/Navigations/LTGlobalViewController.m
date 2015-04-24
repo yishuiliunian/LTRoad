@@ -28,6 +28,9 @@
     [super viewDidLoad];
     if (LTCurrentAccount) {
         [self loadApplicationMainVC];
+#ifdef DEBUG
+        [self loadGuideViewController];
+#endif
     } else {
         [self loadGuideViewController];
     }

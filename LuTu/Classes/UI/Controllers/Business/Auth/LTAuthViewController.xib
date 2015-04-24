@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LTAuthViewController">
@@ -17,34 +19,41 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gaW-lY-gr5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_bg" translatesAutoresizingMaskIntoConstraints="NO" id="gaW-lY-gr5">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHt-6a-Csq">
-                    <rect key="frame" x="17" y="425" width="286" height="45"/>
-                    <state key="normal" title="微信" image="btn_msg_click">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="handleWeixinAction:" destination="-1" eventType="touchUpInside" id="UHQ-nh-EZ2"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZA-th-otM">
-                    <rect key="frame" x="17" y="500" width="118" height="30"/>
-                    <state key="normal" title="微博" image="btn_msg_click">
+                <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qZA-th-otM">
+                    <rect key="frame" x="17" y="485" width="133" height="45"/>
+                    <state key="normal" title="新浪微博" image="logo_weibo" backgroundImage="white_round_btn">
+                        <color key="titleColor" red="1" green="0.22434770579970253" blue="0.20420229884985197" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="handleWeiboAction:" destination="-1" eventType="touchUpInside" id="tkI-tG-20f"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fga-x9-qJg">
-                    <rect key="frame" x="173" y="500" width="130" height="30"/>
-                    <state key="normal" title="QQ" image="btn_msg_click">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fga-x9-qJg">
+                    <rect key="frame" x="166" y="485" width="128" height="45"/>
+                    <state key="normal" title="QQ" image="logo_qq" backgroundImage="blue_round_btn">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
                         <action selector="handleQQAction:" destination="-1" eventType="touchUpInside" id="OJM-nT-RUL"/>
+                    </connections>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_logo" translatesAutoresizingMaskIntoConstraints="NO" id="eqE-ql-onh">
+                    <rect key="frame" x="92" y="79" width="136" height="92"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eqE-ql-onh" secondAttribute="height" multiplier="68:37" constant="-33.081081081081095" id="sFI-Bg-n8j"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHt-6a-Csq">
+                    <rect key="frame" x="17" y="423" width="286" height="45"/>
+                    <state key="normal" title="微信" image="auth_wechat" backgroundImage="green_round_btn">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="handleWeixinAction:" destination="-1" eventType="touchUpInside" id="UHQ-nh-EZ2"/>
                     </connections>
                 </button>
             </subviews>
@@ -53,23 +62,35 @@
                 <constraint firstAttribute="trailing" secondItem="NHt-6a-Csq" secondAttribute="trailing" constant="17" id="2sf-u4-OUW"/>
                 <constraint firstAttribute="bottom" secondItem="qZA-th-otM" secondAttribute="bottom" constant="38" id="3Y8-Ar-9f6"/>
                 <constraint firstItem="qZA-th-otM" firstAttribute="height" secondItem="Fga-x9-qJg" secondAttribute="height" id="Akq-ZV-IVv"/>
+                <constraint firstAttribute="trailing" secondItem="eqE-ql-onh" secondAttribute="trailing" constant="92" id="Dru-BJ-kis"/>
                 <constraint firstItem="gaW-lY-gr5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HX7-9P-SvQ"/>
                 <constraint firstAttribute="trailing" secondItem="Fga-x9-qJg" secondAttribute="trailing" constant="26" id="JuL-Re-bH4"/>
+                <constraint firstItem="eqE-ql-onh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="Lao-L8-YSi"/>
+                <constraint firstItem="Fga-x9-qJg" firstAttribute="height" secondItem="qZA-th-otM" secondAttribute="height" id="Naa-jZ-tRB"/>
                 <constraint firstItem="gaW-lY-gr5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="OCI-sK-ddc"/>
-                <constraint firstItem="Fga-x9-qJg" firstAttribute="top" secondItem="NHt-6a-Csq" secondAttribute="bottom" constant="57" id="Q5l-nY-mHC"/>
+                <constraint firstItem="Fga-x9-qJg" firstAttribute="top" secondItem="NHt-6a-Csq" secondAttribute="bottom" constant="17" id="Q5l-nY-mHC"/>
                 <constraint firstAttribute="trailing" secondItem="gaW-lY-gr5" secondAttribute="trailing" id="SCl-ae-vSr"/>
                 <constraint firstAttribute="bottom" secondItem="gaW-lY-gr5" secondAttribute="bottom" id="U1x-b9-LGG"/>
-                <constraint firstItem="Fga-x9-qJg" firstAttribute="leading" secondItem="qZA-th-otM" secondAttribute="trailing" constant="29" id="bYn-Aa-QfX"/>
+                <constraint firstItem="Fga-x9-qJg" firstAttribute="leading" secondItem="qZA-th-otM" secondAttribute="trailing" constant="16" id="bYn-Aa-QfX"/>
+                <constraint firstItem="Fga-x9-qJg" firstAttribute="height" secondItem="NHt-6a-Csq" secondAttribute="height" id="cXj-kY-RJY"/>
                 <constraint firstItem="NHt-6a-Csq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="f9X-DO-470"/>
                 <constraint firstItem="qZA-th-otM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="17" id="hOJ-b2-vDR"/>
                 <constraint firstAttribute="bottom" secondItem="Fga-x9-qJg" secondAttribute="bottom" constant="38" id="hmm-u8-KEi"/>
-                <constraint firstItem="qZA-th-otM" firstAttribute="width" secondItem="Fga-x9-qJg" secondAttribute="width" id="m4Y-nX-It5"/>
+                <constraint firstItem="qZA-th-otM" firstAttribute="width" secondItem="Fga-x9-qJg" secondAttribute="width" constant="5" id="m4Y-nX-It5"/>
+                <constraint firstItem="eqE-ql-onh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="92" id="th4-LY-xop"/>
             </constraints>
             <point key="canvasLocation" x="589" y="479"/>
         </view>
     </objects>
     <resources>
-        <image name="btn_msg_click" width="29" height="29"/>
+        <image name="auth_bg" width="320" height="568"/>
+        <image name="auth_logo" width="149" height="89"/>
+        <image name="auth_wechat" width="44" height="30"/>
+        <image name="blue_round_btn" width="132" height="45"/>
+        <image name="green_round_btn" width="275" height="45"/>
+        <image name="logo_qq" width="25" height="22"/>
+        <image name="logo_weibo" width="27" height="22"/>
+        <image name="white_round_btn" width="45" height="45"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
