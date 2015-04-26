@@ -58,7 +58,7 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - LTNavigationBar (2.0.1)
+  - LTNavigationBar (2.0.2)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
@@ -107,7 +107,7 @@ SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  LTNavigationBar: 6cfc0d3628e925d519130018a15c296cefaf0db3
+  LTNavigationBar: cfe4963b0ec99d2086d5a61906edf62fdae939aa
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
   Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
@@ -115,4 +115,4 @@ SPEC CHECKSUMS:
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.36.3

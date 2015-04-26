@@ -16,6 +16,24 @@
 #import "LTNavigationController.h"
 #import "LTGuideContainerViewController.h"
 #import <DZImageCache.h>
+#import "LTRoadViewController.h"
+
+@implementation UIViewController (GlobalNavigation)
+
+- (LTGlobalViewController*) globalViewController
+{
+    if (self.parentViewController) {
+        if ([self.parentViewController isKindOfClass:[LTGlobalViewController class]]) {
+            return (LTGlobalViewController*)self.parentViewController;
+        } else {
+            return [self.parentViewController globalViewController];
+        }
+    } else {
+        return nil;
+    }
+}
+
+@end
 
 @interface LTGlobalViewController ()
 {
@@ -28,9 +46,6 @@
     [super viewDidLoad];
     if (LTCurrentAccount) {
         [self loadApplicationMainVC];
-#ifdef DEBUG
-        [self loadGuideViewController];
-#endif
     } else {
         [self loadGuideViewController];
     }
@@ -45,9 +60,17 @@
     [vc didMoveToParentViewController:self];
 }
 
+- (void) lt_removeChildViewController:(UIViewController*)vc {
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    [vc didMoveToParentViewController:nil];
+}
 - (void) changeMainVC:(UIViewController*)vc
 {
+    [self lt_removeChildViewController:_mainVC];
     [self lt_addViewController:vc];
+    _mainVC = vc;
 }
 
 - (void) loadGuideViewController
@@ -67,7 +90,8 @@
     discoverVC.tabBarItem.image = DZCachedImageByName(@"discovery_normal");
     discoverVC.tabBarItem.selectedImage = DZCachedImageByName(@"discovery_click");
     
-    LTSelectedRoadViewController* selectedVC = [LTSelectedRoadViewController new];
+    LTSelectedRoadViewController* selectedVC = [LTRoadViewController readViewControllerWithDataController:[LTRecommondReadDataController new]];
+    
     selectedVC.tabBarItem.title = @"精选";
     selectedVC.tabBarItem.image = DZCachedImageByName(@"choice_normal");
     selectedVC.tabBarItem.selectedImage = DZCachedImageByName(@"choice_click");
@@ -95,7 +119,14 @@
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-
 }
 
+/*
+ 
+ */
+
+- (void) viewController:(UIViewController *)viewController didEnterAccount:(LTAccount *)account
+{
+    [self loadApplicationMainVC];
+}
 @end

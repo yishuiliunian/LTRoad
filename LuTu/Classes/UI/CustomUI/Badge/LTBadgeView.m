@@ -11,6 +11,7 @@
 #import "LTBadgeView_Private.h"
 #import "LTFont.h"
 #import "LTTagColorManager.h"
+#import "LTColors.h"
 @interface LTBadgeView()
 @property (nonatomic, strong, readonly) UILabel* textLabel;
 @end
@@ -27,6 +28,8 @@
     _textLabel.textAlignment = NSTextAlignmentCenter;
     self.layer.cornerRadius = 4;
     self.backgroundColor = LTColorTagDefault();
+    //
+    ColorLabelWithWhite(_textLabel);
     return self;
 }
 - (void) setItem:(LTBadgeItem *)item

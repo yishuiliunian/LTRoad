@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>86CA3B55-1F26-4796-BF1E-A5F16F55D2CC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LuTu</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>05707852C29207A926657F0C3F113AAEBF84961A</key>
+		<string>https://github.com/yishuiliunian/LTRoad.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LuTu.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>05707852C29207A926657F0C3F113AAEBF84961A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yishuiliunian/LTRoad.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>05707852C29207A926657F0C3F113AAEBF84961A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>05707852C29207A926657F0C3F113AAEBF84961A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LTIos</string>
+		</dict>
+	</array>
+</dict>
+</plist>

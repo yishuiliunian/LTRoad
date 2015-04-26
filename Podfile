@@ -21,6 +21,7 @@ target 'LuTu' do
   pod 'Masonry'
   pod 'DZSwipeViewController'
   pod 'libextobjc'
+  pod 'Mantle'
 end
 
 

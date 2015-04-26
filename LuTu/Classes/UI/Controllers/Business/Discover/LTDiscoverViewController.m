@@ -14,6 +14,8 @@
 #import <DZImageCache.h>
 #import "UIViewController+Additions.h"
 #import "LTCoverFlowLayout.h"
+#import "LTRecommondReadDataController.h"
+#import "LTSelectedRoadViewController.h"
 INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 @interface LTDiscoverViewController ()
 {
@@ -148,6 +150,15 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     {
         return UIEdgeInsetsMake(15, 15, 15, 15);
     }
+}
+
+- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTUIDiscoverItem* item = _discoverItems[indexPath.row];
+    LTRecommondReadDataController* dataController = [[LTRecommondReadDataController alloc] init];
+    dataController.category = item.category;
+    LTSelectedRoadViewController* vc = [LTSelectedRoadViewController readViewControllerWithDataController:dataController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -12,6 +12,7 @@
 #import <extobjc.h>
 #import "MSTokenManager.h"
 #import "LTAccountManager.h"
+#import "LTGlobalViewController.h"
 @interface LTAuthViewController () <MSRequestUIDelegate>
 
 @end
@@ -58,6 +59,8 @@
     account.openAccessToken = req.accessToken;
     [[LTAccountManager shareManager] reloadAccount:account];
     [MSShareTokenManager cacheToken:token forAccount:account];
+    
+    [self.globalViewController viewController:self didEnterAccount:account];
 }
 
 - (void) request:(MSRequest *)request onError:(NSError *)error

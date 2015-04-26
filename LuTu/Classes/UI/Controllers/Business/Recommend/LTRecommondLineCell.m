@@ -10,6 +10,7 @@
 #import <DZProgramDefines.h>
 #import <DZGeometryTools.h>
 #import "LKHaneke.h"
+#import "LTGlobals.h"
 @implementation LTRecommondLineCell
 - (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -37,6 +38,11 @@
     //
     self.backgroundColor = [UIColor clearColor];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    //
+    ColorLabelWithWhite(_dateLabel);
+    ColorLabelWithWhite(_distanceLabel);
+    ColorLabelWithWhite(_titleBabel);
 }
 
 

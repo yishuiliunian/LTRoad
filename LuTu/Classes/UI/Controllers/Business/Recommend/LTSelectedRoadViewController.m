@@ -15,35 +15,54 @@
 #import "LTRouteDetailViewController.h"
 #import "LTRecommendLine.h"
 @interface LTSelectedRoadViewController()
+{
+    BOOL _needUpdateDataControllerTableView;
+}
 @property (nonatomic, strong) LTRecommondReadDataController* dataController;
 @end
 @implementation LTSelectedRoadViewController
 
+
++ (instancetype) readViewControllerWithDataController:(LTPageDataController*)dataController
+{
+    return [[self alloc] initWithDataController:dataController];
+}
+
+- (instancetype) initWithDataController:(LTPageDataController*)dateController
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    _dataController = [LTRecommondReadDataController new];
+    _needUpdateDataControllerTableView = YES;
+    return self;
+}
 - (void) configureView
 {
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.view.backgroundColor = [UIColor clearColor];
-    
-    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"address") style:UIBarButtonItemStyleDone target:self action:@selector(locateTheAddress)];
-    self.navigationItem.leftBarButtonItem = left;
-    
-    [self loadNavigationBarSearchItem];
-    
+
 }
-- (void) search
+
+
+- (void) setDataController:(LTRecommondReadDataController *)dataController
 {
-    
-}
-- (void) locateTheAddress
-{
-    
+    if (_dataController != dataController) {
+        _dataController = dataController;
+        if (self.isViewLoaded) {
+            _dataController.tableView = self.tableView;
+        }
+    }
 }
 - (void) viewDidLoad
 {
     [super viewDidLoad];
     [self configureView];
-    _dataController = [LTRecommondReadDataController new];
-    _dataController.tableView = self.tableView;
+    if (_needUpdateDataControllerTableView) {
+        _dataController.tableView = self.tableView;
+        _needUpdateDataControllerTableView = NO;
+    }
     [_dataController reloadAllData];
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

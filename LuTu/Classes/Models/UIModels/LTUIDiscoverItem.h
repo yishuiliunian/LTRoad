@@ -11,4 +11,5 @@
 @interface LTUIDiscoverItem : NSObject
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSURL* backgroundURL;
+@property (nonatomic, strong) NSString* category;
 @end

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTAccountManager.h"
+@class LTGlobalViewController;
+@interface UIViewController (GlobalNavigation)
+@property (nonatomic, strong, readonly) LTGlobalViewController* globalViewController;
+@end
 
 @interface LTGlobalViewController : UIViewController
-
+- (void) viewController:(UIViewController*)viewController didEnterAccount:(LTAccount*)account;
 @end

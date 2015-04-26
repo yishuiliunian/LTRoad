@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle.h>
+@class LTSettings;
+FOUNDATION_EXTERN LTSettings* LTShareSettings();
+FOUNDATION_EXTERN void LTLocalizedSettings();
 
+
+@interface LTSettings : MTLModel <MTLJSONSerializing>
+@property (nonatomic, strong) NSString* currentCity;
+@end
 @interface LTUserDataManager : NSObject
 
 @end

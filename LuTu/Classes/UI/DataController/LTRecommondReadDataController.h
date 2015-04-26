@@ -9,5 +9,6 @@
 #import "LTPageDataController.h"
 #import "LTRecommondRoadReq.h"
 @interface LTRecommondReadDataController : LTPageDataController
-
+@property (nonatomic, strong) NSString* keyword;
+@property (nonatomic, strong) NSString* category;
 @end
