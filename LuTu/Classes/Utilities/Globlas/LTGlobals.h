@@ -10,7 +10,7 @@
 #import <Mantle.h>
 #import "LTColors.h"
 #import "LTFont.h"
-
+#import "LTUserDataManager.h"
 FOUNDATION_EXTERN NSString* LTCellIdentifierFromClass(Class cla);
 
 FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);

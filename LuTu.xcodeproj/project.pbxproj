@@ -86,6 +86,8 @@
 		65B9E4831AEC915000577594 /* LTFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4821AEC915000577594 /* LTFiles.m */; };
 		65B9E4861AEC91BC00577594 /* LTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4851AEC91BC00577594 /* LTLocationManager.m */; };
 		65B9E4891AEC963500577594 /* LTRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4881AEC963500577594 /* LTRoadViewController.m */; };
+		65B9E48C1AEC9D6200577594 /* LTCategoryListReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E48B1AEC9D6200577594 /* LTCategoryListReq.m */; };
+		65B9E48F1AECA12200577594 /* PMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E48E1AECA12200577594 /* PMCategory.m */; };
 		65BCE6E11AE6262900482360 /* LTLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E01AE6262900482360 /* LTLine.m */; };
 		65BCE6E41AE626EB00482360 /* LTRoutePOIReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E31AE626EB00482360 /* LTRoutePOIReq.m */; };
 		65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E71AE6278C00482360 /* PMPoiInfo.m */; };
@@ -281,6 +283,10 @@
 		65B9E4851AEC91BC00577594 /* LTLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLocationManager.m; sourceTree = "<group>"; };
 		65B9E4871AEC963500577594 /* LTRoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRoadViewController.h; sourceTree = "<group>"; };
 		65B9E4881AEC963500577594 /* LTRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRoadViewController.m; sourceTree = "<group>"; };
+		65B9E48A1AEC9D6200577594 /* LTCategoryListReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCategoryListReq.h; sourceTree = "<group>"; };
+		65B9E48B1AEC9D6200577594 /* LTCategoryListReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCategoryListReq.m; sourceTree = "<group>"; };
+		65B9E48D1AECA12200577594 /* PMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCategory.h; sourceTree = "<group>"; };
+		65B9E48E1AECA12200577594 /* PMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCategory.m; sourceTree = "<group>"; };
 		65BCE6DF1AE6262900482360 /* LTLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLine.h; sourceTree = "<group>"; };
 		65BCE6E01AE6262900482360 /* LTLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLine.m; sourceTree = "<group>"; };
 		65BCE6E21AE626EB00482360 /* LTRoutePOIReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTRoutePOIReq.h; path = ../LTRoutePOIReq.h; sourceTree = "<group>"; };
@@ -518,6 +524,8 @@
 				65035FD71AE495B900BBEDEB /* LTRoteListReq.m */,
 				650C0C3C1AE5EE25008FC2B8 /* LTRouteDetailReq.h */,
 				650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */,
+				65B9E48A1AEC9D6200577594 /* LTCategoryListReq.h */,
+				65B9E48B1AEC9D6200577594 /* LTCategoryListReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -902,6 +910,8 @@
 				650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */,
 				65A3F68E1AE8E34C00BD6B1F /* PMToken.h */,
 				65A3F68F1AE8E34C00BD6B1F /* PMToken.m */,
+				65B9E48D1AECA12200577594 /* PMCategory.h */,
+				65B9E48E1AECA12200577594 /* PMCategory.m */,
 			);
 			path = ProtocolModels;
 			sourceTree = "<group>";
@@ -1216,6 +1226,7 @@
 				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				6517E7971AE7ADE9004F71BC /* LTLinePoiCell.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
+				65B9E48F1AECA12200577594 /* PMCategory.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
 				657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */,
 				65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */,
@@ -1254,6 +1265,7 @@
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
 				6517E7861AE78EC3004F71BC /* LTLineHeaderView.m in Sources */,
 				6517E79F1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m in Sources */,
+				65B9E48C1AEC9D6200577594 /* LTCategoryListReq.m in Sources */,
 				652FB9251AD23EB60082894E /* MSToken.m in Sources */,
 				6517E7AF1AE7CC53004F71BC /* LTUserInfoItem.m in Sources */,
 				65035FE21AE4AB7E00BBEDEB /* LTRecommondReadDataController.m in Sources */,

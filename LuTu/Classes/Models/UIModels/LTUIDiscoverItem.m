@@ -10,4 +10,16 @@
 
 @implementation LTUIDiscoverItem
 
+- (instancetype) initWithCategory:(PMCategory *)category
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    _category = category;
+    _title = category.name;
+    _backgroundURL = [NSURL URLWithString:category.intro_image_url];
+    _categoryID = category.category_id;
+    return self;
+}
 @end

@@ -113,7 +113,6 @@
     
     [self changeMainVC:mainVC];
     mineVC.tabBarController.tabBar.barTintColor = [UIColor blackColor];
-    
 }
 
 - (void) viewWillLayoutSubviews

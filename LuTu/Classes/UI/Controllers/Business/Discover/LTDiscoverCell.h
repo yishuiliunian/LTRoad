@@ -12,4 +12,5 @@
 @interface LTDiscoverCell : UICollectionViewCell;
 DEFINE_PROPERTY_STRONG_UIImageView(backgroundImageView);
 DEFINE_PROPERTY_STRONG(LTUIDiscoverItem*, discoverItem);
+DEFINE_PROPERTY_STRONG_UILabel(titleLabel);
 @end

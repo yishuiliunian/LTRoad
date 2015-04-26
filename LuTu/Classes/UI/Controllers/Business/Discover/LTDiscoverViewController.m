@@ -16,8 +16,10 @@
 #import "LTCoverFlowLayout.h"
 #import "LTRecommondReadDataController.h"
 #import "LTSelectedRoadViewController.h"
+#import "LTCategoryListReq.h"
+#import "LTGlobals.h"
 INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
-@interface LTDiscoverViewController ()
+@interface LTDiscoverViewController () <MSRequestUIDelegate>
 {
     NSArray* _discoverItems;
 }
@@ -78,17 +80,28 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 
 - (void) reloadAllData
 {
-    NSMutableArray* array = [NSMutableArray new];
-    for (int i = 0  ; i < 10; i++) {
-        LTUIDiscoverItem* item = [LTUIDiscoverItem new];
-        item.title = @"xxx";
-        item.backgroundURL = [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
-        [array addObject:item];
-    }
+
+    LTCategoryListReq* listReq = [LTCategoryListReq new];
+    listReq.city = LTShareSettings().currentCity;
+    MSPerformRequestWithDelegateSelf(listReq);
+}
+
+#pragma mark Request delegate
+//
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
     
-    _discoverItems = array;
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    _discoverItems = object;
     [self.collectionView reloadData];
 }
+
+//
+#pragma mark -
 - (void) setLayoutType:(LTLayoutType)layoutType
 {
     if (_layoutType != layoutType) {
@@ -156,7 +169,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
     LTUIDiscoverItem* item = _discoverItems[indexPath.row];
     LTRecommondReadDataController* dataController = [[LTRecommondReadDataController alloc] init];
-    dataController.category = item.category;
+    dataController.category = item.categoryID;
     LTSelectedRoadViewController* vc = [LTSelectedRoadViewController readViewControllerWithDataController:dataController];
     [self.navigationController pushViewController:vc animated:YES];
 }
