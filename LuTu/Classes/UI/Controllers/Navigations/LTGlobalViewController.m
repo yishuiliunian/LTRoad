@@ -44,7 +44,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    if (LTCurrentAccount) {
+    if (!LTCurrentAccount) {
         [self loadApplicationMainVC];
     } else {
         [self loadGuideViewController];

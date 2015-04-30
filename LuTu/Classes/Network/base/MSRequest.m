@@ -105,7 +105,10 @@
         MSRequestOnErrorAndReturn(error);
     }
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-
+#ifdef DEBUG
+    NSString* str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"服务器返回的数据是:%@",str);
+#endif
     MSRequestOnErrorAndReturn(error);
     if (![dic isKindOfClass:[NSDictionary class]]) {
         error = [NSError ltErrorWithCode:LTErrorCodeDecode];

@@ -12,15 +12,10 @@
 - (BOOL) addCommonParamters:(NSError *__autoreleasing *)error
 {
     SendSuperFunctionWithError(addCommonParamters);
-    if (!ret) {
-        return ret;
-    }
     if (![MSShareTokenManager revarifyCacheToken:error]) {
         return NO;
     }
-    
-    [self addParamter:MSShareTokenString forKey:@"skey"];
-    [self addParamter:MSShareToken.account forKey:@"account"];
+    [self addParamter:MSShareTokenString forKey:@"accessToken"];
     return YES;
 }
 @end

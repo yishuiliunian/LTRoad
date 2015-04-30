@@ -266,11 +266,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/UI/Controllers/Business/Auth/LTAuthViewController.m"
-            timestampString = "451709216.073257"
+            timestampString = "451993191.748502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84">
+            startingLineNumber = "81"
+            endingLineNumber = "81">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/UI/Controllers/Business/Auth/LTAuthViewController.m"
-            timestampString = "451709216.073257"
+            timestampString = "451993191.748502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89">
+            startingLineNumber = "86"
+            endingLineNumber = "86">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -308,28 +308,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/Network/base/MSRequest.m"
-            timestampString = "451469407.975752"
+            timestampString = "451993323.572983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-doRequst"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/Auth/LTAuthViewController.m"
-            timestampString = "451709216.073257"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "-request:onSucced:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -352,16 +336,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Navigations/LTGlobalViewController.m"
-            timestampString = "451712666.474527"
+            filePath = "LuTu/Classes/UI/Controllers/Business/Auth/LTAuthViewController.m"
+            timestampString = "452001495.965918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-request:onSucced:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -371,28 +355,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/Discover/LTDiscoverViewController.m"
-            timestampString = "451715213.369727"
+            filePath = "LuTu/Classes/Network/protocols/LTTokenReq.m"
+            timestampString = "452001508.940961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-request:onError:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/Network/protocols/LTCategoryListReq.m"
-            timestampString = "451715853.080558"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "-onSuccess:"
             landmarkType = "5">
          </BreakpointContent>

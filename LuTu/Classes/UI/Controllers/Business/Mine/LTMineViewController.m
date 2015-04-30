@@ -11,6 +11,8 @@
 #import "LTActionItem.h"
 #import "LTActionCell.h"
 #import "LTEditUserInfoViewController.h"
+#import "LTMyCarClubViewController.h"
+#import "LTAccountManager.h"
 @interface LTMineViewController ()
 {
     NSArray* _allActions;
@@ -35,6 +37,10 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     tapG.numberOfTouchesRequired =1;
     [_topView.avatarImageView addGestureRecognizer:tapG];
     [self reloadAllData];
+    
+    //
+    [_topView.carFriendButton addTarget:self action:@selector(handleShowMyClub) forControlEvents:UIControlEventTouchUpInside];
+    //
 }
 
 - (void) handleTapGestrue:(UITapGestureRecognizer*)tap
@@ -44,7 +50,11 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
         [self.navigationController pushViewController:editUserInfoVC animated:YES];
     }
 }
-
+- (void) handleShowMyClub
+{
+    LTMyCarClubViewController* clubVC = [[LTMyCarClubViewController alloc]initWithUID:LTCurrentAccount.accountID];
+    [self.navigationController pushViewController:clubVC animated:YES];
+}
 - (void) reloadAllData
 {
     LTActionItem* dynamicItem = [[LTActionItem alloc] init];

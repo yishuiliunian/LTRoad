@@ -9,7 +9,7 @@
 #import "MSTokenManager.h"
 #import <DZSingletonFactory.h>
 #import "LTAccountManager.h"
-#import "LTAccountManager.h"
+#import "LTError.h"
 @implementation MSTokenManager
 + (MSTokenManager*) shareManager {
     return DZSingleForClass([self class]);
@@ -83,19 +83,20 @@
     }
     
     LTAccount* currentAccount = LTCurrentAccount;
-//    if (!currentAccount) {
-//        *error = [NSError ms_errorWithMessage:@"未登录任何账号" code:-9999];
-//        return NO;
-//    }
-//    
-//    MSLoginReq* req = [MSLoginReq new];
-//    req.accountID = currentAccount.accountID;
-//    req.password = currentAccount.password;
-//    if (![req doRequst]) {
-//        *error = req.lastError;
-//        return NO;
-//    }
-//    _token = [[MSToken alloc] initWithToken:req.token account:currentAccount.accountID];
+    
+    if (!currentAccount) {
+        if (error != NULL) {
+            *error = [NSError ltErrorWithCode:222 message:@"未登录任何账号"];
+        }
+        return NO;
+    }
+    
+   _token = [self loadTokenForAccount:currentAccount];
+    if (!_token) {
+        if (error != NULL) {
+            *error = [NSError ltErrorWithCode:222 message:@"没有缓存任何凭据"];
+        }
+    }
     return YES;
 }
 @end
