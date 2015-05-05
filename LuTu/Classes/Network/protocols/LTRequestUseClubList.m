@@ -8,10 +8,11 @@
 
 #import "LTRequestUseClubList.h"
 #import "LTUICarMeet.h"
+#import "LTUIMyCarClubInfo.h"
 @implementation LTRequestUseClubList
 - (NSString*)method
 {
-    return @"/user/car_club/simple/list";
+    return @"/user/car_club/list";
 }
 
 - (BOOL) loadParamters:(NSError *__autoreleasing *)error
@@ -30,10 +31,10 @@
 {
     NSMutableArray* clubs= [NSMutableArray new];
     for (int i = 1; i < 10; i++) {
-        LTUICarMeet* carMeet = [LTUICarMeet new];
-        carMeet.title = @"宝马车友会";
-        carMeet.detail = @"100个会员";
-        carMeet.emblemURL = [NSURL URLWithString:@"http://tech.uc.cn/wp-content/uploads/2014/04/docker-dev.png"];
+        LTUIMyCarClubInfo* carMeet = [LTUIMyCarClubInfo new];
+        carMeet.name= @"宝马车友会";
+        carMeet.detailInfo = @"100个会员";
+        carMeet.avatarImageUrl= [NSURL URLWithString:@"http://tech.uc.cn/wp-content/uploads/2014/04/docker-dev.png"];
         [clubs addObject:carMeet];
     }
     

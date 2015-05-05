@@ -10,7 +10,7 @@
 #import "DZexpandCollectionViewController.h"
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
-#import "LTCarClubReq.h"
+#import "LTUserCarClubReq.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -46,7 +46,7 @@
 
 - (void) reloadAllCarClub
 {
-    LTCarClubReq* carClueReq = [LTCarClubReq new];
+    LTUserCarClubReq* carClueReq = [LTUserCarClubReq new];
     MSPerformRequestWithDelegateSelf(carClueReq);
 }
 

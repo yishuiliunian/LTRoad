@@ -16,6 +16,7 @@
         return NO;
     }
     [self addParamter:MSShareTokenString forKey:@"accessToken"];
+    [self addParamter:MSShareToken.account forKey:@"openId"];
     return YES;
 }
 @end

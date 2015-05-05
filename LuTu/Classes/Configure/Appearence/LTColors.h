@@ -37,6 +37,7 @@ LTExternColor(TagDefault)
 LTExternColor(GrayNormal)
 LTExternColor(BackgroundGray)
 LTExternColor(PointGray)
+LTExternColor(DetailGray)
 
 
 FOUNDATION_EXTERN void ColorLabelWithWhite(UILabel* label);

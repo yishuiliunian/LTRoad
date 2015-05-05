@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <DZProgramDefines.h>
-@interface LTMyClubTableViewCell : UITableViewCell
+#import "LTUIMyCarClubInfo.h"
+#import "LTCommonTTableViewCellLayoutProtocol.h"
+@interface LTMyClubTableViewCell : UITableViewCell <LTCommonTTableViewCellLayoutProtocol>
+@property (nonatomic, strong) LTUIMyCarClubInfo* carClubInfo;
 DEFINE_PROPERTY_STRONG_UIImageView(avatarImageView);
 DEFINE_PROPERTY_STRONG_UILabel(titleLabel);
 DEFINE_PROPERTY_STRONG_UILabel(detailLabel);

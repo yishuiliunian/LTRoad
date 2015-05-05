@@ -52,6 +52,7 @@ LTColorDefine(TagDefault, 333333, 1)
 LTColorDefine(BackgroundGray, f0f3f8, 1)
 LTColorDefine(PointGray, dfdee4, 1)
 
+LTColorDefine(DetailGray, f4f4f4, 1)
 
 
 void ColorLabelWithWhite (UILabel* label) {

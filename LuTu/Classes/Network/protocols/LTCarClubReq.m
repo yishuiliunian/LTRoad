@@ -35,7 +35,7 @@
     [self addParamter:LTShareSettings().currentCity forKey:@"city"];
 #ifdef DEBUG
     if (!self.keyword) {
-        [self addParamter:@"" forKey:@"keyword"];
+        [self addParamter:@"s" forKey:@"keyword"];
     }
 #endif
     return YES;
