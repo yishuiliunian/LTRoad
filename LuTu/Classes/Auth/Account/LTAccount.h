@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
-@interface LTAccount : MTLModel
+#import "LTUserInfo.h"
+@interface LTAccount : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString* accountID;
 @property (nonatomic, strong) NSString* openId;
 @property (nonatomic, strong) NSString* openAccessToken;
+@property (nonatomic, strong) LTUserInfo* userInfo;
 @end

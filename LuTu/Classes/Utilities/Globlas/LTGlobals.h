@@ -22,7 +22,8 @@ FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);
 
 
 
-#define DEFINE_Mantle_JSONTranformer_Function_1( name ,c,sub) + (NSValueTransformer*) name##sub {\
+#define DEFINE_Mantle_JSONTranformer_Function_1( name ,c,sub) \
++ (NSValueTransformer*) name##sub {\
 return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]];\
 }
 #define DEFINE_Mantle_JSONTranformer_Function( name ,c) DEFINE_Mantle_JSONTranformer_Function_1( name ,c, JSONTransformer)

@@ -13,6 +13,8 @@
 #import "MSTokenManager.h"
 #import "LTAccountManager.h"
 #import "LTGlobalViewController.h"
+#import "PMToken.h"
+#import "MSToken.h"
 @interface LTAuthViewController () <MSRequestUIDelegate>
 
 @end
@@ -52,13 +54,16 @@
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
     LTTokenReq* req = (LTTokenReq*)request;
-    MSToken* token = (MSToken*)object;
+    PMToken* token = (PMToken*)object;
+    MSToken* serverToken = [[MSToken alloc] initWithToken:token.access_token account:token.open_id];
+    serverToken.experiedDate = [NSDate dateWithTimeIntervalSince1970:token.expiration/1000];
     LTAccount* account = [[LTAccount alloc] init];
-    account.accountID = token.account;
+    account.accountID = token.open_id;
     account.openId = req.openID;
     account.openAccessToken = req.accessToken;
+    account.userInfo = [[LTUserInfo alloc] initWithPMTokenUserInfo:token.oauth_user_info];
     [[LTAccountManager shareManager] reloadAccount:account];
-    [MSShareTokenManager cacheToken:token forAccount:account];
+    [MSShareTokenManager cacheToken:serverToken forAccount:account];
     
     [self.globalViewController viewController:self didEnterAccount:account];
 }

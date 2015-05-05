@@ -33,21 +33,21 @@ NSString* LTTokenTypeKey(SATokenType type) {
 {
     SendSuperFunctionWithError(loadParamters);
     
-    [self addParamter:self.openID forKey:@"openId"];
-    [self addParamter:self.accessToken forKey:@"accessToken"];
-    [self addParamter:LTTokenTypeKey(self.type) forKey:@"oauthType"];
+    [self addParamter:self.openID forKey:@"oAuthOpenId"];
+    [self addParamter:self.accessToken forKey:@"oAuthAccessToken"];
+    [self addParamter:LTTokenTypeKey(self.type) forKey:@"oAuthType"];
     return YES;
 }
 - (void) onSuccess:(id)retObject
 {
     NSError* error;
-    PMToken* token = [[PMToken alloc] initWithDictionary:retObject error:&error];
+    
+    PMToken* token = [MTLJSONAdapter modelOfClass:[PMToken class] fromJSONDictionary:retObject error:&error];
     if (error) {
         [self doUIOnError:error];
         return;
     }
-    MSToken* serverToken = [[MSToken alloc] initWithToken:token.access_token account:_openID];
-    serverToken.experiedDate = [NSDate dateWithTimeIntervalSince1970:token.expiration/1000];
-    [self doUIOnSuccced:serverToken];
+
+    [self doUIOnSuccced:token];
 }
 @end

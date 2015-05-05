@@ -7,7 +7,21 @@
 //
 
 #import "LTAccount.h"
+#import "LTGlobals.h"
 
 @implementation LTAccount
++ (NSDictionary*) JSONKeyPathsByPropertyKey
+{
+    return @{
+             LTMantleSameMapPair(accountID),
+             LTMantleSameMapPair(openId),
+             LTMantleSameMapPair(openAccessToken),
+             LTMantleSameMapPair(userInfo)
+             };
+}
 
++ (NSValueTransformer*) userInfoJSONTransformer
+{
+    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[LTUserInfo class]];
+}
 @end

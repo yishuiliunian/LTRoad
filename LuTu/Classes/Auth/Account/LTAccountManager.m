@@ -9,6 +9,7 @@
 #import "LTAccountManager.h"
 #import <DZSingletonFactory.h>
 #import <DZProgramDefines.h>
+#import "MSLog.h"
 
 @interface LTAccountManager ()
 @property (nonatomic, assign) int reloadTokenCount;
@@ -23,21 +24,31 @@
 INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
 - (LTAccount*) loadAccountFromStorage
 {
-    NSDictionary* dic = [[NSUserDefaults standardUserDefaults] objectForKey:kMSStorageAccount];
+    NSData* data =  [[NSUserDefaults standardUserDefaults] objectForKey:kMSStorageAccount];
+    if (![data isKindOfClass:[NSData class]]) {
+        return nil;
+    }
+    NSDictionary* dic = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     if (!dic) {
         return nil;
     }
-    return [[LTAccount alloc] initWithDictionary:dic error:nil];
+    return  [MTLJSONAdapter modelOfClass:[LTAccount class] fromJSONDictionary:dic error:nil];
 }
 
 - (void) storeAccountToStorage:(LTAccount*)account
 {
-    NSDictionary* dic = [account dictionaryValue];
+    NSError* error;
+    NSDictionary* dic =  [MTLJSONAdapter JSONDictionaryFromModel:account error:&error];
+    if (error) {
+        DDLogError(@"序列化账户信息失败");
+        return;
+    }
     if (!dic) {
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:kMSStorageAccount];
         return;
     }
-    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:kMSStorageAccount];
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:dic];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:kMSStorageAccount];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
