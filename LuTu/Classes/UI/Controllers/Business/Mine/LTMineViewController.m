@@ -13,6 +13,7 @@
 #import "LTEditUserInfoViewController.h"
 #import "LTMyCarClubViewController.h"
 #import "LTAccountManager.h"
+#import "LTMyFavoriteViewController.h"
 @interface LTMineViewController ()
 {
     NSArray* _allActions;
@@ -40,6 +41,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     
     //
     [_topView.carFriendButton addTarget:self action:@selector(handleShowMyClub) forControlEvents:UIControlEventTouchUpInside];
+    [_topView.favarateButton addTarget:self action:@selector(handleShowMyFavorate) forControlEvents:UIControlEventTouchUpInside];
     //
 }
 
@@ -49,6 +51,12 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
         LTEditUserInfoViewController* editUserInfoVC = [LTEditUserInfoViewController new];
         [self.navigationController pushViewController:editUserInfoVC animated:YES];
     }
+}
+
+- (void) handleShowMyFavorate
+{
+    LTMyFavoriteViewController* fvc = [LTMyFavoriteViewController myFavoriteViewController];
+    [self.navigationController pushViewController:fvc animated:YES];
 }
 - (void) handleShowMyClub
 {

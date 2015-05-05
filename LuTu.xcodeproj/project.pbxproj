@@ -90,6 +90,12 @@
 		65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */; };
 		65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */; };
 		65A3F6901AE8E34C00BD6B1F /* PMToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F68F1AE8E34C00BD6B1F /* PMToken.m */; };
+		65B283381AF8B9BD001E85A6 /* LTMyFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */; };
+		65B2833B1AF8BA02001E85A6 /* LTMyFavoriteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2833A1AF8BA02001E85A6 /* LTMyFavoriteDataController.m */; };
+		65B2833E1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2833D1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m */; };
+		65B283411AF8BCC9001E85A6 /* LTMyFavoriteReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283401AF8BCC9001E85A6 /* LTMyFavoriteReq.m */; };
+		65B283441AF8BEB5001E85A6 /* PMMyFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */; };
+		65B283471AF8BECC001E85A6 /* LTUIMyFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283461AF8BECC001E85A6 /* LTUIMyFavorite.m */; };
 		65B9E4831AEC915000577594 /* LTFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4821AEC915000577594 /* LTFiles.m */; };
 		65B9E4861AEC91BC00577594 /* LTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4851AEC91BC00577594 /* LTLocationManager.m */; };
 		65B9E4891AEC963500577594 /* LTRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4881AEC963500577594 /* LTRoadViewController.m */; };
@@ -302,6 +308,18 @@
 		65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGuideContainerViewController.m; sourceTree = "<group>"; };
 		65A3F68E1AE8E34C00BD6B1F /* PMToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMToken.h; sourceTree = "<group>"; };
 		65A3F68F1AE8E34C00BD6B1F /* PMToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMToken.m; sourceTree = "<group>"; };
+		65B283361AF8B9BD001E85A6 /* LTMyFavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteViewController.h; sourceTree = "<group>"; };
+		65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMyFavoriteViewController.m; sourceTree = "<group>"; };
+		65B283391AF8BA02001E85A6 /* LTMyFavoriteDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteDataController.h; sourceTree = "<group>"; };
+		65B2833A1AF8BA02001E85A6 /* LTMyFavoriteDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMyFavoriteDataController.m; sourceTree = "<group>"; };
+		65B2833C1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteTableViewCell.h; sourceTree = "<group>"; };
+		65B2833D1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMyFavoriteTableViewCell.m; sourceTree = "<group>"; };
+		65B2833F1AF8BCC9001E85A6 /* LTMyFavoriteReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteReq.h; sourceTree = "<group>"; };
+		65B283401AF8BCC9001E85A6 /* LTMyFavoriteReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMyFavoriteReq.m; sourceTree = "<group>"; };
+		65B283421AF8BEB5001E85A6 /* PMMyFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMMyFavorite.h; sourceTree = "<group>"; };
+		65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMyFavorite.m; sourceTree = "<group>"; };
+		65B283451AF8BECC001E85A6 /* LTUIMyFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIMyFavorite.h; sourceTree = "<group>"; };
+		65B283461AF8BECC001E85A6 /* LTUIMyFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIMyFavorite.m; sourceTree = "<group>"; };
 		65B9E4811AEC915000577594 /* LTFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFiles.h; sourceTree = "<group>"; };
 		65B9E4821AEC915000577594 /* LTFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFiles.m; sourceTree = "<group>"; };
 		65B9E4841AEC91BC00577594 /* LTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationManager.h; sourceTree = "<group>"; };
@@ -597,6 +615,8 @@
 				65038DD71AF898EF00B0D9F2 /* LTCarClubReq.m */,
 				65CDBA411AF8AD83008458C3 /* LTUserCarClubReq.h */,
 				65CDBA421AF8AD83008458C3 /* LTUserCarClubReq.m */,
+				65B2833F1AF8BCC9001E85A6 /* LTMyFavoriteReq.h */,
+				65B283401AF8BCC9001E85A6 /* LTMyFavoriteReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -681,6 +701,8 @@
 		652FB94B1AD276FB0082894E /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				65B283341AF8B99B001E85A6 /* MyFavorite */,
+				65B283351AF8B99B001E85A6 /* MyTopic */,
 				6517E7AC1AE7CC42004F71BC /* edit */,
 				657D6FF51ADF790D00AA5EBA /* items */,
 				652FB9501AD277650082894E /* LTMineViewController.h */,
@@ -939,6 +961,26 @@
 			path = AuthContainer;
 			sourceTree = "<group>";
 		};
+		65B283341AF8B99B001E85A6 /* MyFavorite */ = {
+			isa = PBXGroup;
+			children = (
+				65B283361AF8B9BD001E85A6 /* LTMyFavoriteViewController.h */,
+				65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */,
+				65B283391AF8BA02001E85A6 /* LTMyFavoriteDataController.h */,
+				65B2833A1AF8BA02001E85A6 /* LTMyFavoriteDataController.m */,
+				65B2833C1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.h */,
+				65B2833D1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m */,
+			);
+			path = MyFavorite;
+			sourceTree = "<group>";
+		};
+		65B283351AF8B99B001E85A6 /* MyTopic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MyTopic;
+			sourceTree = "<group>";
+		};
 		65B9E4801AEC904A00577594 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +1029,8 @@
 				65B9E48E1AECA12200577594 /* PMCategory.m */,
 				65CDBA441AF8B08E008458C3 /* PMUserCarClub.h */,
 				65CDBA451AF8B08E008458C3 /* PMUserCarClub.m */,
+				65B283421AF8BEB5001E85A6 /* PMMyFavorite.h */,
+				65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */,
 			);
 			path = ProtocolModels;
 			sourceTree = "<group>";
@@ -1127,6 +1171,8 @@
 				65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */,
 				65CDBA471AF8B3D5008458C3 /* LTUIMyCarClubInfo.h */,
 				65CDBA481AF8B3D5008458C3 /* LTUIMyCarClubInfo.m */,
+				65B283451AF8BECC001E85A6 /* LTUIMyFavorite.h */,
+				65B283461AF8BECC001E85A6 /* LTUIMyFavorite.m */,
 			);
 			path = UIModels;
 			sourceTree = "<group>";
@@ -1320,6 +1366,7 @@
 				652FB9441AD26C870082894E /* LTRecommondRoadReq.m in Sources */,
 				6517E7A61AE7C559004F71BC /* LTCarMeetTopView.m in Sources */,
 				652FB93D1AD268CE0082894E /* LTCheckServiceReq.m in Sources */,
+				65B283441AF8BEB5001E85A6 /* PMMyFavorite.m in Sources */,
 				657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */,
 				652FB96F1AD27FBA0082894E /* LTColors.m in Sources */,
 				652FB95B1AD277D40082894E /* LTSelectedRoadViewController.m in Sources */,
@@ -1335,6 +1382,7 @@
 				6517E7801AE78811004F71BC /* LTTopShowTextView.m in Sources */,
 				652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */,
 				65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */,
+				65B283411AF8BCC9001E85A6 /* LTMyFavoriteReq.m in Sources */,
 				6517E7941AE7ACCF004F71BC /* LTUIPoi.m in Sources */,
 				65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */,
 				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,
@@ -1360,6 +1408,7 @@
 				650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */,
 				6517E7A21AE7C42C004F71BC /* LTCarMeetInfoViewController.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,
+				65B283471AF8BECC001E85A6 /* LTUIMyFavorite.m in Sources */,
 				65BD573F1AE506C50059DE8E /* PMRecommondLine.m in Sources */,
 				6517E79B1AE7C0BA004F71BC /* LTCarMeetDetailViewController.m in Sources */,
 				6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */,
@@ -1372,11 +1421,13 @@
 				65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */,
 				652FB9271AD23EB60082894E /* MSVerifyAuthorRequest.m in Sources */,
 				652FB9411AD269E90082894E /* LTServiceStatusManager.m in Sources */,
+				65B2833B1AF8BA02001E85A6 /* LTMyFavoriteDataController.m in Sources */,
 				652FB95E1AD279EA0082894E /* LTDataBase.m in Sources */,
 				652FB9581AD277A50082894E /* LTCarMeetViewController.m in Sources */,
 				650C0C3E1AE5EE25008FC2B8 /* LTRouteDetailReq.m in Sources */,
 				652FB9551AD277750082894E /* LTDiscoverViewController.m in Sources */,
 				65038DE01AF8A10700B0D9F2 /* LTTableViewPageDataController.m in Sources */,
+				65B283381AF8B9BD001E85A6 /* LTMyFavoriteViewController.m in Sources */,
 				65038DD51AF8684D00B0D9F2 /* LTUserInfo.m in Sources */,
 				652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */,
 				652FB9521AD277650082894E /* LTMineViewController.m in Sources */,
@@ -1399,6 +1450,7 @@
 				652FB9371AD241030082894E /* LTError.m in Sources */,
 				652FB9301AD23EF50082894E /* LTAccountManager.m in Sources */,
 				65C224241ADE35A800BE26FA /* UIViewController+Additions.m in Sources */,
+				65B2833E1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m in Sources */,
 				657D6FF41ADF642C00AA5EBA /* UIButton+decorate.m in Sources */,
 				650C0C451AE5F19A008FC2B8 /* PMRoute.m in Sources */,
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,

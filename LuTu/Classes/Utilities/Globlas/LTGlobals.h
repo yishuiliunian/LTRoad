@@ -12,7 +12,7 @@
 #import "LTFont.h"
 #import "LTUserDataManager.h"
 FOUNDATION_EXTERN NSString* LTCellIdentifierFromClass(Class cla);
-
+#define LTCellMapPairWithClass(dataCla , cellCla) LTCellIdentifierFromClass([dataCla class]) : [cellCla class]
 FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);
 
 
