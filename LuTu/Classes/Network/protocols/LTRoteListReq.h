@@ -8,11 +8,9 @@
 
 #import "MSRequest.h"
 #import "LTNetworkConfigure.h"
-
-@interface LTRoteListReq : MSRequest
+#import "LTPageRequestProtocol.h"
+@interface LTRoteListReq : MSRequest <LTPageRequestProtocol>
 @property (nonatomic, strong) NSString* city;
 @property (nonatomic, strong) NSString* keyword;
-@property (nonatomic, assign) int pageId;
-@property (nonatomic, assign) int pageSize;
 @property (nonatomic, strong) NSString* category;
 @end

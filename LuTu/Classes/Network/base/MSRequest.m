@@ -10,6 +10,7 @@
 #import "MSRouter.h"
 #import "LTError.h"
 #import <NSString+URLEncode.h>
+#import "MSLog.h"
 
 @interface MSRequest ()
 
@@ -94,9 +95,11 @@
     url = [NSURL URLWithString:urlStr];
 
 
-
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:HttpMethodGET];
+    //
+    DDLogInfo(@"发送的请求详情:%@",request);
+    //
     NSURLResponse* response ;
     NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     MSRequestOnErrorAndReturn(error);

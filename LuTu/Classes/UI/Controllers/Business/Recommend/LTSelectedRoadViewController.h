@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LTRecommondReadDataController.h"
-@interface LTSelectedRoadViewController : UITableViewController
-+ (instancetype) readViewControllerWithDataController:(LTPageDataController*)dataController;
-- (instancetype) initWithDataController:(LTPageDataController*)dateController;
+#import "LTPageTableViewController.h"
+@interface LTSelectedRoadViewController : LTPageTableViewController
 @end

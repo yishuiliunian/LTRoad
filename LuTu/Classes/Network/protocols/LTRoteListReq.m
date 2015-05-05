@@ -10,7 +10,8 @@
 #import "LTRecommendLine.h"
 #import "PMRecommondLine.h"
 @implementation LTRoteListReq
-
+@synthesize pageId = _pageId;
+@synthesize pageSize = _pageSize;
 - (instancetype) init
 {
     self = [super init];
@@ -50,9 +51,12 @@
         [array addObject:rLine];
     }
 #ifdef DEBUG
-    for (int i = 0; i < 100; i++) {
-        [array addObject:array.firstObject];
+    if (array.count) {
+        for (int i = 0; i < 100; i++) {
+            [array addObject:array.firstObject];
+        }
     }
+
 #endif
     [self doUIOnSuccced:array];
 }

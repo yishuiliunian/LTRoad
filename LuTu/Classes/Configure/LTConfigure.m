@@ -12,6 +12,7 @@
 #import "LTRoteListReq.h"
 #import <BMapKit.h>
 #import <SAAuth/SAReqManager.h>
+#import "MSLog.h"
 
 
 void SetupSocialNetwork()
@@ -20,6 +21,7 @@ void SetupSocialNetwork()
 }
  void LTApplicationSetup()
 {
+    [MSLog setup];
     SetupSocialNetwork();
     [DZImageShareCache setupAssetsSourceType];
     [[[BMKMapManager alloc] init]  start:@"fqYUrYb3PnInVt6GUSYxlbU8" generalDelegate:nil];

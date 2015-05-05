@@ -28,30 +28,15 @@
     return self;
 }
 
-- (void) reloadAllData
+- (MSRequest<LTPageRequestProtocol>*) syncDataReqeust
 {
-    [super reloadAllData];
-    
     LTRoteListReq* req = [[LTRoteListReq alloc] init];
     req.city = LTShareSettings().currentCity;
     req.category = self.category;
     req.keyword = self.keyword;
-    MSPerformRequestWithDelegateSelf(req);
-
+    return req;
 }
 
-- (void) request:(MSRequest *)request onError:(NSError *)error
-{
-    
-}
-
-- (void) request:(MSRequest *)request onSucced:(id)object
-{
-    NSMutableArray* array = [[NSMutableArray alloc] initWithArray:_array];
-    [array addObjectsFromArray:object];
-    _array = array;
-    [self.tableView reloadData];
-}
 
 - (void) decorateCell:(UITableViewCell *)cell withObject:(id)object
 {
@@ -59,4 +44,6 @@
     LTRecommendLine* line = (LTRecommendLine*)object;
     rCell.line = line;
 }
+
+
 @end

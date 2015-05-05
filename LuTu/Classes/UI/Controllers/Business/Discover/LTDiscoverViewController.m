@@ -170,7 +170,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     LTUIDiscoverItem* item = _discoverItems[indexPath.row];
     LTRecommondReadDataController* dataController = [[LTRecommondReadDataController alloc] init];
     dataController.category = item.categoryID;
-    LTSelectedRoadViewController* vc = [LTSelectedRoadViewController readViewControllerWithDataController:dataController];
+    LTSelectedRoadViewController* vc = [[LTSelectedRoadViewController alloc] initWithDataController:dataController];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2015年 Road.Inc. All rights reserved.
 //
 
-#import "LTPageDataController.h"
+#import "LTTableViewPageDataController.h"
 #import "LTRecommondRoadReq.h"
-@interface LTRecommondReadDataController : LTPageDataController
+@interface LTRecommondReadDataController : LTTableViewPageDataController
 @property (nonatomic, strong) NSString* keyword;
 @property (nonatomic, strong) NSString* category;
 @end

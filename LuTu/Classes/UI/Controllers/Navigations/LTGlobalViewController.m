@@ -90,7 +90,7 @@
     discoverVC.tabBarItem.image = DZCachedImageByName(@"discovery_normal");
     discoverVC.tabBarItem.selectedImage = DZCachedImageByName(@"discovery_click");
     
-    LTSelectedRoadViewController* selectedVC = [LTRoadViewController readViewControllerWithDataController:[LTRecommondReadDataController new]];
+    LTSelectedRoadViewController* selectedVC = [[LTRoadViewController alloc ] initWithDataController:[LTRecommondReadDataController new]];
     
     selectedVC.tabBarItem.title = @"精选";
     selectedVC.tabBarItem.image = DZCachedImageByName(@"choice_normal");

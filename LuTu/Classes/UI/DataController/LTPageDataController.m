@@ -12,6 +12,8 @@
 #import "LTNetworkConfigure.h"
 #import "LTGlobals.h"
 
+
+#define LTPageFirstIndex 1
 @interface LTPageDataController () <UITableViewDataSource>
 
 @end
@@ -24,31 +26,8 @@
         return self;
     }
     _pageSize = LTPageSizeDefault;
-    _pageIndex = 1;
+    _pageIndex = LTPageFirstIndex;
     return self;
-}
-
-- (void) setObjectMapCell:(NSDictionary *)objectMapCell
-{
-    if (_objectMapCell != objectMapCell) {
-        _objectMapCell = objectMapCell;
-        [self registerTableClass];
-    }
-}
-
-- (void) registerTableClass
-{
-    for (NSString* key in _objectMapCell.allKeys) {
-        [_tableView registerClass:_objectMapCell[key] forCellReuseIdentifier:key];
-    }
-}
-- (void) setTableView:(UITableView *)tableView
-{
-    if (_tableView != tableView) {
-        _tableView = tableView;
-        _tableView.dataSource = self;
-        [self registerTableClass];
-    }
 }
 - (void) forwardInvocation:(NSInvocation *)anInvocation
 {
@@ -59,41 +38,77 @@
     }
 }
 
-- (void) reloadAllData
+- (NSMethodSignature*) methodSignatureForSelector:(SEL)aSelector
 {
-    NSParameterAssert(self.objectMapCell);
-    NSParameterAssert(self.tableView);
+    NSMethodSignature* signature = [super methodSignatureForSelector:aSelector];
+    if (!signature)
+        signature = [_array methodSignatureForSelector:aSelector];
+    return signature;
 }
 
-- (void) getNetPageData
-{
-    
-}
-
-- (id) objectAtIndex:(NSInteger)index
-{
-    return _array[index];
-}
-
-
-- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSUInteger) count
 {
     return _array.count;
 }
 
-- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (MSRequest<LTPageRequestProtocol>*) syncDataReqeust
 {
-    id line = _array[indexPath.row];
-    NSString* const kCellIdentifier = LTCellIdentifierFromClass([line class]);
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
-    [self decorateCell:cell withObject:line];
-    return cell;
+    return nil;
 }
+
+- (void) reloadAllData
+{
+    MSRequest<LTPageRequestProtocol> * pageRequest = [self syncDataReqeust];
+    pageRequest.pageId = 1;
+    _pageIndex = LTPageFirstIndex;
+    MSPerformRequestWithDelegateSelf(pageRequest);
+}
+
+- (void) getNetPageData
+{
+    MSRequest<LTPageRequestProtocol> * pageRequest = [self syncDataReqeust];
+    pageRequest.pageId = ++_pageIndex;
+    MSPerformRequestWithDelegateSelf(pageRequest);
+}
+
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    MSRequest<LTPageRequestProtocol>* req = (MSRequest<LTPageRequestProtocol>*)request;
+    if (req.pageId == LTPageFirstIndex) {
+        [self handleReloadData:object];
+    } else {
+        [self handleNextPageData:object];
+    }
+}
+
+- (void) handleReloadData:(NSArray*)data
+{
+    _array = data;
+    [self reloadUIAllUIData];
+}
+
+- (void) reloadUIAllUIData
+{
+    
+}
+
+- (void) insertUIDataAtIndexs:(NSArray*)indexPaths
+{
+    
+}
+- (void) handleNextPageData:(NSArray*)data
+{
+    
+}
+
+
 - (void) decorateCell:(UITableViewCell*)cell withObject:(id)object
 {
     

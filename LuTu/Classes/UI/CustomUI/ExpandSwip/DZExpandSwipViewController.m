@@ -10,7 +10,8 @@
 #import "DZexpandCollectionViewController.h"
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
-@interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate>
+#import "LTCarClubReq.h"
+@interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
 @property (nonatomic, strong) NSMutableDictionary* viewControllersMap;
@@ -31,6 +32,33 @@
     [super viewDidLoad];
     _expandCollectioViewController = [[DZexpandCollectionViewController alloc] init];
     _expandCollectioViewController.delegate = self;
+
+    //
+    [self lt_addViewController:_expandCollectioViewController];
+    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
+    _pageViewController.delegate = self;
+    _pageViewController.dataSource = self;
+    [self lt_addViewController:_pageViewController];
+    [self scrollToPageViewControllerAtIndex:0];
+    //
+    [self reloadAllCarClub];
+}
+
+- (void) reloadAllCarClub
+{
+    LTCarClubReq* carClueReq = [LTCarClubReq new];
+    MSPerformRequestWithDelegateSelf(carClueReq);
+}
+
+#pragma mark carclub request delegate
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
     NSMutableArray* array = [NSMutableArray new];
     for (int i = 0; i < 100; i++) {
         LTUICarMeet* carMeet = [LTUICarMeet new];
@@ -40,13 +68,9 @@
         [array addObject:carMeet];
     }
     _expandCollectioViewController.items = array;
-    [self lt_addViewController:_expandCollectioViewController];
-    _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil];
-    _pageViewController.delegate = self;
-    _pageViewController.dataSource = self;
-    [self lt_addViewController:_pageViewController];
     [self scrollToPageViewControllerAtIndex:0];
 }
+#pragma mark ---
 - (void) scrollToPageViewControllerAtIndex:(NSInteger)index
 {
     if (index >= _expandCollectioViewController.items.count) {
