@@ -96,6 +96,8 @@
 		65B283411AF8BCC9001E85A6 /* LTMyFavoriteReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283401AF8BCC9001E85A6 /* LTMyFavoriteReq.m */; };
 		65B283441AF8BEB5001E85A6 /* PMMyFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */; };
 		65B283471AF8BECC001E85A6 /* LTUIMyFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283461AF8BECC001E85A6 /* LTUIMyFavorite.m */; };
+		65B2834A1AF8C58A001E85A6 /* LTCarMeetFeedDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283491AF8C58A001E85A6 /* LTCarMeetFeedDataController.m */; };
+		65B2834D1AF8C691001E85A6 /* LTCarClubFeedReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2834C1AF8C691001E85A6 /* LTCarClubFeedReq.m */; };
 		65B9E4831AEC915000577594 /* LTFiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4821AEC915000577594 /* LTFiles.m */; };
 		65B9E4861AEC91BC00577594 /* LTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4851AEC91BC00577594 /* LTLocationManager.m */; };
 		65B9E4891AEC963500577594 /* LTRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4881AEC963500577594 /* LTRoadViewController.m */; };
@@ -320,6 +322,10 @@
 		65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMyFavorite.m; sourceTree = "<group>"; };
 		65B283451AF8BECC001E85A6 /* LTUIMyFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIMyFavorite.h; sourceTree = "<group>"; };
 		65B283461AF8BECC001E85A6 /* LTUIMyFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIMyFavorite.m; sourceTree = "<group>"; };
+		65B283481AF8C58A001E85A6 /* LTCarMeetFeedDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetFeedDataController.h; sourceTree = "<group>"; };
+		65B283491AF8C58A001E85A6 /* LTCarMeetFeedDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetFeedDataController.m; sourceTree = "<group>"; };
+		65B2834B1AF8C691001E85A6 /* LTCarClubFeedReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarClubFeedReq.h; sourceTree = "<group>"; };
+		65B2834C1AF8C691001E85A6 /* LTCarClubFeedReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarClubFeedReq.m; sourceTree = "<group>"; };
 		65B9E4811AEC915000577594 /* LTFiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTFiles.h; sourceTree = "<group>"; };
 		65B9E4821AEC915000577594 /* LTFiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTFiles.m; sourceTree = "<group>"; };
 		65B9E4841AEC91BC00577594 /* LTLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLocationManager.h; sourceTree = "<group>"; };
@@ -617,6 +623,8 @@
 				65CDBA421AF8AD83008458C3 /* LTUserCarClubReq.m */,
 				65B2833F1AF8BCC9001E85A6 /* LTMyFavoriteReq.h */,
 				65B283401AF8BCC9001E85A6 /* LTMyFavoriteReq.m */,
+				65B2834B1AF8C691001E85A6 /* LTCarClubFeedReq.h */,
+				65B2834C1AF8C691001E85A6 /* LTCarClubFeedReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -1042,6 +1050,8 @@
 				65D1FCA31ADBB32100CB90F9 /* LTCarMeetFeedViewController.m */,
 				65C224291ADE784300BE26FA /* LTCarMeetFeedCell.h */,
 				65C2242A1ADE784300BE26FA /* LTCarMeetFeedCell.m */,
+				65B283481AF8C58A001E85A6 /* LTCarMeetFeedDataController.h */,
+				65B283491AF8C58A001E85A6 /* LTCarMeetFeedDataController.m */,
 			);
 			path = Feeds;
 			sourceTree = "<group>";
@@ -1456,8 +1466,10 @@
 				652FB94F1AD277500082894E /* LTMainViewController.m in Sources */,
 				652FB9231AD23EB60082894E /* MSRequest.m in Sources */,
 				6517E7891AE7901D004F71BC /* LTLineStartEndView.m in Sources */,
+				65B2834D1AF8C691001E85A6 /* LTCarClubFeedReq.m in Sources */,
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
+				65B2834A1AF8C58A001E85A6 /* LTCarMeetFeedDataController.m in Sources */,
 				65CDBA461AF8B08E008458C3 /* PMUserCarClub.m in Sources */,
 				65BCE6E41AE626EB00482360 /* LTRoutePOIReq.m in Sources */,
 				65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */,
