@@ -48,8 +48,14 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void) handleTapGestrue:(UITapGestureRecognizer*)tap
 {
     if (tap.state == UIGestureRecognizerStateRecognized) {
-        LTEditUserInfoViewController* editUserInfoVC = [LTEditUserInfoViewController new];
-        [self.navigationController pushViewController:editUserInfoVC animated:YES];
+        if (![LTShareAccountManager checkApplicationAuthorization]) {
+            [LTShareAccountManager ensureApplicationAuthorization:^{
+                [self reloadAllData];
+            }];
+        } else {
+            LTEditUserInfoViewController* editUserInfoVC = [LTEditUserInfoViewController new];
+            [self.navigationController pushViewController:editUserInfoVC animated:YES];
+        }
     }
 }
 

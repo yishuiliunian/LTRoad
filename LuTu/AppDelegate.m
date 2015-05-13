@@ -22,9 +22,9 @@
     
     LTApplicationSetup();
     LTGlobalViewController* globalVC = [LTGlobalViewController new];
+    _globalViewController = globalVC;
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = globalVC;
-    //
     //
     [self.window makeKeyAndVisible];
     return YES;

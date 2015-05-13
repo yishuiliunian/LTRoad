@@ -15,7 +15,8 @@ FOUNDATION_EXTERN void LTLocalizedSettings();
 
 @interface LTSettings : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString* currentCity;
+@property (nonatomic, assign) BOOL isFisrstLoad;
+@property (nonatomic, strong) NSString* version;
 @end
 @interface LTUserDataManager : NSObject
-
 @end

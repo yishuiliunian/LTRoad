@@ -64,8 +64,10 @@
     account.userInfo = [[LTUserInfo alloc] initWithPMTokenUserInfo:token.oauth_user_info];
     [[LTAccountManager shareManager] reloadAccount:account];
     [MSShareTokenManager cacheToken:serverToken forAccount:account];
-    
-    [self.globalViewController viewController:self didEnterAccount:account];
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if (self.succeedBlock) {
+        self.succeedBlock();
+    }
 }
 
 - (void) request:(MSRequest *)request onError:(NSError *)error

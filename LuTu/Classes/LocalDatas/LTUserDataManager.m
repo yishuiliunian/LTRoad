@@ -12,11 +12,13 @@
 #import "LTFiles.h"
 #import <CocoaLumberjack.h>
 #import "LTLocationManager.h"
+#import <DZDevices.h>
 @implementation LTSettings
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
     return @{
              LTMantleSameMapPair(currentCity),
+             LTMantleSameMapPair(isFisrstLoad)
              };
 }
 
@@ -36,6 +38,20 @@
     }
     return city;
 }
+//只在第一次读取的时候是对的
+- (BOOL) isFisrstLoad
+{
+    if (_isFisrstLoad) {
+        _isFisrstLoad = NO;
+        LTLocalizedSettings();
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
+}
+
 @end
 
 LTSettings* LTDefaultSettings()
@@ -66,6 +82,17 @@ LTSettings* LTLoadSettingFromLocal ()
     return nil;
 }
 
+void LTUpdateSettings(LTSettings* settings) {
+    settings.isFisrstLoad = YES;
+}
+void LTEnsureUpdateSettings(LTSettings* settings)
+{
+    NSString* version = LTApplicationVersion();
+    if (![settings.version isEqualToString:version]) {
+        LTUpdateSettings(settings);
+    }
+    settings.version = version;
+}
 LTSettings* LTShareSettings()
 {
     static LTSettings* share = nil;
@@ -75,6 +102,7 @@ LTSettings* LTShareSettings()
         if (!share) {
             share = LTDefaultSettings();
         }
+        LTEnsureUpdateSettings(share);
     });
     return share;
 }

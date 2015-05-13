@@ -20,7 +20,7 @@ FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);
 #define LTMantleMapPair(key, v) @""#key : @""#v
 #define LTMantleSameMapPair(k) LTMantleMapPair(k , k)
 
-
+FOUNDATION_EXTERN NSString* LTApplicationVersion();
 
 #define DEFINE_Mantle_JSONTranformer_Function_1( name ,c,sub) \
 + (NSValueTransformer*) name##sub {\

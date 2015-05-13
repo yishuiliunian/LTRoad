@@ -10,6 +10,8 @@
 #import <DZSingletonFactory.h>
 #import <DZProgramDefines.h>
 #import "MSLog.h"
+#import "MSTokenManager.h"
+#import "AppDelegate.h"
 
 @interface LTAccountManager ()
 @property (nonatomic, assign) int reloadTokenCount;
@@ -72,7 +74,22 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
     [self storeAccountToStorage:_currentAccount];
 }
 
+- (BOOL) checkApplicationAuthorization{
+    
+    if (self.currentAccount) {
+        if ([MSShareTokenManager isTokenVaild]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
-
-
+- (void) ensureApplicationAuthorization:(LTAuthSucceedBlock)block
+{
+    //OK
+    if ([self checkApplicationAuthorization]) {
+        return;
+    }
+    [[(AppDelegate*)[UIApplication sharedApplication].delegate globalViewController] loadAuthViewController:block];
+}
 @end

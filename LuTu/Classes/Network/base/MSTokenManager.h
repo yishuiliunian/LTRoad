@@ -15,6 +15,7 @@
 @interface MSTokenManager : NSObject
 @property (nonatomic, strong, readonly) MSToken* token;
 + (MSTokenManager*) shareManager;
+- (BOOL) isTokenVaild;
 - (BOOL) revarifyCacheToken:(NSError*__autoreleasing*)error;
 - (void) cacheToken:(MSToken*)token forAccount:(LTAccount*)ac;
 @end

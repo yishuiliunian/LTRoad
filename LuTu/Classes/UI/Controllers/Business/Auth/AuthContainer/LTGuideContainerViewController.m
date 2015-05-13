@@ -11,7 +11,6 @@
 #import "LTAuthViewController.h"
 @interface LTGuideContainerViewController ()
 @property (nonatomic, strong) LTNavigationController* authNavigationController;
-@property (nonatomic, strong) LTAuthViewController* authViewController;
 @end
 
 @implementation LTGuideContainerViewController
@@ -26,21 +25,12 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadAuthViewController];
 }
 
--  (void) loadAuthViewController
-{
-    _authViewController = [[LTAuthViewController alloc] initWithNibName:@"LTAuthViewController" bundle:nil];
-    _authNavigationController = [[LTNavigationController alloc] initWithRootViewController:_authViewController];
-    
-    [self lt_addViewController:_authNavigationController];
-}
 
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    _authNavigationController.view.frame = self.view.bounds;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

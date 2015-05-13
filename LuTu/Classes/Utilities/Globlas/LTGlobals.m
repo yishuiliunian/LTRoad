@@ -22,3 +22,15 @@ NSArray* LTSpereateStringToArray(NSString* str) {
     NSArray* array = [str componentsSeparatedByString:kLTSeperateKey];
     return array;
 }
+
+
+NSString* LTApplicationVersion()
+{
+    static NSString* version = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary* infoDict =[[NSBundle mainBundle] infoDictionary];
+        version =[infoDict objectForKey:@"CFBundleVersion"];
+    });
+    return version;
+}

@@ -9,6 +9,8 @@
 #import "LTRoadViewController.h"
 #import <DZImageCache.h>
 #import "UIViewController+Additions.h"
+#import "LTCityTableViewController.h"
+#import "LTNavigationController.h"
 @implementation LTRoadViewController
 - (void) viewDidLoad
 {
@@ -22,6 +24,8 @@
 
 - (void) locateTheAddress
 {
-    
+    LTCityTableViewController* cityVC = [LTCityTableViewController new];
+    LTNavigationController* nav = [[LTNavigationController alloc] initWithRootViewController:cityVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 @end

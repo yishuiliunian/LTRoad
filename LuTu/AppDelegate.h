@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LTGlobalViewController.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (nonatomic, strong, readonly) LTGlobalViewController* globalViewController;
 @property (strong, nonatomic) UIWindow *window;
 
 

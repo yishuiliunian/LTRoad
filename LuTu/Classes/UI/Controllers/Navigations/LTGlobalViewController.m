@@ -17,6 +17,8 @@
 #import "LTGuideContainerViewController.h"
 #import <DZImageCache.h>
 #import "LTRoadViewController.h"
+#import "LTNavigationController.h"
+#import "LTAuthViewController.h"
 
 @implementation UIViewController (GlobalNavigation)
 
@@ -44,11 +46,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
-    if (LTCurrentAccount) {
-        [self loadApplicationMainVC];
-    } else {
-        [self loadGuideViewController];
-    }
+    [self loadApplicationMainVC];
 }
 
 - (void) lt_addViewController:(UIViewController*)vc
@@ -120,12 +118,11 @@
     [super viewWillLayoutSubviews];
 }
 
-/*
- 
- */
-
-- (void) viewController:(UIViewController *)viewController didEnterAccount:(LTAccount *)account
+-  (void) loadAuthViewController:(LTAuthSucceedBlock)block
 {
-    [self loadApplicationMainVC];
+    LTAuthViewController* authViewController  = [[LTAuthViewController alloc] initWithNibName:@"LTAuthViewController" bundle:nil];
+    authViewController.succeedBlock = block;
+    LTNavigationController* nav = [[LTNavigationController alloc] initWithRootViewController:authViewController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 @end

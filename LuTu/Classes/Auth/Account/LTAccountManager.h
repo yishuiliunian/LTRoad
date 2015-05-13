@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LTAccount.h"
+#import "LTAuthViewController.h"
 
 #define LTShareAccountManager  [LTAccountManager shareManager]
 #define LTCurrentAccount [LTShareAccountManager currentAccount]
@@ -15,4 +16,10 @@
 @property (nonatomic, strong, readonly) LTAccount* currentAccount;
 + (LTAccountManager*) shareManager;
 - (void) reloadAccount:(LTAccount*)account;
+
+/**
+ *  确保当前有一个账号登陆
+ */
+- (void) ensureApplicationAuthorization:(LTAuthSucceedBlock)block;
+- (BOOL) checkApplicationAuthorization;
 @end
