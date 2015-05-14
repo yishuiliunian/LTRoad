@@ -7,6 +7,7 @@
 //
 
 #import "LTBackButton.h"
+#import <DZGeometryTools.h>
 @interface LTBackButton()
 {
     UIImageView* _backgroundImageView;
@@ -23,6 +24,9 @@
     [self insertSubview:_backgroundImageView atIndex:0];
     _backgroundImageView.backgroundColor = [UIColor blackColor];
     _backgroundImageView.alpha = 6;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.imageView.contentMode = UIViewContentModeCenter;
     return self;
 }
 
@@ -30,5 +34,14 @@
 {
     [super layoutSubviews];
     _backgroundImageView.frame = self.bounds;
+    CGRect imageRect;
+    CGRect titleRect;
+    
+    CGRectDivide(self.bounds, &imageRect, &titleRect, CGRectGetHeight(self.bounds)/2, CGRectMinYEdge);
+    CGFloat imageWidth = MIN(CGRectGetWidth(imageRect), CGRectGetHeight(imageRect));
+    self.imageView.frame = imageRect;
+    self.titleLabel.frame = CGRectCenterSubSize(titleRect, CGSizeMake(20, 0));
+    
+    [self bringSubviewToFront:self.imageView];
 }
 @end

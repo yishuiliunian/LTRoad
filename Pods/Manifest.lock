@@ -14,15 +14,17 @@ PODS:
     - DZSinglonFactory
   - DZCDNFiles (1.0.1):
     - DZSinglonFactory
-  - DZGeometryTools (1.0.5)
+  - DZGeometryTools (1.0.6)
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
-  - DZSwipeViewController (0.1.6)
+  - DZSwipeViewController (0.1.8):
+    - DZGeometryTools
   - DZWeChatLib (1.5.0)
+  - FXBlurView (1.6.3)
   - Haneke (1.0.1)
   - HexColors (2.2.1)
-  - JSONModel (1.0.2)
+  - JSONModel (1.1.0)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
     - libextobjc/EXTConcreteProtocol (= 0.4.1)
@@ -58,7 +60,7 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - LTNavigationBar (2.0.2)
+  - LTNavigationBar (2.0.3)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
@@ -81,6 +83,7 @@ DEPENDENCIES:
   - DZProgrameDefines
   - DZSinglonFactory
   - DZSwipeViewController
+  - FXBlurView
   - Haneke (~> 1.0)
   - HexColors
   - libextobjc
@@ -97,22 +100,23 @@ SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
-  DZGeometryTools: 041db19a4edc67c993b5bae16fdaf7a7b5ff9900
+  DZGeometryTools: e516c57b44d3fe96783d7f19aafb9c010877c840
   DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
-  DZSwipeViewController: c4c02b12deb354b02086500600c60fa5cdc7060c
+  DZSwipeViewController: 3c0dbe3e5dd2ed06c74087897205c6d15722b228
   DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
+  FXBlurView: c6d23f3d35af2c6282296a2930f61c6e2c788d01
   Haneke: d60be8b96b228633b24708dd153169d6849d6f78
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
-  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  LTNavigationBar: cfe4963b0ec99d2086d5a61906edf62fdae939aa
+  LTNavigationBar: 28903730dc6babd80059c391ce095ac179ce454d
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
-  Mantle: 17de73ef929db2234d76fde2aacfb89ab11c61e8
+  Mantle: d7c75b6fb789b20f7ae30cd0d09435fe545896ff
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.35.0.rc2

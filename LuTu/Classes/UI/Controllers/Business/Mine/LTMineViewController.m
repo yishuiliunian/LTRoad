@@ -14,6 +14,9 @@
 #import "LTMyCarClubViewController.h"
 #import "LTAccountManager.h"
 #import "LTMyFavoriteViewController.h"
+#import "LKHaneke.h"
+#import "LTGlobals.h"
+
 @interface LTMineViewController ()
 {
     NSArray* _allActions;
@@ -71,6 +74,8 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 }
 - (void) reloadAllData
 {
+    LTAccount* currentAccount = [LTShareAccountManager currentAccount];
+    // reload tableview data
     LTActionItem* dynamicItem = [[LTActionItem alloc] init];
     dynamicItem.title = @"我的动态";
     
@@ -80,6 +85,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     _allActions = @[dynamicItem, aboutItem];
     
     [self.tableView reloadData];
+    
+    //reload 用户信息
+    
+    [_topView.avatarImageView loadAvatarURL:LTNSURLFromString(currentAccount.userInfo.avatarURL)];
+    if ([LTShareAccountManager checkApplicationAuthorization]) {
+        _topView.nickNameLabel.text = currentAccount.userInfo.nickName;
+    } else
+    {
+        _topView.nickNameLabel.text = @"未登录";
+    }
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView

@@ -15,7 +15,7 @@
 
 @interface PMToken : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString* access_token;
-@property (nonatomic, assign) int expiration;
+@property (nonatomic, assign) int64_t expiration;
 @property (nonatomic, assign) BOOL auth_first;
 @property (nonatomic, assign) BOOL auth_success;
 @property (nonatomic, strong) NSString* open_id;

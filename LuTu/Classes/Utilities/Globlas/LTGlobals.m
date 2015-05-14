@@ -34,3 +34,8 @@ NSString* LTApplicationVersion()
     });
     return version;
 }
+
+
+NSURL* LTNSURLFromString(NSString* string) {
+    return [NSURL URLWithString:string];
+}

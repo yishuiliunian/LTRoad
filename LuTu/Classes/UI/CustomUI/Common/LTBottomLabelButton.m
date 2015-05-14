@@ -17,6 +17,7 @@
         return self;
     }
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.imageView.contentMode = UIViewContentModeCenter;
     return self;
 }
 

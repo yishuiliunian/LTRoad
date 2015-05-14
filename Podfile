@@ -22,6 +22,7 @@ target 'LuTu' do
   pod 'DZSwipeViewController'
   pod 'libextobjc'
   pod 'Mantle'
+  pod 'FXBlurView'
 end
 
 

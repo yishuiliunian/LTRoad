@@ -27,3 +27,7 @@ FOUNDATION_EXTERN NSString* LTApplicationVersion();
 return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]];\
 }
 #define DEFINE_Mantle_JSONTranformer_Function( name ,c) DEFINE_Mantle_JSONTranformer_Function_1( name ,c, JSONTransformer)
+
+
+
+FOUNDATION_EXTERN NSURL* LTNSURLFromString(NSString* string);

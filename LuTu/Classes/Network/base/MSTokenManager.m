@@ -43,7 +43,7 @@
     }
     LTAccount* account = LTCurrentAccount;
     if (account) {
-        [self loadTokenForAccount:account];
+       _token = [self loadTokenForAccount:account];
     }
     return self;
 }

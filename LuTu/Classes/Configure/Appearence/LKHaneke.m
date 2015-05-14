@@ -9,6 +9,7 @@
 #import "LKHaneke.h"
 #import <Haneke.h>
 #import <DZGeometryTools.h>
+#import <DZImageCache.h>
 HNKCacheFormat* HNKCreateCacheFormatWithSize(CGSize size, NSString* key)  {
     HNKCacheFormat* format = [HNKCache sharedCache].formats[key];
     if (!format) {
@@ -38,3 +39,33 @@ LTHNKShareCacheFormat(CGCurrentScreenSize().width, 300, FeedBackground)
 LTHNKShareCacheFormat(200, 300, DiscoverBackground)
 LTHNKShareCacheFormat(100, 100, CarMeet)
 LTHNKShareCacheFormat(100, 100, Avatar)
+
+
+
+
+@implementation UIImageView (PlaceHolder)
+
+- (void) loadRemoteURL:(NSURL*)url placeHolderName:(NSString*) placeHolder
+{
+    [self hnk_setImageFromURL:url placeholder:DZCachedImageByName(placeHolder)];
+}
+
+- (void) loadAvatarURL:(NSURL*)url
+{
+    [self loadRemoteURL:url placeHolderName:@"avatar_default"];
+}
+
+- (void) loadFeedBackgroundURL:(NSURL*)url
+{
+    [self loadRemoteURL:url placeHolderName:@""];
+}
+
+- (void) loadLittleImageURL:(NSURL*)url
+{
+    [self loadRemoteURL:url placeHolderName:@""];
+}
+@end
+
+void LKLoadRemoteURLWithPlaceHolder(UIImageView* imageView , NSURL* url, NSString* placeHolderName) {
+    
+}

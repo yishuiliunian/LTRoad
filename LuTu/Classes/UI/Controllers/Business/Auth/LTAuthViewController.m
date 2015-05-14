@@ -56,7 +56,9 @@
     LTTokenReq* req = (LTTokenReq*)request;
     PMToken* token = (PMToken*)object;
     MSToken* serverToken = [[MSToken alloc] initWithToken:token.access_token account:token.open_id];
-    serverToken.experiedDate = [NSDate dateWithTimeIntervalSince1970:token.expiration/1000];
+    
+    NSDate* experiedDate = [NSDate dateWithTimeIntervalSince1970:token.expiration / 1000];
+    serverToken.experiedDate = experiedDate;
     LTAccount* account = [[LTAccount alloc] init];
     account.accountID = token.open_id;
     account.openId = req.openID;
