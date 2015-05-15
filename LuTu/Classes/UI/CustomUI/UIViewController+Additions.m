@@ -8,6 +8,8 @@
 
 #import "UIViewController+Additions.h"
 #import <DZImageCache.h>
+#import "LTNavigationController.h"
+#import "LTSearchTableViewController.h"
 @implementation UIViewController (Additions)
 - (void) loadNavigationBarSearchItem
 {
@@ -18,6 +20,8 @@
 
 - (void) search
 {
-    
+    LTSearchTableViewController* searchVC = [LTSearchTableViewController new];
+    LTNavigationController* navVC = [[LTNavigationController alloc] initWithRootViewController:searchVC];
+    [self.navigationController presentViewController:navVC animated:YES completion:nil];
 }
 @end

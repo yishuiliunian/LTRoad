@@ -38,6 +38,7 @@
     _contentBackgroundView.layer.masksToBounds = YES;
     self.backgroundColor = [UIColor clearColor];
     _lineView.backgroundColor = LTColorPointGray();
+    _contentTextLabel.numberOfLines = 0;
     
     return self;
 }

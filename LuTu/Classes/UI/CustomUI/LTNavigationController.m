@@ -19,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addTitleViewToViewController:self.topViewController];
-    // Do any additional setup after loading the view.
+    self.navigationBar.clipsToBounds = YES;
 }
 - (void) viewWillAppear:(BOOL)animated
 {

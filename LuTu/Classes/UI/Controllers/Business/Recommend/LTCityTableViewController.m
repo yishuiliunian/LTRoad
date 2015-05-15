@@ -30,6 +30,7 @@ static NSString* const kCellCityIdentifier = @"kCellCityIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.tableView registerClass:[LTCityCell class] forCellReuseIdentifier:kCellCityIdentifier];
+    self.title = @"出发地选择";
     [self reloadAllData];
 }
 

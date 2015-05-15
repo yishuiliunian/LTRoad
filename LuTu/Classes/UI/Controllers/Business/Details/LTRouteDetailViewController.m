@@ -96,7 +96,6 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 }
 - (void)  replaceDataWithPOIS:(NSArray*)pois
 {
-    NSMutableArray* array = [NSMutableArray new];
 }
 
 - (void) onHandleRemoteRoteDetail:(PMLine*)pmline
