@@ -10,6 +10,7 @@
 #import "LTCityReq.h"
 #import "PMCity.h"
 #import "LTUserDataManager.h"
+#import "LTNotificationTools.h"
 @interface LTCityCell : UITableViewCell
 
 @end
@@ -74,6 +75,7 @@ static NSString* const kCellCityIdentifier = @"kCellCityIdentifier";
     LTShareSettings().currentCity = city.cityID;
     LTLocalizedSettings();
     [self dismissSelfViewController];
+    LTPostCityReloadMessage(city.cityID);
 }
 
 - (void) dismissSelfViewController

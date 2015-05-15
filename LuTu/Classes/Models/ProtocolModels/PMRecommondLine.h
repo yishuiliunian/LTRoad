@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString* route_id;
 @property (nonatomic, strong) NSString* route_name;
 @property (nonatomic, strong) NSString* tag;
+@property (nonatomic, strong) NSString* intro_image_url;
 @property (nonatomic, strong) PMNoticePOI* notice_poi;
 @end
 

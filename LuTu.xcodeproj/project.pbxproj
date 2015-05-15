@@ -74,6 +74,7 @@
 		652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9671AD27EE80082894E /* LTBackgroundImageView.m */; };
 		652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96B1AD27FA60082894E /* LTAppearenceTools.m */; };
 		652FB96F1AD27FBA0082894E /* LTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96E1AD27FBA0082894E /* LTColors.m */; };
+		65576A7D1B05D299004DFCB8 /* LTNotificationTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 65576A7C1B05D299004DFCB8 /* LTNotificationTools.m */; };
 		6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */; };
 		657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE61ADE82B800AA5EBA /* LTMineTopView.m */; };
 		657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE91ADE832E00AA5EBA /* LTBottomLabelButton.m */; };
@@ -283,6 +284,8 @@
 		652FB96B1AD27FA60082894E /* LTAppearenceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAppearenceTools.m; sourceTree = "<group>"; };
 		652FB96D1AD27FBA0082894E /* LTColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTColors.h; sourceTree = "<group>"; };
 		652FB96E1AD27FBA0082894E /* LTColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTColors.m; sourceTree = "<group>"; };
+		65576A7B1B05D299004DFCB8 /* LTNotificationTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNotificationTools.h; sourceTree = "<group>"; };
+		65576A7C1B05D299004DFCB8 /* LTNotificationTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNotificationTools.m; sourceTree = "<group>"; };
 		6562C5891AE5E7F9004713E7 /* LTTagColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTagColorManager.h; sourceTree = "<group>"; };
 		6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTagColorManager.m; sourceTree = "<group>"; };
 		657D6FE51ADE82B800AA5EBA /* LTMineTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMineTopView.h; sourceTree = "<group>"; };
@@ -931,6 +934,8 @@
 				652FB9321AD23F730082894E /* MSLog.m */,
 				65035FE31AE4AE2D00BBEDEB /* LTGlobals.h */,
 				65035FE41AE4AE2D00BBEDEB /* LTGlobals.m */,
+				65576A7B1B05D299004DFCB8 /* LTNotificationTools.h */,
+				65576A7C1B05D299004DFCB8 /* LTNotificationTools.m */,
 			);
 			path = Globlas;
 			sourceTree = "<group>";
@@ -1408,6 +1413,7 @@
 				652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */,
 				65D1FC9E1ADBAF2000CB90F9 /* DZExpandSwipViewController.m in Sources */,
 				65B283411AF8BCC9001E85A6 /* LTMyFavoriteReq.m in Sources */,
+				65576A7D1B05D299004DFCB8 /* LTNotificationTools.m in Sources */,
 				6517E7941AE7ACCF004F71BC /* LTUIPoi.m in Sources */,
 				65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */,
 				65D1FCA41ADBB32100CB90F9 /* LTCarMeetFeedViewController.m in Sources */,

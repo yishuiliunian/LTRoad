@@ -8,5 +8,18 @@
 
 #import "LTAppearenceTools.h"
 #import "LTColors.h"
+#import <DZImageCache.h>
 
 
+
+void LTSetupNavigationBar()
+{
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBackIndicatorImage:DZCachedImageByName(@"top_arrowback_black")];
+    [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:DZCachedImageByName(@"top_arrowback_black")];
+}
+
+void LTAppearanceSetup()
+{
+    LTSetupNavigationBar();
+}

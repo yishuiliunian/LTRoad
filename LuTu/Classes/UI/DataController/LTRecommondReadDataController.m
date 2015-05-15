@@ -12,12 +12,17 @@
 #import "LTRecommondLineCell.h"
 #import "LTRoteListReq.h"
 #import "LTUserDataManager.h"
+#import "LTNotificationTools.h"
 @interface LTRecommondReadDataController () <MSRequestUIDelegate>
 
 @end
 
 @implementation LTRecommondReadDataController
 
+- (void) dealloc
+{
+    LTRemoveObserverForCityReload(self);
+}
 - (instancetype) init
 {
     self = [super init];
@@ -25,6 +30,7 @@
         return self;
     }
     self.objectMapCell = @{LTCellIdentifierFromClass([LTRecommendLine class]) : [LTRecommondLineCell class] };
+    LTAddObserverForCityReload(self, @selector(reloadAllData));
     return self;
 }
 

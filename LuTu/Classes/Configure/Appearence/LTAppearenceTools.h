@@ -11,3 +11,6 @@
 #import "LTColors.h"
 #import "LTFont.h"
 #import "LTTagColorManager.h"
+
+
+FOUNDATION_EXTERN void LTAppearanceSetup();

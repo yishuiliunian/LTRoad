@@ -20,7 +20,8 @@
              LTMantleMapPair(notice_poi, notice_poi),
              LTMantleMapPair(route_id, route_id),
              LTMantleMapPair(route_name, route_name),
-             LTMantleSameMapPair(tag)
+             LTMantleSameMapPair(tag),
+             LTMantleSameMapPair(intro_image_url)
              };
 }
 + (NSValueTransformer*) notice_poiJSONTransformer

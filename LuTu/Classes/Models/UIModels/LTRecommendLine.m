@@ -16,15 +16,14 @@
         return self;
     }
     self.createDate =  [NSDate date];
-    NSArray* tags = LTSpereateStringToArray(pmModel.tag);
     NSMutableArray* array = [NSMutableArray new];
-    for (NSString* tag  in tags) {
+    for (NSString* tag  in pmModel.category) {
         [array addObject:LTCreateBadgeItemWithText(tag)];
     }
     self.tagBadgeItems = array;
     self.distance = @"3.5KM";
     self.likeCount = pmModel.fav_count;
-    self.backgroudImageURL = [NSURL URLWithString:pmModel.notice_poi.intro_image_url];
+    self.backgroudImageURL = [NSURL URLWithString:pmModel.intro_image_url];
     self.title = pmModel.route_name;
     self.createDateString = @"2/14";
     self.routeID = pmModel.route_id;

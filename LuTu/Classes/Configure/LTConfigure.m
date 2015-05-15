@@ -13,6 +13,7 @@
 #import <BMapKit.h>
 #import <SAAuth/SAReqManager.h>
 #import "MSLog.h"
+#import "LTAppearenceTools.h"
 
 
 void SetupSocialNetwork()
@@ -21,6 +22,7 @@ void SetupSocialNetwork()
 }
  void LTApplicationSetup()
 {
+    LTAppearanceSetup();
     [MSLog setup];
     SetupSocialNetwork();
     [DZImageShareCache setupAssetsSourceType];

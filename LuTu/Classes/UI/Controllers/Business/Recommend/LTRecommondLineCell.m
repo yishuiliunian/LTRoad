@@ -43,9 +43,23 @@
     ColorLabelWithWhite(_dateLabel);
     ColorLabelWithWhite(_distanceLabel);
     ColorLabelWithWhite(_titleBabel);
+    
+    //
+    _distanceIconImageView.image = DZCachedImageByName(@"location_list");
+    //
+    [self decerateLikeButtonWithBeFav:NO count:0];
+
 }
 
-
+- (void) decerateLikeButtonWithBeFav:(BOOL)isFav count:(int)count
+{
+    if (isFav) {
+        [_likeButton setImage:DZCachedImageByName(@"icon_care") forState:UIControlStateNormal];
+    } else {
+        [_likeButton setImage:DZCachedImageByName(@"icon_care") forState:UIControlStateNormal];
+    }
+    [_likeButton setTitle:[@(count) stringValue] forState:UIControlStateNormal];
+}
 - (void) setLine:(LTRecommendLine *)line
 {
     if (_line != line) {
@@ -61,7 +75,9 @@
     _dateLabel.text = _line.createDateString;
     _distanceLabel.text = _line.distance;
     [_backgroundImageView hnk_setImageFromURL:_line.backgroudImageURL];
+    [self decerateLikeButtonWithBeFav:NO count:_line.likeCount];
     [self setNeedsLayout];
+    
 }
 
 - (void) layoutSubviews
@@ -72,7 +88,10 @@
     CGSize distanceIconSize = CGSizeMake(30, 30);
     CGFloat xSpace = 10;
     CGFloat ySpace = 10;
-    CGFloat maxWidth = CGRectGetWidth(self.bounds) - xSpace*2;
+    
+    
+    CGSize likeButtonSize = CGSizeMake(60, 20);
+    CGFloat maxWidth = CGRectGetWidth(self.bounds) - xSpace*3 - likeButtonSize.width;
     _distanceIconImageView.frame = CGRectMake(xSpace, CGRectGetMaxY(_backgroundImageView.frame) - ySpace - distanceIconSize.height, distanceIconSize.width, distanceIconSize.height);
     CGRect distanceLabelFrame = CGRectOffset(_distanceIconImageView.frame, distanceIconSize.width + xSpace, 0);
     distanceLabelFrame.size.width =  _line.distanceUIWidth;
@@ -82,11 +101,16 @@
     badgeFrame.size.width = maxWidth - CGRectGetMaxX(_distanceLabel.frame) - xSpace;
     _badgesView.frame = badgeFrame;
     //
+    CGFloat titleHeight = 30;
+    _titleBabel.frame = CGRectMake(xSpace, CGRectGetMinY(_distanceIconImageView.frame) - titleHeight, maxWidth, titleHeight);
     
     CGFloat dateHeight = 30;
-    _dateLabel.frame = CGRectMake(xSpace, CGRectGetMinY(_distanceIconImageView.frame) - dateHeight,  maxWidth, dateHeight);
-    CGFloat titleHeight = 30;
-    _titleBabel.frame = CGRectMake(xSpace, CGRectGetMinY(_dateLabel.frame) - titleHeight, maxWidth, titleHeight);
+    _dateLabel.frame = CGRectMake(xSpace, CGRectGetMinY(_titleBabel.frame) - dateHeight,  maxWidth, dateHeight);
+
+    
+    CGFloat lbStartX = CGRectGetMaxX(_titleBabel.frame) + xSpace;
+    CGFloat lbStartY = CGRectGetMinY(_dateLabel.frame) + (CGRectGetMaxY(_distanceIconImageView.frame) - CGRectGetMinY(_dateLabel.frame) - likeButtonSize.height) / 2;
+    _likeButton.frame = CGRectMake(lbStartX, lbStartY, likeButtonSize.width, likeButtonSize.height);
     
 }
 @end

@@ -19,6 +19,8 @@
     UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"location") style:UIBarButtonItemStyleDone target:self action:@selector(locateTheAddress)];
     self.navigationItem.leftBarButtonItem = left;
     [self loadNavigationBarSearchItem];
+    
+    
 }
 
 
