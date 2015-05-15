@@ -11,7 +11,7 @@
 @implementation UIViewController (Additions)
 - (void) loadNavigationBarSearchItem
 {
-    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"search1") style:UIBarButtonItemStyleDone target:self action:@selector(search)];
+    UIBarButtonItem* rightItem = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"search") style:UIBarButtonItemStyleDone target:self action:@selector(search)];
     self.navigationItem.rightBarButtonItem = rightItem;
     //
 }

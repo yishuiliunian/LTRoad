@@ -73,6 +73,7 @@ static NSString* const kCellCityIdentifier = @"kCellCityIdentifier";
     PMCity* city = _allCitys[indexPath.row];
     LTShareSettings().currentCity = city.cityID;
     LTLocalizedSettings();
+    [self dismissSelfViewController];
 }
 
 - (void) dismissSelfViewController

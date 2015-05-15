@@ -34,7 +34,7 @@
     }
     NSString* city = LTShareLocationManger.currentCity;
     if (!city) {
-        return @"深圳市";
+        return @"1001";
     }
     return city;
 }
