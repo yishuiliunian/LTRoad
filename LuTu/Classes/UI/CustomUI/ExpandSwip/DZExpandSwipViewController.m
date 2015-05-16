@@ -11,6 +11,7 @@
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
 #import "LTUserCarClubReq.h"
+#import "LTCarMeetFeedDataController.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -107,15 +108,12 @@
     }
     LTCarMeetFeedViewController* carMeetVC = _viewControllersMap[key];
     if (!carMeetVC) {
-        carMeetVC = [LTCarMeetFeedViewController new];
+        LTCarMeetFeedDataController* dataController = [LTCarMeetFeedDataController new];
+        carMeetVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
         _viewControllersMap[key] = carMeetVC;
+        dataController.carMeet = meet;
     }
-    carMeetVC.carMeet = meet;
-    if ([carMeetVC.carMeet.key integerValue] %2) {
-        carMeetVC.view.backgroundColor = [UIColor redColor];
-    } else {
-        carMeetVC.view.backgroundColor = [UIColor greenColor];
-    }
+
     return carMeetVC;
     
 }
@@ -134,7 +132,10 @@
     if (![vc isKindOfClass:[LTCarMeetFeedViewController class]]) {
         return NSNotFound;
     }
-    LTUICarMeet* currentCarMeet =[ (LTCarMeetFeedViewController*)vc carMeet];
+    LTUICarMeet* currentCarMeet =[ (LTCarMeetFeedDataController*)
+                                  [(LTCarMeetFeedViewController*)
+                                   vc dataController]
+                                  carMeet];
     return [self indexOfCarMeet:currentCarMeet];
     
 }

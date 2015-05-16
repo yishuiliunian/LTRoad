@@ -23,3 +23,13 @@ void LTAppearanceSetup()
 {
     LTSetupNavigationBar();
 }
+
+CGFloat LTFeedContentWidth()
+{
+    static CGFloat width;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        width = CGRectGetWidth([UIScreen mainScreen].applicationFrame) - LTLayoutXOffset*2;
+    });
+    return width;
+}

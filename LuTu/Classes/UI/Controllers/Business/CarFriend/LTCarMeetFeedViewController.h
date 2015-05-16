@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LTUICarMeet.h"
-@interface LTCarMeetFeedViewController : UITableViewController
-@property (nonatomic, strong) LTUICarMeet* carMeet;
+#import "LTPageTableViewController.h"
+@interface LTCarMeetFeedViewController : LTPageTableViewController
 @end

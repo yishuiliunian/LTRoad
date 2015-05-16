@@ -14,3 +14,9 @@
 
 
 FOUNDATION_EXTERN void LTAppearanceSetup();
+
+
+#define LTLayoutXOffset 15
+#define LTLayoutYOffset 10
+
+FOUNDATION_EXTERN CGFloat LTFeedContentWidth();
