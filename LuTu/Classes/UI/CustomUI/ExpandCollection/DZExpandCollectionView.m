@@ -81,9 +81,6 @@
 - (void) handleSingleTapAtCell:(UITapGestureRecognizer*)tapGR
 {
     if (tapGR.state == UIGestureRecognizerStateRecognized) {
-        if (!self.expanded) {
-            return;
-        }
         CGPoint point = [tapGR locationInView:self];
         NSArray* visibleCells = [self.visibleCells copy];
         UICollectionViewCell* tapCell = nil;
@@ -94,6 +91,13 @@
             }
         }
         if (!tapCell) {
+            return;
+        }
+        if (!self.expanded) {
+            if ([self.expandDelegate respondsToSelector:@selector(expandCollectionView:hanldeSingleTapAtIndex:)]) {
+                NSIndexPath* indexpath = [self indexPathForCell:tapCell];
+                [self.expandDelegate expandCollectionView:self hanldeSingleTapAtIndex:indexpath.row];
+            }
             return;
         }
         if (![tapCell isKindOfClass:[DZExpandCollectionViewCell class]]) {

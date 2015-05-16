@@ -8,6 +8,14 @@
 
 #import "LTCarMeetFeedCell.h"
 #import "LKHaneke.h"
+#import <DZGeometryTools.h>
+#import <DZImageCache.h>
+#import "LTGlobals.h"
+#import "LTLinePointView.h"
+@interface LTCarMeetFeedCell ()
+@property (nonatomic, strong) UIImageView* pointView;
+@end
+
 @implementation LTCarMeetFeedCell
 - (instancetype) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -20,11 +28,25 @@
     INIT_SUBVIEW_UILabel(self.contentView, _carMeetTitleLabel);
     INIT_SUBVIEW_UILabel(self.contentView, _feedDetailLabel);
     INIT_SUBVIEW_UILabel(self.contentView, _ownerNameLabel);
+    INIT_SUBVIEW(self.contentView, UIImageView, _pointView);
     INIT_SUBVIEW(self.contentView, LTLikeButton, _commentButton);
     //
     _feedImageView.hnk_cacheFormat = LTHanekeCacheFormatCarMeet();
     _feedImageView.layer.masksToBounds = YES;
     _feedDetailLabel.numberOfLines = 0;
+    //
+    [_commentButton setImage:DZCachedImageByName(@"post_comment") forState:UIControlStateNormal];
+    [_commentButton setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
+    //
+    _carMeetTitleLabel.font = LTFontSubTitle();
+    _feedDetailLabel.font = LTFontContentText();
+    _ownerNameLabel.font = LTFontSubTitle();
+    //
+    _carMeetTitleLabel.textColor = LTColorDetailGray();
+    _feedDetailLabel.textColor = LTColorGray();
+    _ownerNameLabel.textColor = LTColorGray();
+    //
+    _pointView.backgroundColor = LTColorDetailGray();
     return self;
 }
 
@@ -41,7 +63,9 @@
     [_feedImageView hnk_setImageFromURL:_carMeetFeed.feedImageURL];
     _carMeetTitleLabel.text = _carMeetFeed.carTitle;
     _feedDetailLabel.text = _carMeetFeed.detail;
-    _ownerNameLabel.text = _carMeetFeed.ownerName;
+    _ownerNameLabel.text =[NSString stringWithFormat:@"%@ %@",_carMeetFeed.ownerName, _carMeetFeed.postDate];
+    [_commentButton setTitle:[@(_carMeetFeed.commentCount) stringValue] forState:UIControlStateNormal];
+    [self setNeedsLayout];
 }
 
 - (void) layoutSubviews
@@ -50,16 +74,54 @@
     static CGFloat xSpace = 10;
     static CGFloat ySpace = 10;
     
-    CGFloat contentWidth = CGRectGetWidth(self.contentView.bounds) - xSpace - xSpace;
-    CGFloat contentHeight = CGRectGetHeight(self.contentView.bounds) - ySpace - ySpace;
-    CGSize imageSize = CGSizeMake(100, contentHeight);
+#define hasImage (_carMeetFeed.feedImageURL)
     
-    CGFloat carMeetTitleHeight = 20;
-    CGFloat labelWidth = contentWidth - imageSize.width - xSpace;
-    _feedImageView.frame = CGRectMake(xSpace, ySpace, imageSize.width, imageSize.height);
-    _carMeetTitleLabel.frame = CGRectMake(CGRectGetMaxX(_feedImageView.frame) + xSpace, ySpace, labelWidth, carMeetTitleHeight);
-    _ownerNameLabel.frame = CGRectMake(CGRectGetMinX(_carMeetTitleLabel.frame), CGRectGetHeight(self.contentView.bounds) - ySpace - carMeetTitleHeight, labelWidth, carMeetTitleHeight);
-    _feedDetailLabel.frame = CGRectMake(CGRectGetMinX(_carMeetTitleLabel.frame), CGRectGetMaxY(_carMeetTitleLabel.frame) + 5, labelWidth, CGRectGetMinY(_ownerNameLabel.frame) - CGRectGetMaxY(_carMeetTitleLabel.frame) - 10);
+    CGRect contentRect = CGRectMake(xSpace, ySpace, CGRectGetWidth(self.bounds) - xSpace * 2, CGRectGetHeight(self.bounds) - ySpace * 2);
+    CGFloat imageWidth = 0;
+    if (hasImage) {
+        imageWidth = 80;
+    }
+    CGRect textContentRect;
+    CGRect imageRect;
+    CGRectDivide(contentRect, &imageRect, &textContentRect, imageWidth, CGRectMaxXEdge);
+    _feedImageView.frame = imageRect;
+    
+    if (hasImage) {
+        textContentRect.size.width -= xSpace;
+    }
+    
+    CGFloat clubTitleHeight = 15;
+    CGFloat nickTimeHeight = 15;
+    
+    CGRect clubTitleRecct;
+    CGRect restRect;
+    CGRectDivide(textContentRect, &clubTitleRecct, &restRect, clubTitleHeight, CGRectMinYEdge);
+    _carMeetTitleLabel.frame = clubTitleRecct;
+    
+    CGRect detailRect;
+    CGRect bottomRect;
+    
+    CGRectDivide(restRect, &bottomRect, &detailRect, nickTimeHeight, CGRectMaxYEdge);
+    
+    detailRect = CGRectCenterSubSize(detailRect, CGSizeMake(0, 10));
+    _feedDetailLabel.frame = detailRect;
+    
+    CGFloat commentWidth = 60;
+    
+    CGRect nickRect;
+    CGRect commentBtnRect;
+    
+    CGRectDivide(bottomRect, &commentBtnRect, &nickRect, commentWidth, CGRectMaxXEdge);
+    commentBtnRect.size.width -=xSpace;
 
+    CGRect pointRect;
+    CGRectDivide(nickRect, &pointRect, &nickRect, 10, CGRectMinXEdge);
+    _ownerNameLabel.frame = nickRect;
+    _commentButton.frame = commentBtnRect;
+    
+    pointRect = CGRectOfCenterForContainsSize(pointRect, CGSizeMake(CGRectGetWidth(pointRect), CGRectGetWidth(pointRect)));
+    _pointView.frame = pointRect;
+
+    _pointView.layer.cornerRadius = CGRectGetWidth(_pointView.frame)/2;
 }
 @end

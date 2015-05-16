@@ -33,6 +33,12 @@ static NSString* cellIdentifier = @"cellIdentifier";
         feed.postDate = @"12/2";
         feed.detail = @"我们从这里出发一直向西";
         feed.feedImageURL = [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
+        if (i %2 ==0 ) {
+            feed.feedImageURL = nil;
+        }
+        feed.commentCount = 2;
+        feed.ownerName = @"愤怒的小妞";
+        feed.postDate = @"2021/1/1";
         [array addObject:feed];
     }
     _allFeeds = array;

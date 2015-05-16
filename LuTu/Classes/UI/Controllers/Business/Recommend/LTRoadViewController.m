@@ -19,16 +19,12 @@
     UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"location") style:UIBarButtonItemStyleDone target:self action:@selector(locateTheAddress)];
     self.navigationItem.leftBarButtonItem = left;
     [self loadNavigationBarSearchItem];
-    
-    
-    
 }
 
 
 - (void) locateTheAddress
 {
     LTCityTableViewController* cityVC = [LTCityTableViewController new];
-    LTNavigationController* nav = [[LTNavigationController alloc] initWithRootViewController:cityVC];
-    [self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:cityVC animated:YES];
 }
 @end

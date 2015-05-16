@@ -14,4 +14,5 @@
 @property (nonatomic, strong) NSString* ownerName;
 @property (nonatomic, strong) NSString* postDate;
 @property (nonatomic, strong) NSString* detail;
+@property (nonatomic, assign) int commentCount;
 @end

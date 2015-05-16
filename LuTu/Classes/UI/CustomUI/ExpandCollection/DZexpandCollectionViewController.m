@@ -11,7 +11,7 @@
 #import "LTCarMeetCell.h"
 #import "LTUICarMeet.h"
 #import "LTCarMeetDetailViewController.h"
-@interface DZexpandCollectionViewController () <LTCarMeetCellDelegate>
+@interface DZexpandCollectionViewController () <LTCarMeetCellDelegate, DZExpandCollectionViewDelegate>
 
 @end
 INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
@@ -19,12 +19,13 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
 - (void) loadView
 {
     UICollectionViewFlowLayout* flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(100, 150);
+    flowLayout.itemSize = CGSizeMake(80, 120);
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     _expandCollectionView = [[DZExpandCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     _expandCollectionView.delegate = self;
     _expandCollectionView.dataSource = self;
     self.view = _expandCollectionView;
+    _expandCollectionView.expandDelegate = self;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,9 +64,10 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
     }
 }
 
-- (void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+
+- (void) expandCollectionView:(DZExpandCollectionView *)expandView hanldeSingleTapAtIndex:(NSInteger)index
 {
-    LTUICarMeet* carmeet = _items[indexPath.row];
+    LTUICarMeet* carmeet = _items[index];
     if ([self.delegate respondsToSelector:@selector(expandViewController:didSelectItem:)]) {
         [self.delegate expandViewController:self didSelectItem:carmeet];
     }

@@ -97,6 +97,9 @@
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:HttpMethodGET];
+#ifdef DEBUG
+    request.timeoutInterval = 2;
+#endif
     //
     DDLogInfo(@"发送的请求详情:%@",request);
     //
