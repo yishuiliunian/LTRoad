@@ -11,6 +11,7 @@
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
 #import "LTUserCarClubReq.h"
+#import "LTCarMeetFeedDataController.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -30,6 +31,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+
     _expandCollectioViewController = [[DZexpandCollectionViewController alloc] init];
     _expandCollectioViewController.delegate = self;
 
@@ -54,7 +56,19 @@
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+#ifdef DEBUG
+    NSMutableArray* array = [NSMutableArray new];
+    for (int i = 0; i < 100; i++) {
+        LTUICarMeet* carMeet = [LTUICarMeet new];
+        carMeet.key = [@(i) stringValue];
+        carMeet.emblemURL =  [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
+        carMeet.title = @"奔驰";
+        carMeet.detail = @"";
+        [array addObject:carMeet];
+    }
+    _expandCollectioViewController.items = array;
+    [self scrollToPageViewControllerAtIndex:0];
+#endif
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
@@ -82,7 +96,7 @@
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    _expandCollectioViewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 200);
+    _expandCollectioViewController.view.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), 160);
     _pageViewController.view.frame = CGRectMake(0, CGRectGetMaxY(_expandCollectioViewController.view.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - CGRectGetMaxY(_expandCollectioViewController.view.frame));
 }
 - (UIViewController*) viewControllerAtIndex:(NSInteger) index
@@ -94,15 +108,12 @@
     }
     LTCarMeetFeedViewController* carMeetVC = _viewControllersMap[key];
     if (!carMeetVC) {
-        carMeetVC = [LTCarMeetFeedViewController new];
+        LTCarMeetFeedDataController* dataController = [LTCarMeetFeedDataController new];
+        carMeetVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
         _viewControllersMap[key] = carMeetVC;
+        dataController.carMeet = meet;
     }
-    carMeetVC.carMeet = meet;
-    if ([carMeetVC.carMeet.key integerValue] %2) {
-        carMeetVC.view.backgroundColor = [UIColor redColor];
-    } else {
-        carMeetVC.view.backgroundColor = [UIColor greenColor];
-    }
+
     return carMeetVC;
     
 }
@@ -121,7 +132,10 @@
     if (![vc isKindOfClass:[LTCarMeetFeedViewController class]]) {
         return NSNotFound;
     }
-    LTUICarMeet* currentCarMeet =[ (LTCarMeetFeedViewController*)vc carMeet];
+    LTUICarMeet* currentCarMeet =[ (LTCarMeetFeedDataController*)
+                                  [(LTCarMeetFeedViewController*)
+                                   vc dataController]
+                                  carMeet];
     return [self indexOfCarMeet:currentCarMeet];
     
 }

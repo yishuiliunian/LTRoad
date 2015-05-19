@@ -36,6 +36,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     _swipViewController = [DZExpandSwipViewController new];
     [self lt_addViewController:_swipViewController];
     

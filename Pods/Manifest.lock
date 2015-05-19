@@ -14,7 +14,7 @@ PODS:
     - DZSinglonFactory
   - DZCDNFiles (1.0.1):
     - DZSinglonFactory
-  - DZGeometryTools (1.0.6)
+  - DZGeometryTools (1.0.8)
   - DZProgrameDefines (1.0.0)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
@@ -100,7 +100,7 @@ SPEC CHECKSUMS:
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
   DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
-  DZGeometryTools: e516c57b44d3fe96783d7f19aafb9c010877c840
+  DZGeometryTools: 522b4356dd5b83421fa37061694ff13755cfb8cc
   DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
@@ -119,4 +119,4 @@ SPEC CHECKSUMS:
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.36.3

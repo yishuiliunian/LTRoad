@@ -7,7 +7,7 @@
 //
 
 #import "LTTableViewPageDataController.h"
-
+#import "LTUICarMeet.h"
 @interface LTCarMeetFeedDataController : LTTableViewPageDataController
-
+@property (nonatomic, strong) LTUICarMeet* carMeet;
 @end

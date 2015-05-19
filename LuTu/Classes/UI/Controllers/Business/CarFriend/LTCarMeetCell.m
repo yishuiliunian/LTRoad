@@ -23,15 +23,11 @@
     }
     INIT_SUBVIEW_UIImageView(self.contentView, _emblemImageView);
     INIT_SUBVIEW_UILabel(self.contentView, _titleLabel);
+    INIT_SELF_SUBVIEW(LTCarMeetMenuView, _menuView);
     _emblemImageView.hnk_cacheFormat = LTHanekeCacheFormatCarMeet();
     _emblemImageView.layer.masksToBounds = YES;
     _titleLabel.textColor = [UIColor whiteColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
-#if DEBUG
-    self.contentView.backgroundColor = [UIColor redColor];
-    INIT_SELF_SUBVIEW(LTCarMeetMenuView, _menuView);
-    _menuView.backgroundColor = [UIColor greenColor];
-#endif
     [_menuView.interButton addTarget:self action:@selector(didTapMenu:) forControlEvents:UIControlEventTouchUpInside];
     return self;
 }
