@@ -77,14 +77,20 @@
 }
 
 - (CGSize)collectionViewContentSize {
+    
+    CGFloat height= CGRectGetWidth(self.collectionView.bounds);
+    if (self.collectionView.contentSize.height> 0 && self.collectionView.contentSize.height < self.collectionView.bounds.size.height) {
+        height = self.collectionView.contentSize.height;
+    }
+
     return (CGSize){self.collectionView.bounds.size.width * [self.collectionView numberOfItemsInSection:0],
-        self.collectionView.bounds.size.height};
+        height};
 }
 
 #pragma mark - Accessors
 
 - (CGFloat)collectionViewHeight {
-    return self.collectionView.bounds.size.height;
+    return self.collectionView.contentSize.height;
 }
 
 - (CGFloat)collectionViewWidth {

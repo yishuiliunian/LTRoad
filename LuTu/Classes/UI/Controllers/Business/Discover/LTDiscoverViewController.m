@@ -71,7 +71,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     LTCoverFlowLayout* layout = [[LTCoverFlowLayout alloc] init];
     CGSize screenSize = CGCurrentScreenSize();
     CGFloat width = screenSize.width - 100;
-    CGFloat height = 200;
+    CGFloat height = screenSize.height - 44-44- 120;
     layout.itemSize = CGSizeMake(width, height);
     layout.scrollDirection =UICollectionViewScrollDirectionHorizontal;
     return (UICollectionViewFlowLayout*)layout;
@@ -100,14 +100,28 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     [self.collectionView reloadData];
 }
 
+- (void) modifyScroll
+{
+    if (_layoutType == LTLayoutTypeGrid) {
+        self.collectionView.alwaysBounceVertical = YES;
+        self.collectionView.alwaysBounceHorizontal = NO;
+    } else if (_layoutType == LTLayoutTypeCover) {
+        self.collectionView.alwaysBounceVertical = NO;
+        self.collectionView.alwaysBounceHorizontal = YES;
+    }
+    
+}
+
 //
 #pragma mark -
 - (void) setLayoutType:(LTLayoutType)layoutType
 {
     if (_layoutType != layoutType) {
         _layoutType = layoutType;
+        [self modifyScroll];
+        [self mofiyLeftBarItemImage];
         [self.collectionView setCollectionViewLayout:[LTDiscoverViewController layoutWithType:_layoutType] animated:YES completion:^(BOOL finished) {
-            
+
         }];
         [self.collectionView reloadData];
     }
@@ -118,17 +132,27 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     [self setLayoutType:aimType];
 }
 
-
+- (void) mofiyLeftBarItemImage
+{
+    if (_layoutType == LTLayoutTypeCover) {
+        self.navigationItem.leftBarButtonItem.image = DZCachedImageByName(@"grids");
+    } else if (_layoutType == LTLayoutTypeGrid)
+    {
+        self.navigationItem.leftBarButtonItem.image = DZCachedImageByName(@"lists");
+    }
+}
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    [self modifyScroll];
     //
-    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"address") style:UIBarButtonItemStyleDone target:self action:@selector(changeLayoutType)];
+    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"grids") style:UIBarButtonItemStyleDone target:self action:@selector(changeLayoutType)];
     self.navigationItem.leftBarButtonItem = left;
     [self loadNavigationBarSearchItem];
     self.view.backgroundColor = [UIColor clearColor];
     self.collectionView.backgroundColor = [UIColor clearColor];
     [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
+    self.collectionView.scrollEnabled = YES;
     [self reloadAllData];
 }
 - (void) search

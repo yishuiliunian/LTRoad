@@ -27,4 +27,5 @@ EXTERN_LTHNKShareCacheFormat(Avatar)
 - (void) loadAvatarURL:(NSURL*)url;
 - (void) loadFeedBackgroundURL:(NSURL*)url;
 - (void) loadLittleImageURL:(NSURL*)url;
+- (void) loadImageURLWithDefaultPlaceHoler:(NSURL*)url;
 @end

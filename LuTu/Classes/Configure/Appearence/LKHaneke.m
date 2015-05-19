@@ -57,12 +57,17 @@ LTHNKShareCacheFormat(100, 100, Avatar)
 
 - (void) loadFeedBackgroundURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:@""];
+    [self loadRemoteURL:url placeHolderName:@"cover"];
 }
 
 - (void) loadLittleImageURL:(NSURL*)url
 {
     [self loadRemoteURL:url placeHolderName:@""];
+}
+
+- (void) loadImageURLWithDefaultPlaceHoler:(NSURL*)url
+{
+    [self loadRemoteURL:url placeHolderName:@"cover"];
 }
 @end
 

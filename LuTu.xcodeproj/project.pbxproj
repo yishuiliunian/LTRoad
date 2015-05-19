@@ -98,7 +98,6 @@
 		657D6FF81ADF799800AA5EBA /* LTActionItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FF71ADF799800AA5EBA /* LTActionItem.m */; };
 		657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */; };
 		657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */; };
-		657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */; };
 		6581A34E1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6581A34C1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m */; };
 		6581A34F1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6581A34D1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib */; };
 		65A0EA411B01FBB90061B3FF /* LTCityReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A0EA401B01FBB90061B3FF /* LTCityReq.m */; };
@@ -109,6 +108,7 @@
 		65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */; };
 		65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */; };
 		65A3F6901AE8E34C00BD6B1F /* PMToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F68F1AE8E34C00BD6B1F /* PMToken.m */; };
+		65AAF4BD1B0AE33D00BE9FCD /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */; };
 		65B283381AF8B9BD001E85A6 /* LTMyFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */; };
 		65B2833B1AF8BA02001E85A6 /* LTMyFavoriteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2833A1AF8BA02001E85A6 /* LTMyFavoriteDataController.m */; };
 		65B2833E1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2833D1AF8BB2A001E85A6 /* LTMyFavoriteTableViewCell.m */; };
@@ -347,8 +347,6 @@
 		657D6FFA1ADF79CD00AA5EBA /* LTActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTActionCell.m; sourceTree = "<group>"; };
 		657D6FFC1ADF7CEB00AA5EBA /* LTCarMeetMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetMenuView.h; sourceTree = "<group>"; };
 		657D6FFD1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetMenuView.m; sourceTree = "<group>"; };
-		657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = ../../../UI/CustomUI/LTCoverFlowLayout.h; sourceTree = "<group>"; };
-		657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = ../../../UI/CustomUI/LTCoverFlowLayout.m; sourceTree = "<group>"; };
 		6581A34B1AE8FDFD008C965A /* LTAddUserInfoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAddUserInfoTableViewController.h; sourceTree = "<group>"; };
 		6581A34C1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAddUserInfoTableViewController.m; sourceTree = "<group>"; };
 		6581A34D1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LTAddUserInfoTableViewController.xib; sourceTree = "<group>"; };
@@ -367,6 +365,8 @@
 		65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGuideContainerViewController.m; sourceTree = "<group>"; };
 		65A3F68E1AE8E34C00BD6B1F /* PMToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMToken.h; sourceTree = "<group>"; };
 		65A3F68F1AE8E34C00BD6B1F /* PMToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMToken.m; sourceTree = "<group>"; };
+		65AAF4BB1B0AE33D00BE9FCD /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.h; sourceTree = SOURCE_ROOT; };
+		65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.m; sourceTree = SOURCE_ROOT; };
 		65B283361AF8B9BD001E85A6 /* LTMyFavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteViewController.h; sourceTree = "<group>"; };
 		65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMyFavoriteViewController.m; sourceTree = "<group>"; };
 		65B283391AF8BA02001E85A6 /* LTMyFavoriteDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteDataController.h; sourceTree = "<group>"; };
@@ -1273,8 +1273,8 @@
 		65FD64B01ADB5F0F00FC94E0 /* Coverflow */ = {
 			isa = PBXGroup;
 			children = (
-				657D6FFF1ADF8AC600AA5EBA /* LTCoverFlowLayout.h */,
-				657D70001ADF8AC600AA5EBA /* LTCoverFlowLayout.m */,
+				65AAF4BB1B0AE33D00BE9FCD /* LTCoverFlowLayout.h */,
+				65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */,
 			);
 			path = Coverflow;
 			sourceTree = "<group>";
@@ -1493,7 +1493,6 @@
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
 				65B9E48F1AECA12200577594 /* PMCategory.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
-				657D70011ADF8AC600AA5EBA /* LTCoverFlowLayout.m in Sources */,
 				651E2B0C1B07151A000E42F9 /* LTHeadImageView.m in Sources */,
 				65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */,
 				652FB9241AD23EB60082894E /* MSRouter.m in Sources */,
@@ -1589,6 +1588,7 @@
 				651E2B001B06FFDE000E42F9 /* LTFeedDetailViewController.m in Sources */,
 				65B9E4891AEC963500577594 /* LTRoadViewController.m in Sources */,
 				652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */,
+				65AAF4BD1B0AE33D00BE9FCD /* LTCoverFlowLayout.m in Sources */,
 				657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */,
 				65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */,
 				65BCE6E11AE6262900482360 /* LTLine.m in Sources */,

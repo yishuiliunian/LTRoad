@@ -74,7 +74,7 @@
     _titleBabel.text = _line.title;
     _dateLabel.text = _line.createDateString;
     _distanceLabel.text = _line.distance;
-    [_backgroundImageView hnk_setImageFromURL:_line.backgroudImageURL];
+    [_backgroundImageView loadFeedBackgroundURL:_line.backgroudImageURL];
     [self decerateLikeButtonWithBeFav:NO count:_line.likeCount];
     [self setNeedsLayout];
     
