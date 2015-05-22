@@ -10,9 +10,12 @@
 #import <Baidu-Maps-iOS-SDK/BMapKit.h>
 #import "LTShowContentView.h"
 #import "LTLineStartEndView.h"
+#import "DZAdjustHeightTools.h"
+#import "LTRouteInfoView.h"
 extern const CGFloat LTLineHeaderCellHeight;
 @interface LTLineHeaderView : UIView
 @property (nonatomic, strong)  BMKMapView* mapView;
 @property (nonatomic, strong, readonly) LTShowContentView* detailContentView;
 @property (nonatomic, strong, readonly) LTLineStartEndView* startEndView;
+@property (nonatomic, strong, readonly) LTRouteInfoView* routeInfoView;
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LTBadgeItem.h"
-#import "PMRecommondLine.h"
+#import "PMRouteDetail.h"
 @interface LTRecommendLine : NSObject
 @property (nonatomic, strong) NSString* routeID;
 @property (nonatomic, strong) NSString* title;
@@ -20,5 +20,5 @@
 @property (nonatomic, assign, readonly) double distanceUIWidth;
 @property (nonatomic, assign) int likeCount;
 
-- (instancetype) initWithNetworkModel:(PMRecommondLine*)pmModel;
+- (instancetype) initWithNetworkModel:(PMRouteDetail*)pmModel;
 @end

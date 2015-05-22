@@ -8,7 +8,8 @@
 
 #import "LTRoteListReq.h"
 #import "LTRecommendLine.h"
-#import "PMRecommondLine.h"
+#import "PMRoteListRsp.h"
+#import "PMRouteDetail.h"
 @implementation LTRoteListReq
 @synthesize pageId = _pageId;
 @synthesize pageSize = _pageSize;
@@ -30,23 +31,22 @@
 - (BOOL) loadParamters:(NSError *__autoreleasing *)error
 {
     SendSuperFunctionWithError(loadParamters);
-    [self addParamter:self.city forKey:@"city"];
+    [self addParamter:self.city forKey:@"cityId"];
     [self addParamter:self.keyword forKey:@"keyword"];
-    [self addParamter:self.category forKey:@"category"];
+    [self addParamter:self.category forKey:@"categoryName"];
     [self addParamterNumber:@(self.pageSize) forKey:@"pageSize"];
-    [self addParamterNumber:@(self.pageId) forKey:@"pageId"];
+    [self addParamterNumber:@(self.pageId) forKey:@"pageNo"];
     return YES;
 }
 
 - (void) onSuccess:(id)retObject
 {
-    NSArray* routeDics = [retObject objectForKey:@"routes"];
     NSError* error = nil;
 
-    NSArray* protocolModels = [MTLJSONAdapter modelsOfClass:[PMRecommondLine class] fromJSONArray:routeDics error:&error];
+    PMRoteListRsp* listRsp = [MTLJSONAdapter modelOfClass:[PMRoteListRsp class] fromJSONDictionary:retObject error:&error];
 
     NSMutableArray* array = [NSMutableArray new];
-    for (PMRecommondLine* line in protocolModels) {
+    for (PMRouteDetail* line in listRsp.list) {
         LTRecommendLine* rLine = [[LTRecommendLine alloc] initWithNetworkModel:line];
         [array addObject:rLine];
     }

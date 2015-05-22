@@ -7,7 +7,6 @@
 //
 
 #import "LTTableViewPageDataController.h"
-#import "LTRecommondRoadReq.h"
 @interface LTRecommondReadDataController : LTTableViewPageDataController
 @property (nonatomic, strong) NSString* keyword;
 @property (nonatomic, strong) NSString* category;

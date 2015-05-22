@@ -33,6 +33,14 @@ return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]
 }
 #define DEFINE_Mantle_JSONTranformer_Function( name ,c) DEFINE_Mantle_JSONTranformer_Function_1( name ,c, JSONTransformer)
 
+#define __DEFINE_URL_Tansform(name,sub) \
++ (NSValueTransformer*) name##sub \
+{ \
+return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName]; \
+}
 
+#define DEFINE_URL_Tansform(name) __DEFINE_URL_Tansform(name,JSONTransformer)
 
 FOUNDATION_EXTERN NSURL* LTNSURLFromString(NSString* string);
+
+#define STR_TO_URL(str)    [NSURL URLWithString:str]

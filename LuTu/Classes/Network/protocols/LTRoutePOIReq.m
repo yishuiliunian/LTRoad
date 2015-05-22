@@ -24,7 +24,7 @@
 
 - (void) onSuccess:(id)retObject
 {
-    NSArray* array = [retObject objectForKey:@"pois"];
+    NSArray* array = (NSArray*)retObject;
     NSError* error;
     NSArray*pois = [MTLJSONAdapter modelsOfClass:[PMPoiInfo class] fromJSONArray:array error:&error];
     if (error) {

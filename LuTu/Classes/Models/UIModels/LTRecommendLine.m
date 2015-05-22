@@ -8,25 +8,26 @@
 
 #import "LTRecommendLine.h"
 #import "LTGlobals.h"
+#import "PMRouteDetail.h"
 @implementation LTRecommendLine
-- (instancetype) initWithNetworkModel:(PMRecommondLine *)pmModel
+- (instancetype) initWithNetworkModel:(PMRouteDetail*)pmModel
 {
     self = [super init];
     if (!self) {
         return self;
     }
     self.createDate =  [NSDate date];
-    NSMutableArray* array = [NSMutableArray new];
-    for (NSString* tag  in pmModel.category) {
-        [array addObject:LTCreateBadgeItemWithText(tag)];
-    }
-    self.tagBadgeItems = array;
+//    NSMutableArray* array = [NSMutableArray new];
+//    for (NSString* tag  in pmModel.category) {
+//        [array addObject:LTCreateBadgeItemWithText(tag)];
+//    }
+//    self.tagBadgeItems = array;
     self.distance = @"3.5KM";
-    self.likeCount = pmModel.fav_count;
-    self.backgroudImageURL = [NSURL URLWithString:pmModel.intro_image_url];
-    self.title = pmModel.route_name;
+//    self.likeCount = pmModel.fav_count;
+    self.backgroudImageURL = STR_TO_URL(pmModel.introImageUrl);
+    self.title = pmModel.name;
     self.createDateString = @"2/14";
-    self.routeID = pmModel.route_id;
+    self.routeID = [@(pmModel.routeId) stringValue];
     return self;
 }
 @end

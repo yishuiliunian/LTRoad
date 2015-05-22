@@ -12,12 +12,16 @@
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
     return @ {
-      LTMantleSameMapPair(route_index),
-        LTMantleSameMapPair(arrival_time),
-        LTMantleSameMapPair(type),
-        LTMantleSameMapPair(intro_text),
+      LTMantleSameMapPair(routeId),
+        LTMantleSameMapPair(poiId),
+        LTMantleSameMapPair(routeIndex),
+        LTMantleSameMapPair(cover),
         LTMantleSameMapPair(name),
-        LTMantleSameMapPair(intro_image_url)
+        LTMantleSameMapPair(introImageUrl),
+        LTMantleSameMapPair(introText),
+        LTMantleSameMapPair(arrivalTime),
+        LTMantleSameMapPair(location),
+        LTMantleSameMapPair(type)
     };
 }
 @end

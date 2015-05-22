@@ -53,7 +53,7 @@
     
     CGFloat image_content_offset = 10;
     
-    CGSize size = [_poiInfo.intro_text sizeWithFont:LTFontPOIDetail() constrainedToSize:CGSizeMake(contentWidth, 19999)];
+    CGSize size = [_poiInfo.introText sizeWithFont:LTFontPOIDetail() constrainedToSize:CGSizeMake(contentWidth, 19999)];
     contentRect = CGRectMake(contentStartX, CGRectGetMaxY(imageRect) + image_content_offset, contentWidth, size.height);
     
     timeIndicatorRect = CGRectMake(contentStartX, CGRectGetMaxY(contentRect) + 10,  timeHeight , timeHeight);
@@ -65,9 +65,9 @@
 - (void) loadContentForCell:(LTLinePoiCell *)cell
 {
     cell.titleLabel.text = _poiInfo.name;
-    [cell.introImageView hnk_setImageFromURL:[NSURL URLWithString:_poiInfo.intro_image_url]];
-    cell.contentTextLabel.text = _poiInfo.intro_text;
-    cell.timeLabel.text = _poiInfo.arrival_time;
+    [cell.introImageView hnk_setImageFromURL:[NSURL URLWithString:_poiInfo.introImageUrl]];
+    cell.contentTextLabel.text = _poiInfo.introText;
+//    cell.timeLabel.text =  _poiInfo.arrivalTime;
 }
 
 - (void) layoutContentViewForCell:(LTLinePoiCell *)cell

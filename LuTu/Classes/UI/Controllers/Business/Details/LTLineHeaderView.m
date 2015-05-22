@@ -32,6 +32,7 @@ const CGFloat  LTLineHeaderCellHeight =410;
     INIT_SELF_SUBVIEW(LTLineStartEndView, _startEndView);
     
     _lineView.backgroundColor = LTColorGrayNormal();
+    
     return self;
 }
 
