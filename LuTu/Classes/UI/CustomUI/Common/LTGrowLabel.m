@@ -7,6 +7,7 @@
 //
 
 #import "LTGrowLabel.h"
+#import "AdjustFrame.h"
 
 
 @interface LTGrowLabel ()
@@ -16,6 +17,16 @@
 @end
 @implementation LTGrowLabel
 
+- (instancetype) initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (!self) {
+        return self;
+    }
+    _needUpdateTextHeight = YES;
+    self.numberOfLines = 0;
+    return self;
+}
 - (void) setText:(NSString *)text
 {
     [super setText:text];
@@ -33,9 +44,9 @@
     if (_needUpdateTextHeight) {
         if (self.text) {
             CGSize size = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(CGRectGetWidth(self.bounds), 10000)];
-            self.textHeight = size.height;
+            self.adjustHeight= size.height + 8;
         } else {
-            self.textHeight = CGRectGetHeight(self.bounds);
+            self.adjustHeight = CGRectGetHeight(self.bounds);
         }
         _needUpdateTextHeight = NO;
     }

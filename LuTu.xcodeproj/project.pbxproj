@@ -149,6 +149,8 @@
 		65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD201AD54C2F00CBF695 /* LTBadgeView.m */; };
 		65D9CD251AD54C3D00CBF695 /* LTBadgeItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD241AD54C3D00CBF695 /* LTBadgeItem.m */; };
 		65D9CD281AD54C4B00CBF695 /* LTBadgeContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */; };
+		65DF76AD1B12C8B0001C8470 /* AdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DF76AC1B12C8B0001C8470 /* AdjustFrame.m */; };
+		65DF76B01B12CBD6001C8470 /* LTAdjustFrameTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DF76AF1B12CBD6001C8470 /* LTAdjustFrameTable.m */; };
 		65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */; };
 		65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */; };
 		65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */; };
@@ -330,8 +332,8 @@
 		6549446F1B0EF9DC00E925D8 /* PMRouteDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRouteDetail.m; sourceTree = "<group>"; };
 		654944711B0F10B000E925D8 /* LTRouteInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRouteInfoView.h; sourceTree = "<group>"; };
 		654944721B0F10B000E925D8 /* LTRouteInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRouteInfoView.m; sourceTree = "<group>"; };
-		654944741B0F161800E925D8 /* LTGrowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGrowLabel.h; sourceTree = "<group>"; };
-		654944751B0F161800E925D8 /* LTGrowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGrowLabel.m; sourceTree = "<group>"; };
+		654944741B0F161800E925D8 /* LTGrowLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTGrowLabel.h; path = ../Common/LTGrowLabel.h; sourceTree = "<group>"; };
+		654944751B0F161800E925D8 /* LTGrowLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTGrowLabel.m; path = ../Common/LTGrowLabel.m; sourceTree = "<group>"; };
 		65576A7B1B05D299004DFCB8 /* LTNotificationTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTNotificationTools.h; sourceTree = "<group>"; };
 		65576A7C1B05D299004DFCB8 /* LTNotificationTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTNotificationTools.m; sourceTree = "<group>"; };
 		65576A7F1B05D8C8004DFCB8 /* LTSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSearchTableViewController.h; sourceTree = "<group>"; };
@@ -452,6 +454,10 @@
 		65D9CD261AD54C4B00CBF695 /* LTBadgeContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeContentView.h; sourceTree = "<group>"; };
 		65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBadgeContentView.m; sourceTree = "<group>"; };
 		65D9CD291AD5502100CBF695 /* LTBadgeView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBadgeView_Private.h; sourceTree = "<group>"; };
+		65DF76AB1B12C8B0001C8470 /* AdjustFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdjustFrame.h; sourceTree = "<group>"; };
+		65DF76AC1B12C8B0001C8470 /* AdjustFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdjustFrame.m; sourceTree = "<group>"; };
+		65DF76AE1B12CBD6001C8470 /* LTAdjustFrameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAdjustFrameTable.h; sourceTree = "<group>"; };
+		65DF76AF1B12CBD6001C8470 /* LTAdjustFrameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAdjustFrameTable.m; sourceTree = "<group>"; };
 		65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHaneke.h; sourceTree = "<group>"; };
 		65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHaneke.m; sourceTree = "<group>"; };
 		65FD64C31ADB605300FC94E0 /* LTDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDiscoverCell.h; sourceTree = "<group>"; };
@@ -557,6 +563,8 @@
 				6517E7851AE78EC3004F71BC /* LTLineHeaderView.m */,
 				654944711B0F10B000E925D8 /* LTRouteInfoView.h */,
 				654944721B0F10B000E925D8 /* LTRouteInfoView.m */,
+				65DF76AE1B12CBD6001C8470 /* LTAdjustFrameTable.h */,
+				65DF76AF1B12CBD6001C8470 /* LTAdjustFrameTable.m */,
 			);
 			name = headView;
 			sourceTree = "<group>";
@@ -858,8 +866,6 @@
 				657D6FEC1ADE83D100AA5EBA /* LTBackButton.m */,
 				651E2B0A1B07151A000E42F9 /* LTHeadImageView.h */,
 				651E2B0B1B07151A000E42F9 /* LTHeadImageView.m */,
-				654944741B0F161800E925D8 /* LTGrowLabel.h */,
-				654944751B0F161800E925D8 /* LTGrowLabel.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1027,6 +1033,7 @@
 				652C4EDF1ADE141300570768 /* UIViewController+LTNavigationBar.h */,
 				652C4EE01ADE141300570768 /* UIViewController+LTNavigationBar.m */,
 				65D9CD1F1AD54BFD00CBF695 /* Badge */,
+				65DF76AA1B12C8A1001C8470 /* AdjustFrame */,
 				652FB9651AD27ED90082894E /* Common */,
 				65C224221ADE35A800BE26FA /* UIViewController+Additions.h */,
 				65C224231ADE35A800BE26FA /* UIViewController+Additions.m */,
@@ -1283,6 +1290,17 @@
 				65D9CD271AD54C4B00CBF695 /* LTBadgeContentView.m */,
 			);
 			path = Badge;
+			sourceTree = "<group>";
+		};
+		65DF76AA1B12C8A1001C8470 /* AdjustFrame */ = {
+			isa = PBXGroup;
+			children = (
+				654944741B0F161800E925D8 /* LTGrowLabel.h */,
+				654944751B0F161800E925D8 /* LTGrowLabel.m */,
+				65DF76AB1B12C8B0001C8470 /* AdjustFrame.h */,
+				65DF76AC1B12C8B0001C8470 /* AdjustFrame.m */,
+			);
+			path = AdjustFrame;
 			sourceTree = "<group>";
 		};
 		65FD64AF1ADB5F0F00FC94E0 /* frameworks */ = {
@@ -1542,6 +1560,7 @@
 				65576A871B05E2B6004DFCB8 /* LTSearchReq.m in Sources */,
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
 				6517E7AA1AE7C7C2004F71BC /* LTEditUserInfoViewController.m in Sources */,
+				65DF76AD1B12C8B0001C8470 /* AdjustFrame.m in Sources */,
 				6517E7801AE78811004F71BC /* LTTopShowTextView.m in Sources */,
 				651E2B121B071A64000E42F9 /* LTFeedContentView.m in Sources */,
 				652C4EE11ADE141300570768 /* UIViewController+LTNavigationBar.m in Sources */,
@@ -1599,6 +1618,7 @@
 				652FB9551AD277750082894E /* LTDiscoverViewController.m in Sources */,
 				65038DE01AF8A10700B0D9F2 /* LTTableViewPageDataController.m in Sources */,
 				654944761B0F161800E925D8 /* LTGrowLabel.m in Sources */,
+				65DF76B01B12CBD6001C8470 /* LTAdjustFrameTable.m in Sources */,
 				65B283381AF8B9BD001E85A6 /* LTMyFavoriteViewController.m in Sources */,
 				65A0EA411B01FBB90061B3FF /* LTCityReq.m in Sources */,
 				65038DD51AF8684D00B0D9F2 /* LTUserInfo.m in Sources */,

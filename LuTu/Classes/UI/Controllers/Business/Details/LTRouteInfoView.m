@@ -8,6 +8,8 @@
 
 #import "LTRouteInfoView.h"
 #import <DZGeometryTools.h>
+#import "AdjustFrame.h"
+#import "LTGlobals.h"
 typedef enum {
     LTRouteInfoViewStateOpen,
     LTRouteInfoViewStateClose
@@ -29,11 +31,11 @@ typedef enum {
 DEFINE_PROPERTY_STRONG_UILabel(indicatorLabel);
 DEFINE_PROPERTY_STRONG_UIButton(actionButton);
 DEFINE_PROPERTY_STRONG_UIImageView(lineView);
+DEFINE_PROPERTY_STRONG_UIImageView(backgroundView);
 @end
 @implementation LTRouteInfoView
 - (void) dealloc
 {
-    [_detailLabel removeObserver:self forKeyPath:@"textHeight"];
 }
 - (instancetype) initWithFrame:(CGRect)frame
 {
@@ -41,33 +43,41 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
     if (!self) {
         return self;
     }
+    INIT_SELF_SUBVIEW_UIImageView(_backgroundView);
     INIT_SELF_SUBVIEW_UILabel(_indicatorLabel);
     INIT_SELF_SUBVIEW(LTGrowLabel, _detailLabel);
     INIT_SUBVIEW_UIButton(self, _actionButton);
+    INIT_SELF_SUBVIEW_UIImageView(_lineView);
     INIT_SELF_SUBVIEW(LTBadgeContentView, _badgeContentView);
     _state = LTRouteInfoViewStateOpen;
     //
     _xOffset = 15;
     _yOffSet = 10;
-    _topHeight = 30;
+    _topHeight = 50;
     _bottomHeight = 40;
     _textHeight = 0;
     //
-    [_detailLabel addObserver:self forKeyPath:@"textHeight" options:NSKeyValueObservingOptionNew context:nil];
+    
+    _indicatorLabel.text = @"线路详情";
+    _lineView.backgroundColor = LTColorGrayBC();
+    
+    //
+    _needUpdateHeight = YES;
+    //
+    _backgroundView.backgroundColor = [UIColor whiteColor];
+    _backgroundView.layer.cornerRadius = 5;
     return self;
 }
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (object == _detailLabel && [keyPath isEqualToString:@"textHeight"]) {
-        [self updateHeight];
-    }
-}
 
 
-- (void) updateHeight
+
+- (void) handleAdjustFrame
 {
-    _textHeight = _detailLabel.textHeight;
-    self.height = [self calHeight];
+    CGFloat height = _yOffSet * 4 + _topHeight + _bottomHeight + _detailLabel.adjustHeight;
+    self.adjustHeight = height;
+    CGRect rect = self.bounds;
+    rect.size.height = height;
+    self.frame = rect;
 }
 
 - (CGFloat) calHeight
@@ -78,11 +88,17 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
         return _yOffSet*4 + _bottomHeight + _topHeight;
     }
 }
+
 - (void) layoutSubviews
 {
     [super layoutSubviews];
-    
-    CGRect contentRect = CGRectCenterSubSize(self.bounds, CGSizeMake(_xOffset*2, _yOffSet*2));
+    CGRect rect = self.bounds;
+    if (_needUpdateHeight) {
+        rect.size.height = [self calHeight];
+        _needUpdateHeight = NO;
+    }
+    CGRect backgroudRect = CGRectCenterSubSize(rect, CGSizeMake(_xOffset*2, _yOffSet*2));
+    CGRect contentRect = CGRectCenterSubSize(backgroudRect, CGSizeMake(_xOffset*2, 0));
     CGRect topRect;
     CGRect textRect;
     CGRect bottomRect;
@@ -95,13 +111,20 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
     CGRect indicatorRect;
     CGRect buttonRect;
     
-    CGRectDivide(topRect, &buttonRect, &indicatorRect, buttonSize.width, CGRectMaxXEdge);
+    CGRectDivide(topRect, &indicatorRect, &buttonRect, buttonSize.width, CGRectMaxXEdge);
     indicatorRect = CGRectShrink(buttonRect, _xOffset, CGRectMaxXEdge);
     
     _indicatorLabel.frame = indicatorRect;
+    _lineView.frame = CGRectMake(CGRectGetMinX(topRect) + _xOffset, CGRectGetMaxY(topRect), CGRectGetWidth(topRect) - _xOffset * 2, 1);
     _actionButton.frame = buttonRect;
     _detailLabel.frame = textRect;
+    _backgroundView.frame = backgroudRect;
     _badgeContentView.frame = bottomRect;
+}
+
+- (BOOL) hintAdjustSupreView
+{
+    return YES;
 }
 
 @end

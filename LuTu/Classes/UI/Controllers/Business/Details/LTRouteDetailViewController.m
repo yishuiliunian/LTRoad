@@ -14,6 +14,8 @@
 #import "LTLine.h"
 #import "LTLinePoiCell.h"
 #import "LTGlobals.h"
+#import <DZGeometryTools.h>
+#import "LTAdjustFrameTable.h"
 @interface LTRouteDetailViewController () <MSRequestUIDelegate>
 {
     NSArray* _allCellDatas;
@@ -37,6 +39,14 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     return self;
 }
 
+- (void) loadView
+{
+    LTAdjustFrameTable* tableView = [[LTAdjustFrameTable alloc] initWithFrame:CGRectLoadViewFrame];
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    self.tableView = tableView;
+    self.view = tableView;
+}
 - (void) loadHeaderView
 {
     _headView = [LTLineHeaderView new];
@@ -93,6 +103,8 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     
     _headView.detailContentView.roadStatusView.detailLabel.text = @"路况";
     _headView.detailContentView.roadStatusView.topLabel.text = @"良好";
+    _headView.routeInfoView.detailLabel.text =  @"asdfaskldfjas啊打发会计师的回房间卡蝴蝶结开发和奥斯卡级东方红啊靠就收到货发框架啊是电话费夸奖啊说的话放假啊圣诞款金凤凰阿斯达克金凤凰阿克江是电话费框架啊说的话分看举案说法金卡水电费框架啊受打击发看啊合适的会计法哈斯东方红啊思考京东方啊空间是东方红夸奖啊收到货饭卡撒娇的发爱神的箭发卡机撒旦法哈师大会计法啊数据库的花费阿萨德飞阿萨德飞阿萨德飞和会计师东方红框架啊是电话费就卡萨丁和副科级撒旦法但是";
+    _headView.routeInfoView.badgeContentView.badgeItems = @[LTCreateBadgeItemWithText(@"亲子游")];
 }
 - (void)  replaceDataWithPOIS:(NSArray*)pois
 {

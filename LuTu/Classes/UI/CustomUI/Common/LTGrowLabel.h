@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface LTGrowLabel : UILabel
-@property (nonatomic, assign) CGFloat textHeight;
 @end

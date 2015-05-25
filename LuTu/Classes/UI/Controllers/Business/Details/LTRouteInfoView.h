@@ -11,8 +11,8 @@
 #import "LTBadgeContentView.h"
 #import "DZAdjustHeightTools.h"
 #import "LTGrowLabel.h"
+#import "AdjustFrame.h"
 @interface LTRouteInfoView : UIView
-DEFINE_PROPERTY_HEIGHT
 DEFINE_PROPERTY_STRONG(LTGrowLabel*,detailLabel);
 DEFINE_PROPERTY_STRONG(LTBadgeContentView*, badgeContentView);
 @end
