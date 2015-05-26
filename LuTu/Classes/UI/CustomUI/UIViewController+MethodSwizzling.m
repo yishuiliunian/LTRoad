@@ -9,6 +9,7 @@
 #import "UIViewController+MethodSwizzling.h"
 #import <DZImageCache.h>
 #import <objc/runtime.h>
+#import "LTAppearenceTools.h"
 
 
 @implementation UIViewController (MethodSwizzling)
@@ -26,10 +27,17 @@
             //
             SwizzingMethod(@selector(viewDidAppear:), @selector(swizzling_viewDidAppear:));
             SwizzingMethod(@selector(viewWillLayoutSubviews), @selector(swizzing_viewWillLayoutSubviews));
+            SwizzingMethod(@selector(viewWillAppear:), @selector(swizzing_viewWillAppear:));
         }
     });
 }
 
+- (void) swizzing_viewWillAppear:(BOOL)animated
+{
+    [self swizzing_viewWillAppear:animated];
+    [self loadNavigationBarAppearance:self.naviationBarStyle];
+
+}
 - (void)swizzling_viewDidAppear:(BOOL)animated
 {
     [self swizzling_viewDidAppear:animated];

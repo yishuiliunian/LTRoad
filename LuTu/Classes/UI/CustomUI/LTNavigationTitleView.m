@@ -60,7 +60,7 @@
     self.backgroundColor = [UIColor clearColor];
     self.contentView.backgroundColor = [UIColor clearColor];
     self.clipsToBounds = YES;
-    _logoImageView = [[UIImageView alloc] initWithImage: DZCachedImageByName(@"logo")];
+    _logoImageView = [[UIImageView alloc] initWithImage: DZCachedImageByName(@"cover_logo")];
     [self addSubview:_logoImageView];
 }
 
@@ -131,6 +131,7 @@
         }
         else {
             
+            [titleAttributes setValue:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
             [titleAttributes setValue:[UIFont boldSystemFontOfSize:20] forKey:NSFontAttributeName];
             [titleAttributes setValue:paragraphStyle                   forKey:NSParagraphStyleAttributeName];
             

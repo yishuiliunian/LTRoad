@@ -24,4 +24,32 @@
     LTNavigationController* navVC = [[LTNavigationController alloc] initWithRootViewController:searchVC];
     [self.navigationController presentViewController:navVC animated:YES completion:nil];
 }
+
+- (UIBarButtonItem*) customBarButtonItemWithTarget:(id)target selector:(SEL)selector image:(NSString*)image highlightImage:(NSString*)hightlightName
+{
+    UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn addTarget:target action:selector forControlEvents:UIControlEventTouchUpInside];
+    UIImage* normalImage = DZCachedImageByName(image);
+    [btn setImage:normalImage forState:UIControlStateNormal];
+    [btn setImage:DZCachedImageByName(hightlightName) forState:UIControlStateHighlighted];
+    CGSize size = normalImage.size;
+    btn.frame = CGRectMake(0, 0, size.width, size.height + 10);
+    UIBarButtonItem* item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    return item;
+}
+
+- (UIBarButtonItem*) backBarButtonItem
+{
+    UIBarButtonItem* item = [self customBarButtonItemWithTarget:self selector:@selector(__dismissViewController) image:@"top_arrowback_black" highlightImage:nil];
+    return item;
+}
+
+- (void) loadBackNavigationItem
+{
+    self.navigationItem.leftBarButtonItem = [self backBarButtonItem];
+}
+- (void) __dismissViewController
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

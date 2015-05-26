@@ -7,15 +7,25 @@
 //
 
 #import "LTNavigationController.h"
-#import <UINavigationBar+Awesome.h>
 #import "UIViewController+MethodSwizzling.h"
 #import <DZImageCache.h>
 #import "LTNavigationTitleView.h"
+#import "UIViewController+Additions.h"
+#import "LTNavigationBar.h"
 @interface LTNavigationController ()
 
 @end
 
 @implementation LTNavigationController
+- (instancetype) initWithRootViewController:(UIViewController *)rootViewController
+{
+    self = [super initWithNavigationBarClass:[LTNavigationBar class] toolbarClass:[UIToolbar class]];
+    if (!self) {
+        return self;
+    }
+    [self pushViewController:rootViewController animated:NO];
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self addTitleViewToViewController:self.topViewController];
@@ -24,7 +34,7 @@
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.navigationBar lt_setBackgroundColor:[UIColor clearColor]];
+
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -47,7 +57,11 @@
 {
     [self addTitleViewToViewController:viewController];
     [super pushViewController:viewController animated:animated];
+    if (self.viewControllers.count > 1) {
+        [viewController loadBackNavigationItem];
+    }
 }
+
 
 - (void)addTitleViewToViewController:(UIViewController *)viewController
 {

@@ -10,4 +10,5 @@
 
 @interface UIViewController (Additions)
 - (void) loadNavigationBarSearchItem;
+- (void) loadBackNavigationItem;
 @end

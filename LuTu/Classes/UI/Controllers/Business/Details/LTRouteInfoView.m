@@ -98,14 +98,14 @@ DEFINE_PROPERTY_STRONG_UIImageView(backgroundView);
         _needUpdateHeight = NO;
     }
     CGRect backgroudRect = CGRectCenterSubSize(rect, CGSizeMake(_xOffset*2, _yOffSet*2));
-    CGRect contentRect = CGRectCenterSubSize(backgroudRect, CGSizeMake(_xOffset*2, 0));
+    CGRect contentRect = CGRectCenterSubSize(backgroudRect, CGSizeMake(_xOffset*2, _yOffSet));
     CGRect topRect;
     CGRect textRect;
     CGRect bottomRect;
     
     CGRectDivide(contentRect, &topRect, &textRect, _topHeight, CGRectMinYEdge);
     CGRectDivide(textRect, &bottomRect, &textRect, _bottomHeight, CGRectMaxYEdge);
-    textRect = CGRectCenterSubSize(textRect, CGSizeMake(0, _yOffSet*2));
+    textRect = CGRectCenterSubSize(textRect, CGSizeMake(0, _yOffSet));
     
     CGSize buttonSize = CGSizeMake(30, 30);
     CGRect indicatorRect;
@@ -115,7 +115,7 @@ DEFINE_PROPERTY_STRONG_UIImageView(backgroundView);
     indicatorRect = CGRectShrink(buttonRect, _xOffset, CGRectMaxXEdge);
     
     _indicatorLabel.frame = indicatorRect;
-    _lineView.frame = CGRectMake(CGRectGetMinX(topRect) + _xOffset, CGRectGetMaxY(topRect), CGRectGetWidth(topRect) - _xOffset * 2, 1);
+    _lineView.frame = CGRectMake(CGRectGetMinX(contentRect), CGRectGetMaxY(topRect), CGRectGetWidth(contentRect) , 1);
     _actionButton.frame = buttonRect;
     _detailLabel.frame = textRect;
     _backgroundView.frame = backgroudRect;

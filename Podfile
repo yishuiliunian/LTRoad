@@ -13,7 +13,6 @@ target 'LuTu' do
   pod 'DZGeometryTools'
   pod 'Haneke', '~> 1.0'
   pod 'DZCache'
-  pod 'LTNavigationBar'
   pod 'HexColors'
   pod 'ProtobufObjC'
   pod 'Mantle'

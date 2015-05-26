@@ -16,7 +16,18 @@
 }
 - (MSToken*) loadTokenForAccount:(LTAccount*)ac
 {
-    NSDictionary* dic =[[NSUserDefaults standardUserDefaults] objectForKey:ac.accountID];
+    if (!ac.accountID) {
+        return nil;
+    }
+    id storeData=[[NSUserDefaults standardUserDefaults] objectForKey:ac.accountID];
+    
+    NSData* dicData = nil;
+    if (![storeData isKindOfClass:[NSData class]]) {
+        return nil;
+    }
+    dicData = storeData;
+    
+    NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:dicData options:0 error:nil];
     if (dic) {
         MSToken* token = [[MSToken alloc] initWithDictionary:dic error:nil];
         if (token) {
@@ -31,7 +42,8 @@
 {
     NSDictionary* dic = [_token dictionaryValue];
     if (dic && ac) {
-        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:ac.accountID];
+        NSData* data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:ac.accountID];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }

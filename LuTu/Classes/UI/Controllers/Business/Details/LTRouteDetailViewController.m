@@ -92,6 +92,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 
 - (void) loadLineUIData
 {
+    self.title = _uiDataLine.routeName;
     _headView.detailContentView.timeView.topLabel.text = _uiDataLine.timeCoast;
     _headView.detailContentView.timeView.detailLabel.text = @"时间";
     
@@ -102,9 +103,12 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     _headView.detailContentView.distanceView.topLabel.text = _uiDataLine.distance;
     
     _headView.detailContentView.roadStatusView.detailLabel.text = @"路况";
-    _headView.detailContentView.roadStatusView.topLabel.text = @"良好";
-    _headView.routeInfoView.detailLabel.text =  @"asdfaskldfjas啊打发会计师的回房间卡蝴蝶结开发和奥斯卡级东方红啊靠就收到货发框架啊是电话费夸奖啊说的话放假啊圣诞款金凤凰阿斯达克金凤凰阿克江是电话费框架啊说的话分看举案说法金卡水电费框架啊受打击发看啊合适的会计法哈斯东方红啊思考京东方啊空间是东方红夸奖啊收到货饭卡撒娇的发爱神的箭发卡机撒旦法哈师大会计法啊数据库的花费阿萨德飞阿萨德飞阿萨德飞和会计师东方红框架啊是电话费就卡萨丁和副科级撒旦法但是";
-    _headView.routeInfoView.badgeContentView.badgeItems = @[LTCreateBadgeItemWithText(@"亲子游")];
+    _headView.detailContentView.roadStatusView.topLabel.text = _uiDataLine.rloadCondition;
+    _headView.routeInfoView.detailLabel.text = @"asdhjfahsjdfhaskjdfhajsdfhjasdfhkjasdhfjasdhfkjasdhfijqwhefuiasdh啊好的减法哈师大会计法哈几十块地方哈会计师等放寒假阿克苏的九分裤啦圣诞节饭卡就的看法姐啊上岛咖啡静安丽舍肯德基法拉克束带结发卡拉束带结发卡束带结发看拉萨的九分裤拉萨的讲课费俺就是的开发姐啊上岛咖啡就阿萨德飞暗示";
+    _headView.routeInfoView.badgeContentView.badgeItems = _uiDataLine.categoryBadgeArray;
+    
+    _headView.startEndView.startPointView.detailLabel.text = _uiDataLine.startPointName;
+    _headView.startEndView.endPointView.detailLabel.text = _uiDataLine.endPointName;
 }
 - (void)  replaceDataWithPOIS:(NSArray*)pois
 {

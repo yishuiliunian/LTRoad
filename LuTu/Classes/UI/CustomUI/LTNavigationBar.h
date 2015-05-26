@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface LTNavigationBar : UINavigationBar
+@property (nonatomic, strong) UIImage* barBackgroundImage;
+@property (strong, nonatomic)  UIColor *color;
+
+-(void)setNavigationBarWithColor:(UIColor *)color;
+-(void)setNavigationBarWithColors:(NSArray *)colours;
+
 
 @end

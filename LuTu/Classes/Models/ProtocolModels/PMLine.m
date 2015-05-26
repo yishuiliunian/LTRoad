@@ -8,6 +8,7 @@
 
 #import "PMLine.h"
 #import "LTGlobals.h"
+#import "PMLineSegment.h"
 
 @implementation PMLine
 
@@ -15,17 +16,28 @@
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
     return @{
-             @"fee_gas":@"fee_gas",
-             @"fee_pass":@"fee_pass",
-             @"distance":@"distance",
-             @"route_index":@"route_index",
-             @"location_end":@"location_end",
-             @"location_start":@"location_start",
-             
+             LTMantleSameMapPair(route_name),
+             LTMantleSameMapPair(route_id),
+             LTMantleSameMapPair(feature),
+             LTMantleSameMapPair(duration),
+             LTMantleSameMapPair(loaging),
+             LTMantleSameMapPair(loaging_time),
+             LTMantleSameMapPair(fee_loaging),
+             LTMantleSameMapPair(fee_entrance),
+             LTMantleSameMapPair(fee_food),
+             LTMantleSameMapPair(gas_station),
+             LTMantleSameMapPair(tags),
+             LTMantleSameMapPair(lines),
              };
 }
 
++ (NSValueTransformer*) tagsJSONTransformer {
+    return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:[NSValueTransformer mtl_validatingTransformerForClass:[NSString class]]];
+}
 
-DEFINE_Mantle_JSONTranformer_Function(location_start, PMLinePoint)
-DEFINE_Mantle_JSONTranformer_Function(location_end, PMLinePoint)
++ (NSValueTransformer*) linesJSONTransformer
+{
+    return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:[NSValueTransformer mtl_validatingTransformerForClass:[PMLineSegment class]]];
+}
+
 @end

@@ -60,13 +60,12 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - LTNavigationBar (2.0.3)
   - MagicalRecord (2.2):
     - MagicalRecord/Core (= 2.2)
   - MagicalRecord/Core (2.2)
-  - Mantle (2.0):
-    - Mantle/extobjc (= 2.0)
-  - Mantle/extobjc (2.0)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
   - Masonry (0.6.1)
   - NSString-UrlEncode (2.0.0)
   - ProtobufObjC (0.0.1)
@@ -87,7 +86,6 @@ DEPENDENCIES:
   - Haneke (~> 1.0)
   - HexColors
   - libextobjc
-  - LTNavigationBar
   - MagicalRecord
   - Mantle
   - Masonry
@@ -111,12 +109,11 @@ SPEC CHECKSUMS:
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  LTNavigationBar: 28903730dc6babd80059c391ce095ac179ce454d
   MagicalRecord: f8a56bb87ab6552f20c4bb8681a1958a197ea3cd
-  Mantle: d7c75b6fb789b20f7ae30cd0d09435fe545896ff
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
 
-COCOAPODS: 0.35.0.rc2
+COCOAPODS: 0.37.1

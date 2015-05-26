@@ -65,7 +65,7 @@
 - (void) loadContentForCell:(LTLinePoiCell *)cell
 {
     cell.titleLabel.text = _poiInfo.name;
-    [cell.introImageView hnk_setImageFromURL:[NSURL URLWithString:_poiInfo.introImageUrl]];
+    [cell.introImageView  loadFeedBackgroundURL:[NSURL URLWithString:_poiInfo.introImageUrl]];
     cell.contentTextLabel.text = _poiInfo.introText;
 //    cell.timeLabel.text =  _poiInfo.arrivalTime;
 }

@@ -154,6 +154,9 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     [self.collectionView registerClass:[LTDiscoverCell class] forCellWithReuseIdentifier:kCoverCellIdentifier];
     self.collectionView.scrollEnabled = YES;
     [self reloadAllData];
+    
+    self.title = @"发现";
+    self.naviationBarStyle = LTNavigationStyleTransparency;
 }
 - (void) search
 {

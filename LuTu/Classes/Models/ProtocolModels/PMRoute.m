@@ -8,6 +8,7 @@
 
 #import "PMRoute.h"
 #import <Mantle.h>
+#import "PMLineSegment.h"
 @implementation PMRoute
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
@@ -25,7 +26,7 @@
              };
 }
 + (NSValueTransformer*) linesJSONTransformer {
-    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[PMLine class]];
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[PMLineSegment class]];
 }
 @end
 

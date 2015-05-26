@@ -46,6 +46,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [_topView.carFriendButton addTarget:self action:@selector(handleShowMyClub) forControlEvents:UIControlEventTouchUpInside];
     [_topView.favarateButton addTarget:self action:@selector(handleShowMyFavorate) forControlEvents:UIControlEventTouchUpInside];
     //
+    self.naviationBarStyle = LTNavigationStyleTransparency;
 }
 
 - (void) handleTapGestrue:(UITapGestureRecognizer*)tap

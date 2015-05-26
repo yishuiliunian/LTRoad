@@ -12,12 +12,18 @@
 #import <DZProgramDefines.h>
 #import "PMLinePoint.h"
 @interface PMLine : MTLModel <MTLJSONSerializing>
-DEFINE_PROPERTY_ASSIGN_Float(fee_gas);
-DEFINE_PROPERTY_ASSIGN_Float(fee_pass);
-DEFINE_PROPERTY_ASSIGN_Float(distance);
-@property (nonatomic, assign) NSInteger route_index;
-@property (nonatomic, strong) PMLinePoint* location_start;
-@property (nonatomic, strong) PMLinePoint* location_end;
+DEFINE_PROPERTY_STRONG_NSString(route_name);
+DEFINE_PROPERTY_STRONG_NSString(route_id);
+DEFINE_PROPERTY_STRONG_NSString(feature);
+DEFINE_PROPERTY_STRONG_NSString(duration);
+DEFINE_PROPERTY_STRONG_NSString(loaging);
+DEFINE_PROPERTY_STRONG_NSString(loaging_time);
+DEFINE_PROPERTY_ASSIGN_Float(fee_loaging);
+DEFINE_PROPERTY_ASSIGN_Float(fee_entrance);
+DEFINE_PROPERTY_ASSIGN_Float(fee_food);
+DEFINE_PROPERTY_ASSIGN_Float(gas_station);
+@property (nonatomic, strong) NSArray* tags;
+@property (nonatomic, strong) NSArray* lines;
 @end
 
 

@@ -11,6 +11,7 @@
 #import <DZImageCache.h>
 #import "UIViewController+Additions.h"
 #import <DZGeometryTools.h>
+#import "LTAppearenceTools.h"
 @interface LTCarMeetViewController()
 {
     UIScrollView* _scrollView;
@@ -45,6 +46,8 @@
     
     [self loadNavigationBarSearchItem];
     
+    self.title = @"圈子";
+    self.naviationBarStyle = LTNavigationStyleTransparency;
 }
 - (void) postFeed
 {
