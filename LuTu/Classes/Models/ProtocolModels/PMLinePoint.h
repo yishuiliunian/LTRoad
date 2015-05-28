@@ -10,6 +10,8 @@
 #import <DZSingletonFactory.h>
 #import <DZProgramDefines.h>
 #import <Mantle.h>
+
+FOUNDATION_EXTERN NSValueTransformer* PMLinePointJSONTransformer();
 @interface PMLinePoint : MTLModel <MTLJSONSerializing>
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lng;

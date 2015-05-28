@@ -8,7 +8,6 @@
 
 #import "LTRouteDetailViewController.h"
 #import "LTRouteDetailReq.h"
-#import "LTRoutePOIReq.h"
 #import "LTLineHeaderView.h"
 #import "LTLine.h"
 #import "LTLinePoiCell.h"
@@ -89,11 +88,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 {
     
 }
-- (void) reloadPOIS {
-    LTRoutePOIReq* detailReq = [LTRoutePOIReq new];
-    detailReq.routeID = _routeID;
-    MSPerformRequestWithDelegateSelf(detailReq);
-}
+
 
 - (void) reloadDetails
 {
@@ -104,7 +99,6 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 - (void) reloadAllData
 {
     [self reloadDetails];
-    [self reloadPOIS];
 }
 
 - (void) loadLineUIData
@@ -143,11 +137,11 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
         CLLocationCoordinate2D startC = coors[i];
         CLLocationCoordinate2D endC = coors[i+1];
         PMLineSegment* seg = lines[i];
-        startC.latitude = seg.location_start.lat;
-        startC.longitude = seg.location_start.lng;
+        startC.latitude = seg.locationStart.lat;
+        startC.longitude = seg.locationStart.lng;
         
-        endC.latitude = seg.location_end.lat;
-        endC.longitude = seg.location_end.lng;
+        endC.latitude = seg.locationEnd.lat;
+        endC.longitude = seg.locationEnd.lng;
     }
     BMKPolyline* polyline = [BMKPolyline polylineWithCoordinates:coors count:coorCount];
     _headView.mapView.delegate = self;
@@ -172,13 +166,16 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 {
     _uiDataLine = [[LTLine alloc] initWithPMLine:pmline];
     [self loadLineUIData];
-}
-
-- (void) onHandleRemotePOIS:(NSArray*) pois
-{
-    _allCellDatas = pois;
+    
+    NSMutableArray* uiPois = [NSMutableArray new];
+    for (PMPoiInfo* info in pmline.pois) {
+        LTUIPoi* p = [[LTUIPoi alloc] initWithPOI:info];
+        [uiPois addObject:p];
+    }
+    _allCellDatas = uiPois;
     [self.tableView reloadData];
 }
+
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
     
@@ -186,9 +183,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    if ([request isKindOfClass:[LTRoutePOIReq class]]) {
-        [self onHandleRemotePOIS:object];
-    } else if ([request isKindOfClass:[LTRouteDetailReq class]]) {
+     if ([request isKindOfClass:[LTRouteDetailReq class]]) {
         [self onHandleRemoteRoteDetail:object];
     }
 }

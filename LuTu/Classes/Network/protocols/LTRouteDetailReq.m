@@ -26,6 +26,12 @@
 {
     
     NSError* error = nil;
+    NSArray* pois = retObject[@"pois"];
+    for (NSDictionary* p  in pois) {
+        PMPoiInfo* info = [MTLJSONAdapter modelOfClass:[PMPoiInfo class] fromJSONDictionary:p error:&error];
+        
+        NSLog(@"");
+    }
     PMRoute* route = [MTLJSONAdapter modelOfClass:[PMRoute class] fromJSONDictionary:retObject error:&error];
 
     if (error) {

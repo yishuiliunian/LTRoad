@@ -11,10 +11,11 @@
 #import <Mantle.h>
 #import "PMLinePoint.h"
 @interface PMLineSegment : MTLModel <MTLJSONSerializing>
-DEFINE_PROPERTY_ASSIGN_Float(distance);
-DEFINE_PROPERTY_ASSIGN_Float(fee_gas);
-DEFINE_PROPERTY_ASSIGN_Float(feed_pass);
-DEFINE_PROPERTY_ASSIGN_INT64(route_index);
-@property (nonatomic, strong) PMLinePoint* location_start;
-@property (nonatomic, strong) PMLinePoint* location_end;
+DEFINE_PROPERTY_STRONG_NSString(distance);
+DEFINE_PROPERTY_STRONG_NSString(lineId);
+DEFINE_PROPERTY_STRONG_NSString(name);
+DEFINE_PROPERTY_STRONG_NSString(routeId);
+DEFINE_PROPERTY_STRONG_NSString(routeIndex);
+@property (nonatomic, strong) PMLinePoint* locationStart;
+@property (nonatomic, strong) PMLinePoint* locationEnd;
 @end

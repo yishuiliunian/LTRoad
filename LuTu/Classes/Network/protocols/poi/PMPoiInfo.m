@@ -12,7 +12,7 @@
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
     return @ {
-      LTMantleSameMapPair(routeId),
+        LTMantleSameMapPair(routeId),
         LTMantleSameMapPair(poiId),
         LTMantleSameMapPair(routeIndex),
         LTMantleSameMapPair(cover),
@@ -23,5 +23,10 @@
         LTMantleSameMapPair(location),
         LTMantleSameMapPair(type)
     };
+}
+
++ (NSValueTransformer*) locationJSONTransformer
+{
+    return PMLinePointJSONTransformer();
 }
 @end

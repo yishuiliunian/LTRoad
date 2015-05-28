@@ -9,16 +9,25 @@
 #import "MTLModel.h"
 #import <DZProgramDefines.h>
 #import <Mantle.h>
+#import "PMPoiInfo.h"
+
+@interface PMRoutePropDetail : MTLModel <MTLJSONSerializing>
+DEFINE_PROPERTY_STRONG_NSString(routeId);
+DEFINE_PROPERTY_STRONG_NSString(propId);
+DEFINE_PROPERTY_STRONG_NSString(detailId);
+DEFINE_PROPERTY_STRONG_NSString(propName);
+DEFINE_PROPERTY_STRONG_NSString(propDesc);
+DEFINE_PROPERTY_STRONG_NSString(propValue);
+@end
+
+
 @interface PMRoute : MTLModel <MTLJSONSerializing>
-DEFINE_PROPERTY_STRONG_NSString(route_name);
-DEFINE_PROPERTY_STRONG_NSString(applicable_vehicle);
-DEFINE_PROPERTY_STRONG_NSString(summary);
-DEFINE_PROPERTY_STRONG_NSString(feature);
-DEFINE_PROPERTY_STRONG_NSString(duration);
-DEFINE_PROPERTY_STRONG_NSString(lodging);
-DEFINE_PROPERTY_STRONG_NSString(lodging_time);
-DEFINE_PROPERTY_STRONG_NSString(gas_station);
-DEFINE_PROPERTY_STRONG_NSString(tag);
+DEFINE_PROPERTY_ASSIGN_BOOL(isFav);
+DEFINE_PROPERTY_STRONG_NSString(name);
+DEFINE_PROPERTY_STRONG_NSString(introImageUrl);
+DEFINE_PROPERTY_ASSIGN_INT64(favCount);
 @property (nonatomic, strong) NSArray* lines;
+@property (nonatomic, strong) NSArray* routePropDetails;
+@property (nonatomic, strong) NSArray* pois;
 @end
 

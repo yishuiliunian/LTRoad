@@ -9,20 +9,21 @@
 #import "MTLModel.h"
 #import <Mantle.h>
 #import <DZProgramDefines.h>
+#import "PMLinePoint.h"
 typedef enum {
    PMPoiTypeHotel,
     PMPoiTypeSpot,
     PMPoiTypeGass
 }PMPoiType;
 @interface PMPoiInfo : MTLModel <MTLJSONSerializing>
-DEFINE_PROPERTY_ASSIGN_INT64(routeId);
-DEFINE_PROPERTY_ASSIGN_INT64(poiId);
-DEFINE_PROPERTY_ASSIGN_INT64(routeIndex);
-@property (nonatomic, assign) BOOL cover;
-@property (nonatomic, strong) NSString* name;
-@property (nonatomic, strong) NSString* introImageUrl;
-@property (nonatomic, strong) NSString* introText;
+DEFINE_PROPERTY_STRONG_NSString(poiId);
+DEFINE_PROPERTY_STRONG_NSString(routeId);
+DEFINE_PROPERTY_STRONG_NSString(name);
+DEFINE_PROPERTY_ASSIGN(PMPoiType, type);
+DEFINE_PROPERTY_ASSIGN_BOOL(cover);
+DEFINE_PROPERTY_STRONG_NSString(routeIndex);
+DEFINE_PROPERTY_STRONG_NSString(location);
+DEFINE_PROPERTY_STRONG_NSString(introImageUrl);
+DEFINE_PROPERTY_STRONG_NSString(introText);
 DEFINE_PROPERTY_ASSIGN_INT64(arrivalTime);
-@property (nonatomic, strong) NSString* location;
-@property (nonatomic, assign) PMPoiType type;
 @end
