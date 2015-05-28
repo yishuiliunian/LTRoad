@@ -9,7 +9,6 @@
 #import "MTLModel.h"
 #import <DZProgramDefines.h>
 #import <Mantle.h>
-#import "PMLine.h"
 @interface PMRoute : MTLModel <MTLJSONSerializing>
 DEFINE_PROPERTY_STRONG_NSString(route_name);
 DEFINE_PROPERTY_STRONG_NSString(applicable_vehicle);

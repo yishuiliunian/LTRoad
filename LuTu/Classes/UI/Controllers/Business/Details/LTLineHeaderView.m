@@ -14,7 +14,7 @@
 #import "AdjustFrame.h"
 const CGFloat  LTLineHeaderCellHeight =410;
 
-@interface LTLineHeaderView ()
+@interface LTLineHeaderView () <BMKMapViewDelegate>
 {
     UIView* _lineView;
 }
@@ -28,15 +28,17 @@ const CGFloat  LTLineHeaderCellHeight =410;
     }
     INIT_SELF_SUBVIEW(UIView, _lineView);
     INIT_SUBVIEW(self, BMKMapView, _mapView);
-    _mapView.backgroundColor = [UIColor redColor];
     INIT_SELF_SUBVIEW(LTShowContentView, _detailContentView);
     INIT_SELF_SUBVIEW(LTLineStartEndView, _startEndView);
     INIT_SELF_SUBVIEW(LTRouteInfoView, _routeInfoView);
     
     _lineView.backgroundColor = LTColorGrayNormal();
+    //
+    _mapView.delegate = self;
     
     return self;
 }
+
 
 
 - (void) handleAdjustFrame

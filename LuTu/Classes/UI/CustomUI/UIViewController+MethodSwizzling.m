@@ -35,7 +35,9 @@
 - (void) swizzing_viewWillAppear:(BOOL)animated
 {
     [self swizzing_viewWillAppear:animated];
-    [self loadNavigationBarAppearance:self.naviationBarStyle];
+    if ([self.parentViewController isKindOfClass:[UINavigationController class]]) {
+        [self loadNavigationBarAppearance:self.naviationBarStyle];
+    }
 
 }
 - (void)swizzling_viewDidAppear:(BOOL)animated

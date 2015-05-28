@@ -10,21 +10,22 @@
 #import "LTGlobals.h"
 
 @implementation LTLine
-- (instancetype) initWithPMLine:(PMLine *)line
+- (instancetype) initWithPMLine:(PMRoute *)line
 {
     self = [super init];
     if (!self) {
         return self;
     }
-    self.routeName = @"哈哈哈";
+    self.routeName = line.route_name;
     self.distance = @"100";
-    self.timeCoast = @"1-3天";
-    self.carStyle = @"轿车";
+    self.timeCoast = line.duration;
+    self.carStyle = line.applicable_vehicle;
     self.rloadCondition = @"良好";
     self.startPointName = @"深圳大学";
     self.endPointName = @"北京";
-    self.introText = @"这是一个非常好的下午";
+    self.introText = line.summary;
     self.categoryBadgeArray = @[LTCreateBadgeItemWithText(@"亲子游"), LTCreateBadgeItemWithText(@"大自然")];
+    _line = line;
     return self;
 }
 

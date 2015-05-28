@@ -16,6 +16,7 @@
 #import "LTAppearenceTools.h"
 #import "LKHaneke.h"
 #import <DZImageCache.h>
+#import "MSLog.h"
 FOUNDATION_EXTERN NSString* LTCellIdentifierFromClass(Class cla);
 #define LTCellMapPairWithClass(dataCla , cellCla) LTCellIdentifierFromClass([dataCla class]) : [cellCla class]
 FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);
@@ -44,3 +45,10 @@ return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName]; 
 FOUNDATION_EXTERN NSURL* LTNSURLFromString(NSString* string);
 
 #define STR_TO_URL(str)    [NSURL URLWithString:str]
+
+
+FOUNDATION_EXTERN NSString*  ENSURE_STR(id object);
+
+//date
+
+FOUNDATION_EXTERN NSDate* LTDateFromServerTimeInterval(int64_t time);

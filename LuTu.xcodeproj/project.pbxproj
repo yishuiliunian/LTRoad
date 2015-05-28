@@ -20,7 +20,6 @@
 		650C0C3E1AE5EE25008FC2B8 /* LTRouteDetailReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */; };
 		650C0C421AE5EED9008FC2B8 /* LTRouteDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C411AE5EED9008FC2B8 /* LTRouteDetailViewController.m */; };
 		650C0C451AE5F19A008FC2B8 /* PMRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C441AE5F19A008FC2B8 /* PMRoute.m */; };
-		650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C471AE60EF7008FC2B8 /* PMLine.m */; };
 		650C0C4B1AE60F43008FC2B8 /* PMLinePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */; };
 		650C0C4E1AE60F8C008FC2B8 /* PMNoticePOI.m in Sources */ = {isa = PBXBuildFile; fileRef = 650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */; };
 		6510E2E91AD9508E0036C767 /* LTConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 6510E2E81AD9508E0036C767 /* LTConfigure.m */; };
@@ -198,10 +197,8 @@
 		650C0C3D1AE5EE25008FC2B8 /* LTRouteDetailReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRouteDetailReq.m; sourceTree = "<group>"; };
 		650C0C401AE5EED9008FC2B8 /* LTRouteDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRouteDetailViewController.h; sourceTree = "<group>"; };
 		650C0C411AE5EED9008FC2B8 /* LTRouteDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRouteDetailViewController.m; sourceTree = "<group>"; };
-		650C0C431AE5F19A008FC2B8 /* PMRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRoute.h; sourceTree = "<group>"; };
-		650C0C441AE5F19A008FC2B8 /* PMRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMRoute.m; sourceTree = "<group>"; };
-		650C0C461AE60EF7008FC2B8 /* PMLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMLine.h; path = ../PMLine.h; sourceTree = "<group>"; };
-		650C0C471AE60EF7008FC2B8 /* PMLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMLine.m; path = ../PMLine.m; sourceTree = "<group>"; };
+		650C0C431AE5F19A008FC2B8 /* PMRoute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMRoute.h; path = ../PMRoute.h; sourceTree = "<group>"; };
+		650C0C441AE5F19A008FC2B8 /* PMRoute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMRoute.m; path = ../PMRoute.m; sourceTree = "<group>"; };
 		650C0C491AE60F43008FC2B8 /* PMLinePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMLinePoint.h; sourceTree = "<group>"; };
 		650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMLinePoint.m; sourceTree = "<group>"; };
 		650C0C4C1AE60F8C008FC2B8 /* PMNoticePOI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMNoticePOI.h; sourceTree = "<group>"; };
@@ -896,8 +893,8 @@
 		6549446D1B0EF9C500E925D8 /* NewModels */ = {
 			isa = PBXGroup;
 			children = (
-				650C0C461AE60EF7008FC2B8 /* PMLine.h */,
-				650C0C471AE60EF7008FC2B8 /* PMLine.m */,
+				650C0C431AE5F19A008FC2B8 /* PMRoute.h */,
+				650C0C441AE5F19A008FC2B8 /* PMRoute.m */,
 				65F9B6081B1321830060AC39 /* PMLineSegment.h */,
 				65F9B6091B1321830060AC39 /* PMLineSegment.m */,
 				6549446A1B0EF7F400E925D8 /* PMRoteListRsp.h */,
@@ -1183,8 +1180,6 @@
 				6549446D1B0EF9C500E925D8 /* NewModels */,
 				65BD573D1AE506C50059DE8E /* PMRecommondLine.h */,
 				65BD573E1AE506C50059DE8E /* PMRecommondLine.m */,
-				650C0C431AE5F19A008FC2B8 /* PMRoute.h */,
-				650C0C441AE5F19A008FC2B8 /* PMRoute.m */,
 				650C0C491AE60F43008FC2B8 /* PMLinePoint.h */,
 				650C0C4A1AE60F43008FC2B8 /* PMLinePoint.m */,
 				650C0C4C1AE60F8C008FC2B8 /* PMNoticePOI.h */,
@@ -1600,7 +1595,6 @@
 				65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */,
 				652C4ED81ADE0C4300570768 /* UIViewController+MethodSwizzling.m in Sources */,
 				65FD64D11ADB82C600FC94E0 /* DZExpandCollectionView.m in Sources */,
-				650C0C481AE60EF7008FC2B8 /* PMLine.m in Sources */,
 				6517E7A21AE7C42C004F71BC /* LTCarMeetInfoViewController.m in Sources */,
 				65576A811B05D8C8004DFCB8 /* LTSearchTableViewController.m in Sources */,
 				657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */,

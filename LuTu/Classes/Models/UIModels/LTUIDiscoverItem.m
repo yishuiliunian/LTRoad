@@ -7,7 +7,7 @@
 //
 
 #import "LTUIDiscoverItem.h"
-
+#import "LTGlobals.h"
 @implementation LTUIDiscoverItem
 
 - (instancetype) initWithCategory:(PMCategory *)category
@@ -18,8 +18,9 @@
     }
     _category = category;
     _title = category.name;
-    _backgroundURL = [NSURL URLWithString:category.intro_image_url];
-    _categoryID = category.category_id;
+    _backgroundURL = [NSURL URLWithString:category.introImageUrl];
+    _categoryID =ENSURE_STR( category.categoryId);
+    _contentCount = [@(category.routeCount) stringValue];
     return self;
 }
 @end

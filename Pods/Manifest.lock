@@ -8,14 +8,14 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.0):
     - CocoaLumberjack/Default
-  - DZCache (1.0.8):
+  - DZCache (1.0.9):
     - DZCDNFiles
     - DZGeometryTools
     - DZSinglonFactory
   - DZCDNFiles (1.0.1):
     - DZSinglonFactory
   - DZGeometryTools (1.0.9)
-  - DZProgrameDefines (1.0.0)
+  - DZProgrameDefines (1.0.1)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
   - DZSwipeViewController (0.1.8):
@@ -96,10 +96,10 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Baidu-Maps-iOS-SDK: 260447c2270b44470d7c0d49a7f1a154b4703973
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  DZCache: 33bf5a410bc942f7cb37b41c4f5207604d67ef4f
+  DZCache: 4e4c8470c077a84d5fc25e2d8b1337f110fbf9a6
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
   DZGeometryTools: 6a875726d83ae18d5ff593b4cb02af11f947b86c
-  DZProgrameDefines: 83b3d377ff16bd59554187600944424878629276
+  DZProgrameDefines: 623dfe81da225994cbba6f1d9ba982d7f5e7f2a5
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZSwipeViewController: 3c0dbe3e5dd2ed06c74087897205c6d15722b228

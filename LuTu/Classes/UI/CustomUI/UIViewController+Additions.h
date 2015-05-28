@@ -11,4 +11,5 @@
 @interface UIViewController (Additions)
 - (void) loadNavigationBarSearchItem;
 - (void) loadBackNavigationItem;
+- (UIBarButtonItem*) customBarButtonItemWithTarget:(id)target selector:(SEL)selector image:(NSString*)image highlightImage:(NSString*)hightlightName;
 @end

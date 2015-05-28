@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Mantle.h>
-@interface MSToken : MTLModel
+@interface MSToken : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString* account;
-@property (nonatomic, strong) NSString* token;
 @property (nonatomic, strong) NSDate* experiedDate;
 
-- (instancetype) initWithToken:(NSString*)token account:(NSString*)account;
+- (instancetype) initWithAccount:(NSString*)account;
 @end

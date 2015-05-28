@@ -29,7 +29,7 @@
     
     NSDictionary* dic = [NSJSONSerialization JSONObjectWithData:dicData options:0 error:nil];
     if (dic) {
-        MSToken* token = [[MSToken alloc] initWithDictionary:dic error:nil];
+        MSToken* token = [MTLJSONAdapter modelOfClass:[MSToken class] fromJSONDictionary:dic error:nil];
         if (token) {
             return token;
         }
@@ -40,9 +40,10 @@
 
 - (void) storeTokenToLocalForAccount:(LTAccount*)ac
 {
-    NSDictionary* dic = [_token dictionaryValue];
+    NSDictionary* dic = [MTLJSONAdapter JSONDictionaryFromModel:_token error:nil];
     if (dic && ac) {
-        NSData* data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+        NSError* error;
+        NSData* data = [NSJSONSerialization dataWithJSONObject:dic options:NSJSONWritingPrettyPrinted error:&error];
         [[NSUserDefaults standardUserDefaults] setObject:data forKey:ac.accountID];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -74,7 +75,7 @@
     if (!_token) {
         return NO;
     }
-    if (!_token.token || !_token.account) {
+    if ( !_token.account) {
         return NO;
     }
     if (!_token.experiedDate) {

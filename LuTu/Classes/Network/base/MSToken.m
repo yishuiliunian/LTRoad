@@ -7,7 +7,7 @@
 //
 
 #import "MSToken.h"
-
+#import "LTGlobals.h"
 @implementation MSToken
 + (NSDateFormatter *)dateFormatter {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -23,14 +23,20 @@
     }];
 }
 
-- (instancetype) initWithToken:(NSString *)token account:(NSString *)account
++(NSDictionary*) JSONKeyPathsByPropertyKey
+{
+    return @{
+             LTMantleSameMapPair(account),
+             LTMantleSameMapPair(experiedDate)
+             };
+}
+- (instancetype) initWithAccount:(NSString *)account
 {
     self = [super init];
     if (!self) {
         return self;
     }
-    _token = token;
-    _account = account;
+    _account = ENSURE_STR(account);
     _experiedDate = [NSDate dateWithTimeIntervalSinceNow:60*10];
     return self;
 }

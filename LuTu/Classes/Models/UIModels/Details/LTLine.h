@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "PMLine.h"
 #import "LTBadgeItem.h"
+#import "PMRoute.h"
+#import "PMLineSegment.h"
 @interface LTLine : NSObject
 @property (nonatomic, strong) NSString* routeName;
 @property (nonatomic, strong) NSString* distance;
@@ -21,5 +22,6 @@
 @property (nonatomic, strong) NSString* endPointName;
 @property (nonatomic, strong) NSString* introText;
 @property (nonatomic, strong) NSArray* categoryBadgeArray;
-- (instancetype) initWithPMLine:(PMLine*)line;
+@property (nonatomic, strong, readonly) PMRoute* line;
+- (instancetype) initWithPMLine:(PMRoute*)line;
 @end

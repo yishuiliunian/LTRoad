@@ -39,3 +39,42 @@ NSString* LTApplicationVersion()
 NSURL* LTNSURLFromString(NSString* string) {
     return [NSURL URLWithString:string];
 }
+
+
+NSTimeInterval LTDefaultTimeStamp()
+{
+    return [[NSDate date] timeIntervalSince1970];
+}
+
+UInt64 LTAlignTimeStamp(NSTimeInterval interval) {
+    return floor(interval);
+}
+
+NSTimeInterval LTUnAlgnTimeStamp(int64_t time) {
+    return (NSTimeInterval) time;
+}
+
+UInt64 LTCurrentTimeStamp()
+{
+    return LTAlignTimeStamp(LTDefaultTimeStamp());
+}
+
+
+
+NSDate* LTDateFromServerTimeInterval(int64_t time) {
+    return [NSDate dateWithTimeIntervalSince1970:LTUnAlgnTimeStamp(time)];
+}
+
+
+
+NSString*  ENSURE_STR(id object) {
+    if ([object isKindOfClass:[NSString class]]) {
+        return object;
+    }
+    else if ([object isKindOfClass:[NSNumber class]]) {
+        return [object stringValue];
+    } else {
+        return [NSString stringWithFormat:@"%@",object];
+    }
+    
+}

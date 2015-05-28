@@ -9,14 +9,15 @@
 #import "LTRouteDetailViewController.h"
 #import "LTRouteDetailReq.h"
 #import "LTRoutePOIReq.h"
-#import "PMLine.h"
 #import "LTLineHeaderView.h"
 #import "LTLine.h"
 #import "LTLinePoiCell.h"
 #import "LTGlobals.h"
 #import <DZGeometryTools.h>
 #import "LTAdjustFrameTable.h"
-@interface LTRouteDetailViewController () <MSRequestUIDelegate>
+#import "UIViewController+Additions.h"
+#import "LTGlobals.h"
+@interface LTRouteDetailViewController () <MSRequestUIDelegate, BMKMapViewDelegate>
 {
     NSArray* _allCellDatas;
     LTLineHeaderView* _headView;
@@ -71,6 +72,22 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     [self loadCells];
     [self configureTableView];
     [self reloadAllData];
+    
+    
+    UIBarButtonItem* shareItem = [self customBarButtonItemWithTarget:self selector:@selector(shareCurrentRoute) image:@"top_share" highlightImage:@"top_share_click"];
+    UIBarButtonItem* favItem = [self customBarButtonItemWithTarget:self selector:@selector(addFav) image:@"top_adfav" highlightImage:@"top_adfav_click"];
+    
+    self.navigationItem.rightBarButtonItems = @[favItem, shareItem];
+}
+
+- (void) shareCurrentRoute
+{
+    
+}
+
+- (void) addFav
+{
+    
 }
 - (void) reloadPOIS {
     LTRoutePOIReq* detailReq = [LTRoutePOIReq new];
@@ -104,17 +121,54 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     
     _headView.detailContentView.roadStatusView.detailLabel.text = @"路况";
     _headView.detailContentView.roadStatusView.topLabel.text = _uiDataLine.rloadCondition;
-    _headView.routeInfoView.detailLabel.text = @"asdhjfahsjdfhaskjdfhajsdfhjasdfhkjasdhfjasdhfkjasdhfijqwhefuiasdh啊好的减法哈师大会计法哈几十块地方哈会计师等放寒假阿克苏的九分裤啦圣诞节饭卡就的看法姐啊上岛咖啡静安丽舍肯德基法拉克束带结发卡拉束带结发卡束带结发看拉萨的九分裤拉萨的讲课费俺就是的开发姐啊上岛咖啡就阿萨德飞暗示";
+    _headView.routeInfoView.detailLabel.text = _uiDataLine.introText;
     _headView.routeInfoView.badgeContentView.badgeItems = _uiDataLine.categoryBadgeArray;
     
     _headView.startEndView.startPointView.detailLabel.text = _uiDataLine.startPointName;
     _headView.startEndView.endPointView.detailLabel.text = _uiDataLine.endPointName;
+    [self loadMapData];
+}
+
+- (void) loadMapData
+{
+    NSArray* lines = _uiDataLine.line.lines;
+    
+    if (lines.count < 1) {
+        return;
+    }
+    
+    NSInteger coorCount = lines.count * 2;
+    CLLocationCoordinate2D* coors = malloc(sizeof(CLLocationCoordinate2D)*lines.count*2);
+    for (int i = 0; i < lines.count; i++) {
+        CLLocationCoordinate2D startC = coors[i];
+        CLLocationCoordinate2D endC = coors[i+1];
+        PMLineSegment* seg = lines[i];
+        startC.latitude = seg.location_start.lat;
+        startC.longitude = seg.location_start.lng;
+        
+        endC.latitude = seg.location_end.lat;
+        endC.longitude = seg.location_end.lng;
+    }
+    BMKPolyline* polyline = [BMKPolyline polylineWithCoordinates:coors count:coorCount];
+    _headView.mapView.delegate = self;
+    [_headView.mapView addOverlay:polyline];
+    free(coors);
+}
+- (BMKOverlayView*) mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay
+{
+    if ([overlay isKindOfClass:[BMKPolyline class]]){
+        BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay] ;
+        polylineView.strokeColor = [[UIColor purpleColor] colorWithAlphaComponent:1];
+        polylineView.lineWidth = 5.0;
+        return polylineView;
+    }
+    return nil;
 }
 - (void)  replaceDataWithPOIS:(NSArray*)pois
 {
 }
 
-- (void) onHandleRemoteRoteDetail:(PMLine*)pmline
+- (void) onHandleRemoteRoteDetail:(PMRoute*)pmline
 {
     _uiDataLine = [[LTLine alloc] initWithPMLine:pmline];
     [self loadLineUIData];

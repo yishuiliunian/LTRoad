@@ -10,7 +10,9 @@
 #import <Mantle.h>
 
 @interface PMCategory : MTLModel <MTLJSONSerializing>
-@property (nonatomic, strong) NSString* category_id;
-@property (nonatomic, strong) NSString*intro_image_url;
+@property (nonatomic, strong) NSString* categoryId;
+@property (nonatomic, strong) NSString*introImageUrl;
 @property (nonatomic, strong) NSString* name;
+@property (nonatomic, assign) int routeCount;
+@property (nonatomic, strong) NSString* label;
 @end

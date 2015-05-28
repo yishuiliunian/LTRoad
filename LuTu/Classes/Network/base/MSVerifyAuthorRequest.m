@@ -8,6 +8,7 @@
 
 #import "MSVerifyAuthorRequest.h"
 #import "MSTokenManager.h"
+
 @implementation MSVerifyAuthorRequest
 - (BOOL) addCommonParamters:(NSError *__autoreleasing *)error
 {
@@ -15,8 +16,7 @@
     if (![MSShareTokenManager revarifyCacheToken:error]) {
         return NO;
     }
-    [self addParamter:MSShareTokenString forKey:@"accessToken"];
-    [self addParamter:MSShareToken.account forKey:@"openId"];
+    [self addParamter:MSShareToken.account forKey:@"uid"];
     return YES;
 }
 @end

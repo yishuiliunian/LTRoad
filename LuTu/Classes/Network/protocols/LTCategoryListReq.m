@@ -31,15 +31,15 @@
 - (BOOL) loadParamters:(NSError *__autoreleasing *)error
 {
     SendSuperFunctionWithError(loadParamters);
-    [self addParamter:self.city forKey:@"city"];
-    [self addParamterNumber:@(self.pageID) forKey:@"pageId"];
+    [self addParamter:self.city forKey:@"cityId"];
+    [self addParamterNumber:@(self.pageID) forKey:@"pageNo"];
     [self addParamterNumber:@(self.pageSize) forKey:@"pageSize"];
     return YES;
 }
 
 - (void) onSuccess:(id)retObject
 {
-    NSArray* categoriesJSONData = [retObject objectForKey:@"categories"];
+    NSArray* categoriesJSONData = [retObject objectForKey:@"list"];
     NSArray* categories = [MTLJSONAdapter modelsOfClass:[PMCategory class] fromJSONArray:categoriesJSONData error:nil];
     
     NSMutableArray* outArray = [NSMutableArray new];
