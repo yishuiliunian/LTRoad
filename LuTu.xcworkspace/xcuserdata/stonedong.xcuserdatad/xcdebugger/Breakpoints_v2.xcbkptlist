@@ -25,22 +25,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/Models/ProtocolModels/PMLinePoint.m"
-            timestampString = "454490455.459239"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "PMLinePointJSONTransformer()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Pods/Mantle/Mantle/MTLValueTransformer.m"
             timestampString = "454491128.759205"
             startingColumnNumber = "9223372036854775807"

@@ -26,6 +26,6 @@
 }
 + (NSValueTransformer*) notice_poiJSONTransformer
 {
-    return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[PMNoticePOI class]];
+    return [NSValueTransformer mtl_validatingTransformerForClass:[PMNoticePOI class]];
 }
 @end

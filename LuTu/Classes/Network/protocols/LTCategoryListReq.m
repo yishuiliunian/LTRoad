@@ -10,6 +10,7 @@
 #import "PMCategory.h"
 #import <Mantle.h>
 #import "LTUIDiscoverItem.h"
+#import "PMCategoryListRsp.h"
 @implementation LTCategoryListReq
 
 - (instancetype) init
@@ -39,11 +40,15 @@
 
 - (void) onSuccess:(id)retObject
 {
-    NSArray* categoriesJSONData = [retObject objectForKey:@"list"];
-    NSArray* categories = [MTLJSONAdapter modelsOfClass:[PMCategory class] fromJSONArray:categoriesJSONData error:nil];
+    NSError* error = nil;
+    PMCategoryListRsp* rsp = [MTLJSONAdapter modelOfClass:[PMCategoryListRsp class] fromJSONDictionary:retObject error:&error];
+    if (error) {
+        [self onError:error];
+        return;
+    }
     
     NSMutableArray* outArray = [NSMutableArray new];
-    for (PMCategory* c in categories) {
+    for (PMCategory* c in rsp.list) {
         LTUIDiscoverItem* item = [[LTUIDiscoverItem alloc] initWithCategory:c];
         [outArray addObject:item];
     }

@@ -40,7 +40,18 @@ return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]
 return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName]; \
 }
 
+
+#define __DEFINE_Mantle_JSONTranformer_Function_Array( name ,c,sub) \
++ (NSValueTransformer*) name##sub {\
+return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:[NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]]];\
+}
+#define DEFINE_Mantle_Array_JSONTranformer_Function( name ,c) __DEFINE_Mantle_JSONTranformer_Function_Array( name ,c, JSONTransformer)
+
+
 #define DEFINE_URL_Tansform(name) __DEFINE_URL_Tansform(name,JSONTransformer)
+
+
+
 
 FOUNDATION_EXTERN NSURL* LTNSURLFromString(NSString* string);
 

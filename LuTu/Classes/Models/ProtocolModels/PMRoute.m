@@ -43,11 +43,7 @@
 }
 
 
-#define __DEFINE_Mantle_JSONTranformer_Function_Array( name ,c,sub) \
-+ (NSValueTransformer*) name##sub {\
-    return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:[NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[c class]]];\
-}
-#define DEFINE_Mantle_Array_JSONTranformer_Function( name ,c) __DEFINE_Mantle_JSONTranformer_Function_Array( name ,c, JSONTransformer)
+
 
 DEFINE_Mantle_Array_JSONTranformer_Function(pois, PMPoiInfo);
 DEFINE_Mantle_Array_JSONTranformer_Function(lines, PMLineSegment);

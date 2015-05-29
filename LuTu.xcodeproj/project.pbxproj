@@ -7,7 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F4AA4F2CD0B29EA425FF8C /* (null) in Headers */ = {isa = PBXBuildFile; };
+		05F3DC7C283616A7625DE343 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		08772DC0334BEA901F0AC970 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		0B4C9A237264EFE02FF51C91 /* libPods-LuTu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181D07AF18EA69C166263FAB /* libPods-LuTu.a */; };
+		0B63E4199F84C854219629BD /* PMUserSummaryRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDC9773B611729B367C573F /* PMUserSummaryRsp.m */; };
+		0BBE44202EEEB7F10F7CC3E9 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		0D398B3A18ECD420F2C34193 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		0DE32D4D71CF63328B0CC270 /* PMUserSummaryRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = B30CB765A57B83CE244F2475 /* PMUserSummaryRsp.h */; };
+		12F5EAA59C20A8F62702C36A /* PMUserClubInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF23567BB8FC6B060DE5935 /* PMUserClubInfo.m */; };
+		13C606FB7413782DEB158C09 /* PMFavoriteListRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = FCF27372A65134FBE3179D18 /* PMFavoriteListRsp.h */; };
+		16AD219535758E6197EF0519 /* PMUserClubInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 443CB78DA485F15D8B4BFE76 /* PMUserClubInfo.h */; };
+		19848A0B6E65FA6A5CD8F8F5 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		1CDC5585F817DC3FBEEE66CF /* PMClubMember.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DF7724C8296E5C33979708F /* PMClubMember.h */; };
+		1DA516DB830A1AABF2FEDFA6 /* PMSearchClubInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FF7FAFA9F8479157FFBEFE42 /* PMSearchClubInfo.h */; };
+		1DC6AB53F116B8A06D607269 /* PMCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 061B5A8A11207FB6EB98EE70 /* PMCategory.h */; };
+		1FB808CD4CF892E2D151EA3C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		1FDA4CC008934DAF6883F0B7 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		20EF7DB1BA764F192B72F946 /* PMUserThreadListRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = B9560096CA97043C248C143F /* PMUserThreadListRsp.h */; };
+		2169560FA8FA802F0A602E24 /* PMSearchClubRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FE85698067036F166E272FF /* PMSearchClubRsp.m */; };
+		2884F51C82037C469EB06C27 /* PMThreadPostInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E76B1515DDC2972E67C32BC /* PMThreadPostInfo.h */; };
+		2D7A8932103D499A36673CAE /* PMSearchClubInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C359D2C76250E0600E84AD8A /* PMSearchClubInfo.m */; };
+		2F2818867BC7DA1B2ED7E918 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		30CD3415C0DE0D147D5D65F9 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3181014ABF99A917298C6F54 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		3276398A563516B50B41C0AB /* (null) in Sources */ = {isa = PBXBuildFile; };
+		37F4DDF154DDD5B991EF54AD /* (null) in Headers */ = {isa = PBXBuildFile; };
+		38C88FAFF317F46EFF1E75E4 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		38D4FE43231893B25F1E1F68 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		3AFC54CA2FC9E56B2581B7DB /* PMThreadPostList.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2CBB0008EAE77F463F7E2 /* PMThreadPostList.m */; };
+		3C1462EFDEDD2701CCDC34C1 /* PMUserThreadInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = D96487F101A331349EDA943D /* PMUserThreadInfo.h */; };
+		3C59FFC187E54A4798D4890A /* PMUserThreadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F045061B0180500CE014D5 /* PMUserThreadInfo.m */; };
+		3E51CDED86906C9F662D56A3 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		3F9D13F04F922DD261E73838 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		43B59FC3921AEAC9152497E0 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		443DEAE14023AD5CE8013031 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		469336EB7110A05FA0770B64 /* PMCategoryListRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = 436A49DE4D5C0698C1600316 /* PMCategoryListRsp.h */; };
+		53F08C42F43732B59C2BF973 /* PMCategoryListRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3EC82481076173E04C422F /* PMCategoryListRsp.m */; };
+		560164629B5B52C456F2E726 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		5BC69D689EFEE1BEB88F8E7D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		5DB6E8D5769D7E800BD9F273 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		643273CAB665CE27974FF0AF /* (null) in Headers */ = {isa = PBXBuildFile; };
+		649169CDA49FCD1C2D9FB996 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		65035FD81AE495B900BBEDEB /* LTRoteListReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FD71AE495B900BBEDEB /* LTRoteListReq.m */; };
 		65035FDB1AE4969A00BBEDEB /* LTNetworkConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FDA1AE4969A00BBEDEB /* LTNetworkConfigure.m */; };
 		65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65035FDE1AE4A77600BBEDEB /* LTPageDataController.m */; };
@@ -84,6 +125,7 @@
 		652FB9681AD27EE80082894E /* LTBackgroundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB9671AD27EE80082894E /* LTBackgroundImageView.m */; };
 		652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96B1AD27FA60082894E /* LTAppearenceTools.m */; };
 		652FB96F1AD27FBA0082894E /* LTColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 652FB96E1AD27FBA0082894E /* LTColors.m */; };
+		6535653B1B18633600C971F5 /* jsonModel.rb in Resources */ = {isa = PBXBuildFile; fileRef = 6535653A1B18633600C971F5 /* jsonModel.rb */; };
 		6549446C1B0EF7F400E925D8 /* PMRoteListRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 6549446B1B0EF7F400E925D8 /* PMRoteListRsp.m */; };
 		654944701B0EF9DC00E925D8 /* PMRouteDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 6549446F1B0EF9DC00E925D8 /* PMRouteDetail.m */; };
 		654944731B0F10B000E925D8 /* LTRouteInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 654944721B0F10B000E925D8 /* LTRouteInfoView.m */; };
@@ -93,6 +135,7 @@
 		65576A841B05D8F7004DFCB8 /* LTSearchDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65576A831B05D8F7004DFCB8 /* LTSearchDataController.m */; };
 		65576A871B05E2B6004DFCB8 /* LTSearchReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65576A861B05E2B6004DFCB8 /* LTSearchReq.m */; };
 		6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */; };
+		6570EC7E800F0421F8320FAC /* (null) in Sources */ = {isa = PBXBuildFile; };
 		657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE61ADE82B800AA5EBA /* LTMineTopView.m */; };
 		657D6FEA1ADE832E00AA5EBA /* LTBottomLabelButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FE91ADE832E00AA5EBA /* LTBottomLabelButton.m */; };
 		657D6FED1ADE83D100AA5EBA /* LTBackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 657D6FEC1ADE83D100AA5EBA /* LTBackButton.m */; };
@@ -111,6 +154,9 @@
 		65A3F6861AE8D05000BD6B1F /* LTGuideContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6851AE8D05000BD6B1F /* LTGuideContainerViewController.m */; };
 		65A3F6901AE8E34C00BD6B1F /* PMToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F68F1AE8E34C00BD6B1F /* PMToken.m */; };
 		65A4A6891B16BF27000E62EE /* NSValueTransformer+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A6881B16BF27000E62EE /* NSValueTransformer+NSString.m */; };
+		65A4A68C1B16FED7000E62EE /* LTAddRouteCommentReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A68B1B16FED7000E62EE /* LTAddRouteCommentReq.m */; };
+		65A4A68F1B17001F000E62EE /* LTGetRouteCommentReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A68E1B17001F000E62EE /* LTGetRouteCommentReq.m */; };
+		65A4A6921B1700CB000E62EE /* PMGetRouteCommentReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A6911B1700CB000E62EE /* PMGetRouteCommentReq.m */; };
 		65AAF4BD1B0AE33D00BE9FCD /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */; };
 		65B283381AF8B9BD001E85A6 /* LTMyFavoriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B283371AF8B9BD001E85A6 /* LTMyFavoriteViewController.m */; };
 		65B2833B1AF8BA02001E85A6 /* LTMyFavoriteDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B2833A1AF8BA02001E85A6 /* LTMyFavoriteDataController.m */; };
@@ -124,7 +170,6 @@
 		65B9E4861AEC91BC00577594 /* LTLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4851AEC91BC00577594 /* LTLocationManager.m */; };
 		65B9E4891AEC963500577594 /* LTRoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E4881AEC963500577594 /* LTRoadViewController.m */; };
 		65B9E48C1AEC9D6200577594 /* LTCategoryListReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E48B1AEC9D6200577594 /* LTCategoryListReq.m */; };
-		65B9E48F1AECA12200577594 /* PMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 65B9E48E1AECA12200577594 /* PMCategory.m */; };
 		65BCE6E11AE6262900482360 /* LTLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E01AE6262900482360 /* LTLine.m */; };
 		65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BCE6E71AE6278C00482360 /* PMPoiInfo.m */; };
 		65BD573F1AE506C50059DE8E /* PMRecommondLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BD573E1AE506C50059DE8E /* PMRecommondLine.m */; };
@@ -160,6 +205,76 @@
 		65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D31ADB87D400FC94E0 /* DZexpandCollectionViewController.m */; };
 		65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */; };
 		65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */; };
+		675DAAA1630DE1A35C26B3A0 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		67C5421B001643F52D69D4B8 /* PMUserClubRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 70E8FE3823F5372174CF246F /* PMUserClubRsp.m */; };
+		68515763C6DFA06584B9ECA5 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		68C694A9C698108D6A06DEA3 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		6D70F311B112F23AAEB43A8A /* (null) in Headers */ = {isa = PBXBuildFile; };
+		6E584D1023529B48F016097A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		71EF16F5EA4578DFFFF8E4DC /* PMSearchClubRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = DB6C5751183F825A75E10914 /* PMSearchClubRsp.h */; };
+		7286A33252D07A2D2D082C41 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7310C313103BFF73AFE49F3D /* PMThreadPostList.h in Headers */ = {isa = PBXBuildFile; fileRef = 595A191B8AD98B4E5077E11E /* PMThreadPostList.h */; };
+		74C43AA59AF60122A201BF7C /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7590FFC0796625E2BB0F9545 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		77A005FE028A94E3BAD1FF67 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		78CA430638DC73F4294B1608 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7D7020BE0D77A43CC2AAAC5A /* (null) in Sources */ = {isa = PBXBuildFile; };
+		7E34AAC09F8F1931A4380120 /* PMThreadListRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 848C1CA1ECF0F50F66655F9B /* PMThreadListRsp.m */; };
+		8146577BD393404A49FADAC1 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		823844096DC7806FD7E88439 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		83367DAF2727CD35D15736F0 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		842F0DF831E234AD6BDD32E0 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		8669F6066AF16ED5F8D2698F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		881CF3F1F7C45C7430982A08 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		893562132AF312C13399597A /* PMCarClubInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5575D3F70D0E42B4692FE4F9 /* PMCarClubInfo.m */; };
+		897C748DA2775E6E13DCCBC4 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		8A8063E931269FFF6F4DD79D /* (null) in Headers */ = {isa = PBXBuildFile; };
+		8B17CABE67C414FD44E02864 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		8F5365E8AB92C023FB01390D /* (null) in Sources */ = {isa = PBXBuildFile; };
+		902B49207AB99B7F89D6CFD5 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		93A100504E1C822A30575193 /* PMFavoriteInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 0073FB2D122761AFD8EAF97C /* PMFavoriteInfo.h */; };
+		94B1A02E08CBC501F379A05C /* (null) in Headers */ = {isa = PBXBuildFile; };
+		9562B2D238C72F6C202F703B /* PMFavoriteListRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 115F8B97E4A03574013D96C4 /* PMFavoriteListRsp.m */; };
+		970E4B1A9246C3313A7442FF /* (null) in Headers */ = {isa = PBXBuildFile; };
+		9916606B8AE190EAFF667C3A /* (null) in Headers */ = {isa = PBXBuildFile; };
+		999D7EAF404F08641EB69500 /* PMUserClubRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A59307D4351F30514F8FE08 /* PMUserClubRsp.h */; };
+		A1F5E059638420F43D99634B /* (null) in Sources */ = {isa = PBXBuildFile; };
+		A24318B31FB1658BBDA51CDC /* (null) in Headers */ = {isa = PBXBuildFile; };
+		A4C56C3CFD95F22528AC7384 /* PMThreadInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C24900F78741CC4C823D52F /* PMThreadInfo.m */; };
+		A5A556EE5C9EE9FA63444673 /* PMUserThreadListRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 242A7009ED5959B73932E6CE /* PMUserThreadListRsp.m */; };
+		A8FC4853CA3F626F68492D9C /* (null) in Headers */ = {isa = PBXBuildFile; };
+		AA73E4D69CBC44660079D89E /* PMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FB866D6AAC1BD0B9B9EA6921 /* PMCategory.m */; };
+		AA829CFC0FF27CE9138C3904 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		AD20F0ACF71111B95575B2A4 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		AE36394E5C60F083B1658A25 /* PMUserInfoShowRsp.m in Sources */ = {isa = PBXBuildFile; fileRef = 22317D5EB07FED6D4124794F /* PMUserInfoShowRsp.m */; };
+		AEB8E5A4132640A8374B86D4 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		B77D0466F614F3F339AFFBAA /* (null) in Headers */ = {isa = PBXBuildFile; };
+		B83097C1F52F6E76F549C8DC /* (null) in Headers */ = {isa = PBXBuildFile; };
+		BBE74AEE1CC0E8BE5F501151 /* PMThreadInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AA85D0A8E9099466936E40 /* PMThreadInfo.h */; };
+		BBF73CC8862F27594A739A35 /* PMThreadListRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = 0745CEBE751A9EFA6B784184 /* PMThreadListRsp.h */; };
+		BC40F1A956DA8C784B836C17 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		C57C01F60A2D1B4ED826504E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		C5E78FC1CD0598F08FDF7E2F /* (null) in Sources */ = {isa = PBXBuildFile; };
+		C7DA44DC8D459948CFF8AEFE /* PMCarClubInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 70AEC6D276990896E6A448DC /* PMCarClubInfo.h */; };
+		C9C33CE1FC971F1FADCA1F34 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		CF810226F10F2C9AB5639C00 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D03821C148A5B52E1BE305D1 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D139BB9BAB0BEE40009B4D06 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		D4383CA8511DEB7A7AB383AA /* (null) in Headers */ = {isa = PBXBuildFile; };
+		D4F9581C17DE65BC3B44565B /* (null) in Headers */ = {isa = PBXBuildFile; };
+		D628DFB31856DF366D944A0B /* (null) in Headers */ = {isa = PBXBuildFile; };
+		DC0E7D02F7B14BF88B64E861 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		E1EEA2D1034BF815FA522C9F /* (null) in Headers */ = {isa = PBXBuildFile; };
+		E2A31B64F8660A3ABB8D74A3 /* PMFavoriteInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0847B9C6341C474CA3F8CEFE /* PMFavoriteInfo.m */; };
+		EC55C6874A496A5976C8A3B1 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		EFB62802160617F023478348 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		F514EC53CACA10ECC450BD48 /* PMClubMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BFDCE07B84988DC56612EA /* PMClubMember.m */; };
+		F59F237DB626885B2CA47767 /* (null) in Headers */ = {isa = PBXBuildFile; };
+		FB6D839223341DD6542134E9 /* PMThreadPostInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B692F4EDAD1D0EA24AF543 /* PMThreadPostInfo.m */; };
+		FBFE680EF1EC903D06C1175B /* (null) in Headers */ = {isa = PBXBuildFile; };
+		FC0E49A060BDDBCAF9834690 /* PMUserInfoShowRsp.h in Headers */ = {isa = PBXBuildFile; fileRef = A72D71E7D6AE86B5D4EF8FB8 /* PMUserInfoShowRsp.h */; };
+		FC23033F76A9858B0FFB0CEC /* (null) in Sources */ = {isa = PBXBuildFile; };
+		FCCB7F2873F5C6D0263447EE /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,7 +288,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0073FB2D122761AFD8EAF97C /* PMFavoriteInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMFavoriteInfo.h; path = GenModels/PMFavoriteInfo.h; sourceTree = "<group>"; };
+		061B5A8A11207FB6EB98EE70 /* PMCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMCategory.h; path = GenModels/PMCategory.h; sourceTree = "<group>"; };
+		0745CEBE751A9EFA6B784184 /* PMThreadListRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMThreadListRsp.h; path = GenModels/PMThreadListRsp.h; sourceTree = "<group>"; };
+		0847B9C6341C474CA3F8CEFE /* PMFavoriteInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMFavoriteInfo.m; path = GenModels/PMFavoriteInfo.m; sourceTree = "<group>"; };
+		115F8B97E4A03574013D96C4 /* PMFavoriteListRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMFavoriteListRsp.m; path = GenModels/PMFavoriteListRsp.m; sourceTree = "<group>"; };
 		181D07AF18EA69C166263FAB /* libPods-LuTu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LuTu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B692F4EDAD1D0EA24AF543 /* PMThreadPostInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMThreadPostInfo.m; path = GenModels/PMThreadPostInfo.m; sourceTree = "<group>"; };
+		22317D5EB07FED6D4124794F /* PMUserInfoShowRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserInfoShowRsp.m; path = GenModels/PMUserInfoShowRsp.m; sourceTree = "<group>"; };
+		242A7009ED5959B73932E6CE /* PMUserThreadListRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserThreadListRsp.m; path = GenModels/PMUserThreadListRsp.m; sourceTree = "<group>"; };
+		26BFDCE07B84988DC56612EA /* PMClubMember.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMClubMember.m; path = GenModels/PMClubMember.m; sourceTree = "<group>"; };
+		3E76B1515DDC2972E67C32BC /* PMThreadPostInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMThreadPostInfo.h; path = GenModels/PMThreadPostInfo.h; sourceTree = "<group>"; };
+		436A49DE4D5C0698C1600316 /* PMCategoryListRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMCategoryListRsp.h; path = GenModels/PMCategoryListRsp.h; sourceTree = "<group>"; };
+		443CB78DA485F15D8B4BFE76 /* PMUserClubInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserClubInfo.h; path = GenModels/PMUserClubInfo.h; sourceTree = "<group>"; };
+		5575D3F70D0E42B4692FE4F9 /* PMCarClubInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMCarClubInfo.m; path = GenModels/PMCarClubInfo.m; sourceTree = "<group>"; };
+		595A191B8AD98B4E5077E11E /* PMThreadPostList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMThreadPostList.h; path = GenModels/PMThreadPostList.h; sourceTree = "<group>"; };
+		5C24900F78741CC4C823D52F /* PMThreadInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMThreadInfo.m; path = GenModels/PMThreadInfo.m; sourceTree = "<group>"; };
 		65035FD61AE495B900BBEDEB /* LTRoteListReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTRoteListReq.h; sourceTree = "<group>"; };
 		65035FD71AE495B900BBEDEB /* LTRoteListReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRoteListReq.m; sourceTree = "<group>"; };
 		65035FD91AE4969A00BBEDEB /* LTNetworkConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTNetworkConfigure.h; path = ../threads/LTNetworkConfigure.h; sourceTree = "<group>"; };
@@ -325,6 +455,7 @@
 		652FB96B1AD27FA60082894E /* LTAppearenceTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAppearenceTools.m; sourceTree = "<group>"; };
 		652FB96D1AD27FBA0082894E /* LTColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTColors.h; sourceTree = "<group>"; };
 		652FB96E1AD27FBA0082894E /* LTColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTColors.m; sourceTree = "<group>"; };
+		6535653A1B18633600C971F5 /* jsonModel.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = jsonModel.rb; sourceTree = "<group>"; };
 		6549446A1B0EF7F400E925D8 /* PMRoteListRsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMRoteListRsp.h; path = ../PMRoteListRsp.h; sourceTree = "<group>"; };
 		6549446B1B0EF7F400E925D8 /* PMRoteListRsp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMRoteListRsp.m; path = ../PMRoteListRsp.m; sourceTree = "<group>"; };
 		6549446E1B0EF9DC00E925D8 /* PMRouteDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMRouteDetail.h; sourceTree = "<group>"; };
@@ -377,6 +508,12 @@
 		65A3F68F1AE8E34C00BD6B1F /* PMToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMToken.m; sourceTree = "<group>"; };
 		65A4A6871B16BF27000E62EE /* NSValueTransformer+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValueTransformer+NSString.h"; sourceTree = "<group>"; };
 		65A4A6881B16BF27000E62EE /* NSValueTransformer+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+NSString.m"; sourceTree = "<group>"; };
+		65A4A68A1B16FED7000E62EE /* LTAddRouteCommentReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAddRouteCommentReq.h; sourceTree = "<group>"; };
+		65A4A68B1B16FED7000E62EE /* LTAddRouteCommentReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAddRouteCommentReq.m; sourceTree = "<group>"; };
+		65A4A68D1B17001F000E62EE /* LTGetRouteCommentReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGetRouteCommentReq.h; sourceTree = "<group>"; };
+		65A4A68E1B17001F000E62EE /* LTGetRouteCommentReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGetRouteCommentReq.m; sourceTree = "<group>"; };
+		65A4A6901B1700CB000E62EE /* PMGetRouteCommentReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMGetRouteCommentReq.h; sourceTree = "<group>"; };
+		65A4A6911B1700CB000E62EE /* PMGetRouteCommentReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMGetRouteCommentReq.m; sourceTree = "<group>"; };
 		65AAF4BB1B0AE33D00BE9FCD /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.h; sourceTree = SOURCE_ROOT; };
 		65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.m; sourceTree = SOURCE_ROOT; };
 		65B283361AF8B9BD001E85A6 /* LTMyFavoriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMyFavoriteViewController.h; sourceTree = "<group>"; };
@@ -403,8 +540,6 @@
 		65B9E4881AEC963500577594 /* LTRoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTRoadViewController.m; sourceTree = "<group>"; };
 		65B9E48A1AEC9D6200577594 /* LTCategoryListReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCategoryListReq.h; sourceTree = "<group>"; };
 		65B9E48B1AEC9D6200577594 /* LTCategoryListReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCategoryListReq.m; sourceTree = "<group>"; };
-		65B9E48D1AECA12200577594 /* PMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMCategory.h; sourceTree = "<group>"; };
-		65B9E48E1AECA12200577594 /* PMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMCategory.m; sourceTree = "<group>"; };
 		65BCE6DF1AE6262900482360 /* LTLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLine.h; sourceTree = "<group>"; };
 		65BCE6E01AE6262900482360 /* LTLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLine.m; sourceTree = "<group>"; };
 		65BCE6E61AE6278C00482360 /* PMPoiInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMPoiInfo.h; path = ../../../Network/protocols/poi/PMPoiInfo.h; sourceTree = "<group>"; };
@@ -477,8 +612,29 @@
 		65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZExpandCollectionViewCell.m; sourceTree = "<group>"; };
 		65FD64D81ADB9A2E00FC94E0 /* LTCarMeetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetCell.h; sourceTree = "<group>"; };
 		65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetCell.m; sourceTree = "<group>"; };
+		6E3EC82481076173E04C422F /* PMCategoryListRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMCategoryListRsp.m; path = GenModels/PMCategoryListRsp.m; sourceTree = "<group>"; };
+		70AEC6D276990896E6A448DC /* PMCarClubInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMCarClubInfo.h; path = GenModels/PMCarClubInfo.h; sourceTree = "<group>"; };
+		70E8FE3823F5372174CF246F /* PMUserClubRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserClubRsp.m; path = GenModels/PMUserClubRsp.m; sourceTree = "<group>"; };
+		73B2CBB0008EAE77F463F7E2 /* PMThreadPostList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMThreadPostList.m; path = GenModels/PMThreadPostList.m; sourceTree = "<group>"; };
+		78AA85D0A8E9099466936E40 /* PMThreadInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMThreadInfo.h; path = GenModels/PMThreadInfo.h; sourceTree = "<group>"; };
+		7A59307D4351F30514F8FE08 /* PMUserClubRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserClubRsp.h; path = GenModels/PMUserClubRsp.h; sourceTree = "<group>"; };
+		7DF7724C8296E5C33979708F /* PMClubMember.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMClubMember.h; path = GenModels/PMClubMember.h; sourceTree = "<group>"; };
+		848C1CA1ECF0F50F66655F9B /* PMThreadListRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMThreadListRsp.m; path = GenModels/PMThreadListRsp.m; sourceTree = "<group>"; };
+		85F045061B0180500CE014D5 /* PMUserThreadInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserThreadInfo.m; path = GenModels/PMUserThreadInfo.m; sourceTree = "<group>"; };
+		9FE85698067036F166E272FF /* PMSearchClubRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMSearchClubRsp.m; path = GenModels/PMSearchClubRsp.m; sourceTree = "<group>"; };
+		A72D71E7D6AE86B5D4EF8FB8 /* PMUserInfoShowRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserInfoShowRsp.h; path = GenModels/PMUserInfoShowRsp.h; sourceTree = "<group>"; };
+		B30CB765A57B83CE244F2475 /* PMUserSummaryRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserSummaryRsp.h; path = GenModels/PMUserSummaryRsp.h; sourceTree = "<group>"; };
 		B31DE014AADD645AC513307D /* Pods-LuTu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.release.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.release.xcconfig"; sourceTree = "<group>"; };
+		B9560096CA97043C248C143F /* PMUserThreadListRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserThreadListRsp.h; path = GenModels/PMUserThreadListRsp.h; sourceTree = "<group>"; };
+		C359D2C76250E0600E84AD8A /* PMSearchClubInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMSearchClubInfo.m; path = GenModels/PMSearchClubInfo.m; sourceTree = "<group>"; };
+		CEF23567BB8FC6B060DE5935 /* PMUserClubInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserClubInfo.m; path = GenModels/PMUserClubInfo.m; sourceTree = "<group>"; };
+		D96487F101A331349EDA943D /* PMUserThreadInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMUserThreadInfo.h; path = GenModels/PMUserThreadInfo.h; sourceTree = "<group>"; };
+		DB6C5751183F825A75E10914 /* PMSearchClubRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMSearchClubRsp.h; path = GenModels/PMSearchClubRsp.h; sourceTree = "<group>"; };
 		DFA8AA5136737BE7B1D5383B /* Pods-LuTu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuTu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuTu/Pods-LuTu.debug.xcconfig"; sourceTree = "<group>"; };
+		EFDC9773B611729B367C573F /* PMUserSummaryRsp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMUserSummaryRsp.m; path = GenModels/PMUserSummaryRsp.m; sourceTree = "<group>"; };
+		FB866D6AAC1BD0B9B9EA6921 /* PMCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMCategory.m; path = GenModels/PMCategory.m; sourceTree = "<group>"; };
+		FCF27372A65134FBE3179D18 /* PMFavoriteListRsp.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMFavoriteListRsp.h; path = GenModels/PMFavoriteListRsp.h; sourceTree = "<group>"; };
+		FF7FAFA9F8479157FFBEFE42 /* PMSearchClubInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMSearchClubInfo.h; path = GenModels/PMSearchClubInfo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +658,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D0D596B063D84DCF8F61E05 /* GenModels */ = {
+			isa = PBXGroup;
+			children = (
+				70AEC6D276990896E6A448DC /* PMCarClubInfo.h */,
+				5575D3F70D0E42B4692FE4F9 /* PMCarClubInfo.m */,
+				061B5A8A11207FB6EB98EE70 /* PMCategory.h */,
+				FB866D6AAC1BD0B9B9EA6921 /* PMCategory.m */,
+				436A49DE4D5C0698C1600316 /* PMCategoryListRsp.h */,
+				6E3EC82481076173E04C422F /* PMCategoryListRsp.m */,
+				7DF7724C8296E5C33979708F /* PMClubMember.h */,
+				26BFDCE07B84988DC56612EA /* PMClubMember.m */,
+				0073FB2D122761AFD8EAF97C /* PMFavoriteInfo.h */,
+				0847B9C6341C474CA3F8CEFE /* PMFavoriteInfo.m */,
+				FCF27372A65134FBE3179D18 /* PMFavoriteListRsp.h */,
+				115F8B97E4A03574013D96C4 /* PMFavoriteListRsp.m */,
+				FF7FAFA9F8479157FFBEFE42 /* PMSearchClubInfo.h */,
+				C359D2C76250E0600E84AD8A /* PMSearchClubInfo.m */,
+				DB6C5751183F825A75E10914 /* PMSearchClubRsp.h */,
+				9FE85698067036F166E272FF /* PMSearchClubRsp.m */,
+				78AA85D0A8E9099466936E40 /* PMThreadInfo.h */,
+				5C24900F78741CC4C823D52F /* PMThreadInfo.m */,
+				0745CEBE751A9EFA6B784184 /* PMThreadListRsp.h */,
+				848C1CA1ECF0F50F66655F9B /* PMThreadListRsp.m */,
+				3E76B1515DDC2972E67C32BC /* PMThreadPostInfo.h */,
+				18B692F4EDAD1D0EA24AF543 /* PMThreadPostInfo.m */,
+				595A191B8AD98B4E5077E11E /* PMThreadPostList.h */,
+				73B2CBB0008EAE77F463F7E2 /* PMThreadPostList.m */,
+				443CB78DA485F15D8B4BFE76 /* PMUserClubInfo.h */,
+				CEF23567BB8FC6B060DE5935 /* PMUserClubInfo.m */,
+				7A59307D4351F30514F8FE08 /* PMUserClubRsp.h */,
+				70E8FE3823F5372174CF246F /* PMUserClubRsp.m */,
+				A72D71E7D6AE86B5D4EF8FB8 /* PMUserInfoShowRsp.h */,
+				22317D5EB07FED6D4124794F /* PMUserInfoShowRsp.m */,
+				B30CB765A57B83CE244F2475 /* PMUserSummaryRsp.h */,
+				EFDC9773B611729B367C573F /* PMUserSummaryRsp.m */,
+				D96487F101A331349EDA943D /* PMUserThreadInfo.h */,
+				85F045061B0180500CE014D5 /* PMUserThreadInfo.m */,
+				B9560096CA97043C248C143F /* PMUserThreadListRsp.h */,
+				242A7009ED5959B73932E6CE /* PMUserThreadListRsp.m */,
+			);
+			name = GenModels;
+			sourceTree = "<group>";
+		};
 		65035FDC1AE4A74E00BBEDEB /* DataController */ = {
 			isa = PBXGroup;
 			children = (
@@ -744,6 +943,10 @@
 				65A0EA401B01FBB90061B3FF /* LTCityReq.m */,
 				65576A851B05E2B6004DFCB8 /* LTSearchReq.h */,
 				65576A861B05E2B6004DFCB8 /* LTSearchReq.m */,
+				65A4A68A1B16FED7000E62EE /* LTAddRouteCommentReq.h */,
+				65A4A68B1B16FED7000E62EE /* LTAddRouteCommentReq.m */,
+				65A4A68D1B17001F000E62EE /* LTGetRouteCommentReq.h */,
+				65A4A68E1B17001F000E62EE /* LTGetRouteCommentReq.m */,
 			);
 			path = protocols;
 			sourceTree = "<group>";
@@ -889,6 +1092,22 @@
 			path = Appearence;
 			sourceTree = "<group>";
 		};
+		653565381B18633600C971F5 /* script */ = {
+			isa = PBXGroup;
+			children = (
+				653565391B18633600C971F5 /* GenModel */,
+			);
+			path = script;
+			sourceTree = "<group>";
+		};
+		653565391B18633600C971F5 /* GenModel */ = {
+			isa = PBXGroup;
+			children = (
+				6535653A1B18633600C971F5 /* jsonModel.rb */,
+			);
+			path = GenModel;
+			sourceTree = "<group>";
+		};
 		6549446D1B0EF9C500E925D8 /* NewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +1123,8 @@
 				6549446F1B0EF9DC00E925D8 /* PMRouteDetail.m */,
 				65F9B6051B13178E0060AC39 /* PMTokenRsp.h */,
 				65F9B6061B13178E0060AC39 /* PMTokenRsp.m */,
+				65A4A6901B1700CB000E62EE /* PMGetRouteCommentReq.h */,
+				65A4A6911B1700CB000E62EE /* PMGetRouteCommentReq.m */,
 			);
 			path = NewModels;
 			sourceTree = "<group>";
@@ -1178,8 +1399,6 @@
 				650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */,
 				65A3F68E1AE8E34C00BD6B1F /* PMToken.h */,
 				65A3F68F1AE8E34C00BD6B1F /* PMToken.m */,
-				65B9E48D1AECA12200577594 /* PMCategory.h */,
-				65B9E48E1AECA12200577594 /* PMCategory.m */,
 				65CDBA441AF8B08E008458C3 /* PMUserCarClub.h */,
 				65CDBA451AF8B08E008458C3 /* PMUserCarClub.m */,
 				65B283421AF8BEB5001E85A6 /* PMMyFavorite.h */,
@@ -1188,6 +1407,7 @@
 				65A0EA461B01FF120061B3FF /* PMCity.m */,
 				651E2B271B07411F000E42F9 /* PMComment.h */,
 				651E2B281B07411F000E42F9 /* PMComment.m */,
+				2D0D596B063D84DCF8F61E05 /* GenModels */,
 			);
 			path = ProtocolModels;
 			sourceTree = "<group>";
@@ -1229,6 +1449,7 @@
 		65D1F06C1AC28B34006525D0 /* LuTu */ = {
 			isa = PBXGroup;
 			children = (
+				653565381B18633600C971F5 /* script */,
 				659D4B451AC3A232007C2DAF /* Classes */,
 				65D1F0711AC28B34006525D0 /* AppDelegate.h */,
 				65D1F0721AC28B34006525D0 /* AppDelegate.m */,
@@ -1387,6 +1608,72 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6893CD3510665E97810B9E98 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBFE680EF1EC903D06C1175B /* (null) in Headers */,
+				B77D0466F614F3F339AFFBAA /* (null) in Headers */,
+				E1EEA2D1034BF815FA522C9F /* (null) in Headers */,
+				01F4AA4F2CD0B29EA425FF8C /* (null) in Headers */,
+				8146577BD393404A49FADAC1 /* (null) in Headers */,
+				B83097C1F52F6E76F549C8DC /* (null) in Headers */,
+				A24318B31FB1658BBDA51CDC /* (null) in Headers */,
+				19848A0B6E65FA6A5CD8F8F5 /* (null) in Headers */,
+				D4383CA8511DEB7A7AB383AA /* (null) in Headers */,
+				8B17CABE67C414FD44E02864 /* (null) in Headers */,
+				EC55C6874A496A5976C8A3B1 /* (null) in Headers */,
+				77A005FE028A94E3BAD1FF67 /* (null) in Headers */,
+				560164629B5B52C456F2E726 /* (null) in Headers */,
+				A8FC4853CA3F626F68492D9C /* (null) in Headers */,
+				3E51CDED86906C9F662D56A3 /* (null) in Headers */,
+				08772DC0334BEA901F0AC970 /* (null) in Headers */,
+				6D70F311B112F23AAEB43A8A /* (null) in Headers */,
+				94B1A02E08CBC501F379A05C /* (null) in Headers */,
+				643273CAB665CE27974FF0AF /* (null) in Headers */,
+				AA829CFC0FF27CE9138C3904 /* (null) in Headers */,
+				D4F9581C17DE65BC3B44565B /* (null) in Headers */,
+				443DEAE14023AD5CE8013031 /* (null) in Headers */,
+				5DB6E8D5769D7E800BD9F273 /* (null) in Headers */,
+				3181014ABF99A917298C6F54 /* (null) in Headers */,
+				2F2818867BC7DA1B2ED7E918 /* (null) in Headers */,
+				D628DFB31856DF366D944A0B /* (null) in Headers */,
+				37F4DDF154DDD5B991EF54AD /* (null) in Headers */,
+				823844096DC7806FD7E88439 /* (null) in Headers */,
+				0D398B3A18ECD420F2C34193 /* (null) in Headers */,
+				68515763C6DFA06584B9ECA5 /* (null) in Headers */,
+				9916606B8AE190EAFF667C3A /* (null) in Headers */,
+				842F0DF831E234AD6BDD32E0 /* (null) in Headers */,
+				675DAAA1630DE1A35C26B3A0 /* (null) in Headers */,
+				AEB8E5A4132640A8374B86D4 /* (null) in Headers */,
+				F59F237DB626885B2CA47767 /* (null) in Headers */,
+				83367DAF2727CD35D15736F0 /* (null) in Headers */,
+				8A8063E931269FFF6F4DD79D /* (null) in Headers */,
+				970E4B1A9246C3313A7442FF /* (null) in Headers */,
+				C7DA44DC8D459948CFF8AEFE /* PMCarClubInfo.h in Headers */,
+				1DC6AB53F116B8A06D607269 /* PMCategory.h in Headers */,
+				469336EB7110A05FA0770B64 /* PMCategoryListRsp.h in Headers */,
+				1CDC5585F817DC3FBEEE66CF /* PMClubMember.h in Headers */,
+				93A100504E1C822A30575193 /* PMFavoriteInfo.h in Headers */,
+				13C606FB7413782DEB158C09 /* PMFavoriteListRsp.h in Headers */,
+				1DA516DB830A1AABF2FEDFA6 /* PMSearchClubInfo.h in Headers */,
+				71EF16F5EA4578DFFFF8E4DC /* PMSearchClubRsp.h in Headers */,
+				BBE74AEE1CC0E8BE5F501151 /* PMThreadInfo.h in Headers */,
+				BBF73CC8862F27594A739A35 /* PMThreadListRsp.h in Headers */,
+				2884F51C82037C469EB06C27 /* PMThreadPostInfo.h in Headers */,
+				7310C313103BFF73AFE49F3D /* PMThreadPostList.h in Headers */,
+				16AD219535758E6197EF0519 /* PMUserClubInfo.h in Headers */,
+				999D7EAF404F08641EB69500 /* PMUserClubRsp.h in Headers */,
+				FC0E49A060BDDBCAF9834690 /* PMUserInfoShowRsp.h in Headers */,
+				0DE32D4D71CF63328B0CC270 /* PMUserSummaryRsp.h in Headers */,
+				3C1462EFDEDD2701CCDC34C1 /* PMUserThreadInfo.h in Headers */,
+				20EF7DB1BA764F192B72F946 /* PMUserThreadListRsp.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		65D1F0691AC28B34006525D0 /* LuTu */ = {
 			isa = PBXNativeTarget;
@@ -1397,6 +1684,7 @@
 				65D1F0671AC28B34006525D0 /* Frameworks */,
 				65D1F0681AC28B34006525D0 /* Resources */,
 				E42809E73D9CE7A0443EE49A /* Copy Pods Resources */,
+				6893CD3510665E97810B9E98 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -1469,6 +1757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6581A34F1AE8FDFD008C965A /* LTAddUserInfoTableViewController.xib in Resources */,
+				6535653B1B18633600C971F5 /* jsonModel.rb in Resources */,
 				65D1F07E1AC28B34006525D0 /* LaunchScreen.xib in Resources */,
 				65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */,
 				65D1F07B1AC28B34006525D0 /* Images.xcassets in Resources */,
@@ -1529,7 +1818,6 @@
 				652C4EDB1ADE100500570768 /* LTNavigationBar.m in Sources */,
 				6517E7971AE7ADE9004F71BC /* LTLinePoiCell.m in Sources */,
 				65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */,
-				65B9E48F1AECA12200577594 /* PMCategory.m in Sources */,
 				65D9CD181AD5475D00CBF695 /* LTFont.m in Sources */,
 				651E2B0C1B07151A000E42F9 /* LTHeadImageView.m in Sources */,
 				65035FDF1AE4A77600BBEDEB /* LTPageDataController.m in Sources */,
@@ -1577,6 +1865,7 @@
 				65BCE6E81AE6278C00482360 /* PMPoiInfo.m in Sources */,
 				65D1FCA11ADBB29E00CB90F9 /* LTUICarMeet.m in Sources */,
 				65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */,
+				65A4A68F1B17001F000E62EE /* LTGetRouteCommentReq.m in Sources */,
 				6517E7861AE78EC3004F71BC /* LTLineHeaderView.m in Sources */,
 				654944731B0F10B000E925D8 /* LTRouteInfoView.m in Sources */,
 				6517E79F1AE7C3CC004F71BC /* LTCatMeetMemberTableViewController.m in Sources */,
@@ -1633,11 +1922,13 @@
 				652FB96C1AD27FA60082894E /* LTAppearenceTools.m in Sources */,
 				65AAF4BD1B0AE33D00BE9FCD /* LTCoverFlowLayout.m in Sources */,
 				657D6FE71ADE82B800AA5EBA /* LTMineTopView.m in Sources */,
+				65A4A6921B1700CB000E62EE /* PMGetRouteCommentReq.m in Sources */,
 				65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */,
 				65BCE6E11AE6262900482360 /* LTLine.m in Sources */,
 				65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */,
 				651E2B031B070036000E42F9 /* LTFeedHeadView.m in Sources */,
 				65D9CD221AD54C2F00CBF695 /* LTBadgeView.m in Sources */,
+				65A4A68C1B16FED7000E62EE /* LTAddRouteCommentReq.m in Sources */,
 				6581A34E1AE8FDFD008C965A /* LTAddUserInfoTableViewController.m in Sources */,
 				65D1F0701AC28B34006525D0 /* main.m in Sources */,
 				65038DD81AF898EF00B0D9F2 /* LTCarClubReq.m in Sources */,
@@ -1667,6 +1958,62 @@
 				6517E77D1AE787C5004F71BC /* LTTopShowImageView.m in Sources */,
 				657D6FFE1ADF7CEB00AA5EBA /* LTCarMeetMenuView.m in Sources */,
 				65F9B6071B13178E0060AC39 /* PMTokenRsp.m in Sources */,
+				38D4FE43231893B25F1E1F68 /* (null) in Sources */,
+				68C694A9C698108D6A06DEA3 /* (null) in Sources */,
+				6E584D1023529B48F016097A /* (null) in Sources */,
+				C5E78FC1CD0598F08FDF7E2F /* (null) in Sources */,
+				6570EC7E800F0421F8320FAC /* (null) in Sources */,
+				DC0E7D02F7B14BF88B64E861 /* (null) in Sources */,
+				D03821C148A5B52E1BE305D1 /* (null) in Sources */,
+				EFB62802160617F023478348 /* (null) in Sources */,
+				902B49207AB99B7F89D6CFD5 /* (null) in Sources */,
+				3276398A563516B50B41C0AB /* (null) in Sources */,
+				8F5365E8AB92C023FB01390D /* (null) in Sources */,
+				881CF3F1F7C45C7430982A08 /* (null) in Sources */,
+				CF810226F10F2C9AB5639C00 /* (null) in Sources */,
+				78CA430638DC73F4294B1608 /* (null) in Sources */,
+				30CD3415C0DE0D147D5D65F9 /* (null) in Sources */,
+				C9C33CE1FC971F1FADCA1F34 /* (null) in Sources */,
+				1FDA4CC008934DAF6883F0B7 /* (null) in Sources */,
+				05F3DC7C283616A7625DE343 /* (null) in Sources */,
+				5BC69D689EFEE1BEB88F8E7D /* (null) in Sources */,
+				FCCB7F2873F5C6D0263447EE /* (null) in Sources */,
+				FC23033F76A9858B0FFB0CEC /* (null) in Sources */,
+				AD20F0ACF71111B95575B2A4 /* (null) in Sources */,
+				43B59FC3921AEAC9152497E0 /* (null) in Sources */,
+				7590FFC0796625E2BB0F9545 /* (null) in Sources */,
+				74C43AA59AF60122A201BF7C /* (null) in Sources */,
+				897C748DA2775E6E13DCCBC4 /* (null) in Sources */,
+				38C88FAFF317F46EFF1E75E4 /* (null) in Sources */,
+				D139BB9BAB0BEE40009B4D06 /* (null) in Sources */,
+				0BBE44202EEEB7F10F7CC3E9 /* (null) in Sources */,
+				7286A33252D07A2D2D082C41 /* (null) in Sources */,
+				A1F5E059638420F43D99634B /* (null) in Sources */,
+				7D7020BE0D77A43CC2AAAC5A /* (null) in Sources */,
+				1FB808CD4CF892E2D151EA3C /* (null) in Sources */,
+				BC40F1A956DA8C784B836C17 /* (null) in Sources */,
+				C57C01F60A2D1B4ED826504E /* (null) in Sources */,
+				649169CDA49FCD1C2D9FB996 /* (null) in Sources */,
+				3F9D13F04F922DD261E73838 /* (null) in Sources */,
+				8669F6066AF16ED5F8D2698F /* (null) in Sources */,
+				893562132AF312C13399597A /* PMCarClubInfo.m in Sources */,
+				AA73E4D69CBC44660079D89E /* PMCategory.m in Sources */,
+				53F08C42F43732B59C2BF973 /* PMCategoryListRsp.m in Sources */,
+				F514EC53CACA10ECC450BD48 /* PMClubMember.m in Sources */,
+				E2A31B64F8660A3ABB8D74A3 /* PMFavoriteInfo.m in Sources */,
+				9562B2D238C72F6C202F703B /* PMFavoriteListRsp.m in Sources */,
+				2D7A8932103D499A36673CAE /* PMSearchClubInfo.m in Sources */,
+				2169560FA8FA802F0A602E24 /* PMSearchClubRsp.m in Sources */,
+				A4C56C3CFD95F22528AC7384 /* PMThreadInfo.m in Sources */,
+				7E34AAC09F8F1931A4380120 /* PMThreadListRsp.m in Sources */,
+				FB6D839223341DD6542134E9 /* PMThreadPostInfo.m in Sources */,
+				3AFC54CA2FC9E56B2581B7DB /* PMThreadPostList.m in Sources */,
+				12F5EAA59C20A8F62702C36A /* PMUserClubInfo.m in Sources */,
+				67C5421B001643F52D69D4B8 /* PMUserClubRsp.m in Sources */,
+				AE36394E5C60F083B1658A25 /* PMUserInfoShowRsp.m in Sources */,
+				0B63E4199F84C854219629BD /* PMUserSummaryRsp.m in Sources */,
+				3C59FFC187E54A4798D4890A /* PMUserThreadInfo.m in Sources */,
+				A5A556EE5C9EE9FA63444673 /* PMUserThreadListRsp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
