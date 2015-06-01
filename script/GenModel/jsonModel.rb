@@ -461,10 +461,17 @@ model("PMFavoriteInfo") { |m|
   int64 "createTime" , m
 }
 
+requestModel("LTUserFavoriteRouteListReq") { |r|
+  method "/user/favorite/route/list" , r
+  response "PMFavoriteListRsp" , r
+  p_int64 "pageNo" , r
+  p_int64 "pageSize" , r
+  p_string "userId" , r
+}
 
 #我的车友会
-model("PMUserClubRsp") { |m|
-  array "result", "PMUserClubInfo", m
+model("PMUserClubListRsp") { |m|
+  array "list", "PMUserClubInfo", m
 }
 
 model("PMUserClubInfo") { |m|
@@ -474,6 +481,12 @@ model("PMUserClubInfo") { |m|
   string "introImageUrl", m
   int32 "userCount", m
   int32 "threadCount", m
+}
+
+requestModel("LTUserCarClubListReq") { |r|
+  method "/user/car_club/list" , r
+  response "PMUserClubListRsp" , r
+  p_string "userId" , r
 }
 
 #我的帖子列表
@@ -497,8 +510,49 @@ model("PMUserThreadInfo") { |m|
   string "content", m
 }
 
+requestModel("LTUserThreadListReq") { |r|
+  method "/user/thread/list" , r
+  response "PMUserThreadListRsp" , r
+  p_int64 "pageNo" , r
+  p_int64 "pageSize" , r
+  p_string "userId" , r
+}
 
+#搜索接口
 
+model("PMRouteSearchInfo") { |m|
+  string "name", m
+  string "intro_image_url", m
+  string "attival_time", m
+}
 
+model("PMClubSearchInfo") { |m|
+  string "club_id", m
+  string "name", m
+  int32 "member_count", m
+  int32 "thread_count", m
+}
+
+model("PMThreadSearchInfo") { |m|
+  string "thread_id", m
+  string "title", m
+  string "user_avatar_url", m
+  string "user_name", m
+  string "create_time", m
+  int32 "post_count", m
+}
+
+model("PMSearchRsp") { |m|
+  array "routes", "PMRouteSearchInfo" , m
+  array "clubs", "PMClubSearchInfo" , m
+  array "threads", "PMThreadSearchInfo" , m
+}
+
+requestModel("LTSearchReq") { |r|
+  method "/search" , r
+  response "PMSearchRsp" , r
+  p_string "city" , r
+  p_string "keyword" , r
+}
 
 FindProject()

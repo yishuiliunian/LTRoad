@@ -10,7 +10,7 @@
 #import "LTGlobals.h"
 @implementation LTUIDiscoverItem
 
-- (instancetype) initWithCategory:(PMCategory *)category
+- (instancetype) initWithCategory:(PMCategoryInfo *)category
 {
     self = [super init];
     if (!self) {

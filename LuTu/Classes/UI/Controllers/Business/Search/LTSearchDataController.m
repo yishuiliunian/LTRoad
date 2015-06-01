@@ -46,6 +46,7 @@
 {
     LTSearchReq* searchReq = [LTSearchReq new];
     searchReq.keyword = keyword;
+    searchReq.city = LTShareSettings().currentCity;
     MSPerformRequestWithDelegateSelf(searchReq);
 }
 

@@ -82,7 +82,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 {
 
     LTCategoryListReq* listReq = [LTCategoryListReq new];
-    listReq.city = LTShareSettings().currentCity;
+    listReq.cityId = LTShareSettings().currentCity;
     MSPerformRequestWithDelegateSelf(listReq);
 }
 

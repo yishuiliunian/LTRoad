@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PMCategory.h"
+#import "PMCategoryInfo.h"
 @interface LTUIDiscoverItem : NSObject
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSURL* backgroundURL;
 @property (nonatomic, strong) NSString* categoryID;
 @property (nonatomic, strong) NSString* contentCount;
-@property (nonatomic, strong, readonly) PMCategory* category;
-- (instancetype) initWithCategory:(PMCategory*)category;
+@property (nonatomic, strong, readonly) PMCategoryInfo* category;
+- (instancetype) initWithCategory:(PMCategoryInfo*)category;
 @end
