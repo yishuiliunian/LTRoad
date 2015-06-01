@@ -11,4 +11,28 @@
             };
 }
 
++ (NSValueTransformer*) nameJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) memberTypeJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) vihicleModelJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) avatarUrlJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
 @end

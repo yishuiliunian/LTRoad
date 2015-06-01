@@ -16,6 +16,7 @@
 #import "LTAdjustFrameTable.h"
 #import "UIViewController+Additions.h"
 #import "LTGlobals.h"
+#import "LTRouteCollectReq.h"
 @interface LTRouteDetailViewController () <MSRequestUIDelegate, BMKMapViewDelegate>
 {
     NSArray* _allCellDatas;
@@ -86,14 +87,17 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 
 - (void) addFav
 {
-    
+    LTRouteCollectReq* favReq = [LTRouteCollectReq new];
+    favReq.routeId = _routeID;
+    favReq.creatorId = LTCurrentAccount.accountID;
+    MSPerformRequestWithDelegateSelf(favReq);
 }
 
 
 - (void) reloadDetails
 {
     LTRouteDetailReq* detailReq = [LTRouteDetailReq new];
-    detailReq.routeID = _routeID;
+    detailReq.routeId = _routeID;
     MSPerformRequestWithDelegateSelf(detailReq);
 }
 - (void) reloadAllData
@@ -162,13 +166,13 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 {
 }
 
-- (void) onHandleRemoteRoteDetail:(PMRoute*)pmline
+- (void) onHandleRemoteRoteDetail:(PMRouteDetailRsp*)pmline
 {
     _uiDataLine = [[LTLine alloc] initWithPMLine:pmline];
     [self loadLineUIData];
     
     NSMutableArray* uiPois = [NSMutableArray new];
-    for (PMPoiInfo* info in pmline.pois) {
+    for (PMRoutePoiInfo* info in pmline.pois) {
         LTUIPoi* p = [[LTUIPoi alloc] initWithPOI:info];
         [uiPois addObject:p];
     }
@@ -176,16 +180,21 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     [self.tableView reloadData];
 }
 
+- (void) onHandleAddFavResponse:(PMNullModel*)model
+{
+    
+}
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
     
 }
-
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
      if ([request isKindOfClass:[LTRouteDetailReq class]]) {
         [self onHandleRemoteRoteDetail:object];
-    }
+     } else if ([request isKindOfClass:[LTRouteCollectReq class]]) {
+         [self onHandleAddFavResponse:object];
+     }
 }
 
 

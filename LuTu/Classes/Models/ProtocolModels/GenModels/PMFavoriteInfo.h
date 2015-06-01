@@ -1,5 +1,11 @@
 
 #import <Mantle.h>
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
 
 @interface PMFavoriteInfo : MTLModel <MTLJSONSerializing>
 @property(nonatomic,strong) NSString* routeId;

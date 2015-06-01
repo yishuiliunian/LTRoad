@@ -13,4 +13,34 @@
             };
 }
 
++ (NSValueTransformer*) postIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) threadIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) contentJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) creatorNameJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) creatorAvatarUrlJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
 @end

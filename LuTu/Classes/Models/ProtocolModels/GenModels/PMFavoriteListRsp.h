@@ -1,5 +1,7 @@
 
 #import <Mantle.h>
+#import "PMFavoriteInfo.h" 
+
 
 @interface PMFavoriteListRsp : MTLModel <MTLJSONSerializing>
 @property(nonatomic,assign) int32_t offset;

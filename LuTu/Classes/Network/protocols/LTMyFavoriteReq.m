@@ -9,7 +9,7 @@
 #import "LTMyFavoriteReq.h"
 #import "LTUIMyFavorite.h"
 @implementation LTMyFavoriteReq
-@synthesize pageId;
+@synthesize pageNo;
 @synthesize pageSize;
 - (NSString*) method
 {

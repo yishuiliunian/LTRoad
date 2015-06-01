@@ -1,5 +1,15 @@
 
 #import <Mantle.h>
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "PMClubMember.h" 
+
 
 @interface PMCarClubInfo : MTLModel <MTLJSONSerializing>
 @property(nonatomic,strong) NSString* carClubId;

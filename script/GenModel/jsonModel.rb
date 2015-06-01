@@ -1,304 +1,15 @@
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require "pathname"
 require "xcodeproj"
-$JSONTypeArray = "array"
-$JSONTypeInt64 = 'int64'
-$JSONTypeInt32 = 'int32'
-$JSONTypeObject = 'object'
-$JSONTypeString = 'string'
-$JSONTypeURL = 'url'
-$JSONTypeDate = 'date'
-
-$JSONModelCache = Hash.new
-class AssertionError < RuntimeError
-end
-
-def assert (m)
-  if yield == false
-      puts m
-      raise AssertionError
-  end
-end
-
-class JSONRecord
-  attr_accessor :name
-  attr_accessor :type
-  def initialize(type, name)
-    @name = name
-    @type = type
-  end
-
-  def codeOutput
-    nil
-  end
-end
-
-
-class JSONModel
-  attr_accessor :records
-  attr_accessor :name
-  def initialize
-    @records = []
-  end
-
-  def addRecord(record)
-    assert('record == nil') {record != nil}
-    assert('record is not class of JSONRecord'){record.is_a?(JSONRecord)}
-    @records << record
-  end
-end
-
-
-def GetJSONModel(key)
-  model = $JSONModelCache[key]
-  model = JSONModel.new() unless model != nil
-  model.name = key
-  $JSONModelCache[key] = model
-  model
-end
-
-def model(modelName)
-  model = GetJSONModel(modelName)
-  yield model
-end
-
-
-
-def OutputModel(model)
-    header = ''
-end
-
-
-#oc代码生成
-
-def OC_Property2(p1, p2, type, name)
-  "@property(" + p1 + "," + p2 + ")" + " " + type + " " + name + ";\n"
-end
-
-def OC_Property_Object(type, name)
-  type = type+"*"
-  OC_Property2("nonatomic", "strong", type , name)
-end
-
-def OC_Property_Number(type, name)
-  OC_Property2("nonatomic", "assign", type, name)
-end
-class OCObjectRecord < JSONRecord
-  def codeOutput
-      OC_Property_Object(@type, @name)
-  end
-end
-
-class OCCustomObjectRecord < OCObjectRecord
-  def jsonTransformer
-"
-+ (NSValueTransformer*) #{@name}JSONTransformer
-{
-   return [NSValueTransformer mtl_validatingTransformerForClass:NSClassFromString(@\"#{@type}\")];
-}
-"
-  end
-end
-
-class OCArrayRecord < OCObjectRecord
-  attr_accessor :ocClass
-  def initialize(type = $JSONTypeArray, name, ocClass)
-    super(type, name)
-    @ocClass = ocClass
-
-  end
-
-  def jsonTransformer
-    " \n
-    + (NSValueTransformer*) #{@name}JSONTransformer  {
-      return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:
-                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@\"#@ocClass\")]];
-    }
-    "
-  end
-
-  def importHeader
-    "#import \"#{@name}.h\" \n"
-  end
-end
-class OCNumberRecord < JSONRecord
-  def codeOutput
-    OC_Property_Number(@type, @name)
-  end
-end
-
-def array(name, ocClass ,model=nil)
-  r = OCArrayRecord.new("NSArray",name, ocClass)
-  model.addRecord(r)
-end
-
-def object(name, ocClass, model = nil)
-  r = OCCustomObjectRecord.new(ocClass, name, model)
-  model.addRecord(r)
-end
-def number(type, name, model = nil)
-  r= OCNumberRecord.new(type, name)
-  model.addRecord(r)
-end
-
-
-def int32(name, model)
-  number("int32_t", name , model)
-end
-
-def int64(name, model)
-  number "int64_t", name, model
-end
-
-def float(name, model)
-  number "float" ,name ,model
-end
-
-
-def double(name, model)
-  number "double", name, model
-end
-
-def bool(name, model)
-  number "BOOL", name, model
-end
-
-def string(name, model)
-  r = OCObjectRecord.new("NSString",name)
-  model.addRecord(r)
-end
-
-def OC_Class_HeaderWithProperties(name, properties)
-  out = "@interface " + name + "\n"
-  properties.each { |x|
-    out = out + x + "\n"
-  }
-  out = out + "@end"
-  out
-end
-
-def OCClassHeaderWithModel(m)
-  ocHeader= '''
-#import <Mantle.h>
-<import_class>
-@interface <class_name> : MTLModel <MTLJSONSerializing>
-<properties>
-@end
-  '''
-
-  p = ""
-  m.records.each { |r|
-    p = p + r.codeOutput
-  }
-
-  ocHeader = ocHeader.gsub(/<properties>/, p)
-  ocHeader = ocHeader.gsub(/<class_name>/, m.name)
-
-  importClass = ""
-
-  ocHeader = ocHeader.gsub(/<import_class>/, importClass)
-
-  ocHeader
-end
-
-def OCClassImplitationWithModel(m)
-
-  ocIm = '''
-#import "<header_name>.h"
-@implementation <class_name>
-+ (NSDictionary*) JSONKeyPathsByPropertyKey
-{
-    return @{<keyValues>
-            };
-}
-<JSON_FUNCTIONS>
-@end
-'''
-
-  keys = "";
-  m.records.each{ |r|
-    keys = keys + "@\"#{r.name}\":@\"#{r.name}\",\n"
-  }
-
-  ocIm = ocIm.gsub(/<class_name>/, m.name)
-  ocIm = ocIm.gsub(/<keyValues>/,keys)
-  ocIm = ocIm.gsub(/<header_name>/, m.name)
-
-  funcs = ""
-  m.records.each{ |r|
-    if r.respond_to?("jsonTransformer")
-      funcs = funcs + r.jsonTransformer +  "\n"
-    end
-  }
-
-  ocIm = ocIm.gsub(/<JSON_FUNCTIONS>/, funcs)
-
-  ocIm
-end
-
-def OC_Class_MapKey(records)
-
-end
-
-
-
-def PathJoin(dir,name)
-  if dir.end_with?("/")
-    return dir + name
-  else
-    return dir + "/" + name
-  end
-end
-
-
-def WriteDataToFile(text, path)
-  if File.exist?(path)
-    File.delete(path)
-  end
-  file = File.new(path, "w")
-  file.puts text
-  file.close
-
-end
-
-
-def OutPutFiles(dir)
-  Dir.mkdir(dir) unless File.exist?(dir)
-  $JSONModelCache.each_value{|m|
-    header = OCClassHeaderWithModel(m)
-    implitation = OCClassImplitationWithModel(m)
-    headerPath = PathJoin(dir, m.name + ".h")
-    imPath = PathJoin(dir, m.name + ".m")
-    WriteDataToFile(header, headerPath)
-    WriteDataToFile(implitation, imPath)
-  }
-end
-
-def FindPathHasFile(currentPath, name)
-  cp = Pathname.new(currentPath)
-  realpath = cp.realpath
-  if realpath.to_path== '/'
-    return nil
-  end
-
-  path = nil
-  Dir.foreach(realpath) do |e|
-    if e.end_with?(name)
-      path = PathJoin(realpath.to_path,e)
-    end
-  end
-  if path == nil
-    p = Pathname.new(currentPath)
-    return FindPathHasFile(p.realpath.parent, name)
-  else
-    return path
-  end
-end
-
-
+require "genrequest"
+require "genmodels"
+require "utilities"
 
 def FindProject
   projpath = FindPathHasFile("./", ".xcodeproj")
   p = Pathname.new(projpath).realpath.parent
+  root = p.to_path
   filesPath = p.join("LuTu","Classes", "Models", "ProtocolModels", "GenModels").to_path
   puts filesPath
   OutPutFiles(filesPath)
@@ -321,13 +32,180 @@ def FindProject
 
   target.add_file_references(fileRefs)
 
+
+  subclassses = []
+  superclasses = []
+
+  $JSONReqeustCache.each_value { |req|
+    output = req.output
+
+    subclassses << output.header
+    subclassses << output.implitation
+
+    superclasses << output.superHeader
+    superclasses << output.superImplitaion
+  }
+
+  OutPutFileTo(root, "LuTu/Classes/Network/GenRequest", project, superclasses, true)
+  OutPutFileTo(root, "LuTu/Classes/Network/GenProtocols", project, subclassses, false)
   project.save
 end
 
 
+
+
 #服务器协议模型
-#发现中的category
-model("PMCategory") { |m|
+
+#单个多个线路信息获取
+model("PMRouteInfo") { |m|
+  string "routeId", m
+  string "name", m
+  string "introImageUrl", m
+  int32 "favCount", m
+  point "location", m
+  array "categoryList", "NSString", m
+}
+
+model("PMRouteListRsp") { |m|
+  int32 "offset", m
+  int32 "limit", m
+  int32 "total", m
+  array "list", "PMRouteInfo", m
+}
+
+requestModel("LTRoadListReq") { |req|
+  method "/route/list",  req
+  response "PMRouteListRsp", req
+  p_int64 "pageNo", req
+  p_int64 "pageSize", req
+  p_string "cityId", req
+  p_string "name", req
+  p_string "categoryName", req
+ }
+
+#线路详细信息获取
+
+model("PMRoutePropInfo") { |m|
+  string "routeId", m
+  string "propId", m
+  string "detailId", m
+  string "propName", m
+  string "propDesc", m
+  string "propValue", m
+}
+
+model("PMRoutePoiInfo") { |m|
+  string "poiId", m
+  string "routeId", m
+  string "name", m
+  int32 "type", m
+  bool "cover", m
+  int32 "routeIndex", m
+  string "arrivalTime", m
+  point "location", m
+  string "introImageUrl", m
+  string "introText", m
+}
+
+model("PMRouteLineInfo") { |m|
+
+  string "lineId", m
+  string "routeId", m
+  string "name", m
+  int32 "routeIndex", m
+  string "locationStart", m
+}
+model("PMRouteDetailRsp") { |m|
+  array "categoryList", "NSString", m
+  bool "isFav", m
+  string "name", m
+  string "introImageUrl", m
+  int64 "favCount", m
+  string "totalTime", m
+  string "carType", m
+  string "totalDistance", m
+  string "routeStatus", m
+  array "routePropDetails", "PMRoutePropInfo", m
+  array "pois", "PMRoutePoiInfo", m
+  array "lines", "PMRouteLineInfo", m
+
+}
+
+requestModel("LTRouteDetailReq") { |r|
+  method "/route/detail", r
+  p_string "userId", r
+  p_string "routeId", r
+  response "PMRouteDetailRsp", r
+}
+
+#添加线路评论
+
+model("PMNullModel") { |m|
+
+}
+requestModel("LTAddRouteCommentReq"){ |r|
+  method "/route/addRouteComment", r
+  response "PMNullModel", r
+  p_string "content", r
+  p_string "creatorId", r
+  p_string "routeId", r
+}
+#获取线路评论列表
+#
+model("PMRouteCommentInfo") {|m|
+  string "id", m
+  string "routeId", m
+  string "content", m
+  string "creatorId", m
+  string "createTime", m
+  string "avatarUrl", m
+  string "createName", m
+}
+
+model("PMGetRouteCommentsRsp") { |m|
+  int64 "offset", m
+  int64 "limit", m
+  int64 "total", m
+  array "list", "PMRouteCommentInfo", m
+}
+requestModel("LTGetRouteCommentsReq") { |r|
+  method "/route/getRouteComment", r
+  response "PMGetRouteCommentsRsp", r
+  p_int64 "pageNo", r
+  p_int64 "pageSize", r
+  p_string "routeId", r
+}
+
+#收藏线路
+
+requestModel("LTRouteCollectReq") { |r|
+  method "/route/collect", r
+  response "PMNullModel", r
+  p_string "creatorId", r
+  p_string "routeId", r
+}
+
+#取消收藏线路
+
+requestModel("LTRouteCancelCollectReq") { |r|
+  method "/route/cancelCollect" , r
+  response "PMNullModel" , r
+  p_string "creatorId" , r
+  p_string "routeId" , r
+}
+
+#为线路点赞
+
+requestModel("LTRouteFavAdd") { |r|
+  method "/route/fav/add", r
+  response "PMNullModel", r
+  p_string "creatorId", r
+  p_string "routeId", r
+}
+
+#单个 多个分类信息获取
+
+model("PMCategoryInfo") { |m|
   string "categoryId", m
   string "name", m
   string "label", m
@@ -335,23 +213,33 @@ model("PMCategory") { |m|
   int32 "routeCount", m
 }
 
-#发现返回的数据
 model("PMCategoryListRsp") { |m|
-  int32 "offset", m
-  int32 "limit", m
-  int32 "total", m
-  array "list", "PMCategory", m
+  int64 "offset", m
+  int64 "limit", m
+  int64 "total", m
+  array "list", "PMCategoryInfo", m
 }
 
-
-#车友会信息
-#
+requestModel("LTCategoryListReq") { |r|
+  method "/category/list", r
+  response "PMCategoryListRsp", r
+  p_int64 "pageNo", r
+  p_int64 "pageSize", r
+  p_string "cityId", r
+}
+#车友会信息展示
 model("PMCarClubInfo") {|m|
   string "carClubId",m
   string "name",m
   string "introText",m
   string "introImageUrl",m
   array "memberList", "PMClubMember",m
+}
+
+requestModel("LTCarClubInfoShowReq") { |r|
+  method "/car_club/info/show", r
+  response "PMCategoryInfo", r
+  p_string "carClubId", r
 }
 
 model("PMClubMember") {|m|
@@ -379,26 +267,66 @@ model("PMSearchClubInfo") { |m|
   int32 "userCount", m
 }
 
-#用户车友会列表
+requestModel("LTCarClubSerachReq") { |m|
+  method "/car_club/search", m
+  p_int64 "pageNo", m
+  p_int64 "pageSize", m
+  p_string "name", m
 
-model("PMUserClubRsp") { |m|
-  array "result", "PMUserClubInfo", m
+  response "PMSearchClubInfo", m
 }
 
-model("PMUserClubInfo") { |m|
+
+#用户车友会列表
+
+model("PMUserCarClubSimpleRsp") { |m|
+  array "list", "PMUserCarClubSimpleInfo", m
+}
+
+model("PMUserCarClubSimpleInfo") { |m|
   string "carClubId", m
   string "name", m
   string "introText", m
   string "introImageUrl", m
 }
 
-#车友会帖子列表
-model("PMThreadListRsp") { |m|
-  int32 "offset", m
-  int32 "limit", m
-  int32 "total", m
-  array "list", "PMThreadInfo", m
+requestModel("LTUserCarClubSimpleListReq") { |r|
+  method "/user/car_club/simple/list", r
+  response "PMUserCarClubSimpleRsp", r
+  p_string "userId", r
 }
+
+#加入车友会
+#
+requestModel("LTCarClubMemberJoinReq") { |r|
+  method "/car_club/member/join", r
+  response "PMNullModel", r
+  p_string "userId", r
+  p_string "carClubId", r
+}
+
+#用户退出车友会
+#
+requestModel("LTCarClubMemberQuitReq") { |r|
+  method "/car_club/member/quit", r
+  response "PMNullModel", r
+  p_string "userId", r
+  p_string "carClubId", r
+}
+
+#车友会发表话题
+
+requestModel("PMThreadNewReq") {|r|
+  method "/thread/new", r
+  response "PMNullModel", r
+  p_string "creatorId", r
+  p_string "clubId", r
+  p_string "title", r
+  p_string "content", r
+  p_int64 "images", r
+}
+
+#车友会帖子列表
 
 model("PMThreadInfo") { |m|
   string "threadId", m
@@ -412,9 +340,26 @@ model("PMThreadInfo") { |m|
   string "content", m
 }
 
+
+
+model("PMThreadListRsp") { |m|
+  int32 "offset", m
+  int32 "limit", m
+  int32 "total", m
+  array "list", "PMThreadInfo", m
+}
+
+requestModel("LTThreadListReq") { |m|
+  method "/thread/list" , m
+  response "PMThreadListRsp" , m
+  p_int64 "pageNo" , m
+  p_int64 "pageSize" , m
+  p_string "carClubId" , m
+}
+
 #车友会回复列表
 
-model("PMThreadPostList") {|m|
+model("PMThreadPostListRsp") {|m|
    int32 "offset", m
   int32 "limit", m
   int32 "total", m
@@ -428,6 +373,42 @@ model ("PMThreadPostInfo") { |m|
   int64 "createTime" , m
   string "creatorName" , m
   string "creatorAvatarUrl" , m
+}
+
+requestModel("LTThreadPostListReq") { |r|
+  method "/thread/post/list" , r
+  response "PMThreadPostListRsp" , r
+  p_int64 "pageNo" , r
+  p_int64 "pageSize" , r
+  p_string "pageId" , r
+  p_string "creatorId" , r
+}
+
+#车友会回复跟帖
+
+
+requestModel("LTThreadPostNewReq") { |r|
+  method "/thread/post/new" , r
+  response "PMNullModel" , r
+  p_string "userId" , r
+  p_string "threadId" , r
+  p_string "content" , r
+}
+
+#个人信息补充
+
+
+requestModel("LTUserInfoCompleteReq") { |r|
+  method "/user/info/complete" , r
+  response "PMNullModel" , r
+  p_string "name" , r
+  p_string "ctiy" , r
+  p_string "phone" , r
+  p_string "avatarUrl" , r
+  p_string "vehicleModel" , r
+  p_string "drivingYear" , r
+  p_int64 "oauthType" , r
+  p_string "userId" , r
 }
 
 #个人信息获取
@@ -445,14 +426,24 @@ model("PMUserInfoShowRsp") { |m|
   int64 "createTime" , m
 }
 
+requestModel("LTUserInfoShowReq") { |r|
+  method "/user/info/show" , r
+  response "PMUserInfoShowRsp" , r
+  p_string "userId" , r
+}
 #用户概览数据
 
-model("PMUserSummaryRsp") { |m|
+model("PMUserStatsListRsp") { |m|
   int32 "clubMemberCount" , m
   int32 "threadCount" , m
   string "userName" , m
 }
 
+requestModel("LTUserStatsListReq") { |r|
+  method "/user/stats/list" , r
+  response "PMUserStatsListRsp" , r
+  p_string "userId" , r
+}
 
 #我的收藏
 
@@ -505,6 +496,7 @@ model("PMUserThreadInfo") { |m|
   string "userAvastarurl", m
   string "content", m
 }
+
 
 
 

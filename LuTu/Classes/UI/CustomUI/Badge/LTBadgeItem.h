@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+FOUNDATION_EXTERN NSArray* LTBadgeTextArray(NSArray* strArray);
 #define LTCreateBadgeItemWithText(text)  [[LTBadgeItem alloc] initWithText:text]
 
 @interface LTBadgeItem : NSObject

@@ -8,9 +8,9 @@
 
 #import "LTRecommendLine.h"
 #import "LTGlobals.h"
-#import "PMRouteDetail.h"
+#import "PMRouteInfo.h"
 @implementation LTRecommendLine
-- (instancetype) initWithNetworkModel:(PMRouteDetail*)pmModel
+- (instancetype) initWithNetworkModel:(PMRouteInfo*)pmModel
 {
     self = [super init];
     if (!self) {
@@ -27,7 +27,7 @@
     self.backgroudImageURL = STR_TO_URL(pmModel.introImageUrl);
     self.title = pmModel.name;
     self.createDateString = @"2/14";
-    self.routeID = [@(pmModel.routeId) stringValue];
+    self.routeID =  pmModel.routeId;
     return self;
 }
 @end

@@ -24,7 +24,7 @@ NSString* const HttpMethodGET = @"GET";
     if (!self) {
         return self;
     }
-    _baseURL = [NSURL URLWithString:@"http://www.xunluji.com:58080"];
+    _baseURL = [NSURL URLWithString:@"http://www.xunluji.com:80"];
     return self;
 }
 @end

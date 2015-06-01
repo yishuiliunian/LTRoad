@@ -10,7 +10,7 @@
 #import "LTGlobals.h"
 
 @implementation LTLine
-- (instancetype) initWithPMLine:(PMRoute *)line
+- (instancetype) initWithPMLine:(PMRouteDetailRsp *)line
 {
     self = [super init];
     if (!self) {
@@ -24,7 +24,7 @@
     self.startPointName = @"深圳大学";
     self.endPointName = @"北京";
 //    self.introText = line.summary;
-    self.categoryBadgeArray = @[LTCreateBadgeItemWithText(@"亲子游"), LTCreateBadgeItemWithText(@"大自然")];
+    self.categoryBadgeArray = LTBadgeTextArray(line.categoryList);
     _line = line;
     return self;
 }

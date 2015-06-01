@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+extern NSString * const TMDStringValueTransformerName;
 @interface NSValueTransformer (NSString)
 
 @end

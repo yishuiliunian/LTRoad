@@ -1,5 +1,13 @@
 
 #import <Mantle.h>
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
+#import "NSValueTransformer+NSString.h"
+
 
 @interface PMClubMember : MTLModel <MTLJSONSerializing>
 @property(nonatomic,strong) NSString* name;

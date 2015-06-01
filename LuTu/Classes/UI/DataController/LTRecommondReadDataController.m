@@ -10,7 +10,7 @@
 #import "LTRecommendLine.h"
 #import "LTGlobals.h"
 #import "LTRecommondLineCell.h"
-#import "LTRoteListReq.h"
+#import "LTRoadListReq.h"
 #import "LTUserDataManager.h"
 #import "LTNotificationTools.h"
 @interface LTRecommondReadDataController () <MSRequestUIDelegate>
@@ -36,10 +36,10 @@
 
 - (MSRequest<LTPageRequestProtocol>*) syncDataReqeust
 {
-    LTRoteListReq* req = [[LTRoteListReq alloc] init];
-    req.city = LTShareSettings().currentCity;
-    req.category = self.category;
-    req.keyword = self.keyword;
+    LTRoadListReq* req = [[LTRoadListReq alloc] init];
+    req.cityId = LTShareSettings().currentCity;
+    req.categoryName = self.category;
+    req.name = self.keyword;
     return req;
 }
 

@@ -10,5 +10,5 @@
 
 @protocol LTPageRequestProtocol <NSObject>
 @property (nonatomic, assign) int pageSize;
-@property (nonatomic, assign) int pageId;
+@property (nonatomic, assign) int pageNo;
 @end

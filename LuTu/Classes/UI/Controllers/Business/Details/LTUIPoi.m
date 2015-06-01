@@ -24,7 +24,7 @@
 @end
 
 @implementation LTUIPoi
-- (instancetype) initWithPOI:(PMPoiInfo *)poi
+- (instancetype) initWithPOI:(PMRoutePoiInfo *)poi
 {
     self = [super init];
     if (!self) {

@@ -9,6 +9,15 @@
 #import "LTBadgeItem.h"
 #import <UIKit/UIKit.h>
 #import "LTFont.h"
+
+NSArray* LTBadgeTextArray(NSArray* strArray)
+{
+    NSMutableArray* array = [NSMutableArray new];
+    for (NSString* str in array) {
+        [array addObject:LTCreateBadgeItemWithText(str)];
+    }
+    return array;
+}
 @implementation LTBadgeItem
 - (instancetype) initWithText:(NSString *)text
 {

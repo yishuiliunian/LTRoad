@@ -10,4 +10,10 @@
             };
 }
 
++ (NSValueTransformer*) userNameJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
 @end

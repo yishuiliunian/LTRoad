@@ -1,5 +1,7 @@
 
 #import <Mantle.h>
+#import "PMSearchClubInfo.h" 
+
 
 @interface PMSearchClubRsp : MTLModel <MTLJSONSerializing>
 @property(nonatomic,assign) int32_t offset;

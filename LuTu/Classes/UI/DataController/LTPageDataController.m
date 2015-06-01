@@ -60,7 +60,7 @@
 - (void) reloadAllData
 {
     MSRequest<LTPageRequestProtocol> * pageRequest = [self syncDataReqeust];
-    pageRequest.pageId = 1;
+    pageRequest.pageNo = 1;
     _pageIndex = LTPageFirstIndex;
     MSPerformRequestWithDelegateSelf(pageRequest);
 }
@@ -68,7 +68,7 @@
 - (void) getNetPageData
 {
     MSRequest<LTPageRequestProtocol> * pageRequest = [self syncDataReqeust];
-    pageRequest.pageId = ++_pageIndex;
+    pageRequest.pageNo = ++_pageIndex;
     MSPerformRequestWithDelegateSelf(pageRequest);
 }
 
@@ -81,7 +81,7 @@
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
     MSRequest<LTPageRequestProtocol>* req = (MSRequest<LTPageRequestProtocol>*)request;
-    if (req.pageId == LTPageFirstIndex) {
+    if (req.pageNo == LTPageFirstIndex) {
         [self handleReloadData:object];
     } else {
         [self handleNextPageData:object];

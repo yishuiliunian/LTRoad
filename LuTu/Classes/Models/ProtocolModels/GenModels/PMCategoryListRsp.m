@@ -14,7 +14,7 @@
 
     + (NSValueTransformer*) listJSONTransformer  {
       return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:
-                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMCategory")]];
+                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMCategoryInfo")]];
     }
     
 

@@ -1,5 +1,7 @@
 
 #import <Mantle.h>
+#import "PMThreadPostInfo.h" 
+
 
 @interface PMThreadPostList : MTLModel <MTLJSONSerializing>
 @property(nonatomic,assign) int32_t offset;
