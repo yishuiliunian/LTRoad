@@ -17,12 +17,6 @@
 }
     
 
-+ (NSValueTransformer*) memberTypeJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
-}
-    
-
 + (NSValueTransformer*) vihicleModelJSONTransformer
 {
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];

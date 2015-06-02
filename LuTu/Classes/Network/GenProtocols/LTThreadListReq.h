@@ -1,3 +1,4 @@
 #import "__LTThreadListReq.h"
-@interface LTThreadListReq : __LTThreadListReq
+#import "LTPageRequestProtocol.h"
+@interface LTThreadListReq : __LTThreadListReq <LTPageRequestProtocol>
 @end

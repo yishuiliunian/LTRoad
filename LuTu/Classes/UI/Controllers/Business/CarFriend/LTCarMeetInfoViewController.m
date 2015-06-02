@@ -7,31 +7,40 @@
 //
 
 #import "LTCarMeetInfoViewController.h"
-
+#import <DZGeometryTools.h>
 @interface LTCarMeetInfoViewController ()
-
+{
+    UITextView* _textView;
+}
 @end
 
 @implementation LTCarMeetInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _textView = [UITextView new];
+    [self.view addSubview:_textView];
+    _textView.backgroundColor = [UIColor whiteColor];
+    _textView.layer.cornerRadius = 5;
+    _textView.text = self.introText;
+}
+
+- (void) setIntroText:(NSString *)introText
+{
+    _introText = introText;
+    _textView.text = introText;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    _textView.frame = CGRectCenterSubSize(self.view.bounds, CGSizeMake(20, 20));
 }
-*/
+
 
 @end

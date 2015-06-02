@@ -11,14 +11,30 @@
 #import "LTCarMeetFeedViewController.h"
 #import "LTCarMeetInfoViewController.h"
 #import "LTCarMeetTopView.h"
-@interface LTCarMeetDetailViewController ()
+#import "LTCarClubInfoShowReq.h"
+#import "PMCarClubInfo.h"
+#import "LTUIClubMember.h"
+@interface LTCarMeetDetailViewController () <MSRequestUIDelegate>
 {
     DZSwipeViewController* _swipViewController;
     LTCarMeetTopView* _topView;
+    LTCatMeetMemberTableViewController* _membersViewController;
+    LTCarMeetInfoViewController* _clubInfoViewController;
+    LTCarMeetFeedViewController* _threadsViewController;
 }
 @end
 
 @implementation LTCarMeetDetailViewController
+
+- (instancetype) initWithCarClub:(LTUICarMeet *)carClub
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    _carClub = carClub;
+    return self;
+}
 - (void) lt_addViewController:(UIViewController*)vc
 {
     [vc willMoveToParentViewController:self];
@@ -30,23 +46,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    LTCarMeetInfoViewController* infoVC = [LTCarMeetInfoViewController new];
-    infoVC.swipeTitle = @"简介";
+    _clubInfoViewController = [LTCarMeetInfoViewController new];
+    _clubInfoViewController.swipeTitle = @"简介";
     
-    LTCatMeetMemberTableViewController* memberVC = [LTCatMeetMemberTableViewController new];
-    memberVC.swipeTitle = @"成员";
+    _membersViewController= [LTCatMeetMemberTableViewController new];
+    _membersViewController.swipeTitle = @"成员";
     
-    LTCarMeetFeedViewController* feedVC = [LTCarMeetFeedViewController new];
-    feedVC.swipeTitle = @"动态";
-    _swipViewController = [[DZSwipeViewController alloc] initWithViewControllers:@[memberVC, feedVC,infoVC]];
+    _threadsViewController= [LTCarMeetFeedViewController new];
+    _threadsViewController.swipeTitle = @"动态";
+    _swipViewController = [[DZSwipeViewController alloc] initWithViewControllers:@[_membersViewController, _threadsViewController, _clubInfoViewController]];
     //
     _topView = [[LTCarMeetTopView alloc] initWithFrame:CGRectMake(0, 0, 0, 100)];
     _swipViewController.topView = _topView;
     //
     [self lt_addViewController:_swipViewController];
     
+    [self reloadAllData];
+    
 }
 
+- (void) reloadAllData
+{
+    LTCarClubInfoShowReq* req = [LTCarClubInfoShowReq new];
+    req.carClubId = _carClub.clubID;
+    MSPerformRequestWithDelegateSelf(req);
+}
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    PMCarClubInfo* clubInfo = (PMCarClubInfo*)object;
+    LTCarMemberDataControl* memberControl = [LTCarMemberDataControl new];
+    NSMutableArray* managers = [NSMutableArray new];
+    NSMutableArray* members = [NSMutableArray new];
+    for (PMClubMember* m in clubInfo.memberList) {
+        LTUIClubMember* member = [[LTUIClubMember alloc] initWithServerModel:m];
+        if (member.type == LTMemberTypeNormal) {
+            [members addObject:member];
+        } else if (member.type == LTMemberTypeManager) {
+            [managers addObject:member];
+        }
+    }
+    memberControl.managers = managers;
+    memberControl.members = members;
+    
+    _membersViewController.membersControl = memberControl;
+    _clubInfoViewController.introText = clubInfo.introText;
+    
+    self.title = clubInfo.name;
+}
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];

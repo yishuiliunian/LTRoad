@@ -74,7 +74,7 @@ INIT_DZ_EXTERN_STRING(kCellIdentifier, expandCell);
 }
 - (void) carMeetCell:(LTCarMeetCell *)cell didTapOnMenuItem:(id)sender
 {
-    LTCarMeetDetailViewController* detailVC = [LTCarMeetDetailViewController new];
+    LTCarMeetDetailViewController* detailVC = [[LTCarMeetDetailViewController alloc] initWithCarClub:cell.carMeet];
     [self.navigationController pushViewController:detailVC animated:YES];
     [self.expandCollectionView closeExpand:cell];
 }

@@ -10,8 +10,8 @@
 #import "DZexpandCollectionViewController.h"
 #import "LTUICarMeet.h"
 #import "LTCarMeetFeedViewController.h"
-#import "LTUserCarClubReq.h"
 #import "LTCarMeetFeedDataController.h"
+#import "LTUserCarClubSimpleListReq.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 @property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -48,7 +48,8 @@
 
 - (void) reloadAllCarClub
 {
-    LTUserCarClubReq* carClueReq = [LTUserCarClubReq new];
+    LTUserCarClubSimpleListReq* carClueReq = [LTUserCarClubSimpleListReq new];
+    
     MSPerformRequestWithDelegateSelf(carClueReq);
 }
 
@@ -73,15 +74,7 @@
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    NSMutableArray* array = [NSMutableArray new];
-    for (int i = 0; i < 100; i++) {
-        LTUICarMeet* carMeet = [LTUICarMeet new];
-        carMeet.key = [@(i) stringValue];
-        carMeet.emblemURL =  [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
-        carMeet.title = @"奔驰";
-        [array addObject:carMeet];
-    }
-    _expandCollectioViewController.items = array;
+    _expandCollectioViewController.items = object;
     [self scrollToPageViewControllerAtIndex:0];
 }
 #pragma mark ---

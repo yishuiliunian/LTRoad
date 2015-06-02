@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LTCarMemberDataControl.h"
 @interface LTCatMeetMemberTableViewController : UITableViewController
-
+@property (nonatomic, strong) NSString* clubID;
+@property (nonatomic, strong)     LTCarMemberDataControl* membersControl;
+- (instancetype) initWithClubID:(NSString*)clubId;
 @end

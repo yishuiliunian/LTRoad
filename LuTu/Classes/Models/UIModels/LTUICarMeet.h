@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PMUserCarClubSimpleInfo.h"
 @interface LTUICarMeet : NSObject
+@property (nonatomic, strong) NSString* clubID;
 @property (nonatomic, strong) NSString* key;
 @property (nonatomic, strong) NSURL* emblemURL;
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* detail;
+
+- (instancetype) initWithSimpleInfo:(PMUserCarClubSimpleInfo*)info;
 @end
 

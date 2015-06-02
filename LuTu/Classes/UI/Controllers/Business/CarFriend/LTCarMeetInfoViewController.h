@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface LTCarMeetInfoViewController : UIViewController
-
+@property (nonatomic, strong) NSString* introText;
 @end

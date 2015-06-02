@@ -1,7 +1,7 @@
 
 #import "__LTCarClubInfoShowReq.h"
 #import <Mantle.h>
-#import "PMCategoryInfo.h"
+#import "PMCarClubInfo.h"
 @implementation __LTCarClubInfoShowReq
 
 - (NSString*) method
@@ -23,9 +23,9 @@
         retobject = @{@"list":retobject};
     }
     if ([retobject isKindOfClass:[NSNull class]]) {
-        [self didGetMessage:[PMCategoryInfo new]];
+        [self didGetMessage:[PMCarClubInfo new]];
     } else {
-        PMCategoryInfo* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMCategoryInfo") fromJSONDictionary:retobject error:&error];
+        PMCarClubInfo* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMCarClubInfo") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];
             return;
@@ -34,7 +34,7 @@
     }
 }
 
-- (void) didGetMessage:(PMCategoryInfo*)message
+- (void) didGetMessage:(PMCarClubInfo*)message
 {
    [self doUIOnSuccced:message];
 }

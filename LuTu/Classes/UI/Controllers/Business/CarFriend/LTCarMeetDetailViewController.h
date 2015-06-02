@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <DZSwipeViewController.h>
+#import "LTUICarMeet.h"
 @interface LTCarMeetDetailViewController : UIViewController
+@property (nonatomic, strong) LTUICarMeet* carClub;
 
+- (instancetype) initWithCarClub:(LTUICarMeet*)carClub;
 @end

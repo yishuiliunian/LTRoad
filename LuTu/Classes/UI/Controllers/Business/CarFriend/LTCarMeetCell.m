@@ -28,6 +28,7 @@
     _emblemImageView.layer.masksToBounds = YES;
     _titleLabel.textColor = [UIColor whiteColor];
     _titleLabel.textAlignment = NSTextAlignmentCenter;
+    _titleLabel.adjustsFontSizeToFitWidth = YES;
     [_menuView.interButton addTarget:self action:@selector(didTapMenu:) forControlEvents:UIControlEventTouchUpInside];
     return self;
 }
@@ -48,7 +49,7 @@
 
 - (void) decorateCell
 {
-    [_emblemImageView hnk_setImageFromURL:_carMeet.emblemURL];
+    [_emblemImageView loadLittleImageURL:_carMeet.emblemURL];
     _titleLabel.text = _carMeet.title;
     _menuView.detailTextLabel.text = _carMeet.detail;
 }

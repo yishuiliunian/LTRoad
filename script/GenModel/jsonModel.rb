@@ -238,13 +238,13 @@ model("PMCarClubInfo") {|m|
 
 requestModel("LTCarClubInfoShowReq") { |r|
   method "/car_club/info/show", r
-  response "PMCategoryInfo", r
+  response "PMCarClubInfo", r
   p_string "carClubId", r
 }
 
 model("PMClubMember") {|m|
   string "name",m
-  string "memberType",m
+  int32 "memberType",m
   string "vihicleModel",m
   string "avatarUrl",m
 }
