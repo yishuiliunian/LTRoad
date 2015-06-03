@@ -1,7 +1,7 @@
 
-#import "PMThreadNewReq.h"
+#import "LTThreadNewReq.h"
 
-@implementation PMThreadNewReq
+@implementation LTThreadNewReq
 - (void) didGetMessage:(PMNullModel*)message
 {
 

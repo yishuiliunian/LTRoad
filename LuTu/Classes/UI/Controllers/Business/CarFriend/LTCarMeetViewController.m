@@ -12,6 +12,8 @@
 #import "UIViewController+Additions.h"
 #import <DZGeometryTools.h>
 #import "LTAppearenceTools.h"
+#import "LTAddThreadViewController.h"
+#import "UIViewController+Additions.h"
 @interface LTCarMeetViewController()
 {
     UIScrollView* _scrollView;
@@ -41,16 +43,20 @@
     _swipViewController = [DZExpandSwipViewController new];
     [self lt_addViewController:_swipViewController];
     
-    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"address") style:UIBarButtonItemStyleDone target:self action:@selector(postFeed)];
+    UIBarButtonItem* left = [[UIBarButtonItem alloc] initWithImage:DZCachedImageByName(@"posts") style:UIBarButtonItemStyleDone target:self action:@selector(postFeed)];
     self.navigationItem.leftBarButtonItem = left;
     
     [self loadNavigationBarSearchItem];
     
     self.title = @"圈子";
     self.naviationBarStyle = LTNavigationStyleTransparency;
+    
 }
 - (void) postFeed
 {
+    LTAddThreadViewController* vc = [LTAddThreadViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 - (void) viewWillLayoutSubviews

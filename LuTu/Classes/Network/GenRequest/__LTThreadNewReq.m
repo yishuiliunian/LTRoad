@@ -1,8 +1,8 @@
 
-#import "__PMThreadNewReq.h"
+#import "__LTThreadNewReq.h"
 #import <Mantle.h>
 #import "PMNullModel.h"
-@implementation __PMThreadNewReq
+@implementation __LTThreadNewReq
 
 - (NSString*) method
 {

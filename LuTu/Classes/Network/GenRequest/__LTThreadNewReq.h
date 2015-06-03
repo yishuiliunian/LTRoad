@@ -1,7 +1,7 @@
 
 #import "MSRequest.h"
 #import "PMNullModel.h"
-@interface __PMThreadNewReq : MSRequest
+@interface __LTThreadNewReq : MSRequest
 
 @property(nonatomic,strong) NSString* creatorId;
 

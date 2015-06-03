@@ -316,7 +316,7 @@ requestModel("LTCarClubMemberQuitReq") { |r|
 
 #车友会发表话题
 
-requestModel("PMThreadNewReq") {|r|
+requestModel("LTThreadNewReq") {|r|
   method "/thread/new", r
   response "PMNullModel", r
   p_string "creatorId", r

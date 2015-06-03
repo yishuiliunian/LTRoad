@@ -71,6 +71,10 @@ PODS:
     - DZQQLib
     - DZWeChatLib
     - JSONModel
+  - SlackTextViewController (1.5):
+    - SlackTextViewController/Additions (= 1.5)
+  - SlackTextViewController/Additions (1.5)
+  - SZTextView (1.2.1)
 
 DEPENDENCIES:
   - Baidu-Maps-iOS-SDK
@@ -90,6 +94,8 @@ DEPENDENCIES:
   - NSString-UrlEncode
   - ProtobufObjC
   - SAAuth
+  - SlackTextViewController
+  - SZTextView
 
 SPEC CHECKSUMS:
   Baidu-Maps-iOS-SDK: 260447c2270b44470d7c0d49a7f1a154b4703973
@@ -113,5 +119,7 @@ SPEC CHECKSUMS:
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
+  SlackTextViewController: 4a1797ac2f3616dbd37435fc62da655e61399cdd
+  SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
 
 COCOAPODS: 0.37.2

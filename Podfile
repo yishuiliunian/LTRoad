@@ -22,6 +22,8 @@ target 'LuTu' do
   pod 'libextobjc'
   pod 'Mantle'
   pod 'FXBlurView'
+  pod 'SlackTextViewController'
+  pod 'SZTextView'
 end
 
 
