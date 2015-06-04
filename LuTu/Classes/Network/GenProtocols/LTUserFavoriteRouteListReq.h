@@ -1,3 +1,4 @@
 #import "__LTUserFavoriteRouteListReq.h"
-@interface LTUserFavoriteRouteListReq : __LTUserFavoriteRouteListReq
+#import "LTPageRequestProtocol.h"
+@interface LTUserFavoriteRouteListReq : __LTUserFavoriteRouteListReq <LTPageRequestProtocol>
 @end

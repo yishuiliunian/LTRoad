@@ -16,8 +16,9 @@
 #import "LTMyFavoriteViewController.h"
 #import "LKHaneke.h"
 #import "LTGlobals.h"
+#import "LTUserStatsListReq.h"
 
-@interface LTMineViewController ()
+@interface LTMineViewController () <MSRequestUIDelegate>
 {
     NSArray* _allActions;
     LTMineTopView* _topView;
@@ -96,6 +97,22 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     {
         _topView.nickNameLabel.text = @"未登录";
     }
+    
+    if (LTCurrentAccount) {
+        LTUserStatsListReq* req = [LTUserStatsListReq new];
+        req.userId = LTCurrentAccount.accountID;
+        MSPerformRequestWithDelegateSelf(req);
+    }
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    
+}
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView

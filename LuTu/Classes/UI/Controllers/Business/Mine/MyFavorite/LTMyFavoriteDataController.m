@@ -9,7 +9,7 @@
 #import "LTMyFavoriteDataController.h"
 #import "LTGlobals.h"
 #import "LTMyFavoriteTableViewCell.h"
-#import "LTMyFavoriteReq.h"
+#import "LTUserFavoriteRouteListReq.h"
 #import "LTUIMyFavorite.h"
 #import "LKHaneke.h"
 @implementation LTMyFavoriteDataController
@@ -25,7 +25,8 @@
 
 - (MSRequest<LTPageRequestProtocol>*) syncDataReqeust
 {
-    LTMyFavoriteReq* req = [LTMyFavoriteReq new];
+    LTUserFavoriteRouteListReq* req = [LTUserFavoriteRouteListReq new];
+    req.userId = LTCurrentAccount.accountID;
     return req;
 }
 
