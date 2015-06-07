@@ -44,6 +44,7 @@
 {
     if (_dataController != dataController) {
         _dataController = dataController;
+        _dataController.tableViewController = self;
         if (self.isViewLoaded) {
             _dataController.tableView = self.tableView;
             _needUpdateDataControllerTableView = NO;

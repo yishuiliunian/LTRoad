@@ -3,15 +3,51 @@
 @implementation PMClubSearchInfo
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
-    return @{@"club_id":@"club_id",
+    return @{@"carClubId":@"carClubId",
+@"createTime":@"createTime",
+@"creatorId":@"creatorId",
+@"introImageUrl":@"introImageUrl",
+@"introText":@"introText",
+@"isDefault":@"isDefault",
+@"memberList":@"memberList",
 @"name":@"name",
-@"member_count":@"member_count",
-@"thread_count":@"thread_count",
+@"memberCount":@"memberCount",
+@"threadCount":@"threadCount",
 
             };
 }
 
-+ (NSValueTransformer*) club_idJSONTransformer
++ (NSValueTransformer*) carClubIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) creatorIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) introImageUrlJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) introTextJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) isDefaultJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) memberListJSONTransformer
 {
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }

@@ -1,3 +1,4 @@
 #import "__LTRoadListReq.h"
-@interface LTRoadListReq : __LTRoadListReq
+#import "LTPageRequestProtocol.h"
+@interface LTRoadListReq : __LTRoadListReq <LTPageRequestProtocol>
 @end

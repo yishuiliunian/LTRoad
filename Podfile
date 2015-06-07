@@ -24,6 +24,7 @@ target 'LuTu' do
   pod 'FXBlurView'
   pod 'SlackTextViewController'
   pod 'SZTextView'
+  pod 'MJRefresh'
 end
 
 

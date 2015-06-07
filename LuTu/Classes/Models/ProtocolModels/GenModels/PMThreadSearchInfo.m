@@ -3,17 +3,52 @@
 @implementation PMThreadSearchInfo
 + (NSDictionary*) JSONKeyPathsByPropertyKey
 {
-    return @{@"thread_id":@"thread_id",
+    return @{@"carClubName":@"carClubName",
+@"clubId":@"clubId",
+@"content":@"content",
+@"createTime":@"createTime",
+@"creatorId":@"creatorId",
+@"images":@"images",
+@"postCount":@"postCount",
+@"threadId":@"threadId",
 @"title":@"title",
-@"user_avatar_url":@"user_avatar_url",
-@"user_name":@"user_name",
-@"create_time":@"create_time",
-@"post_count":@"post_count",
+@"userAvastarurl":@"userAvastarurl",
+@"userName":@"userName",
 
             };
 }
 
-+ (NSValueTransformer*) thread_idJSONTransformer
++ (NSValueTransformer*) carClubNameJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) clubIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) contentJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) creatorIdJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) imagesJSONTransformer
+{
+    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
+}
+    
+
++ (NSValueTransformer*) threadIdJSONTransformer
 {
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }
@@ -25,19 +60,13 @@
 }
     
 
-+ (NSValueTransformer*) user_avatar_urlJSONTransformer
++ (NSValueTransformer*) userAvastarurlJSONTransformer
 {
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }
     
 
-+ (NSValueTransformer*) user_nameJSONTransformer
-{
-    return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
-}
-    
-
-+ (NSValueTransformer*) create_timeJSONTransformer
++ (NSValueTransformer*) userNameJSONTransformer
 {
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }

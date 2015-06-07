@@ -9,10 +9,15 @@
 #import "LTSearchTableViewController.h"
 #import <DZGeometryTools.h>
 #import "LTSearchDataController.h"
+#import "LTTableSectionView.h"
+#import "LTGlobals.h"
+
 @interface LTSearchTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar* searchBar;
 @property (nonatomic, strong) LTSearchDataController* dataController;
 @end
+
+
 
 @implementation LTSearchTableViewController
 
@@ -31,13 +36,22 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     //
     [self initDataController];
-    
-    [_dataController searchKeyword:@"的"];
+    [_searchBar becomeFirstResponder];
 }
 
 - (void) searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) searchBarBookmarkButtonClicked:(UISearchBar *)searchBar
+{
+    
+}
+
+- (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [_dataController searchKeyword:searchBar.text];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -45,67 +59,45 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id object = [_dataController objectAtIndexPath:indexPath];
+    if ([object isKindOfClass:[LTUICarMeetFeed class]]) {
+        return 100;
+    } else if ([object isKindOfClass:[LTUIMyCarClubInfo class]]) {
+        return 80;
+    } else {
+        return 80;
+    }
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
-    return 0;
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString* key = [_dataController headerViewIdentifierForSection:section];
+    LTTableSectionView* sectionView = (LTTableSectionView*) [tableView dequeueReusableHeaderFooterViewWithIdentifier:key];
+    if (!sectionView) {
+        sectionView = [LTTableSectionView new];
+    }
+    sectionView.textLabel.text = key;
+    return sectionView;
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 40;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UIView*) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    NSString* key = [[_dataController headerViewIdentifierForSection:section] stringByAppendingString:@"footer"];
+    UIView* aView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:key];
+    if (!aView) {
+        aView = [UIView new];
+    }
+    aView.backgroundColor = LTColorBackgroundGray();
+    return aView;
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 20;
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

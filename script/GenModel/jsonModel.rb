@@ -340,8 +340,6 @@ model("PMThreadInfo") { |m|
   string "content", m
 }
 
-
-
 model("PMThreadListRsp") { |m|
   int32 "offset", m
   int32 "limit", m
@@ -521,25 +519,44 @@ requestModel("LTUserThreadListReq") { |r|
 #搜索接口
 
 model("PMRouteSearchInfo") { |m|
+  string "carType", m
+  int64 "createTime", m
+  string "favCount", m
+  string "introImageUrl", m
+  point  "location", m
   string "name", m
-  string "intro_image_url", m
-  string "attival_time", m
+  string "routeId", m
+  string "routeStatus", m
+  string "status", m
+  string "totalDistance", m
+  string "totalTime", m
 }
 
 model("PMClubSearchInfo") { |m|
-  string "club_id", m
+  string "carClubId", m
+  int64 "createTime", m
+  string "creatorId", m
+  string "introImageUrl", m
+  string "introText", m
+  string "isDefault", m
+  string "memberList", m
   string "name", m
-  int32 "member_count", m
-  int32 "thread_count", m
+  int32 "memberCount", m
+  int32 "threadCount", m
 }
 
 model("PMThreadSearchInfo") { |m|
-  string "thread_id", m
+  string "carClubName", m
+  string "clubId", m
+  string "content", m
+  int64 "createTime", m
+  string "creatorId", m
+  string "images", m
+  int64 "postCount", m
+  string "threadId", m
   string "title", m
-  string "user_avatar_url", m
-  string "user_name", m
-  string "create_time", m
-  int32 "post_count", m
+  string "userAvastarurl", m
+  string "userName", m
 }
 
 model("PMSearchRsp") { |m|

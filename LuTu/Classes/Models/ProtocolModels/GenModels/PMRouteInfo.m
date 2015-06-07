@@ -33,29 +33,34 @@
 
 + (NSValueTransformer*) locationJSONTransformer
 {
-        return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
-            if ([value isKindOfClass:[NSString class]]) {
-                NSString* str = value;
-                NSArray* values = [str componentsSeparatedByString:@","];
-                if (values.count == 2) {
-                    PMLinePoint* point = [PMLinePoint new];
-                    point.lat = [values[0] floatValue];
-                    point.lng = [values[0] floatValue];
-                    *success = YES;
-                    return point;
-                }
-
-            }
-            *success = NO;
-            return nil;
-        } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
-            if ([value isKindOfClass:[PMLinePoint class]]) {
-                PMLinePoint* point = (PMLinePoint*) value;
+ return [MTLValueTransformer transformerUsingForwardBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        if ([value isKindOfClass:[NSString class]]) {
+            NSString* str = value;
+            NSArray* values = [str componentsSeparatedByString:@","];
+            if (values.count == 2) {
+                PMLinePoint* point = [PMLinePoint new];
+                point.lat = [values[0] floatValue];
+                point.lng = [values[0] floatValue];
                 *success = YES;
-                return [NSString stringWithFormat:@"%f,%f", point.lat, point.lng];
+                return point;
             }
-            return nil;
-        }];
+        }
+        
+        PMLinePoint* point = [PMLinePoint new];
+        point.lat = 0;
+        point.lng = 0;
+        *success = YES;
+        return point;
+        
+    } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
+        if ([value isKindOfClass:[PMLinePoint class]]) {
+            PMLinePoint* point = (PMLinePoint*) value;
+            *success = YES;
+            return [NSString stringWithFormat:@"%f,%f", point.lat, point.lng];
+        }
+        return nil;
+    }];
+
 }
 
 

@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "MSRequest.h"
 #import "LTPageRequestProtocol.h"
+#import <MJRefresh.h>
 @interface LTPageDataController : NSObject <NSFastEnumeration, MSRequestUIDelegate>
 {
     NSArray* _array;
@@ -22,11 +23,16 @@
 @property (readonly) NSUInteger count;
 - (id)objectAtIndex:(NSUInteger)index;
 - (void) reloadAllData;
-- (void) getNetPageData;
+- (void) getNextPageData;
+
 //
 - (MSRequest<LTPageRequestProtocol>*) syncDataReqeust;
 - (void) reloadUIAllUIData;
 - (void) insertUIDataAtIndexs:(NSArray*)indexPaths;
+//
+- (void) handleOnError:(NSError*)error;
+- (void) handleReloadData:(NSArray*)data;
+- (void) handleNextPageData:(NSArray*)data;
 //
 //array 的常用方法
 - (NSArray *)arrayByAddingObject:(id)anObject;

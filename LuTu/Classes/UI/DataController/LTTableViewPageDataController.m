@@ -30,7 +30,32 @@
         _tableView = tableView;
         _tableView.dataSource = self;
         [self registerTableClass];
+//        [_tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(reloadAllData)];
+        _tableView.header.updatedTimeHidden = YES;
+        [_tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(getNextPageData)];
     }
+}
+
+- (void) setTableViewController:(UITableViewController *)tableViewController
+{
+    if (_tableViewController != tableViewController) {
+        _tableViewController = tableViewController;
+        _tableViewController.refreshControl = [UIRefreshControl new];
+        [_tableViewController.refreshControl addTarget:self action:@selector(reloadAllData) forControlEvents:UIControlEventValueChanged];
+    }
+}
+- (void) handleReloadData:(NSArray *)data
+{
+    [super handleReloadData:data];
+    [_tableViewController.refreshControl endRefreshing];
+}
+
+
+- (void) handleNextPageData:(NSArray *)data
+{
+    [super handleNextPageData:data];
+    [_tableView.footer endRefreshing];
+    
 }
 - (void) reloadUIAllUIData
 {

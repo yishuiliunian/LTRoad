@@ -22,4 +22,17 @@
     _feedImageURL = STR_TO_URL(threadInfo.userAvastarurl);
     return self;
 }
+
+- (instancetype) initWithSearchInfo:(PMThreadSearchInfo *)searchInfo
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    _carTitle = searchInfo.title;
+    _ownerName = searchInfo.userName;
+    _commentCount = searchInfo.postCount;
+
+    return self;
+}
 @end

@@ -14,6 +14,7 @@
 #import "LTCarClubInfoShowReq.h"
 #import "PMCarClubInfo.h"
 #import "LTUIClubMember.h"
+#import "LTCarMeetFeedDataController.h"
 @interface LTCarMeetDetailViewController () <MSRequestUIDelegate>
 {
     DZSwipeViewController* _swipViewController;
@@ -51,8 +52,10 @@
     
     _membersViewController= [LTCatMeetMemberTableViewController new];
     _membersViewController.swipeTitle = @"成员";
-    
-    _threadsViewController= [LTCarMeetFeedViewController new];
+
+    LTCarMeetFeedDataController* dataController  = [ LTCarMeetFeedDataController new];
+    dataController.carMeet = _carClub;
+    _threadsViewController= [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
     _threadsViewController.swipeTitle = @"动态";
     _swipViewController = [[DZSwipeViewController alloc] initWithViewControllers:@[_membersViewController, _threadsViewController, _clubInfoViewController]];
     //

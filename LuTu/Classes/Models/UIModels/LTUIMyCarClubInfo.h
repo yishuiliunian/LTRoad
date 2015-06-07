@@ -8,10 +8,12 @@
 
 #import "MTLModel.h"
 #import "PMUserCarClub.h"
+#import "PMClubSearchInfo.h"
 @interface LTUIMyCarClubInfo : MTLModel
 @property (nonatomic, assign) int club_id;
 @property (nonatomic, strong) NSString* name;
 @property (nonatomic, strong) NSString* detailInfo;
 @property (nonatomic, strong) NSURL* avatarImageUrl;
 - (instancetype) initWithPMUserCarClubInfo:(PMUserCarClub*)info;
+- (instancetype) initWithSearchInfo:(PMClubSearchInfo*)info;
 @end

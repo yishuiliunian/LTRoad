@@ -31,17 +31,14 @@ NSValueTransformer* PMLinePointJSONTransformer()
                 point.lng = [values[0] floatValue];
                 *success = YES;
                 return point;
-            } else {
-                PMLinePoint* point = [PMLinePoint new];
-                point.lat = 0;
-                point.lng = 0;
-                *success = YES;
-                return point;
             }
-            
         }
-        *success = NO;
-        return nil;
+        PMLinePoint* point = [PMLinePoint new];
+        point.lat = 0;
+        point.lng = 0;
+        *success = YES;
+        return point;
+        
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         if ([value isKindOfClass:[PMLinePoint class]]) {
             PMLinePoint* point = (PMLinePoint*) value;

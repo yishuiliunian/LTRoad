@@ -124,8 +124,17 @@
         error = [NSError ltErrorWithCode:ret message:message];
         MSRequestOnErrorAndReturn(error);
     }
+    NSMutableDictionary* resultMaps = [NSMutableDictionary new];
     id retData = dic[@"result"];
-    [self onSuccess:retData];
+    if ([retData isKindOfClass:[NSArray class]]) {
+        [self onSuccess:retData];
+    } else if([retData isKindOfClass:[NSDictionary class]])
+    {
+        [self onSuccess:retData];
+    } else
+    {
+        [self onSuccess:dic];
+    }
     return YES;
 }
 

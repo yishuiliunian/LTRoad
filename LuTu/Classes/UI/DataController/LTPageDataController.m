@@ -65,7 +65,7 @@
     MSPerformRequestWithDelegateSelf(pageRequest);
 }
 
-- (void) getNetPageData
+- (void) getNextPageData
 {
     MSRequest<LTPageRequestProtocol> * pageRequest = [self syncDataReqeust];
     pageRequest.pageNo = ++_pageIndex;
@@ -73,10 +73,15 @@
 }
 
 
-- (void) request:(MSRequest *)request onError:(NSError *)error
+- (void) handleOnError:(NSError*)error
 {
     
 }
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    [self handleOnError:error];
+}
+
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
@@ -90,20 +95,52 @@
 
 - (void) handleReloadData:(NSArray*)data
 {
-    _array = data;
+    [self insertNewDatas:data];
     [self reloadUIAllUIData];
 }
 
+- (NSString*) identifyForObject:(id)object
+{
+    return nil;
+}
+
+- (NSComparisonResult) compareObject:(id)object1 withObject:(id)object2
+{
+    return NSOrderedSame;
+}
+- (void) handleNextPageData:(NSArray*)data
+{
+    [self insertNewDatas:data];
+    [self reloadUIAllUIData];
+}
+
+- (void) insertNewDatas:(NSArray*)datas
+{
+    NSMutableArray* copyArray = [NSMutableArray new];
+    [copyArray addObjectsFromArray:_array];
+    [copyArray addObjectsFromArray:datas];
+    NSArray* enmeratorArray = [copyArray copy];
+    NSMutableDictionary* dic = [NSMutableDictionary new];
+    for (id object  in enmeratorArray) {
+        NSString* key = [self identifyForObject:object];
+        if (key) {
+            if (dic[key]) {
+                [copyArray removeObject:object];
+            }
+            dic[key] = @(YES);
+        }
+    }
+    [copyArray sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        return [self compareObject:obj1 withObject:obj2];
+    }];
+    _array = copyArray;
+}
 - (void) reloadUIAllUIData
 {
     
 }
 
 - (void) insertUIDataAtIndexs:(NSArray*)indexPaths
-{
-    
-}
-- (void) handleNextPageData:(NSArray*)data
 {
     
 }

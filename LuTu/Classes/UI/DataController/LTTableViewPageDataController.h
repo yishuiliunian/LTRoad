@@ -10,6 +10,7 @@
 
 @interface LTTableViewPageDataController : LTPageDataController <UITableViewDataSource>
 @property (nonatomic, strong) NSDictionary* objectMapCell;
-@property (nonatomic, strong) UITableView* tableView;
+@property (nonatomic, weak) UITableView* tableView;
+@property (nonatomic, weak) UITableViewController* tableViewController;
 - (void) decorateCell:(UITableViewCell*)cell withObject:(id)object;
 @end
