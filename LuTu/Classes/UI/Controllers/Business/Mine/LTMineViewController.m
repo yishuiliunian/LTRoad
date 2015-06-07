@@ -17,6 +17,8 @@
 #import "LKHaneke.h"
 #import "LTGlobals.h"
 #import "LTUserStatsListReq.h"
+#import "LTMyThreadDataController.h"
+#import "LTCarMeetFeedViewController.h"
 
 @interface LTMineViewController () <MSRequestUIDelegate>
 {
@@ -46,6 +48,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     //
     [_topView.carFriendButton addTarget:self action:@selector(handleShowMyClub) forControlEvents:UIControlEventTouchUpInside];
     [_topView.favarateButton addTarget:self action:@selector(handleShowMyFavorate) forControlEvents:UIControlEventTouchUpInside];
+    [_topView.feedButton addTarget:self action:@selector(handleShowMyThreads) forControlEvents:UIControlEventTouchUpInside];
     //
     self.naviationBarStyle = LTNavigationStyleTransparency;
 }
@@ -73,6 +76,13 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 {
     LTMyCarClubViewController* clubVC = [[LTMyCarClubViewController alloc]initWithUID:LTCurrentAccount.accountID];
     [self.navigationController pushViewController:clubVC animated:YES];
+}
+
+- (void) handleShowMyThreads
+{
+    LTMyThreadDataController* dataController = [LTMyThreadDataController new];
+    LTCarMeetFeedViewController* feedVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
+    [self.navigationController pushViewController:feedVC animated:YES];
 }
 - (void) reloadAllData
 {

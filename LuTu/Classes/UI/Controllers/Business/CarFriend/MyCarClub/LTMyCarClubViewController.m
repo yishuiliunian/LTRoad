@@ -7,7 +7,7 @@
 //
 
 #import "LTMyCarClubViewController.h"
-#import "LTRequestUseClubList.h"
+#import "LTUserCarClubListReq.h"
 #import "LTMyClubTableViewCell.h"
 @interface LTMyCarClubViewController () <MSRequestUIDelegate>
 {
@@ -37,7 +37,7 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 
 - (void) reloadAllData
 {
-    LTRequestUseClubList* clubsReq = [LTRequestUseClubList new];
+    LTUserCarClubListReq* clubsReq = [LTUserCarClubListReq new];
     clubsReq.userId = self.uid;
     MSPerformRequestWithDelegateSelf(clubsReq);
 

@@ -1,6 +1,6 @@
 
 #import "LTUserFavoriteRouteListReq.h"
-
+#import "LTUIRouteSearchInfo.h"
 @implementation LTUserFavoriteRouteListReq
 
 - (instancetype) init
@@ -14,7 +14,12 @@
 }
 - (void) didGetMessage:(PMFavoriteListRsp*)message
 {
-    
+    NSMutableArray* array = [NSMutableArray new];
+    for (PMFavoriteInfo* fa in message.list) {
+        LTUIRouteSearchInfo* info = [[LTUIRouteSearchInfo alloc] initWithFavoriteInfo:fa];
+        [array addObject:info];
+    }
+    [self doUIOnSuccced:array];
 }
 @end
 

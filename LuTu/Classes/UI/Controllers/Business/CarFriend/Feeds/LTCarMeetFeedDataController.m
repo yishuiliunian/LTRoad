@@ -21,6 +21,10 @@
     return self;
 }
 
+- (NSString*) identifyForObject:(id)object
+{
+    return [(LTUICarMeetFeed*)object threadId];
+}
 
 - (MSRequest<LTPageRequestProtocol>*) syncDataReqeust{
     

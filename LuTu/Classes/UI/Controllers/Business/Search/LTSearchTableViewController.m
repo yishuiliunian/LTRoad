@@ -44,10 +44,6 @@
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void) searchBarBookmarkButtonClicked:(UISearchBar *)searchBar
-{
-    
-}
 
 - (void) searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {

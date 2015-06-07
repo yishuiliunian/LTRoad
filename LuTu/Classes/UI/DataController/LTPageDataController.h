@@ -34,6 +34,9 @@
 - (void) handleReloadData:(NSArray*)data;
 - (void) handleNextPageData:(NSArray*)data;
 //
+
+- (NSString*) identifyForObject:(id)object;
+- (NSComparisonResult) compareObject:(id)object1 withObject:(id)object2;
 //array 的常用方法
 - (NSArray *)arrayByAddingObject:(id)anObject;
 - (NSArray *)arrayByAddingObjectsFromArray:(NSArray *)otherArray;

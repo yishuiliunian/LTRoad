@@ -8,9 +8,9 @@
 
 #import "LTMyFavoriteDataController.h"
 #import "LTGlobals.h"
-#import "LTMyFavoriteTableViewCell.h"
+#import "LTSearchRouteTableViewCell.h"
 #import "LTUserFavoriteRouteListReq.h"
-#import "LTUIMyFavorite.h"
+#import "LTUIRouteSearchInfo.h"
 #import "LKHaneke.h"
 @implementation LTMyFavoriteDataController
 - (instancetype) init
@@ -19,7 +19,7 @@
     if (!self) {
         return self;
     }
-    self.objectMapCell = @{LTCellMapPairWithClass( LTUIMyFavorite,LTMyFavoriteTableViewCell)};
+    self.objectMapCell = @{LTCellMapPairWithClass( LTUIRouteSearchInfo,LTSearchRouteTableViewCell)};
     return self;
 }
 
@@ -30,12 +30,18 @@
     return req;
 }
 
+- (NSString*) identifyForObject:(id)object
+{
+    if ([object isKindOfClass:[LTUIRouteSearchInfo class]]) {
+        return [(LTUIRouteSearchInfo*)object routeId];
+    }
+    return nil;
+}
+
 - (void) decorateCell:(UITableViewCell *)cell withObject:(id)object
 {
-    LTMyFavoriteTableViewCell* fCell = (LTMyFavoriteTableViewCell*)cell;
-    LTUIMyFavorite* fdata = (LTUIMyFavorite*)object;
-    [fCell.imageView hnk_setImageFromURL:fdata.avatarImageURL];
-    fCell.textLabel.text = fdata.title;
-    fCell.detailTextLabel.text = fdata.detail;
+    LTSearchRouteTableViewCell* fCell = (LTSearchRouteTableViewCell*)cell;
+    LTUIRouteSearchInfo* fdata = (LTUIRouteSearchInfo*)object;
+    fCell.routeInfo = fdata;
 }
 @end
