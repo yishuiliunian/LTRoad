@@ -27,9 +27,9 @@
     if ([retobject isKindOfClass:[NSNull class]]) {
         [self didGetMessage:[PMUserDynamicListRsp new]];
     } else {
-        if (retobject[@"list"]) {
-            id object = retobject[@"list"];
-            if ([object isKindOfClass:[NSString class]]) {
+        id list = retobject[@"list"];
+        if ([list isKindOfClass:[NSString class]]) {
+            if ([list isEqualToString:@""]) {
                 NSMutableDictionary* dic = [retobject mutableCopy];
                 dic[@"list"] = [NSNull null];
                 retobject = dic;

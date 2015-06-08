@@ -20,4 +20,16 @@
     _timeText = @"2012/1/1";
     return self;
 }
+
+- (instancetype) initWithPMMessage:(PMUserMessageInfo *)info
+{
+    self = [super init];
+    if (!self) {
+        return self;
+    }
+    _dynamicId = info.messageId;
+    _content = info.content;
+    _timeText = @"2011/1/1";
+    return self;
+}
 @end

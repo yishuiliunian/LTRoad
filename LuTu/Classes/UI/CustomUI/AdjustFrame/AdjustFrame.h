@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface UIView (AdjustFrame)
 @property (nonatomic, assign) CGFloat adjustHeight;
 - (BOOL) hintAdjustSupreView;

@@ -43,8 +43,7 @@ const CGFloat  LTLineHeaderCellHeight =410;
 
 - (void) handleAdjustFrame
 {
-    CGFloat adjustHeight = CGRectGetMinY(_routeInfoView.frame) + _routeInfoView.adjustHeight;
-    self.adjustHeight = adjustHeight;
+    self.adjustHeight = 250 + LTLayoutYOffset + LTLinePointViewHeight + LTLayoutYOffset + 60 + _routeInfoView.adjustHeight;
 }
 
 - (void) layoutSubviews

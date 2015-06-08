@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <DZProgramDefines.h>
-#import "DZAdjustHeightTools.h"
+#import "LTGrowLabel.h"
+#import "LTGrowImageView.h"
 @interface LTFeedContentView : UIView
-DEFINE_PROPERTY_HEIGHT
-DEFINE_PROPERTY_STRONG_UIImageView(imageView);
-DEFINE_PROPERTY_STRONG_UILabel(contentLabel);
+DEFINE_PROPERTY_STRONG(LTGrowImageView*,imageView);
+DEFINE_PROPERTY_STRONG(LTGrowLabel*,contentLabel);
 @end

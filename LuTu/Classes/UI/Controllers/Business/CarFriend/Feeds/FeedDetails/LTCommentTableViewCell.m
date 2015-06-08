@@ -18,6 +18,8 @@
     }
     INIT_SUBVIEW(self.contentView, LTTopicHeadView, _headerView);
     INIT_SUBVIEW(self.contentView, UILabel, _contentTextLabel);
+    _contentTextLabel.numberOfLines = 0;
+    _contentTextLabel.font = LTFontDetail();
     return self;
 }
 - (void)awakeFromNib {

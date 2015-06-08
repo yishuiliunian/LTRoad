@@ -41,6 +41,7 @@ static NSString* cellIdentifier = @"cellIdentifier";
     LTUICarMeetFeed* feed = [self.dataController objectAtIndex:indexPath.row];
     LTFeedDetailViewController* detailVC = [LTFeedDetailViewController new];
     detailVC.hidesBottomBarWhenPushed = YES;
+    detailVC.carFeedInfo = feed;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 @end

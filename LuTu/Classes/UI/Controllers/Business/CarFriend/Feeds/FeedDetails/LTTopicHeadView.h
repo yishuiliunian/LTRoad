@@ -10,9 +10,7 @@
 #import <DZGeometryTools.h>
 #import <DZProgramDefines.h>
 #import "LTHeadImageView.h"
-#import "DZAdjustHeightTools.h"
 @interface LTTopicHeadView : UIView
-DEFINE_PROPERTY_HEIGHT
 DEFINE_PROPERTY_STRONG(LTHeadImageView*, avatarImageView);
 DEFINE_PROPERTY_STRONG_UILabel(nickLabel);
 DEFINE_PROPERTY_STRONG_UILabel(timeLabel);

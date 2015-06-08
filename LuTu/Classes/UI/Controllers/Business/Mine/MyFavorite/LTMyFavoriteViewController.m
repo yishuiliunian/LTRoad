@@ -8,6 +8,8 @@
 
 #import "LTMyFavoriteViewController.h"
 #import "LTMyFavoriteDataController.h"
+#import "LTUIRouteSearchInfo.h"
+#import "LTRouteDetailViewController.h"
 @interface LTMyFavoriteViewController ()
 
 @end
@@ -35,4 +37,10 @@
     return 80;
 }
 
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTUIRouteSearchInfo * info = [self.dataController objectAtIndex:indexPath.row];
+    LTRouteDetailViewController* vc = [[LTRouteDetailViewController alloc] initWithRouteID:info.routeId];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

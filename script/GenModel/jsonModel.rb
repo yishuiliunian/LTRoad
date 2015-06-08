@@ -595,4 +595,30 @@ requestModel("LTUserDynamicListReq") { |m|
   response "PMUserDynamicListRsp", m
 }
 
+#w我的消息
+
+model("PMUserMessageInfo") { |m|
+  string "messageId", m
+  string "content", m
+  string "userId", m
+  int64 "createTime", m
+}
+
+model("PMUserMessageListRsp") { |m|
+
+  int64 "offset", m
+  int64 "limit", m
+  int64 "total", m
+  array "list", "PMUserMessageInfo", m
+
+}
+
+requestModel("LTUserMessageListReq") { |m|
+  method "/user/message/list", m
+  response "PMUserMessageListRsp", m
+  p_int64 "pageNo", m
+  p_int64 "pageSize", m
+  p_string "userId", m
+}
+
 FindProject()

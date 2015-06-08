@@ -11,12 +11,12 @@
 #import "LTSearchDataController.h"
 #import "LTTableSectionView.h"
 #import "LTGlobals.h"
-
+#import "LTUIRouteSearchInfo.h"
+#import "LTRouteDetailViewController.h"
 @interface LTSearchTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar* searchBar;
 @property (nonatomic, strong) LTSearchDataController* dataController;
 @end
-
 
 
 @implementation LTSearchTableViewController
@@ -95,5 +95,15 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 20;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id object = [self.dataController objectAtIndexPath:indexPath];
+    if ([object isKindOfClass:[LTUIRouteSearchInfo class]]) {
+        LTUIRouteSearchInfo * info = object;
+        LTRouteDetailViewController* vc = [[LTRouteDetailViewController alloc] initWithRouteID:info.routeId];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 @end

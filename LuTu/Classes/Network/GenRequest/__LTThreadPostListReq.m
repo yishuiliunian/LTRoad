@@ -28,6 +28,14 @@
     if ([retobject isKindOfClass:[NSNull class]]) {
         [self didGetMessage:[PMThreadPostListRsp new]];
     } else {
+        id list = retobject[@"list"];
+        if ([list isKindOfClass:[NSString class]]) {
+            if ([list isEqualToString:@""]) {
+                NSMutableDictionary* dic = [retobject mutableCopy];
+                dic[@"list"] = [NSNull null];
+                retobject = dic;
+            }
+        }
         PMThreadPostListRsp* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMThreadPostListRsp") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];

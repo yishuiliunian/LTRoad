@@ -9,10 +9,10 @@
 #import "LTFeedDetailViewController.h"
 #import "LTCommentTableViewCell.h"
 #import "LTFeedView.h"
-#import "LTPostDetail.h"
 #import "LTGlobals.h"
 #import "LTPostToolBar.h"
 #import "LTUIComment.h"
+#import "LTAdjustFrameTable.h"
 @interface LTFeedDetailViewController () <LTPostToolBarDelegate>
 {
     NSMutableDictionary* _allComments;
@@ -20,52 +20,34 @@
     NSInteger _pageIndex;
     LTPostToolBar* _postToolBar;
 }
-@property (nonatomic, strong) LTPostDetail* postDetail;
 @end
 
 @implementation LTFeedDetailViewController
 static NSString* const kCellIdentifier = @"kCellIdentifier";
-- (void) dealloc
+
+- (void) loadView
 {
-    [_headerFeedView removeObserver:self forKeyPath:@"height"];
-}
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (object == _headerFeedView && [keyPath isEqualToString:@"height"]) {
-        [self reloadHeaderViewLayout];
-    }
+    self.tableView = [LTAdjustFrameTable new];
+    self.view = self.tableView;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 - (void) reloadHeaderViewLayout
 {
-    _headerFeedView.frame = CGRectMake(0, 0, CGRectGetViewControllerWidth, _headerFeedView.height);
+    _headerFeedView.frame = CGRectMake(0, 0, CGRectGetViewControllerWidth, _headerFeedView.adjustHeight);
     self.tableView.tableHeaderView = _headerFeedView;
-    
-
 }
 
 - (void) initSubViews
 {
     _headerFeedView = [LTFeedView new];
     [self reloadHeaderViewLayout];
-    ADD_OBSERVER_TO_HEIGHT(_headerFeedView);
     
     _postToolBar = [LTPostToolBar new];
     _postToolBar.delegate = self;
     
 }
-- (void) fakeData
-{
-    LTPostDetail* post = [LTPostDetail new];
-    post.title = @"我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。";
-    post.dateString = @"2o11-33";
-    post.owerName = @"流年";
-    post.lookedCount = 3;
-    post.commentCount = 5;
-    post.contentText = @"我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。我们一路向西，知道走到了这条路的尽头，再也看不到远方的时候。";
-    post.role = @"楼主";
-    post.clubName = @"卡宴";
-    self.postDetail = post;
-}
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -76,34 +58,35 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [self.tableView registerClass:[LTCommentTableViewCell class] forCellReuseIdentifier:kCellIdentifier];
     self.tableView.backgroundColor = LTColorBackgroundGray();
     
-#ifdef DEBUG
-    [self fakeData];
-#endif
     
     [self reloadCommentsAtIndex:0];
+    [self reloadPostDetail];
 }
 
-- (void) setPostDetail:(LTPostDetail *)postDetail
+- (void) setCarFeedInfo:(LTUICarMeetFeed *)carFeedInfo
 {
-    if (_postDetail != postDetail) {
-        _postDetail = postDetail;
-        [self reloadPostDetail];
+    if (_carFeedInfo != carFeedInfo) {
+        _carFeedInfo = carFeedInfo;
+        if ([self isViewLoaded]) {
+            [self reloadPostDetail];
+        }
     }
 }
+
 - (void) reloadPostDetail
 {
 #define NUM_TO_STR(x) [@(x) stringValue]
-    _headerFeedView.feedHeaderView.titleLabel.text = _postDetail.title;
-    [_headerFeedView.feedHeaderView.lookedCountButton setTitle:NUM_TO_STR(_postDetail.lookedCount) forState:UIControlStateNormal];
-    [_headerFeedView.feedHeaderView.commentButton setTitle:NUM_TO_STR(_postDetail.commentCount) forState:UIControlStateNormal];
-    _headerFeedView.feedHeaderView.clubNickLabel.text = _postDetail.clubName;
-    _headerFeedView.topicHeaderView.nickLabel.text = _postDetail.owerName;
-    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_postDetail.avatarImageURL];
+    _headerFeedView.feedHeaderView.titleLabel.text = _carFeedInfo.title;
+    [_headerFeedView.feedHeaderView.lookedCountButton setTitle:NUM_TO_STR(0) forState:UIControlStateNormal];
+    [_headerFeedView.feedHeaderView.commentButton setTitle:NUM_TO_STR(_carFeedInfo.commentCount) forState:UIControlStateNormal];
+    _headerFeedView.feedHeaderView.clubNickLabel.text = _carFeedInfo.carTitle;
+    _headerFeedView.topicHeaderView.nickLabel.text = _carFeedInfo.ownerName;
+    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_carFeedInfo.userAvatarURL];
     _headerFeedView.topicHeaderView.roleLabel.text = @"楼主";
-    _headerFeedView.topicHeaderView.timeLabel.text = _postDetail.dateString;
-    _headerFeedView.feedContentView.contentLabel.text = _postDetail.contentText;
-    [_headerFeedView.feedContentView.imageView loadFeedBackgroundURL:_postDetail.contentImageURL];
-    
+    _headerFeedView.topicHeaderView.timeLabel.text = _carFeedInfo.postDate;
+    _headerFeedView.feedContentView.contentLabel.text = _carFeedInfo.content;
+    [_headerFeedView.feedContentView.imageView loadFeedBackgroundURL:_carFeedInfo.feedImageURL];
+//
 }
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -136,7 +119,10 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 {
     return 1;
 }
-
+- (void) reloadCommentsAtPageNo:(NSInteger)interger
+{
+    
+}
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return CURRENT_ALL_COMMENTS.count;

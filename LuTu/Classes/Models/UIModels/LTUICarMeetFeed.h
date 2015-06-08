@@ -18,6 +18,9 @@
 @property (nonatomic, strong) NSString* detail;
 @property (nonatomic, assign) int commentCount;
 @property (nonatomic, strong) NSString* threadId;
+@property (nonatomic, strong) NSString* title;
+@property (nonatomic, strong) NSURL* userAvatarURL;
+@property (nonatomic, strong) NSString* content;
 
 - (instancetype) initWithThreadInfo:(PMThreadInfo*)threadInfo;
 - (instancetype) initWithSearchInfo:(PMThreadSearchInfo*)searchInfo;

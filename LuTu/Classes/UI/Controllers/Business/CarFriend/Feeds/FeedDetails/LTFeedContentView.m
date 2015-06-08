@@ -10,48 +10,35 @@
 #import "LTGlobals.h"
 @interface LTFeedContentView()
 {
-    CGFloat _textHeight;
     CGFloat _imageHeight;
 }
 @end
 @implementation LTFeedContentView
-- (void) dealloc
-{
-    [_contentLabel removeObserver:self forKeyPath:@"text"];
-}
+
 - (instancetype) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (!self) {
         return self;
     }
-    INIT_SELF_SUBVIEW_UIImageView(_imageView);
-    INIT_SELF_SUBVIEW_UILabel(_contentLabel);
-    _textHeight = 20;
-    _imageHeight = 100;
+    INIT_SELF_SUBVIEW(LTGrowImageView,_imageView);
+    INIT_SELF_SUBVIEW(LTGrowLabel,_contentLabel);
     //
     _contentLabel.font = LTFontDetail();
     _contentLabel.numberOfLines = 0;
-    _contentLabel.textAlignment = NSTextAlignmentCenter;
+    _contentLabel.textAlignment = NSTextAlignmentLeft;
     //
-    [_contentLabel addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:nil];
-    _height = [self calculateHeight];
-    _imageView.frame = CGRectMake(0, 0, 2, 2);
+    _imageView.adjustImageSize = CGSizeMake(CGCurrentScreenSize().width - 20, 100);
+    _imageView.hnk_cacheFormat = LTHanekeCacheFormatFeedBackground();
     return self;
 }
-FILL_CALCULATE_HEIGHT_FUNC
+- (void) handleAdjustFrame
 {
-    return _textHeight + LTLayoutYOffset*3 + _imageHeight;
-}
+    if (_imageView.adjustHeight < 0.1) {
+        self.adjustHeight = _contentLabel.adjustHeight + LTLayoutYOffset*2 + _imageView.adjustHeight;
+    } else {
+        self.adjustHeight = _contentLabel.adjustHeight + LTLayoutYOffset*3 + _imageView.adjustHeight;
 
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
-    if (object == _contentLabel && [keyPath isEqualToString:@"text"]) {
-        NSString* text = change[NSKeyValueChangeNewKey];
-        UIFont* font = _contentLabel.font;
-        CGSize size = [text sizeWithFont:font constrainedToSize:CGSizeMake(LTFeedContentWidth(), 100000)];
-        _textHeight = size.height;
-        self.height = [self calculateHeight];
     }
 }
 
@@ -63,8 +50,10 @@ FILL_CALCULATE_HEIGHT_FUNC
     CGRect imageRect;
     CGRect textRect;
     
-    CGRectDivide(contentRect, &imageRect, &textRect, _imageHeight, CGRectMinYEdge);
-    textRect = CGRectShrink(textRect, LTLayoutYOffset, CGRectMinYEdge);
+    CGRectDivide(contentRect, &imageRect, &textRect, _imageView.adjustHeight, CGRectMinYEdge);
+    if (_imageView.adjustHeight > 1) {
+        textRect = CGRectShrink(textRect, LTLayoutYOffset, CGRectMinYEdge);
+    }
     
     _imageView.frame = imageRect;
     _contentLabel.frame = textRect;

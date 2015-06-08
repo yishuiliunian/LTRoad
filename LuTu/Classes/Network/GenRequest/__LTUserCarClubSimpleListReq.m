@@ -25,6 +25,14 @@
     if ([retobject isKindOfClass:[NSNull class]]) {
         [self didGetMessage:[PMUserCarClubSimpleRsp new]];
     } else {
+        id list = retobject[@"list"];
+        if ([list isKindOfClass:[NSString class]]) {
+            if ([list isEqualToString:@""]) {
+                NSMutableDictionary* dic = [retobject mutableCopy];
+                dic[@"list"] = [NSNull null];
+                retobject = dic;
+            }
+        }
         PMUserCarClubSimpleRsp* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMUserCarClubSimpleRsp") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];

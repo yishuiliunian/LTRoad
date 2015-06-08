@@ -20,7 +20,7 @@ EXTERN_LTHNKShareCacheFormat(DiscoverBackground)
 EXTERN_LTHNKShareCacheFormat(CarMeet)
 EXTERN_LTHNKShareCacheFormat(Avatar)
 
-
+extern NSString* const kPlaceHolderImageName;
 
 @interface UIImageView (PlaceHolder)
 - (void) loadRemoteURL:(NSURL*)url placeHolderName:(NSString*) placeHolder;

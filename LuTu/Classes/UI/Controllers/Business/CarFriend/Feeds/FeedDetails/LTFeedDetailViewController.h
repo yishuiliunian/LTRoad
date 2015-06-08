@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LTUICarMeetFeed.h"
 @interface LTFeedDetailViewController :  UITableViewController
+@property (nonatomic, strong) LTUICarMeetFeed* carFeedInfo;
 @end

@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <DZProgramDefines.h>
 #import "LTLikeButton.h"
-#import "DZAdjustHeightTools.h"
+#import "AdjustFrame.h"
+#import "LTGrowLabel.h"
+
 @interface LTFeedHeadView : UIView
-DEFINE_PROPERTY_HEIGHT
-DEFINE_PROPERTY_STRONG_UILabel(titleLabel);
+DEFINE_PROPERTY_STRONG(LTGrowLabel*,titleLabel);
 DEFINE_PROPERTY_STRONG(LTLikeButton*, commentButton);
 DEFINE_PROPERTY_STRONG(LTLikeButton*, lookedCountButton);
 DEFINE_PROPERTY_STRONG_UILabel(clubNickLabel);

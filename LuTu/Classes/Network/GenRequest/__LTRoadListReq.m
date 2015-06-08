@@ -29,6 +29,14 @@
     if ([retobject isKindOfClass:[NSNull class]]) {
         [self didGetMessage:[PMRouteListRsp new]];
     } else {
+        id list = retobject[@"list"];
+        if ([list isKindOfClass:[NSString class]]) {
+            if ([list isEqualToString:@""]) {
+                NSMutableDictionary* dic = [retobject mutableCopy];
+                dic[@"list"] = [NSNull null];
+                retobject = dic;
+            }
+        }
         PMRouteListRsp* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMRouteListRsp") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];

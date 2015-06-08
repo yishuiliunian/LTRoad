@@ -27,6 +27,14 @@
     if ([retobject isKindOfClass:[NSNull class]]) {
         [self didGetMessage:[PMFavoriteListRsp new]];
     } else {
+        id list = retobject[@"list"];
+        if ([list isKindOfClass:[NSString class]]) {
+            if ([list isEqualToString:@""]) {
+                NSMutableDictionary* dic = [retobject mutableCopy];
+                dic[@"list"] = [NSNull null];
+                retobject = dic;
+            }
+        }
         PMFavoriteListRsp* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMFavoriteListRsp") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];

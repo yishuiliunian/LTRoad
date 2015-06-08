@@ -22,6 +22,7 @@
 #import "LTSettingsViewController.h"
 #import "LTMyNewsDataController.h"
 #import "LTMyNewsViewController.h"
+#import "LTMyMessagesDataController.h"
 @interface LTMineViewController () <MSRequestUIDelegate>
 {
     NSArray* _allActions;
@@ -52,8 +53,15 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [_topView.favarateButton addTarget:self action:@selector(handleShowMyFavorate) forControlEvents:UIControlEventTouchUpInside];
     [_topView.feedButton addTarget:self action:@selector(handleShowMyThreads) forControlEvents:UIControlEventTouchUpInside];
     [_topView.settingButton addTarget:self action:@selector(handleShowSettings) forControlEvents:UIControlEventTouchUpInside];
+    [_topView.messageButton addTarget:self action:@selector(handleShowMessages) forControlEvents:UIControlEventTouchUpInside];
     //
     self.naviationBarStyle = LTNavigationStyleTransparency;
+}
+- (void) handleShowMessages
+{
+    LTMyMessagesDataController* messageDataController = [LTMyMessagesDataController new];
+    LTMyNewsViewController* vc = [[LTMyNewsViewController alloc] initWithDataController:messageDataController];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void) handleShowSettings

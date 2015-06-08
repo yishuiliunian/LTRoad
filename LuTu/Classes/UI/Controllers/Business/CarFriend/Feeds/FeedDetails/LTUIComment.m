@@ -35,9 +35,9 @@
 - (void) calculateLayout
 {
     _avatarHeight = 80;
-    CGFloat width = LTFeedContentWidth() - _avatarHeight - 10;
+    CGFloat width = LTFeedContentWidth() - _avatarHeight - LTLayoutXOffset;
     _textHeight = [self.contentText sizeWithFont:LTFontDetail() constrainedToSize:CGSizeMake(width, 10000)].height;
-    
+ 
     _topRect = CGRectMake(0, 0, CGRectLoadViewFrame.size.width, _avatarHeight);
     _bottomRect = CGRectMake(LTLayoutXOffset + _avatarHeight + 10, CGRectGetMaxY(_topRect) + LTLayoutYOffset, width, _textHeight);
 }

@@ -37,14 +37,18 @@
     [super setFont:font];
     _needUpdateTextHeight = YES;
 }
-
+- (void) setFrame:(CGRect)frame
+{
+    [super setFrame:frame];
+    _needUpdateTextHeight = YES;
+}
 - (void) layoutSubviews
 {
     [super layoutSubviews];
     if (_needUpdateTextHeight) {
         if (self.text) {
             CGSize size = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(CGRectGetWidth(self.bounds), 10000)];
-            self.adjustHeight= size.height + 8;
+            self.adjustHeight= size.height + 15;
         } else {
             self.adjustHeight = CGRectGetHeight(self.bounds);
         }

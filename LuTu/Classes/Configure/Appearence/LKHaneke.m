@@ -41,6 +41,7 @@ LTHNKShareCacheFormat(100, 100, CarMeet)
 LTHNKShareCacheFormat(100, 100, Avatar)
 
 
+NSString* const kPlaceHolderImageName = @"cover";
 
 
 @implementation UIImageView (PlaceHolder)
@@ -57,17 +58,17 @@ LTHNKShareCacheFormat(100, 100, Avatar)
 
 - (void) loadFeedBackgroundURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:@"cover"];
+    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
 }
 
 - (void) loadLittleImageURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:@"cover"];
+    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
 }
 
 - (void) loadImageURLWithDefaultPlaceHoler:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:@"cover"];
+    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
 }
 @end
 
