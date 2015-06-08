@@ -572,4 +572,27 @@ requestModel("LTSearchReq") { |r|
   p_string "keyword" , r
 }
 
+#我的动态列表
+
+model("PMUserNewsInfo")  {|m|
+  string "dynamicId", m
+  string "content", m
+  int64 "createTime", m
+  string "userId", m
+
+}
+model("PMUserDynamicListRsp") { |m|
+  int64 "offset", m
+  int64 "limit", m
+  int64 "total", m
+  array "list", "PMUserNewsInfo", m
+}
+requestModel("LTUserDynamicListReq") { |m|
+  method "/user/dynamic/list", m
+  p_int64 "pageNo", m
+  p_int64 "pageSize", m
+  p_string "userId", m
+  response "PMUserDynamicListRsp", m
+}
+
 FindProject()

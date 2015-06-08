@@ -24,6 +24,7 @@ PODS:
   - FXBlurView (1.6.3)
   - Haneke (1.0.1)
   - HexColors (2.2.1)
+  - InAppSettingsKit (2.6)
   - JSONModel (1.1.0)
   - libextobjc (0.4.1):
     - libextobjc/EXTADT (= 0.4.1)
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - FXBlurView
   - Haneke (~> 1.0)
   - HexColors
+  - InAppSettingsKit
   - libextobjc
   - MagicalRecord
   - Mantle
@@ -113,6 +115,7 @@ SPEC CHECKSUMS:
   FXBlurView: c6d23f3d35af2c6282296a2930f61c6e2c788d01
   Haneke: d60be8b96b228633b24708dd153169d6849d6f78
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
+  InAppSettingsKit: cc56d3ec45f11352a16d5b210da8a3fa1b9d05ed
   JSONModel: ec77e9865236a7a09d9cf7668df6b4b328d9ec1d
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba

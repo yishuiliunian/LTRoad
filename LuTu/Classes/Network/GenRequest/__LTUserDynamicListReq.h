@@ -1,7 +1,7 @@
 
 #import "MSRequest.h"
-#import "PMUserThreadListRsp.h"
-@interface __LTUserThreadListReq : MSRequest
+#import "PMUserDynamicListRsp.h"
+@interface __LTUserDynamicListReq : MSRequest
 
 @property(nonatomic,assign) int64_t pageNo;
 
@@ -10,6 +10,6 @@
 @property(nonatomic,strong) NSString* userId;
 
 
-- (void) didGetMessage:(PMUserThreadListRsp*)message;
+- (void) didGetMessage:(PMUserDynamicListRsp*)message;
 @end
     

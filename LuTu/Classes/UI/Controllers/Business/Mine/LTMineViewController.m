@@ -19,7 +19,9 @@
 #import "LTUserStatsListReq.h"
 #import "LTMyThreadDataController.h"
 #import "LTCarMeetFeedViewController.h"
-
+#import "LTSettingsViewController.h"
+#import "LTMyNewsDataController.h"
+#import "LTMyNewsViewController.h"
 @interface LTMineViewController () <MSRequestUIDelegate>
 {
     NSArray* _allActions;
@@ -49,10 +51,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [_topView.carFriendButton addTarget:self action:@selector(handleShowMyClub) forControlEvents:UIControlEventTouchUpInside];
     [_topView.favarateButton addTarget:self action:@selector(handleShowMyFavorate) forControlEvents:UIControlEventTouchUpInside];
     [_topView.feedButton addTarget:self action:@selector(handleShowMyThreads) forControlEvents:UIControlEventTouchUpInside];
+    [_topView.settingButton addTarget:self action:@selector(handleShowSettings) forControlEvents:UIControlEventTouchUpInside];
     //
     self.naviationBarStyle = LTNavigationStyleTransparency;
 }
 
+- (void) handleShowSettings
+{
+    LTSettingsViewController* settingsVC = [[LTSettingsViewController alloc] init];
+    [self.navigationController pushViewController:settingsVC animated:YES];
+}
 - (void) handleTapGestrue:(UITapGestureRecognizer*)tap
 {
     if (tap.state == UIGestureRecognizerStateRecognized) {
@@ -146,6 +154,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 64;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   LTActionItem* item = [_allActions objectAtIndex:indexPath.row];
+    if ([item.title isEqualToString:@"我的动态"]) {
+        LTMyNewsDataController* datController = [[LTMyNewsDataController alloc] init];
+        LTMyNewsViewController* viewController = [[LTMyNewsViewController alloc] initWithDataController:datController];
+        [self.navigationController pushViewController:viewController animated:YES];
+    }
 }
 @end
 

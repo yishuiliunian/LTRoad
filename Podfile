@@ -25,6 +25,7 @@ target 'LuTu' do
   pod 'SlackTextViewController'
   pod 'SZTextView'
   pod 'MJRefresh'
+  pod 'InAppSettingsKit'
 end
 
 
