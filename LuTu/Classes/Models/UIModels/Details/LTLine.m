@@ -17,14 +17,25 @@
         return self;
     }
     self.routeName = line.name;
-    self.distance = @"100";
-//    self.timeCoast = line.duration;
-//    self.carStyle = line.applicable_vehicle;
-    self.rloadCondition = @"良好";
+    self.distance = line.totalDistance;
+    self.timeCoast = line.totalTime;
+    self.carStyle = line.carType;
+    self.rloadCondition = line.routeStatus;
     self.startPointName = @"深圳大学";
     self.endPointName = @"北京";
-//    self.introText = line.summary;
-    self.categoryBadgeArray = LTBadgeTextArray(line.categoryList);
+    
+    NSMutableString* str = [NSMutableString new];
+    for (PMRoutePropInfo* prop  in line.routePropDetails) {
+        [str appendFormat:@"%@:%@", prop.propDesc, prop.propValue];
+    }
+    self.introText = [str copy];
+    
+    NSMutableArray* badgeItems = [NSMutableArray new];
+    for (PMCategoryInfo* info  in line.categoryList) {
+        LTBadgeItem* item = LTCreateBadgeItemWithText(info.name);
+        [badgeItems addObject:item];
+    }
+    self.categoryBadgeArray = badgeItems;
     _line = line;
     return self;
 }

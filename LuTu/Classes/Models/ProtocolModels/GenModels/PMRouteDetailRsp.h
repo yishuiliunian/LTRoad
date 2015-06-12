@@ -1,5 +1,6 @@
 
 #import <Mantle.h>
+#import "PMCategoryInfo.h" 
 
 #import "NSValueTransformer+NSString.h"
 
