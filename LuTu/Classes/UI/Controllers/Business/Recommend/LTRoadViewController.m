@@ -26,7 +26,6 @@
 - (void) locateTheAddress
 {
     LTCityTableViewController* cityVC = [LTCityTableViewController new];
-    LTNavigationController* nav = [[LTNavigationController alloc] initWithRootViewController:cityVC];
-    [self.navigationController pushViewController:nav animated:YES];
+    [self.navigationController pushViewController:cityVC animated:YES];
 }
 @end

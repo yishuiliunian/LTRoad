@@ -7,7 +7,7 @@
 //
 
 #import "LTCarMeetMenuView.h"
-
+#import "LTGlobals.h"
 @implementation LTCarMeetMenuView
 - (instancetype) initWithFrame:(CGRect)frame
 {
@@ -20,6 +20,10 @@
     //
     [_interButton setTitle:@"进入主页" forState:UIControlStateNormal];
     _detailTextLabel.numberOfLines = 0;
+    ColorLabelWithWhite(_detailTextLabel);
+    _interButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    _interButton.layer.borderWidth = 1;
+    _interButton.layer.cornerRadius = 3;
     return self;
 }
 

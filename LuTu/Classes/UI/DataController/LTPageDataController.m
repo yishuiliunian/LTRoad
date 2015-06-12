@@ -95,7 +95,7 @@
 
 - (void) handleReloadData:(NSArray*)data
 {
-    [self insertNewDatas:data];
+    _array = data;
     [self reloadUIAllUIData];
 }
 

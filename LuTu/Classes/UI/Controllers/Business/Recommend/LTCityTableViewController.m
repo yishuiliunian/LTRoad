@@ -11,6 +11,7 @@
 #import "PMCity.h"
 #import "LTUserDataManager.h"
 #import "LTNotificationTools.h"
+
 @interface LTCityCell : UITableViewCell
 
 @end
@@ -75,12 +76,12 @@ static NSString* const kCellCityIdentifier = @"kCellCityIdentifier";
     PMCity* city = _allCitys[indexPath.row];
     LTShareSettings().currentCity = city.cityID;
     LTLocalizedSettings();
-    [self dismissSelfViewController];
     LTPostCityReloadMessage(city.cityID);
+    [self dismissSelfViewController];
 }
 
 - (void) dismissSelfViewController
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
