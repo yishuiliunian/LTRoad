@@ -38,6 +38,21 @@
 {
     return DZSingleForClass([self class]);
 }
+
+- (void) registerColor:(NSString*)hexColor forKey:(NSString*)key
+{
+    if (!key) {
+        return ;
+    }
+    if (!hexColor) {
+        return;
+    }
+    
+    UIColor* color = [UIColor colorWithHexString:hexColor];
+    if (color) {
+        _colorMap[key] = color;
+    }
+}
 - (instancetype) init
 {
     self = [super init];

@@ -9,6 +9,8 @@
 #import "LTRecommendLine.h"
 #import "LTGlobals.h"
 #import "PMRouteInfo.h"
+#import "LTTagColorManager.h"
+#import "LTLocationManager.h"
 @implementation LTRecommendLine
 - (instancetype) initWithNetworkModel:(PMRouteInfo*)pmModel
 {
@@ -17,18 +19,25 @@
         return self;
     }
     self.createDate =  [NSDate date];
-//    NSMutableArray* array = [NSMutableArray new];
-//    for (NSString* tag  in pmModel.category) {
-//        [array addObject:LTCreateBadgeItemWithText(tag)];
-//    }
-//    self.tagBadgeItems = array;
-    self.distance = @"3.5KM";
-//    self.likeCount = pmModel.fav_count;
+    NSMutableArray* array = [NSMutableArray new];
+    for (PMRouteCategoryInfo* info in pmModel.categoryList) {
+        LTBadgeItem* item = LTCreateBadgeItemWithText(info.name);
+        [[LTTagColorManager shareInstance] registerColor:info.color forKey:info.name];
+        [array addObject:item];
+    }
+    self.tagBadgeItems = array;
+    self.distance = [[LTLocationManager shareManager] userDistanceToPoint:pmModel.location];
+    self.likeCount = pmModel.favCount;
     self.backgroudImageURL = STR_TO_URL(pmModel.introImageUrl);
     self.title = pmModel.name;
     self.createDateString = @"2/14";
     self.routeID =  pmModel.routeId;
+    [self caluateLayouts];
     return self;
 }
 
+- (void) caluateLayouts
+{
+    _distanceUIWidth = [self.distance sizeWithFont:LTFontDetail() constrainedToSize:CGSizeMake(1000, 10000)].width;
+}
 @end

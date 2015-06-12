@@ -13,6 +13,7 @@
 
 FOUNDATION_EXTERN NSValueTransformer* PMLinePointJSONTransformer();
 @interface PMLinePoint : MTLModel <MTLJSONSerializing>
++ (PMLinePoint*) defaultPoint;
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lng;
 @end

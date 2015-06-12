@@ -16,6 +16,19 @@
              LTMantleSameMapPair(lng)
              };
 }
+
+ + (PMLinePoint*) defaultPoint
+{
+    static PMLinePoint* point = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        point = [[PMLinePoint alloc] init];
+        point.lat = 1;
+        point.lng = 2;
+    });
+    return point;
+}
+
 @end
 
 

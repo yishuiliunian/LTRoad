@@ -7,6 +7,7 @@
 #import "NSValueTransformer+NSString.h"
 
 #import "PMLinePoint.h"
+#import "PMRouteCategoryInfo.h" 
 
 
 @interface PMRouteInfo : MTLModel <MTLJSONSerializing>

@@ -13,7 +13,9 @@
 #import "LTPostToolBar.h"
 #import "LTUIComment.h"
 #import "LTAdjustFrameTable.h"
-@interface LTFeedDetailViewController () <LTPostToolBarDelegate>
+#import "LTThreadPostListReq.h"
+#import "PMThreadPostListRsp.h"
+@interface LTFeedDetailViewController () <LTPostToolBarDelegate, MSRequestUIDelegate>
 {
     NSMutableDictionary* _allComments;
     LTFeedView* _headerFeedView;
@@ -139,16 +141,46 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     LTUIComment* c = CURRENT_ALL_COMMENTS[indexPath.row];
     return c.height;
 }
+
+- (void) postToolBar:(LTPostToolBar *)toolbar didMoveToIndex:(int)index
+{
+    [self reloadCommentsAtIndex:index];
+}
 #pragma mark reload data
 
 - (void) reloadCommentsAtIndex:(NSInteger)index
 {
-    NSMutableArray* array = [NSMutableArray new];
-    for (int i = 0 ; i < 40; i++) {
-        LTUIComment* c = [[LTUIComment alloc] initWithPMComment:nil];
-        [array addObject:c];
+    LTThreadPostListReq* postListReq = [LTThreadPostListReq new];
+    postListReq.threadId = _carFeedInfo.threadId;
+    postListReq.pageNo = index;
+    postListReq.pageSize = 5;
+    MSPerformRequestWithDelegateSelf(postListReq);
+}
+
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    
+}
+
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    NSInteger index = [(LTThreadPostListReq*)request pageNo];
+    PMThreadPostListRsp* rsp = (PMThreadPostListRsp*)object;
+    _pageIndex = index;
+    _postToolBar.pageCount = ceil((double)rsp.total / rsp.list.count);
+    _postToolBar.currentPageIndex = (int)rsp.offset;
+    
+    NSMutableArray* comments = [NSMutableArray new];
+    for (PMThreadPostInfo* info in rsp.list) {
+        LTUIComment* c = [[LTUIComment alloc] initWithPMComment:info];
+        [comments addObject:c];
     }
-    _allComments[NUM_TO_STR(index)] = array;
+    _allComments[NUM_TO_STR(_pageIndex)] = comments;
+    if (_pageIndex == 0) {
+        self.tableView.tableHeaderView = _headerFeedView;
+    } else {
+        self.tableView.tableHeaderView = 0;
+    }
     [self.tableView reloadData];
 }
 @end

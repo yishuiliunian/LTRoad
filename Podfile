@@ -26,6 +26,7 @@ target 'LuTu' do
   pod 'SZTextView'
   pod 'MJRefresh'
   pod 'InAppSettingsKit'
+  pod 'DateTools'
 end
 
 

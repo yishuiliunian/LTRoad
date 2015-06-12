@@ -57,13 +57,19 @@ end
 #服务器协议模型
 
 #单个多个线路信息获取
+
+model("PMRouteCategoryInfo") { |m|
+  string "color", m
+  string "name", m
+}
+
 model("PMRouteInfo") { |m|
   string "routeId", m
   string "name", m
   string "introImageUrl", m
   int32 "favCount", m
   point "location", m
-  array "categoryList", "NSString", m
+  array "categoryList", "PMRouteCategoryInfo", m
 }
 
 model("PMRouteListRsp") { |m|
@@ -378,7 +384,7 @@ requestModel("LTThreadPostListReq") { |r|
   response "PMThreadPostListRsp" , r
   p_int64 "pageNo" , r
   p_int64 "pageSize" , r
-  p_string "pageId" , r
+  p_string "threadId" , r
   p_string "creatorId" , r
 }
 

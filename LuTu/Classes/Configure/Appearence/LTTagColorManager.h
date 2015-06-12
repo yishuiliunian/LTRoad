@@ -12,4 +12,5 @@
 @interface LTTagColorManager : NSObject
 + (LTTagColorManager*) shareInstance;
 - (UIColor*) colorForKey:(NSString*)key;
+- (void) registerColor:(NSString*)hexColor forKey:(NSString*)key;
 @end

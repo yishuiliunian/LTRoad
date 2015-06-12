@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "PMLinePoint.h"
 #define LTShareLocationManger  [LTLocationManager shareManager]
 @interface LTLocationManager : NSObject
 + (LTLocationManager*) shareManager;
 @property (nonatomic, strong, readonly) NSString* currentCity;
+- (NSString*) userDistanceToPoint:(PMLinePoint*)point;
 @end

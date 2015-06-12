@@ -8,7 +8,7 @@
 
 #import "LTGlobals.h"
 
-
+#import <DateTools.h>
 NSString* LTCellIdentifierFromClass(Class cla) {
     return NSStringFromClass(cla);
 }
@@ -77,4 +77,10 @@ NSString*  ENSURE_STR(id object) {
         return [NSString stringWithFormat:@"%@",object];
     }
     
+}
+
+NSString* TIME_TO_STR(int64_t timeStamp)
+{
+    NSDate* date = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    return [date  formattedDateWithStyle:NSDateFormatterMediumStyle];
 }

@@ -14,7 +14,7 @@
     
 [self addParamterNumber:@(self.pageNo) forKey:@"pageNo"];
 [self addParamterNumber:@(self.pageSize) forKey:@"pageSize"];
-[self addParamter:self.pageId forKey:@"pageId"];
+[self addParamter:self.threadId forKey:@"threadId"];
 [self addParamter:self.creatorId forKey:@"creatorId"];
 
     return YES;

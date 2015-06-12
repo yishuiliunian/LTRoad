@@ -63,6 +63,12 @@
 
 }
 
+ 
 
+    + (NSValueTransformer*) categoryListJSONTransformer  {
+      return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:
+                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMRouteCategoryInfo")]];
+    }
+    
 
 @end

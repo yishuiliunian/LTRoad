@@ -7,7 +7,7 @@
 
 @property(nonatomic,assign) int64_t pageSize;
 
-@property(nonatomic,strong) NSString* pageId;
+@property(nonatomic,strong) NSString* threadId;
 
 @property(nonatomic,strong) NSString* creatorId;
 

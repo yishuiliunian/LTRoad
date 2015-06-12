@@ -15,20 +15,18 @@
 }
 @end
 @implementation LTUIComment
-- (instancetype) initWithPMComment:(PMComment *)comment
+- (instancetype) initWithPMComment:(PMThreadPostInfo *)comment
 {
     self = [super init];
     if (!self) {
         return self;
     }
 
-#ifdef DEBUG
-    _nickName = @"大话红";
-    _postDate = @"2033-101";
-    _roleName = @"1楼";
-    _avatarURL = [NSURL URLWithString:@"http://cdn.cocimg.com/bbs/attachment/upload/83/270831396235667.jpg"];
-    _contentText = @"爱的说法电话费金卡回房间阿萨德会发生大富科技阿萨德和附件阿萨德和附件阿萨德会发生代发货加快递费";
-#endif
+    _nickName = comment.creatorName;
+    _postDate = TIME_TO_STR(comment.createTime);
+    _avatarURL = STR_TO_URL(comment.creatorAvatarUrl);
+    _contentText =  comment.content;
+    _postId = comment;
     [self calculateLayout];
     return self;
 }

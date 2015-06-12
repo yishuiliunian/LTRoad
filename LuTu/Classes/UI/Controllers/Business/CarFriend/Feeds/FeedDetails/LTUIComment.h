@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "PMComment.h"
+#import "PMThreadPostInfo.h"
 @interface LTUIComment : NSObject
+@property (nonatomic, strong) NSString* postId;
 @property (nonatomic, strong) NSString* nickName;
 @property (nonatomic, strong) NSString* roleName;
 @property (nonatomic, strong) NSString* postDate;
@@ -19,5 +20,5 @@
 @property (nonatomic, assign) CGRect topRect;
 @property (nonatomic, assign) CGRect bottomRect;
 
-- (instancetype) initWithPMComment:(PMComment*)comment;
+- (instancetype) initWithPMComment:(PMThreadPostInfo*)comment;
 @end

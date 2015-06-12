@@ -43,11 +43,12 @@
     ColorLabelWithWhite(_dateLabel);
     ColorLabelWithWhite(_distanceLabel);
     ColorLabelWithWhite(_titleBabel);
-    
+    _distanceLabel.adjustsFontSizeToFitWidth = YES;
     //
     _distanceIconImageView.image = DZCachedImageByName(@"location_list");
     //
     [self decerateLikeButtonWithBeFav:NO count:0];
+    
 
 }
 
@@ -85,15 +86,15 @@
     [super layoutSubviews];
     _backgroundImageView.frame = CGRectCenterSubSize(self.contentView.bounds, CGSizeMake(10, 10));
     
-    CGSize distanceIconSize = CGSizeMake(30, 30);
+    CGSize distanceIconSize = CGSizeMake(70, 30);
     CGFloat xSpace = 10;
     CGFloat ySpace = 10;
     
     
     CGSize likeButtonSize = CGSizeMake(60, 20);
     CGFloat maxWidth = CGRectGetWidth(self.bounds) - xSpace*3 - likeButtonSize.width;
-    _distanceIconImageView.frame = CGRectMake(xSpace, CGRectGetMaxY(_backgroundImageView.frame) - ySpace - distanceIconSize.height, distanceIconSize.width, distanceIconSize.height);
-    CGRect distanceLabelFrame = CGRectOffset(_distanceIconImageView.frame, distanceIconSize.width + xSpace, 0);
+    _distanceIconImageView.frame = CGRectMake(xSpace, CGRectGetMaxY(_backgroundImageView.frame) - ySpace - distanceIconSize.height, distanceIconSize.height, distanceIconSize.height);
+    CGRect distanceLabelFrame = CGRectOffset(_distanceIconImageView.frame, CGRectGetWidth(_distanceIconImageView.frame) + xSpace, 0);
     distanceLabelFrame.size.width =  _line.distanceUIWidth;
     _distanceLabel.frame = distanceLabelFrame;
     

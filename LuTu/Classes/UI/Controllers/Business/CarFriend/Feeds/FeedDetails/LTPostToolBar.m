@@ -31,17 +31,18 @@
     //
     [_leftBtn setTitle:@"上一页" forState:UIControlStateNormal];
     [_rightBtn setTitle:@"下一页" forState:UIControlStateNormal];
-    [_leftBtn setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
-    [_rightBtn setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
+    [_leftBtn setTitleColor:LTColorGray() forState:UIControlStateNormal];
+    [_rightBtn setTitleColor:LTColorDetailGray() forState:UIControlStateDisabled];
     //
     
     [_leftBtn addTarget:self action:@selector(handleGoToBefore:) forControlEvents:UIControlEventTouchUpInside];
-    [_leftBtn addTarget:self action:@selector(handleGoToNext:) forControlEvents:UIControlEventTouchUpInside];
+    [_rightBtn addTarget:self action:@selector(handleGoToNext:) forControlEvents:UIControlEventTouchUpInside];
     _indexLabel.layer.cornerRadius = 5;
     _indexLabel.layer.borderWidth = 1;
     _indexLabel.layer.borderColor = LTColorDetailGray().CGColor;
     _indexLabel.textColor = LTColorDetailGray();
     _indexLabel.textAlignment = NSTextAlignmentCenter;
+    self.userInteractionEnabled = YES;
     [self showIndex];
     return self;
 }
@@ -85,6 +86,8 @@
 {
     _leftBtn.enabled = self.currentPageIndex > 1;
     _rightBtn.enabled = self.currentPageIndex < _pageCount;
+    
+    NSLog(@"left enable %d , right %d", _leftBtn.enabled, _rightBtn.enabled);
 }
 - (void) showIndex
 {
