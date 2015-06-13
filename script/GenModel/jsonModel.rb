@@ -122,7 +122,7 @@ model("PMRouteLineInfo") { |m|
   string "locationStart", m
 }
 model("PMRouteDetailRsp") { |m|
-  array "categoryList", "NSString", m
+  array "categoryList", "PMCategoryInfo", m
   bool "isFav", m
   string "name", m
   string "introImageUrl", m

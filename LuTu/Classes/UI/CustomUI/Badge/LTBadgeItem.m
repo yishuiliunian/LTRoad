@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "LTFont.h"
 
+
 NSArray* LTBadgeTextArray(NSArray* strArray)
 {
     NSMutableArray* array = [NSMutableArray new];
