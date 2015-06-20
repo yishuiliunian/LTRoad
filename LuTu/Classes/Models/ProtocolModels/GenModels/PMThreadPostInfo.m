@@ -43,4 +43,15 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"createTime"])
+	{
+	   self.createTime = 0;
+	}
+
+
+}
+
 @end

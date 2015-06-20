@@ -18,4 +18,25 @@
     }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"offset"])
+	{
+	   self.offset = 0;
+	}
+
+else if([key isEqualToString:@"limit"])
+	{
+	   self.limit = 0;
+	}
+
+else if([key isEqualToString:@"total"])
+	{
+	   self.total = 0;
+	}
+
+
+}
+
 @end

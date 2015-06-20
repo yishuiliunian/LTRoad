@@ -45,13 +45,13 @@
                 return point;
             }
         }
-        
+
         PMLinePoint* point = [PMLinePoint new];
         point.lat = 0;
         point.lng = 0;
         *success = YES;
         return point;
-        
+
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         if ([value isKindOfClass:[PMLinePoint class]]) {
             PMLinePoint* point = (PMLinePoint*) value;
@@ -70,5 +70,16 @@
                                   [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMRouteCategoryInfo")]];
     }
     
+
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"favCount"])
+	{
+	   self.favCount = 0;
+	}
+
+
+}
 
 @end

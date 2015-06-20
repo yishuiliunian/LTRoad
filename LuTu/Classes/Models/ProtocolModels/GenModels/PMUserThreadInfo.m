@@ -64,4 +64,15 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"postCount"])
+	{
+	   self.postCount = 0;
+	}
+
+
+}
+
 @end

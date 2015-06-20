@@ -37,4 +37,20 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"threadCount"])
+	{
+	   self.threadCount = 0;
+	}
+
+else if([key isEqualToString:@"userCount"])
+	{
+	   self.userCount = 0;
+	}
+
+
+}
+
 @end

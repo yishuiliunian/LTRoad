@@ -36,4 +36,15 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"routeCount"])
+	{
+	   self.routeCount = 0;
+	}
+
+
+}
+
 @end

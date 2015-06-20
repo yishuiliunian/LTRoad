@@ -169,13 +169,13 @@ class OCPointRecord < OCObjectRecord
                 return point;
             }
         }
-        
+
         PMLinePoint* point = [PMLinePoint new];
         point.lat = 0;
         point.lng = 0;
         *success = YES;
         return point;
-        
+
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         if ([value isKindOfClass:[PMLinePoint class]]) {
             PMLinePoint* point = (PMLinePoint*) value;
@@ -198,7 +198,16 @@ class OCNumberRecord < JSONRecord
   def paramterOutput
     RequestAddNumberParaters("self.#{@name}", @name)
   end
+
+  def nilDataSetter
+"else if([key isEqualToString:@\"#{@name}\"])
+\t{
+\t   self.#{@name} = 0;
+\t}
+"
+  end
 end
+
 
 def array(name, ocClass ,model=nil)
   r = OCArrayRecord.new("NSArray",name, ocClass)
@@ -244,4 +253,3 @@ def string(name, model)
   r = OCStringRecord.new("NSString",name)
   model.addRecord(r)
 end
-

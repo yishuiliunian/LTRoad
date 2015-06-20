@@ -124,6 +124,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     
     _headView.startEndView.startPointView.detailLabel.text = _uiDataLine.startPointName;
     _headView.startEndView.endPointView.detailLabel.text = _uiDataLine.endPointName;
+    _headView.routeInfoView.badgeContentView.badgeItems = _uiDataLine.categoryBadgeArray;
     [self loadMapData];
 }
 

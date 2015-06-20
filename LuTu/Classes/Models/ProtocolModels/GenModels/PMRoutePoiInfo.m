@@ -55,13 +55,13 @@
                 return point;
             }
         }
-        
+
         PMLinePoint* point = [PMLinePoint new];
         point.lat = 0;
         point.lng = 0;
         *success = YES;
         return point;
-        
+
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         if ([value isKindOfClass:[PMLinePoint class]]) {
             PMLinePoint* point = (PMLinePoint*) value;
@@ -85,5 +85,26 @@
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }
     
+
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"type"])
+	{
+	   self.type = 0;
+	}
+
+else if([key isEqualToString:@"cover"])
+	{
+	   self.cover = 0;
+	}
+
+else if([key isEqualToString:@"routeIndex"])
+	{
+	   self.routeIndex = 0;
+	}
+
+
+}
 
 @end

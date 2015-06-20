@@ -49,6 +49,12 @@ def OCClassImplitationWithModel(m)
             };
 }
 <json_functions>
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    <nil_data_setter>
+}
+
 @end
 '''
 
@@ -62,13 +68,19 @@ def OCClassImplitationWithModel(m)
   ocim = ocim.gsub(/<header_name>/, m.name)
 
   funcs = ""
+  nilSetter = ""
   m.records.each{ |r|
     if r.respond_to?("jsonTransformer")
       funcs = funcs + r.jsonTransformer +  "\n"
     end
+
+    if r.respond_to?("nilDataSetter")
+      nilSetter = nilSetter + r.nilDataSetter + "\n"
+    end
   }
 
   ocim = ocim.gsub(/<json_functions>/, funcs)
+  ocim = ocim.gsub(/<nil_data_setter>/, nilSetter)
 
   ocim
 end

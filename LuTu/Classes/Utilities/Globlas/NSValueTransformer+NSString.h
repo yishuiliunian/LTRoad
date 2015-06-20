@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 extern NSString * const TMDStringValueTransformerName;
+extern NSString* const TMDInt32ValueTransformerName;
+extern NSString* const TMDIntValueTransformerName;
+extern NSString* const TMDInt64ValueTransformerName;
 @interface NSValueTransformer (NSString)
 
 @end

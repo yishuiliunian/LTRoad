@@ -72,4 +72,20 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"createTime"])
+	{
+	   self.createTime = 0;
+	}
+
+else if([key isEqualToString:@"postCount"])
+	{
+	   self.postCount = 0;
+	}
+
+
+}
+
 @end

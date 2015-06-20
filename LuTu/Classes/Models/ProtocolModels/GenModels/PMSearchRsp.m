@@ -31,4 +31,10 @@
     }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    
+}
+
 @end

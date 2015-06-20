@@ -29,4 +29,15 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"memberType"])
+	{
+	   self.memberType = 0;
+	}
+
+
+}
+
 @end

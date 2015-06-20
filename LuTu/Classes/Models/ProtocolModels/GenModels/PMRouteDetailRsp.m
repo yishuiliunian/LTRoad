@@ -83,4 +83,20 @@
     }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"isFav"])
+	{
+	   self.isFav = 0;
+	}
+
+else if([key isEqualToString:@"favCount"])
+	{
+	   self.favCount = 0;
+	}
+
+
+}
+
 @end

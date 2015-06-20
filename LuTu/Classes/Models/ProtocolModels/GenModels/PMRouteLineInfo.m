@@ -36,4 +36,15 @@
 }
     
 
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"routeIndex"])
+	{
+	   self.routeIndex = 0;
+	}
+
+
+}
+
 @end

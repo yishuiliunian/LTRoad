@@ -50,13 +50,13 @@
                 return point;
             }
         }
-        
+
         PMLinePoint* point = [PMLinePoint new];
         point.lat = 0;
         point.lng = 0;
         *success = YES;
         return point;
-        
+
     } reverseBlock:^id(id value, BOOL *success, NSError *__autoreleasing *error) {
         if ([value isKindOfClass:[PMLinePoint class]]) {
             PMLinePoint* point = (PMLinePoint*) value;
@@ -104,5 +104,16 @@
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }
     
+
+- (void) setNilValueForKey:(NSString *)key
+{
+    if(NO){}
+    else if([key isEqualToString:@"createTime"])
+	{
+	   self.createTime = 0;
+	}
+
+
+}
 
 @end
