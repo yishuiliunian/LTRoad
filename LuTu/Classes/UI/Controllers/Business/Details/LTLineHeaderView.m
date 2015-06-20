@@ -60,4 +60,16 @@ const CGFloat  LTLineHeaderCellHeight =410;
     _lineView.frame = CGRectMake(0, CGRectGetMaxY(_startEndView.frame) + 10, CGRectGetWidth(self.bounds), 1);
     _routeInfoView.frame = CGRectMake(0, CGRectGetMaxY(_detailContentView.frame), CGRectGetWidth(self.bounds), _routeInfoView.adjustHeight);
 }
+
+- (BMKAnnotationView*) mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        BMKPointAnnotation* point = (BMKPointAnnotation*)annotation;
+        BMKPinAnnotationView* view =[[ BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:point.title];
+        view.pinColor = BMKPinAnnotationColorPurple;
+        view.animatesDrop = YES;
+        return view;
+    }
+    return nil;
+}
 @end

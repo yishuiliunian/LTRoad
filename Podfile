@@ -16,7 +16,6 @@ target 'LuTu' do
   pod 'HexColors'
   pod 'ProtobufObjC'
   pod 'Mantle'
-  pod 'Baidu-Maps-iOS-SDK'
   pod 'Masonry'
   pod 'DZSwipeViewController'
   pod 'libextobjc'

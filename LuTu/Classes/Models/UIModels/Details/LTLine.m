@@ -8,6 +8,14 @@
 
 #import "LTLine.h"
 #import "LTGlobals.h"
+#import <DZImageCache.h>
+UIImage* LTCarStyleImage(NSString* type) {
+    if ([type isEqualToString:@""]) {
+        return nil;
+    } else {
+        return DZCachedImageByName(@"car");
+    }
+}
 
 @implementation LTLine
 - (instancetype) initWithPMLine:(PMRouteDetailRsp *)line
@@ -23,6 +31,7 @@
     self.rloadCondition = line.routeStatus;
     self.startPointName = @"深圳大学";
     self.endPointName = @"北京";
+    self.carStyleImage = LTCarStyleImage(self.carStyle);
     
     NSMutableString* str = [NSMutableString new];
     for (PMRoutePropInfo* prop  in line.routePropDetails) {

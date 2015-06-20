@@ -9,10 +9,12 @@
 #import "LTLocationManager.h"
 #import <DZSingletonFactory.h>
 #import "PMLinePoint.h"
-#import <BMapKit.h>
-@interface LTLocationManager ()
+#import <BaiduMapAPI/BMapKit.h>
+@interface LTLocationManager () <CLLocationManagerDelegate>
 {
     PMLinePoint* _currentPoint;
+    BMKMapManager* _mapManager;
+    CLLocationManager* _locationManager;
 }
 @end
 @implementation LTLocationManager
@@ -63,7 +65,28 @@
         return self;
     }
     _currentPoint = [self reloadStoredPoint];
+    _mapManager =  [[BMKMapManager alloc] init];
     return self;
+}
+- (void) setup
+{
+    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8) {
+        //由于IOS8中定位的授权机制改变 需要进行手动授权
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.delegate = self;
+        //获取授权认证
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
+            [_locationManager requestAlwaysAuthorization];
+            [_locationManager requestWhenInUseAuthorization];
+        }
+    }
+}
+
+- (void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
+{
+    [_mapManager stop];
+    [ _mapManager  start:@"oorRwxz7etP9d75hdd4M9uMQ" generalDelegate:nil];
+ 
 }
 
 - (NSString*) userDistanceToPoint:(PMLinePoint*)point

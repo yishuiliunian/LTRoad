@@ -10,10 +10,11 @@
 #import "LTConfigure.h"
 #import <DZImageCache.h>
 #import "LTRoadListReq.h"
-#import <BMapKit.h>
+#import <BaiduMapAPI/BMapKit.h>
 #import <SAAuth/SAReqManager.h>
 #import "MSLog.h"
 #import "LTAppearenceTools.h"
+#import "LTLocationManager.h"
 
 
 void SetupSocialNetwork()
@@ -26,5 +27,5 @@ void SetupSocialNetwork()
     [MSLog setup];
     SetupSocialNetwork();
     [DZImageShareCache setupAssetsSourceType];
-    [[[BMKMapManager alloc] init]  start:@"fqYUrYb3PnInVt6GUSYxlbU8" generalDelegate:nil];
+    [[LTLocationManager shareManager] setup];
 }

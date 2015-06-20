@@ -130,39 +130,31 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 
 - (void) loadMapData
 {
-    NSArray* lines = _uiDataLine.line.lines;
+    NSArray* pois = _uiDataLine.line.pois;
     
-    if (lines.count < 1) {
+    if (pois.count < 1) {
         return;
     }
     
-    NSInteger coorCount = lines.count * 2;
-    CLLocationCoordinate2D* coors = malloc(sizeof(CLLocationCoordinate2D)*lines.count*2);
-    for (int i = 0; i < lines.count; i++) {
-        CLLocationCoordinate2D startC = coors[i];
-        CLLocationCoordinate2D endC = coors[i+1];
-        PMLineSegment* seg = lines[i];
-        startC.latitude = seg.locationStart.lat;
-        startC.longitude = seg.locationStart.lng;
+    NSMutableArray* annotations = [NSMutableArray new];
+    for (int i = 0; i < pois.count; i++) {
+        PMRoutePoiInfo* poi = pois[i];
+        CLLocationCoordinate2D startC;
+        startC.latitude = 38.213;
+        startC.longitude = 116;
         
-        endC.latitude = seg.locationEnd.lat;
-        endC.longitude = seg.locationEnd.lng;
+        
+        BMKPointAnnotation* anno = [BMKPointAnnotation new];
+        anno.coordinate = startC;
+        anno.title = @"i是北京";
+        [annotations addObject:anno];
+        
     }
-    BMKPolyline* polyline = [BMKPolyline polylineWithCoordinates:coors count:coorCount];
-    _headView.mapView.delegate = self;
-    [_headView.mapView addOverlay:polyline];
-    free(coors);
+    [_headView.mapView addAnnotations:annotations];
+    
+    [_headView.mapView showsUserLocation];
 }
-- (BMKOverlayView*) mapView:(BMKMapView *)mapView viewForOverlay:(id<BMKOverlay>)overlay
-{
-    if ([overlay isKindOfClass:[BMKPolyline class]]){
-        BMKPolylineView* polylineView = [[BMKPolylineView alloc] initWithOverlay:overlay] ;
-        polylineView.strokeColor = [[UIColor purpleColor] colorWithAlphaComponent:1];
-        polylineView.lineWidth = 5.0;
-        return polylineView;
-    }
-    return nil;
-}
+
 - (void)  replaceDataWithPOIS:(NSArray*)pois
 {
 }

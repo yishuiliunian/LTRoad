@@ -2839,6 +2839,9 @@
 		65A4A6891B16BF27000E62EE /* NSValueTransformer+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A6881B16BF27000E62EE /* NSValueTransformer+NSString.m */; };
 		65A4A68F1B17001F000E62EE /* LTGetRouteCommentReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4A68E1B17001F000E62EE /* LTGetRouteCommentReq.m */; };
 		65A687C55944B78CD207F1A5 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		65A68C291B3511C200CE691F /* BaiduMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A68C281B3511C200CE691F /* BaiduMapAPI.framework */; };
+		65A68C2B1B35142200CE691F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A68C2A1B35142200CE691F /* CoreLocation.framework */; };
+		65A68C2D1B35143B00CE691F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65A68C2C1B35143B00CE691F /* OpenGLES.framework */; };
 		65AAF4BD1B0AE33D00BE9FCD /* LTCoverFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */; };
 		65AE48DA1B23F2A7008DD36D /* LTMyThreadDataController.h in Headers */ = {isa = PBXBuildFile; fileRef = 65AE48D81B23F2A7008DD36D /* LTMyThreadDataController.h */; };
 		65AE48DB1B23F2A7008DD36D /* LTMyThreadDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AE48D91B23F2A7008DD36D /* LTMyThreadDataController.m */; };
@@ -2909,6 +2912,11 @@
 		65FD64D41ADB87D400FC94E0 /* DZexpandCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D31ADB87D400FC94E0 /* DZexpandCollectionViewController.m */; };
 		65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */; };
 		65FD64DA1ADB9A2E00FC94E0 /* LTCarMeetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */; };
+		65FE5D791B35148400D9C2E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FE5D781B35148400D9C2E5 /* QuartzCore.framework */; };
+		65FE5D7B1B35149000D9C2E5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FE5D7A1B35149000D9C2E5 /* SystemConfiguration.framework */; };
+		65FE5D7D1B35149900D9C2E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FE5D7C1B35149900D9C2E5 /* CoreGraphics.framework */; };
+		65FE5D7F1B3514A200D9C2E5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65FE5D7E1B3514A200D9C2E5 /* Security.framework */; };
+		65FE5D811B35156700D9C2E5 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65FE5D801B35156700D9C2E5 /* mapapi.bundle */; };
 		6606D481C40DA0989FB3F96A /* (null) in Sources */ = {isa = PBXBuildFile; };
 		661DEC4EDD8C8425E74EC820 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		662B9CFD851AEA1D8614042C /* (null) in Headers */ = {isa = PBXBuildFile; };
@@ -7272,6 +7280,9 @@
 		65A4A6881B16BF27000E62EE /* NSValueTransformer+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValueTransformer+NSString.m"; sourceTree = "<group>"; };
 		65A4A68D1B17001F000E62EE /* LTGetRouteCommentReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTGetRouteCommentReq.h; sourceTree = "<group>"; };
 		65A4A68E1B17001F000E62EE /* LTGetRouteCommentReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTGetRouteCommentReq.m; sourceTree = "<group>"; };
+		65A68C281B3511C200CE691F /* BaiduMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI.framework; sourceTree = "<group>"; };
+		65A68C2A1B35142200CE691F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65A68C2C1B35143B00CE691F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		65AAF4BB1B0AE33D00BE9FCD /* LTCoverFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTCoverFlowLayout.h; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.h; sourceTree = SOURCE_ROOT; };
 		65AAF4BC1B0AE33D00BE9FCD /* LTCoverFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LTCoverFlowLayout.m; path = LuTu/Classes/UI/CustomUI/LTCoverFlowLayout.m; sourceTree = SOURCE_ROOT; };
 		65AE48D81B23F2A7008DD36D /* LTMyThreadDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LTMyThreadDataController.h; path = LuTu/Classes/UI/Controllers/Business/CarFriend/MyCarClub/LTMyThreadDataController.h; sourceTree = SOURCE_ROOT; };
@@ -7375,6 +7386,11 @@
 		65FD64D61ADB89B100FC94E0 /* DZExpandCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZExpandCollectionViewCell.m; sourceTree = "<group>"; };
 		65FD64D81ADB9A2E00FC94E0 /* LTCarMeetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetCell.h; sourceTree = "<group>"; };
 		65FD64D91ADB9A2E00FC94E0 /* LTCarMeetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetCell.m; sourceTree = "<group>"; };
+		65FE5D781B35148400D9C2E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		65FE5D7A1B35149000D9C2E5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		65FE5D7C1B35149900D9C2E5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65FE5D7E1B3514A200D9C2E5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		65FE5D801B35156700D9C2E5 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = mapapi.bundle; path = BaiduMapAPI.framework/Resources/mapapi.bundle; sourceTree = "<group>"; };
 		6752B55635E985A4373CD206 /* __LTCarClubInfoShowReq.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = __LTCarClubInfoShowReq.h; path = GenRequest/__LTCarClubInfoShowReq.h; sourceTree = "<group>"; };
 		678A8F1550547DF758432C4A /* PMCategoryInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PMCategoryInfo.m; path = GenModels/PMCategoryInfo.m; sourceTree = "<group>"; };
 		68D5B2960C49838A96A6E1B8 /* LTUserStatsListReq.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LTUserStatsListReq.m; path = GenProtocols/LTUserStatsListReq.m; sourceTree = "<group>"; };
@@ -7500,8 +7516,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65FE5D7F1B3514A200D9C2E5 /* Security.framework in Frameworks */,
+				65FE5D7D1B35149900D9C2E5 /* CoreGraphics.framework in Frameworks */,
+				65FE5D7B1B35149000D9C2E5 /* SystemConfiguration.framework in Frameworks */,
+				65FE5D791B35148400D9C2E5 /* QuartzCore.framework in Frameworks */,
+				65A68C2D1B35143B00CE691F /* OpenGLES.framework in Frameworks */,
+				65A68C2B1B35142200CE691F /* CoreLocation.framework in Frameworks */,
 				652FB9601AD27B460082894E /* CoreData.framework in Frameworks */,
 				652FB9111AD23DF50082894E /* libc++.dylib in Frameworks */,
+				65A68C291B3511C200CE691F /* BaiduMapAPI.framework in Frameworks */,
 				0B4C9A237264EFE02FF51C91 /* libPods-LuTu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -8321,6 +8344,8 @@
 		65D1F0611AC28B34006525D0 = {
 			isa = PBXGroup;
 			children = (
+				65FE5D801B35156700D9C2E5 /* mapapi.bundle */,
+				65A68C281B3511C200CE691F /* BaiduMapAPI.framework */,
 				65D1F06C1AC28B34006525D0 /* LuTu */,
 				65D1F0861AC28B34006525D0 /* LuTuTests */,
 				65D1F06B1AC28B34006525D0 /* Products */,
@@ -8582,6 +8607,12 @@
 		EC9FC8B69BF65BF6E0F2FAAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65FE5D7E1B3514A200D9C2E5 /* Security.framework */,
+				65FE5D7C1B35149900D9C2E5 /* CoreGraphics.framework */,
+				65FE5D7A1B35149000D9C2E5 /* SystemConfiguration.framework */,
+				65FE5D781B35148400D9C2E5 /* QuartzCore.framework */,
+				65A68C2C1B35143B00CE691F /* OpenGLES.framework */,
+				65A68C2A1B35142200CE691F /* CoreLocation.framework */,
 				652FB95F1AD27B460082894E /* CoreData.framework */,
 				652FB9101AD23DF50082894E /* libc++.dylib */,
 				181D07AF18EA69C166263FAB /* libPods-LuTu.a */,
@@ -12174,6 +12205,7 @@
 				65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */,
 				65D1F07B1AC28B34006525D0 /* Images.xcassets in Resources */,
 				65AE48E41B251BA7008DD36D /* Settings.bundle in Resources */,
+				65FE5D811B35156700D9C2E5 /* mapapi.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -15886,6 +15918,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LuTu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -15901,6 +15937,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LuTu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

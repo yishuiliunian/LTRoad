@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Baidu-Maps-iOS-SDK/BMapKit.h>
+#import <BaiduMapAPI/BMapKit.h>
 #import "LTShowContentView.h"
 #import "LTLineStartEndView.h"
 #import "DZAdjustHeightTools.h"

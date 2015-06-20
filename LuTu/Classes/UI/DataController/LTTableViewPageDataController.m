@@ -8,6 +8,7 @@
 
 #import "LTTableViewPageDataController.h"
 #import "LTGlobals.h"
+#import <MJRefresh.h>
 @implementation LTTableViewPageDataController
 
 - (void) setObjectMapCell:(NSDictionary *)objectMapCell
@@ -31,8 +32,7 @@
         _tableView.dataSource = self;
         [self registerTableClass];
 //        [_tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(reloadAllData)];
-        _tableView.header.updatedTimeHidden = YES;
-        [_tableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(getNextPageData)];
+        _tableView.header = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageData)];
     }
 }
 

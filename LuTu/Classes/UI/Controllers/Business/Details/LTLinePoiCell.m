@@ -40,6 +40,7 @@
     _lineView.backgroundColor = LTColorPointGray();
     _contentTextLabel.numberOfLines = 0;
     
+    _contentTextLabel.font = LTFontPOIDetail();
     return self;
 }
 
