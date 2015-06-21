@@ -29,7 +29,20 @@
     _avatarImageView.hnk_cacheFormat = LTHanekeCacheFormatAvatar();
     [_exitButton setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
     
+    _exitButton.layer.borderColor = LTColorDetailGray().CGColor;
+    _exitButton.layer.borderWidth = 1;
+    _exitButton.layer.cornerRadius = 2;
     return self;
+}
+
+- (void) showInfoWithEnter
+{
+    [_exitButton setTitle:@"加入" forState:UIControlStateNormal];
+}
+
+- (void) showINfoWithExit
+{
+    [_exitButton setTitle:@"推出" forState:UIControlStateNormal];
 }
 - (void)awakeFromNib {
 }
@@ -56,7 +69,7 @@
     _exitButton.frame = CGRectMake(CGRectGetMaxX(_detailLabel.frame) + space, CGRectHeightOffsetCenter(self.bounds, exitButtonFrame.height), exitButtonFrame.width, exitButtonFrame.height);
 }
 
-- (void) setCarClubInfo:(LTUIMyCarClubInfo *)carClubInfo
+- (void) setCarClubInfo:(LTUICarMeet *)carClubInfo
 {
     if (_carClubInfo != carClubInfo) {
         _carClubInfo = carClubInfo;
@@ -67,9 +80,9 @@
 
 - (void) decoreateCell
 {
-    [_avatarImageView hnk_setImageFromURL:_carClubInfo.avatarImageUrl];
-    _titleLabel.text = _carClubInfo.name;
-    _detailLabel.text = _carClubInfo.detailInfo;
+    [_avatarImageView loadLittleImageURL:_carClubInfo.emblemURL];
+    _titleLabel.text = _carClubInfo.title;
+    _detailLabel.text = _carClubInfo.detail;
 }
 
 + (CGFloat) layoutCellHeight

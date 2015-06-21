@@ -13,6 +13,13 @@
 #import "LTGlobals.h"
 #import "LTUIRouteSearchInfo.h"
 #import "LTRouteDetailViewController.h"
+#import "LTUICarMeetFeed.h"
+#import "LTFeedDetailViewController.h"
+#import "LTMyCarClubViewController.h"
+#import "LTGlobals.h"
+#import <DZProgramDefines.h>
+#import "LTUICarMeet.h"
+#import "LTCarMeetDetailViewController.h"
 @interface LTSearchTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong) UISearchBar* searchBar;
 @property (nonatomic, strong) LTSearchDataController* dataController;
@@ -61,7 +68,7 @@
     id object = [_dataController objectAtIndexPath:indexPath];
     if ([object isKindOfClass:[LTUICarMeetFeed class]]) {
         return 100;
-    } else if ([object isKindOfClass:[LTUIMyCarClubInfo class]]) {
+    } else if ([object isKindOfClass:[LTUICarMeet class]]) {
         return 80;
     } else {
         return 80;
@@ -104,6 +111,17 @@
         LTUIRouteSearchInfo * info = object;
         LTRouteDetailViewController* vc = [[LTRouteDetailViewController alloc] initWithRouteID:info.routeId];
         [self.navigationController pushViewController:vc animated:YES];
+    } else if ([object isKindOfClass:[LTUICarMeetFeed class]]) {
+        LTUICarMeetFeed* feed = (LTUICarMeetFeed*)object;
+        LTFeedDetailViewController* detailVC = [LTFeedDetailViewController new];
+        detailVC.hidesBottomBarWhenPushed = YES;
+        detailVC.carFeedInfo = feed;
+        [self.navigationController pushViewController:detailVC animated:YES];
+    } else if ([object isKindOfClass:[LTUICarMeet class] ]) {
+        LTUICarMeet* info = (LTUICarMeet*)object;
+        LTCarMeetDetailViewController* clubViewController = [[LTCarMeetDetailViewController alloc] initWithCarClub:info];
+        [self.navigationController pushViewController:clubViewController animated:YES];
+        
     }
 }
 @end

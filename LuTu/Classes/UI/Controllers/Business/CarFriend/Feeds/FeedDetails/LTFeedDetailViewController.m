@@ -83,7 +83,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [_headerFeedView.feedHeaderView.commentButton setTitle:NUM_TO_STR(_carFeedInfo.commentCount) forState:UIControlStateNormal];
     _headerFeedView.feedHeaderView.clubNickLabel.text = _carFeedInfo.carTitle;
     _headerFeedView.topicHeaderView.nickLabel.text = _carFeedInfo.ownerName;
-    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_carFeedInfo.userAvatarURL];
+//    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_carFeedInfo.userAvatarURL];
     _headerFeedView.topicHeaderView.roleLabel.text = @"楼主";
     _headerFeedView.topicHeaderView.timeLabel.text = _carFeedInfo.postDate;
     _headerFeedView.feedContentView.contentLabel.text = _carFeedInfo.content;

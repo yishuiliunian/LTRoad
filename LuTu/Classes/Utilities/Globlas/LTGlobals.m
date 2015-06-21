@@ -51,7 +51,7 @@ UInt64 LTAlignTimeStamp(NSTimeInterval interval) {
 }
 
 NSTimeInterval LTUnAlgnTimeStamp(int64_t time) {
-    return (NSTimeInterval) time;
+    return (NSTimeInterval) time / 1000;
 }
 
 UInt64 LTCurrentTimeStamp()
@@ -65,7 +65,9 @@ NSDate* LTDateFromServerTimeInterval(int64_t time) {
     return [NSDate dateWithTimeIntervalSince1970:LTUnAlgnTimeStamp(time)];
 }
 
-
+NSString* LTDateShortStringFromInterval(int64_t time) {
+    return [LTDateFromServerTimeInterval(time) formattedDateWithFormat:@"yyyy-mm-dd"];
+}
 
 NSString*  ENSURE_STR(id object) {
     if ([object isKindOfClass:[NSString class]]) {

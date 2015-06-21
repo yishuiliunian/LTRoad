@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "LTUIMyCarClubInfo.h"
 #import "LTUICarMeetFeed.h"
 
 @interface LTSearchDataController : NSObject

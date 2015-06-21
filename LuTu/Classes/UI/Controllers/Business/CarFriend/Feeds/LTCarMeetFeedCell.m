@@ -62,7 +62,7 @@
 {
     [_feedImageView loadLittleImageURL:_carMeetFeed.feedImageURL];
     _carMeetTitleLabel.text = _carMeetFeed.carTitle;
-    _feedDetailLabel.text = _carMeetFeed.detail;
+    _feedDetailLabel.text = _carMeetFeed.content;
     _ownerNameLabel.text =[NSString stringWithFormat:@"%@ %@",_carMeetFeed.ownerName, _carMeetFeed.postDate];
     [_commentButton setTitle:[@(_carMeetFeed.commentCount) stringValue] forState:UIControlStateNormal];
     [self setNeedsLayout];

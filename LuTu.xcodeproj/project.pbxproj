@@ -2876,8 +2876,6 @@
 		65C224271ADE77D800BE26FA /* LTUICarMeetFeed.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */; };
 		65C2242B1ADE784300BE26FA /* LTCarMeetFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2242A1ADE784300BE26FA /* LTCarMeetFeedCell.m */; };
 		65CB8A95C0C8F363E9D1C0DF /* (null) in Sources */ = {isa = PBXBuildFile; };
-		65CDBA461AF8B08E008458C3 /* PMUserCarClub.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CDBA451AF8B08E008458C3 /* PMUserCarClub.m */; };
-		65CDBA491AF8B3D5008458C3 /* LTUIMyCarClubInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CDBA481AF8B3D5008458C3 /* LTUIMyCarClubInfo.m */; };
 		65D1E40F0C312EE9CB9BC44E /* (null) in Headers */ = {isa = PBXBuildFile; };
 		65D1F0701AC28B34006525D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1F06F1AC28B34006525D0 /* main.m */; };
 		65D1F0731AC28B34006525D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D1F0721AC28B34006525D0 /* AppDelegate.m */; };
@@ -7328,10 +7326,6 @@
 		65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUICarMeetFeed.m; sourceTree = "<group>"; };
 		65C224291ADE784300BE26FA /* LTCarMeetFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCarMeetFeedCell.h; sourceTree = "<group>"; };
 		65C2242A1ADE784300BE26FA /* LTCarMeetFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTCarMeetFeedCell.m; sourceTree = "<group>"; };
-		65CDBA441AF8B08E008458C3 /* PMUserCarClub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMUserCarClub.h; sourceTree = "<group>"; };
-		65CDBA451AF8B08E008458C3 /* PMUserCarClub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMUserCarClub.m; sourceTree = "<group>"; };
-		65CDBA471AF8B3D5008458C3 /* LTUIMyCarClubInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIMyCarClubInfo.h; sourceTree = "<group>"; };
-		65CDBA481AF8B3D5008458C3 /* LTUIMyCarClubInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIMyCarClubInfo.m; sourceTree = "<group>"; };
 		65CDBA4A1AF8B5E2008458C3 /* LTCommonTTableViewCellLayoutProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTCommonTTableViewCellLayoutProtocol.h; sourceTree = "<group>"; };
 		65D1F06A1AC28B34006525D0 /* LuTu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LuTu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D1F06E1AC28B34006525D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -8316,8 +8310,6 @@
 				650C0C4D1AE60F8C008FC2B8 /* PMNoticePOI.m */,
 				65A3F68E1AE8E34C00BD6B1F /* PMToken.h */,
 				65A3F68F1AE8E34C00BD6B1F /* PMToken.m */,
-				65CDBA441AF8B08E008458C3 /* PMUserCarClub.h */,
-				65CDBA451AF8B08E008458C3 /* PMUserCarClub.m */,
 				65B283421AF8BEB5001E85A6 /* PMMyFavorite.h */,
 				65B283431AF8BEB5001E85A6 /* PMMyFavorite.m */,
 				65A0EA451B01FF120061B3FF /* PMCity.h */,
@@ -8481,8 +8473,6 @@
 				65D1FCA01ADBB29E00CB90F9 /* LTUICarMeet.m */,
 				65C224251ADE77D800BE26FA /* LTUICarMeetFeed.h */,
 				65C224261ADE77D800BE26FA /* LTUICarMeetFeed.m */,
-				65CDBA471AF8B3D5008458C3 /* LTUIMyCarClubInfo.h */,
-				65CDBA481AF8B3D5008458C3 /* LTUIMyCarClubInfo.m */,
 				651E2B241B073DEB000E42F9 /* LTUIComment.h */,
 				651E2B251B073DEB000E42F9 /* LTUIComment.m */,
 				658B181F1B1E0C0D00A99DD9 /* LTUIClubMember.h */,
@@ -12279,7 +12269,6 @@
 				65A3F6751AE8C55500BD6B1F /* LTUserDataManager.m in Sources */,
 				65FD64D71ADB89B100FC94E0 /* DZExpandCollectionViewCell.m in Sources */,
 				65D9CD1B1AD54A8200CBF695 /* LTLikeButton.m in Sources */,
-				65CDBA491AF8B3D5008458C3 /* LTUIMyCarClubInfo.m in Sources */,
 				65C224271ADE77D800BE26FA /* LTUICarMeetFeed.m in Sources */,
 				6517E7831AE788A6004F71BC /* LTShowContentView.m in Sources */,
 				652FB9471AD276520082894E /* LTGlobalViewController.m in Sources */,
@@ -12378,7 +12367,6 @@
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
 				65B2834A1AF8C58A001E85A6 /* LTCarMeetFeedDataController.m in Sources */,
-				65CDBA461AF8B08E008458C3 /* PMUserCarClub.m in Sources */,
 				65F9B60A1B1321830060AC39 /* PMLineSegment.m in Sources */,
 				65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */,
 				657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */,

@@ -41,14 +41,7 @@
 }
 
 - (NSArray *)layoutAttributesForElementsInRect:(CGRect)rect {
-    //    CGFloat xOffset = self.collectionView.contentOffset.x;
     NSArray *idxPaths = [self indexPathsContainedInRect:rect];
-    //    CGRect visibleRect = (CGRect){self.collectionView.contentOffset, self.collectionView.bounds.size};
-    
-    //    NSLog(@"Current offset: %.2f.", xOffset);
-    //    NSLog(@"Visible rect: %@. Requested rect: %@", NSStringFromCGRect(visibleRect), NSStringFromCGRect(rect));
-    //    NSLog(@"Got %d items for requested rect.", (int32_t)idxPaths.count);
-    
     NSMutableArray *resultingAttributes = [NSMutableArray new];
     
     for (NSIndexPath *path in idxPaths) {
@@ -67,7 +60,7 @@
     attributes.size = self.itemSize;
     attributes.center = (CGPoint){
         [self collectionViewWidth] * indexPath.row + [self collectionViewWidth],
-        [self collectionViewHeight] / 2
+        ([self collectionViewHeight]) / 2 + 64
     };
     
     [self interpolateAttributes:attributes

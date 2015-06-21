@@ -17,13 +17,11 @@
     }
     _carTitle = threadInfo.carClubName;
     _ownerName = threadInfo.userName;
-    _detail = threadInfo.content;
     _commentCount = threadInfo.postCount;
     _feedImageURL = STR_TO_URL(threadInfo.userAvastarurl);
     _threadId = threadInfo.threadId;
     _title = threadInfo.title;
     _content = threadInfo.content;
-    _userAvatarURL = STR_TO_URL(threadInfo.userAvastarurl);
     return self;
 }
 
@@ -35,11 +33,12 @@
     }
     _carTitle = searchInfo.carClubName;
     _ownerName = searchInfo.userName;
-    _commentCount = searchInfo.postCount;
+    _commentCount = (int)searchInfo.postCount;
     _threadId = searchInfo.threadId;
     _title = searchInfo.title;
     _content = searchInfo.content;
-    _userAvatarURL = STR_TO_URL(searchInfo.userAvastarurl);
+    _feedImageURL = STR_TO_URL(searchInfo.userAvastarurl);
+    _postDate = LTDateShortStringFromInterval(searchInfo.createTime);
 
     return self;
 }
@@ -53,13 +52,11 @@
     
     _carTitle = threadInfo.carClubName;
     _ownerName = threadInfo.userName;
-    _detail = threadInfo.content;
     _commentCount = threadInfo.postCount;
     _postDate = @"2012/1/1";
     _threadId = threadInfo.threadId;
     _title = threadInfo.title;
     _content = threadInfo.content;
-    _userAvatarURL = STR_TO_URL(threadInfo.userAvastarurl);
     return self;
 }
 @end

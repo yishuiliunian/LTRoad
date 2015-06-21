@@ -64,3 +64,4 @@ FOUNDATION_EXTERN NSString*  ENSURE_STR(id object);
 //date
 
 FOUNDATION_EXTERN NSDate* LTDateFromServerTimeInterval(int64_t time);
+FOUNDATION_EXTERN NSString* LTDateShortStringFromInterval(int64_t time);

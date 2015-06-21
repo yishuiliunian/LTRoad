@@ -53,22 +53,22 @@ NSString* const kPlaceHolderImageName = @"cover";
 
 - (void) loadAvatarURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:@"avatar_default"];
+    [self loadRemoteURL:url placeHolderName:@"avatar_blank"];
 }
 
 - (void) loadFeedBackgroundURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
+    [self loadRemoteURL:url placeHolderName:@"index_blank"];
 }
 
 - (void) loadLittleImageURL:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
+    [self loadRemoteURL:url placeHolderName:@"square_blank"];
 }
 
 - (void) loadImageURLWithDefaultPlaceHoler:(NSURL*)url
 {
-    [self loadRemoteURL:url placeHolderName:kPlaceHolderImageName];
+    [self loadRemoteURL:url placeHolderName:@"square_blank"];
 }
 @end
 

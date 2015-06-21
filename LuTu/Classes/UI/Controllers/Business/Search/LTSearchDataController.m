@@ -28,7 +28,7 @@
         _tableView.dataSource = self;
         
         [self.tableView registerClass:[LTCarMeetFeedCell class] forCellReuseIdentifier:LTCellIdentifierFromClass([LTUICarMeetFeed class])];
-        [self.tableView registerClass:[LTMyClubTableViewCell class] forCellReuseIdentifier:LTCellIdentifierFromClass([LTUIMyCarClubInfo class])];
+        [self.tableView registerClass:[LTMyClubTableViewCell class] forCellReuseIdentifier:LTCellIdentifierFromClass([LTUICarMeet class])];
         [self.tableView registerClass:[LTSearchRouteTableViewCell class] forCellReuseIdentifier:LTCellIdentifierFromClass([LTUIRouteSearchInfo class])];
     }
 }
@@ -79,7 +79,7 @@
     NSMutableArray* threadArray = [NSMutableArray new];
     
     for (PMClubSearchInfo* sInfo in rsp.clubs) {
-        LTUIMyCarClubInfo* info = [[LTUIMyCarClubInfo alloc] initWithSearchInfo:sInfo];
+        LTUICarMeet* info = [[LTUICarMeet alloc] initWithSearchInfo:sInfo];
         [clubArray addObject:info];
     }
     
@@ -111,7 +111,7 @@
 - (NSString*) headerViewIdentifierForSection:(NSInteger)section
 {
     id object = _allDatas[section][0];
-    if ([object isKindOfClass:[LTUIMyCarClubInfo class]]) {
+    if ([object isKindOfClass:[LTUICarMeet class]]) {
         return @"圈子";
     } else if ([object isKindOfClass:[LTUICarMeetFeed class]])
     {
@@ -141,7 +141,8 @@
     NSString* key = LTCellIdentifierFromClass(object.class);
     UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:key forIndexPath:indexPath];
     if ([cell isKindOfClass:[LTMyClubTableViewCell class]]) {
-        [(LTMyClubTableViewCell*)cell setCarClubInfo:(LTUIMyCarClubInfo*)object];
+        [(LTMyClubTableViewCell*)cell setCarClubInfo:(LTUICarMeet*)object];
+        [(LTMyClubTableViewCell*)cell showInfoWithEnter];
     } else if ([cell isKindOfClass:[LTCarMeetFeedCell class]]) {
         [(LTCarMeetFeedCell*)cell setCarMeetFeed:(LTUICarMeetFeed *)object];
     } else if ([cell isKindOfClass:[LTSearchRouteTableViewCell class]]) {
@@ -149,7 +150,5 @@
     }
     return cell;
 }
-
-
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "PMUserCarClubSimpleInfo.h"
+#import "PMClubSearchInfo.h"
+#import "PMUserClubInfo.h"
 @interface LTUICarMeet : NSObject
 @property (nonatomic, strong) NSString* clubID;
 @property (nonatomic, strong) NSString* key;
@@ -16,5 +18,8 @@
 @property (nonatomic, strong) NSString* detail;
 
 - (instancetype) initWithSimpleInfo:(PMUserCarClubSimpleInfo*)info;
+
+- (instancetype) initWithSearchInfo:(PMClubSearchInfo*)info;
+- (instancetype) initWithClubInfo:(PMUserClubInfo*)info;
 @end
 

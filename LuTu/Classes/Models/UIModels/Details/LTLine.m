@@ -10,9 +10,18 @@
 #import "LTGlobals.h"
 #import <DZImageCache.h>
 UIImage* LTCarStyleImage(NSString* type) {
-    if ([type isEqualToString:@""]) {
-        return nil;
-    } else {
+    if ([type isEqualToString:@"小轿车"]) {
+        return DZCachedImageByName(@"car");
+    }
+    else if ([type isEqualToString:@"SUV"])
+    {
+        return DZCachedImageByName(@"suv");
+    }
+    else if ([type isEqualToString:@"自行车"])
+    {
+        return DZCachedImageByName(@"bike");
+    }
+    else {
         return DZCachedImageByName(@"car");
     }
 }

@@ -71,7 +71,7 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LTMyClubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCarClubViewCellIdentifier forIndexPath:indexPath];
-    LTUIMyCarClubInfo* info = _allCarClubs[indexPath.row];
+    LTUICarMeet* info = _allCarClubs[indexPath.row];
     cell.carClubInfo = info;
     return cell;
 }
