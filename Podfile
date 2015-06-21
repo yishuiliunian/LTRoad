@@ -26,6 +26,7 @@ target 'LuTu' do
   pod 'MJRefresh'
   pod 'InAppSettingsKit'
   pod 'DateTools'
+  pod 'JSBadgeView'
 end
 
 

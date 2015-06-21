@@ -28,6 +28,8 @@ DEFINE_PROPERTY_STRONG_UIImageView(bookLeftSideEffetImageView);
     _backgroundImageView.layer.masksToBounds = YES;
     ColorLabelWithWhite(_titleLabel);
     _bookLeftSideEffetImageView.image = DZCachedImageByName(@"book_side_effet");
+    _bookLeftSideEffetImageView.backgroundColor = LTColorBalckAlpha6();
+    _backgroundImageView.layer.cornerRadius = 4;
     return self;
 }
 
@@ -35,7 +37,7 @@ DEFINE_PROPERTY_STRONG_UIImageView(bookLeftSideEffetImageView);
 {
     [super layoutSubviews];
     CGRect sideRect = self.bounds;
-    sideRect.size.width = 10;
+    sideRect.size.width = 5;
     _bookLeftSideEffetImageView.frame = sideRect;
     self.backgroundImageView.frame = self.bounds;
     CGFloat xOffSet = 10;
