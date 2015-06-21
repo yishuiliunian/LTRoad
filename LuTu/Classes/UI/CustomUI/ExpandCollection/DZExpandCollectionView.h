@@ -14,6 +14,7 @@
 @end
 
 @interface DZExpandCollectionView : UICollectionView
+@property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, weak) NSObject<DZExpandCollectionViewDelegate>* expandDelegate;
 @property (nonatomic, assign ,readonly) BOOL expanded;
 - (void) closeExpand:(DZExpandCollectionViewCell*)tapCell;

@@ -8,6 +8,8 @@
 
 #import "DZExpandCollectionView.h"
 #import "DZExpandCollectionViewCell.h"
+#import <DZProgramDefines.h>
+#import <DZImageCache.h>
 @class DZExpandCollectionView;
 @interface DZExpandCollectionViewTouchDelegate : NSObject <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) DZExpandCollectionView* collectionView;
@@ -41,6 +43,7 @@
     NSArray* _beforeCells;
     NSArray* _afertCells;
 }
+DEFINE_PROPERTY_STRONG_UIImageView(selectedIndicatorImageView);
 @property (nonatomic, strong) DZExpandCollectionViewTouchDelegate* touchDelegate;
 @end
 
@@ -53,6 +56,8 @@
         return self;
     }
     [self expandCommonInit];
+    INIT_SELF_SUBVIEW_UIImageView(_selectedIndicatorImageView);
+    _selectedIndicatorImageView.image = DZCachedImageByName(@"car_arrow_sub");
     return self;
 }
 
@@ -205,4 +210,30 @@
     }
     [super reloadData];
 }
+
+- (void) setSelectedIndex:(NSInteger)selectedIndex
+{
+    _selectedIndex = selectedIndex;
+    [self setNeedsLayout];
+}
+
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    
+    
+    NSUInteger cellCount = [self.dataSource collectionView:self numberOfItemsInSection:0];
+    if (_selectedIndex < cellCount) {
+        UICollectionViewCell* cell = [self cellForItemAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
+        CGRect selectRect;
+        selectRect.size.width = 70;
+        selectRect.size.height = 10;
+        
+        selectRect.origin.x = cell.center.x - selectRect.size.width / 2;
+        selectRect.origin.y = CGRectGetMaxY(self.bounds) - selectRect.size.height;
+        _selectedIndicatorImageView.frame = selectRect;
+        [self bringSubviewToFront:_selectedIndicatorImageView];
+    }
+}
+
 @end

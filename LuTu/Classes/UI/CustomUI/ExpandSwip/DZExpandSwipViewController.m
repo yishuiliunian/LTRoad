@@ -84,6 +84,7 @@
         return ;
     }
     [_pageViewController setViewControllers:@[[self viewControllerAtIndex:index]] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion:nil];
+    _expandCollectioViewController.expandCollectionView.selectedIndex = index;
  
 }
 - (void) viewWillLayoutSubviews
@@ -179,7 +180,10 @@
 
 - (void) pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed
 {
-    
+    LTCarMeetFeedViewController* vc = pageViewController.viewControllers.count ? pageViewController.viewControllers[0] : nil;
+    LTUICarMeet* carMeet = [(LTCarMeetFeedDataController*)vc.dataController carMeet];
+    NSInteger index = [self indexOfCarMeet:carMeet];
+    _expandCollectioViewController.expandCollectionView.selectedIndex = index;
 }
 
 @end
