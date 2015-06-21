@@ -17,7 +17,6 @@
     CGFloat _ySpace;
     CGFloat _bottomHeight;
 }
-
 @end
 
 @implementation LTFeedHeadView
@@ -44,7 +43,7 @@
     _clubNickLabel.textColor = LTColorDetailGray();
     [_lookedCountButton setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
     [_commentButton setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
-    [_lookedCountButton setImage:DZCachedImageByName(@"post_comment") forState:UIControlStateNormal];
+    [_lookedCountButton setImage:DZCachedImageByName(@"look_icon") forState:UIControlStateNormal];
     [_commentButton setImage:DZCachedImageByName(@"post_comment") forState:UIControlStateNormal];
     return self;
 }

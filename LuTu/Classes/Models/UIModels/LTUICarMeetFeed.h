@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "PMThreadInfo.h"
-#import "PMThreadSearchInfo.h"
-#import "PMUserThreadInfo.h"
 @interface LTUICarMeetFeed : NSObject
 @property (nonatomic, strong) NSURL* feedImageURL;
 @property (nonatomic, strong) NSString* carTitle;
@@ -19,8 +17,7 @@
 @property (nonatomic, strong) NSString* threadId;
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* content;
-
+@property (nonatomic, strong) NSURL*  userAvatarURL;
+@property (nonatomic, strong) NSArray* images;
 - (instancetype) initWithThreadInfo:(PMThreadInfo*)threadInfo;
-- (instancetype) initWithSearchInfo:(PMThreadSearchInfo*)searchInfo;
-- (instancetype) initWithUserThreadInfo:(PMUserThreadInfo*)threadInfo;
 @end

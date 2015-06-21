@@ -34,13 +34,12 @@
 {
     _avatarHeight = 80;
     CGFloat width = LTFeedContentWidth() - _avatarHeight - LTLayoutXOffset;
-    _textHeight = [self.contentText sizeWithFont:LTFontDetail() constrainedToSize:CGSizeMake(width, 10000)].height;
- 
+    _textHeight = [self.contentText sizeWithFont:LTFontContentText() constrainedToSize:CGSizeMake(width, 10000)].height;
     _topRect = CGRectMake(0, 0, CGRectLoadViewFrame.size.width, _avatarHeight);
-    _bottomRect = CGRectMake(LTLayoutXOffset + _avatarHeight + 10, CGRectGetMaxY(_topRect) + LTLayoutYOffset, width, _textHeight);
+    _bottomRect = CGRectMake(LTLayoutXOffset + _avatarHeight, CGRectGetMaxY(_topRect) , width, _textHeight);
 }
 - (CGFloat) height
 {
-    return _textHeight + _avatarHeight + 3* LTLayoutYOffset;
+    return _textHeight + _avatarHeight + LTLayoutYOffset;
 }
 @end

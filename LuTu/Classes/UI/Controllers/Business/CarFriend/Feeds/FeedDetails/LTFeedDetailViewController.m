@@ -83,7 +83,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     [_headerFeedView.feedHeaderView.commentButton setTitle:NUM_TO_STR(_carFeedInfo.commentCount) forState:UIControlStateNormal];
     _headerFeedView.feedHeaderView.clubNickLabel.text = _carFeedInfo.carTitle;
     _headerFeedView.topicHeaderView.nickLabel.text = _carFeedInfo.ownerName;
-//    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_carFeedInfo.userAvatarURL];
+    [_headerFeedView.topicHeaderView.avatarImageView  loadAvatarURL:_carFeedInfo.userAvatarURL];
     _headerFeedView.topicHeaderView.roleLabel.text = @"楼主";
     _headerFeedView.topicHeaderView.timeLabel.text = _carFeedInfo.postDate;
     _headerFeedView.feedContentView.contentLabel.text = _carFeedInfo.content;
@@ -134,6 +134,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 {
     LTCommentTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     cell.comment = CURRENT_ALL_COMMENTS[indexPath.row];
+    cell.headerView.roleLabel.text = [NSString stringWithFormat:@"%d楼", indexPath.row + 1];
     return cell;
 }
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

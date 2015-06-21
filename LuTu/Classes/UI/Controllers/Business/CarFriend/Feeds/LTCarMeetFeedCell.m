@@ -39,7 +39,7 @@
     [_commentButton setTitleColor:LTColorDetailGray() forState:UIControlStateNormal];
     //
     _carMeetTitleLabel.font = LTFontSubTitle();
-    _feedDetailLabel.font = LTFontContentText();
+    _feedDetailLabel.font = LTFontSubTitle();
     _ownerNameLabel.font = LTFontSubTitle();
     //
     _carMeetTitleLabel.textColor = LTColorDetailGray();

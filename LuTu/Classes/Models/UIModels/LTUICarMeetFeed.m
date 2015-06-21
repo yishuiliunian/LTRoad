@@ -18,45 +18,27 @@
     _carTitle = threadInfo.carClubName;
     _ownerName = threadInfo.userName;
     _commentCount = threadInfo.postCount;
-    _feedImageURL = STR_TO_URL(threadInfo.userAvastarurl);
-    _threadId = threadInfo.threadId;
-    _title = threadInfo.title;
-    _content = threadInfo.content;
-    return self;
-}
-
-- (instancetype) initWithSearchInfo:(PMThreadSearchInfo *)searchInfo
-{
-    self = [super init];
-    if (!self) {
-        return self;
-    }
-    _carTitle = searchInfo.carClubName;
-    _ownerName = searchInfo.userName;
-    _commentCount = (int)searchInfo.postCount;
-    _threadId = searchInfo.threadId;
-    _title = searchInfo.title;
-    _content = searchInfo.content;
-    _feedImageURL = STR_TO_URL(searchInfo.userAvastarurl);
-    _postDate = LTDateShortStringFromInterval(searchInfo.createTime);
-
-    return self;
-}
-
-- (instancetype) initWithUserThreadInfo:(PMUserThreadInfo *)threadInfo
-{
-    self  = [super init];
-    if (!self) {
-        return self;
-    }
     
-    _carTitle = threadInfo.carClubName;
-    _ownerName = threadInfo.userName;
-    _commentCount = threadInfo.postCount;
-    _postDate = @"2012/1/1";
+    NSMutableArray* array = [NSMutableArray new];
+    for (PMImageInfo* img  in threadInfo.images) {
+        NSURL* url = STR_TO_URL(img.url);
+        if (url) {
+            [array addObject:url];
+        }
+    }
+    _images = array;
+    if (_images.count) {
+        _feedImageURL = _images[0];
+    } else
+    {
+        _feedImageURL = nil;
+    }
     _threadId = threadInfo.threadId;
     _title = threadInfo.title;
     _content = threadInfo.content;
+    _postDate = LTDateShortStringFromInterval(threadInfo.createTime);
+    _userAvatarURL = STR_TO_URL(threadInfo.userAvastarurl);
     return self;
 }
+
 @end

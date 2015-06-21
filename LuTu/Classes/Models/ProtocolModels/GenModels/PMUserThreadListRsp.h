@@ -1,6 +1,6 @@
 
 #import <Mantle.h>
-#import "PMUserThreadInfo.h" 
+#import "PMThreadInfo.h" 
 
 
 @interface PMUserThreadListRsp : MTLModel <MTLJSONSerializing>

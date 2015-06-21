@@ -12,6 +12,8 @@
 @"userName":@"userName",
 @"userAvastarurl":@"userAvastarurl",
 @"content":@"content",
+@"createTime":@"createTime",
+@"images":@"images",
 
             };
 }
@@ -63,6 +65,13 @@
     return [NSValueTransformer valueTransformerForName:TMDStringValueTransformerName];
 }
     
+ 
+
+    + (NSValueTransformer*) imagesJSONTransformer  {
+      return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:
+                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMImageInfo")]];
+    }
+    
 
 - (void) setNilValueForKey:(NSString *)key
 {
@@ -70,6 +79,11 @@
     else if([key isEqualToString:@"postCount"])
 	{
 	   self.postCount = 0;
+	}
+
+else if([key isEqualToString:@"createTime"])
+	{
+	   self.createTime = 0;
 	}
 
 

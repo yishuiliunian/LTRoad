@@ -23,6 +23,8 @@
     INIT_SELF_SUBVIEW_UILabel(_timeLabel);
     INIT_SELF_SUBVIEW_UILabel(_roleLabel);
     
+    _timeLabel.textColor = LTColorDetailGray();
+    _roleLabel.textColor = LTColorDetailGray();
     return self;
 }
 - (CGFloat) height
@@ -50,7 +52,6 @@
     CGRect nickRect;
     CGRect roleRect;
     
-    topRect = CGRectShrink(topRect, LTLayoutXOffset, CGRectMinXEdge);
     CGRectDivide(topRect, &roleRect, &nickRect, 50, CGRectMaxXEdge);
     
     _avatarImageView.frame = avatarRect;

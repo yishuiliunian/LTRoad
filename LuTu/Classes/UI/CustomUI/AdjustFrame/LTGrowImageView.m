@@ -41,10 +41,19 @@
 {
     [super layoutSubviews];
     if (_needUpdateAdjustHeight) {
-        if (!self.image || [self.image isEqual:DZCachedImageByName(kPlaceHolderImageName)]) {
+        if (!self.image || [self.image isEqual:DZCachedImageByName(kPlaceHolderImageName)] || self.image.size.width < 1 || self.image.size.height < 1) {
             self.adjustHeight = 0;
         } else {
-            self.adjustHeight = self.image.size.height /2;
+            CGSize imageSize = self.image.size;
+            imageSize = CGSizeMake(imageSize.width/2, imageSize.height/2);
+            CGFloat height = 0;
+            
+            CGFloat width = CGRectGetWidth(self.bounds);
+            if (width == 0) {
+                width = 1000;
+            }
+            height = imageSize.height* CGRectGetWidth(self.bounds) / imageSize.width;
+            self.adjustHeight = height;
         }
         _needUpdateAdjustHeight = NO;
     }

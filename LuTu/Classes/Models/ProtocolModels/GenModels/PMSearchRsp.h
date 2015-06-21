@@ -4,7 +4,7 @@
 
 #import "PMClubSearchInfo.h" 
 
-#import "PMThreadSearchInfo.h" 
+#import "PMThreadInfo.h" 
 
 
 @interface PMSearchRsp : MTLModel <MTLJSONSerializing>

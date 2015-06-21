@@ -88,8 +88,8 @@
         [routeArray addObject:info];
     }
     
-    for (PMThreadSearchInfo* tInfo in rsp.threads) {
-        LTUICarMeetFeed* feed = [[LTUICarMeetFeed alloc] initWithSearchInfo:tInfo];
+    for (PMThreadInfo* tInfo in rsp.threads) {
+        LTUICarMeetFeed* feed = [[LTUICarMeetFeed alloc] initWithThreadInfo:tInfo];
         [threadArray addObject:feed];
     }
     

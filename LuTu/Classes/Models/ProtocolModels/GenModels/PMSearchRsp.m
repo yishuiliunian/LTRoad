@@ -27,7 +27,7 @@
 
     + (NSValueTransformer*) threadsJSONTransformer  {
       return [NSValueTransformer mtl_arrayMappingTransformerWithTransformer:
-                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMThreadSearchInfo")]];
+                                  [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:NSClassFromString(@"PMThreadInfo")]];
     }
     
 

@@ -333,7 +333,11 @@ requestModel("LTThreadNewReq") {|r|
 }
 
 #车友会帖子列表
-
+model("PMImageInfo") { |m|
+  int64 "createTime", m
+  string "imageId", m
+  string "url", m
+}
 model("PMThreadInfo") { |m|
   string "threadId", m
   string "clubId", m
@@ -344,6 +348,8 @@ model("PMThreadInfo") { |m|
   string "userName", m
   string "userAvastarurl", m
   string "content", m
+  int64 "createTime",m
+  array "images", "PMImageInfo", m
 }
 
 model("PMThreadListRsp") { |m|
@@ -499,20 +505,10 @@ model("PMUserThreadListRsp") { |m|
   int32 "offset", m
   int32 "limit", m
   int32 "total", m
-  array "list", "PMUserThreadInfo", m
+  array "list", "PMThreadInfo", m
 }
 
-model("PMUserThreadInfo") { |m|
-  string "threadId", m
-  string "clubId", m
-  string "title", m
-  string "creatorId", m
-  int32 "postCount", m
-  string "carClubName", m
-  string "userName", m
-  string "userAvastarurl", m
-  string "content", m
-}
+
 
 requestModel("LTUserThreadListReq") { |r|
   method "/user/thread/list" , r
@@ -551,24 +547,10 @@ model("PMClubSearchInfo") { |m|
   int32 "threadCount", m
 }
 
-model("PMThreadSearchInfo") { |m|
-  string "carClubName", m
-  string "clubId", m
-  string "content", m
-  int64 "createTime", m
-  string "creatorId", m
-  string "images", m
-  int64 "postCount", m
-  string "threadId", m
-  string "title", m
-  string "userAvastarurl", m
-  string "userName", m
-}
-
 model("PMSearchRsp") { |m|
   array "routes", "PMRouteSearchInfo" , m
   array "clubs", "PMClubSearchInfo" , m
-  array "threads", "PMThreadSearchInfo" , m
+  array "threads", "PMThreadInfo" , m
 }
 
 requestModel("LTSearchReq") { |r|
