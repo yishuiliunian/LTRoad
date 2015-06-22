@@ -12,7 +12,9 @@
 #import <SZTextView.h>
 #import "LTGlobals.h"
 #import "LTThreadNewReq.h"
-
+#import <LMDropdownView.h>
+#import "LTTopActionButton.h"
+#import "MUAlertPool.h"
 @interface LTInputToolbar  : UIView
 DEFINE_PROPERTY_STRONG_UIImageView(backgroudImageView);
 DEFINE_PROPERTY_STRONG_UIButton(imageButton);
@@ -40,11 +42,14 @@ DEFINE_PROPERTY_STRONG_UIButton(imageButton);
 @end
 
 
-@interface LTAddThreadViewController () <MSRequestUIDelegate>
+@interface LTAddThreadViewController () <MSRequestUIDelegate, UITableViewDelegate, UITableViewDataSource, LTToggleActionProtocol>
 DEFINE_PROPERTY_STRONG(UITextField*, titleTextFiled);
 DEFINE_PROPERTY_STRONG(SZTextView*, contentTextView);
 DEFINE_PROPERTY_STRONG(LTInputToolbar*, inputToolbar);
 DEFINE_PROPERTY_STRONG_UIImageView(lineView);
+DEFINE_PROPERTY_STRONG(UITableView*, menuTableView);
+DEFINE_PROPERTY_STRONG(LMDropdownView*, dropDownView);
+DEFINE_PROPERTY_STRONG(LTTopActionButton*, actionButton);
 @end
 
 @implementation LTAddThreadViewController
@@ -106,8 +111,16 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
     
     //
     _inputToolbar.backgroundColor = LTColorGrayNormal();
+    _menuTableView = [UITableView new];
+    _menuTableView.delegate = self;
+    _menuTableView.dataSource = self;
+    [_menuTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellIdentifier];
+    
+    _dropDownView = [[LMDropdownView alloc] init];
+    _dropDownView.menuContentView = self.menuTableView;
 }
 
+static NSString*  kCellIdentifier = @"kCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -117,27 +130,48 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
     self.navigationItem.rightBarButtonItem = postItem;
 
     // Do any additional setup after loading the view.
+    
+    _actionButton= [LTTopActionButton new];
+    [_actionButton setTitle:@"xxxx" forState:UIControlStateNormal];
+    _actionButton.frame = CGRectMake(0, 0, 400, 44);
+    [_actionButton addToggleActionTarget:self];
+    self.navigationItem.titleView = _actionButton;
+    
+    
 }
 
+- (void) toggleActionButton:(LTTopActionButton *)sender
+{
+    if (sender.isAction) {
+        _menuTableView.frame = CGRectMake(self.menuTableView.frame.origin.x,
+                                          self.menuTableView.frame.origin.y,
+                                          CGRectGetWidth(self.view.frame),
+                                          MIN(CGRectGetHeight(self.view.bounds) /2, self.allCarClubs.count*44));
+        [_menuTableView reloadData];
+        [_dropDownView showInView:self.view withFrame:self.view.bounds];
+    } else {
+        [_dropDownView hide];
+    }
+}
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    
+    MUAlertShowSuccess(@"发布成功");
 }
 - (void) postFeed
 {
     LTThreadNewReq* req = [LTThreadNewReq new];
     req.creatorId = LTCurrentAccount.accountID;
-    req.clubId = @"1";
+    req.clubId = self.selectedCarMeet.clubID;
     req.title = _titleTextFiled.text;
     req.content = _contentTextView.text;
-    
     MSPerformRequestWithDelegateSelf(req);
+    MUAlertShowLoading(@"发布中...");
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -145,6 +179,7 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
     [super viewWillAppear:animated];
     [self layoutWithKeybordHeight:0];
     [_titleTextFiled becomeFirstResponder];
+    [self showCarClubInfo];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -160,5 +195,42 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
+}
+
+- (void) showCarClubInfo
+{
+    [_actionButton setTitle:self.selectedCarMeet.title forState:UIControlStateNormal];
+}
+
+- (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.allCarClubs.count;
+}
+
+- (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
+    LTUICarMeet* carmeet = self.allCarClubs[indexPath.row];
+    cell.textLabel.text = carmeet.title;
+    return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTUICarMeet* carmeet = self.allCarClubs[indexPath.row];
+    self.selectedCarMeet = carmeet;
+    [self showCarClubInfo];
+    [_dropDownView hide];
+    _actionButton.isAction = NO;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 @end

@@ -32,7 +32,7 @@
     [_leftBtn setTitle:@"上一页" forState:UIControlStateNormal];
     [_rightBtn setTitle:@"下一页" forState:UIControlStateNormal];
     [_leftBtn setTitleColor:LTColorGrayDeep() forState:UIControlStateNormal];
-    [_rightBtn setTitleColor:LTColorGrayEF() forState:UIControlStateDisabled];
+    [_rightBtn setTitleColor:LTColorGrayDeep() forState:UIControlStateNormal];
     //
     
     [_leftBtn addTarget:self action:@selector(handleGoToBefore:) forControlEvents:UIControlEventTouchUpInside];

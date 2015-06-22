@@ -27,6 +27,8 @@ target 'LuTu' do
   pod 'InAppSettingsKit'
   pod 'DateTools'
   pod 'JSBadgeView'
+  pod 'SVProgressHUD'
+  pod 'LMDropdownView'
 end
 
 

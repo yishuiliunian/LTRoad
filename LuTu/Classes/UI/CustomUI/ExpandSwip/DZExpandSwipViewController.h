@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DZexpandCollectionViewController.h"
 @interface DZExpandSwipViewController : UIViewController
-
+@property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
 @end

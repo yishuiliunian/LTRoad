@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "LTUICarMeet.h"
 @interface LTAddThreadViewController : UIViewController
-
+@property (nonatomic, strong) NSArray* allCarClubs;
+@property (nonatomic, strong) LTUICarMeet* selectedCarMeet;
 @end

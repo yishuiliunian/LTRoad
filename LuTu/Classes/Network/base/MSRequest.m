@@ -11,7 +11,7 @@
 #import "LTError.h"
 #import <NSString+URLEncode.h>
 #import "MSLog.h"
-
+#import "MUAlertPool.h"
 @interface MSRequest ()
 
 @end
@@ -77,6 +77,10 @@
     }
     return str;
 }
+
+- (void) willSendRequest:(NSMutableURLRequest*)request
+{
+}
 - (BOOL) doRequst
 {
     NSError* error= nil;
@@ -97,6 +101,7 @@
 
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:HttpMethodGET];
+    [self willSendRequest:request];
 
     //
     DDLogInfo(@"发送的请求详情:%@",request);
@@ -141,6 +146,9 @@
 - (void) doUIOnSuccced:(id)object
 {
     dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        MUAlertHideLoading;
+        });
         if ([self.uidelegate respondsToSelector:@selector(request:onSucced:)]) {
             [self.uidelegate request:self onSucced:object];
         }
@@ -150,6 +158,9 @@
 - (void) doUIOnError:(NSError*)error
 {
     dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        MUAlertHideLoading;
+        });
         if ([self.uidelegate respondsToSelector:@selector(request:onError:)]) {
             [self.uidelegate request:self onError:error];
         }

@@ -31,8 +31,7 @@
         _tableView = tableView;
         _tableView.dataSource = self;
         [self registerTableClass];
-//        [_tableView addLegendHeaderWithRefreshingTarget:self refreshingAction:@selector(reloadAllData)];
-        _tableView.header = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageData)];
+        _tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(getNextPageData)];
     }
 }
 
@@ -55,7 +54,6 @@
 {
     [super handleNextPageData:data];
     [_tableView.footer endRefreshing];
-    
 }
 - (void) reloadUIAllUIData
 {

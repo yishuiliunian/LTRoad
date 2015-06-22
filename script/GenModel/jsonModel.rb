@@ -329,7 +329,8 @@ requestModel("LTThreadNewReq") {|r|
   p_string "clubId", r
   p_string "title", r
   p_string "content", r
-  p_int64 "images", r
+  p_string "images", r
+  p_string "channel", r
 }
 
 #车友会帖子列表
@@ -606,6 +607,17 @@ requestModel("LTUserMessageListReq") { |m|
   response "PMUserMessageListRsp", m
   p_int64 "pageNo", m
   p_int64 "pageSize", m
+  p_string "userId", m
+}
+
+##上传图片接口
+model("PMUploadImageRsp") {|m|
+  string "image_url", m
+  string "imageId", m
+}
+requestModel("LTUploadImageReq") { |m|
+  method "/server/image/upload", m
+  response "PMUploadImageRsp", m
   p_string "userId", m
 }
 

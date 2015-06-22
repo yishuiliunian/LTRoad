@@ -14,6 +14,7 @@
 #import "LTUIComment.h"
 #import "LTAdjustFrameTable.h"
 #import "LTThreadPostListReq.h"
+#import "UIViewController+Additions.h"
 #import "PMThreadPostListRsp.h"
 @interface LTFeedDetailViewController () <LTPostToolBarDelegate, MSRequestUIDelegate>
 {
@@ -21,6 +22,8 @@
     LTFeedView* _headerFeedView;
     NSInteger _pageIndex;
     LTPostToolBar* _postToolBar;
+    
+    UISegmentedControl* _navTopSegmentControl;
 }
 @end
 
@@ -50,9 +53,22 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     
 }
 
+static NSString* const kLTThreadAll = @"全部";
+static NSString* const KLTThreadLouZHu = @"楼主";
+- (void) changedThreadOwner
+{
+    [self reloadCommentsAtIndex:1];
+}
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+   
+    _navTopSegmentControl = [[UISegmentedControl alloc] initWithItems:@[kLTThreadAll, KLTThreadLouZHu]];
+    self.navigationItem.titleView = _navTopSegmentControl;
+    _navTopSegmentControl.selectedSegmentIndex = 0;
+    [_navTopSegmentControl addTarget:self action:@selector(changedThreadOwner) forControlEvents:UIControlEventValueChanged];
+    
+    //
     _allComments = [NSMutableDictionary new];
     self.hidesBottomBarWhenPushed = YES;
     [self initSubViews];
@@ -61,8 +77,16 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     self.tableView.backgroundColor = LTColorBackgroundGray();
     
     
-    [self reloadCommentsAtIndex:0];
+    [self reloadCommentsAtIndex:1];
     [self reloadPostDetail];
+    
+    UIBarButtonItem* item = [self customBarButtonItemWithTarget:self selector:@selector(postComment) image:@"chat" highlightImage:@"chat"];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void) postComment
+{
+    
 }
 
 - (void) setCarFeedInfo:(LTUICarMeetFeed *)carFeedInfo
@@ -155,6 +179,12 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     postListReq.threadId = _carFeedInfo.threadId;
     postListReq.pageNo = index;
     postListReq.pageSize = 5;
+    
+    if (_navTopSegmentControl.selectedSegmentIndex == 0) {
+        postListReq.creatorId = nil;
+    } else {
+        postListReq.creatorId = self.carFeedInfo.threadInfo.creatorId;
+    }
     MSPerformRequestWithDelegateSelf(postListReq);
 }
 
@@ -165,11 +195,14 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
+    LTThreadPostListReq* req = (LTThreadPostListReq*)request;
     NSInteger index = [(LTThreadPostListReq*)request pageNo];
     PMThreadPostListRsp* rsp = (PMThreadPostListRsp*)object;
     _pageIndex = index;
-    _postToolBar.pageCount = ceil((double)rsp.total / rsp.list.count);
-    _postToolBar.currentPageIndex = (int)rsp.offset;
+    _postToolBar.pageCount = ceil((double)rsp.total / req.pageSize);
+//    _postToolBar.currentPageIndex = (int)rsp.offset;
+    
+    NSLog(@"------------%d",rsp.offset);
     
     NSMutableArray* comments = [NSMutableArray new];
     for (PMThreadPostInfo* info in rsp.list) {
@@ -177,7 +210,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
         [comments addObject:c];
     }
     _allComments[NUM_TO_STR(_pageIndex)] = comments;
-    if (_pageIndex == 0) {
+    if (_pageIndex == 1) {
         self.tableView.tableHeaderView = _headerFeedView;
     } else {
         self.tableView.tableHeaderView = 0;

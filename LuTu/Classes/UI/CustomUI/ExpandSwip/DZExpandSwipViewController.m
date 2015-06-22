@@ -13,7 +13,7 @@
 #import "LTCarMeetFeedDataController.h"
 #import "LTUserCarClubSimpleListReq.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
-@property (nonatomic, strong) DZexpandCollectionViewController* expandCollectioViewController;
+
 @property (nonatomic, strong) UIPageViewController* pageViewController;
 @property (nonatomic, strong) NSMutableDictionary* viewControllersMap;
 @end
@@ -57,19 +57,7 @@
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-#ifdef DEBUG
-    NSMutableArray* array = [NSMutableArray new];
-    for (int i = 0; i < 100; i++) {
-        LTUICarMeet* carMeet = [LTUICarMeet new];
-        carMeet.key = [@(i) stringValue];
-        carMeet.emblemURL =  [NSURL URLWithString:@"http://preview.quanjing.com/danita_rm008/us02-rbe0002.jpg"];
-        carMeet.title = @"奔驰";
-        carMeet.detail = @"";
-        [array addObject:carMeet];
-    }
-    _expandCollectioViewController.items = array;
-    [self scrollToPageViewControllerAtIndex:0];
-#endif
+
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
@@ -103,11 +91,10 @@
     LTCarMeetFeedViewController* carMeetVC = _viewControllersMap[key];
     if (!carMeetVC) {
         LTCarMeetFeedDataController* dataController = [LTCarMeetFeedDataController new];
+        dataController.carMeet = meet;
         carMeetVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
         _viewControllersMap[key] = carMeetVC;
-        dataController.carMeet = meet;
     }
-
     return carMeetVC;
     
 }

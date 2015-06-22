@@ -56,6 +56,8 @@
 {
     LTAddThreadViewController* vc = [LTAddThreadViewController new];
     vc.hidesBottomBarWhenPushed = YES;
+    vc.allCarClubs = self.swipViewController.expandCollectioViewController.items;
+    vc.selectedCarMeet = vc.allCarClubs[0];
     [self.navigationController pushViewController:vc animated:YES];
     
 }

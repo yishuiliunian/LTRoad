@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString* content;
 @property (nonatomic, strong) NSURL*  userAvatarURL;
 @property (nonatomic, strong) NSArray* images;
+@property (nonatomic, strong, readonly) PMThreadInfo* threadInfo;
 - (instancetype) initWithThreadInfo:(PMThreadInfo*)threadInfo;
 @end

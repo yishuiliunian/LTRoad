@@ -38,6 +38,7 @@
     _content = threadInfo.content;
     _postDate = LTDateShortStringFromInterval(threadInfo.createTime);
     _userAvatarURL = STR_TO_URL(threadInfo.userAvastarurl);
+    _threadInfo = threadInfo;
     return self;
 }
 

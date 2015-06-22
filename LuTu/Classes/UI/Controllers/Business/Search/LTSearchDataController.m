@@ -13,8 +13,9 @@
 #import "LTSearchReq.h"
 #import "LTUIRouteSearchInfo.h"
 #import "LTSearchRouteTableViewCell.h"
+#import "LTCarClubMemberJoinReq.h"
 
-@interface LTSearchDataController () <UITableViewDataSource, MSRequestUIDelegate>
+@interface LTSearchDataController () <UITableViewDataSource, MSRequestUIDelegate, LTClubActionProtocol>
 {
     NSArray* _allDatas;
 }
@@ -68,44 +69,48 @@
 #pragma msrequest delegate
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    PMSearchRsp* rsp = (PMSearchRsp*)object;
-    NSMutableArray* clubArray = [NSMutableArray new];
-    NSMutableArray* routeArray = [NSMutableArray new];
-    NSMutableArray* threadArray = [NSMutableArray new];
-    
-    for (PMClubSearchInfo* sInfo in rsp.clubs) {
-        LTUICarMeet* info = [[LTUICarMeet alloc] initWithSearchInfo:sInfo];
-        [clubArray addObject:info];
+    if ([request isKindOfClass:[LTSearchReq class]]) {
+        PMSearchRsp* rsp = (PMSearchRsp*)object;
+        NSMutableArray* clubArray = [NSMutableArray new];
+        NSMutableArray* routeArray = [NSMutableArray new];
+        NSMutableArray* threadArray = [NSMutableArray new];
+        
+        for (PMClubSearchInfo* sInfo in rsp.clubs) {
+            LTUICarMeet* info = [[LTUICarMeet alloc] initWithSearchInfo:sInfo];
+            [clubArray addObject:info];
+        }
+        
+        for (PMRouteSearchInfo* rInfo in rsp.routes) {
+            LTUIRouteSearchInfo* info = [[LTUIRouteSearchInfo alloc] initWithRouteInfo:rInfo];
+            [routeArray addObject:info];
+        }
+        
+        for (PMThreadInfo* tInfo in rsp.threads) {
+            LTUICarMeetFeed* feed = [[LTUICarMeetFeed alloc] initWithThreadInfo:tInfo];
+            [threadArray addObject:feed];
+        }
+        
+        NSMutableArray* array = [NSMutableArray new];
+        if (routeArray.count) {
+            [array addObject:routeArray];
+        }
+        if (threadArray.count) {
+            [array addObject:threadArray];
+        }
+        if (clubArray.count) {
+            [array addObject:clubArray];
+        }
+        
+        _allDatas = array;
+        [self.tableView reloadData];
+    } else if ([request isKindOfClass:[LTCarClubMemberJoinReq class]]) {
+        MUAlertShowSuccess(@"您已经成功加入");
     }
-    
-    for (PMRouteSearchInfo* rInfo in rsp.routes) {
-        LTUIRouteSearchInfo* info = [[LTUIRouteSearchInfo alloc] initWithRouteInfo:rInfo];
-        [routeArray addObject:info];
-    }
-    
-    for (PMThreadInfo* tInfo in rsp.threads) {
-        LTUICarMeetFeed* feed = [[LTUICarMeetFeed alloc] initWithThreadInfo:tInfo];
-        [threadArray addObject:feed];
-    }
-    
-    NSMutableArray* array = [NSMutableArray new];
-    if (routeArray.count) {
-        [array addObject:routeArray];
-    }
-    if (threadArray.count) {
-        [array addObject:threadArray];
-    }
-    if (clubArray.count) {
-        [array addObject:clubArray];
-    }
-
-    _allDatas = array;
-    [self.tableView reloadData];
 }
 
 - (NSString*) headerViewIdentifierForSection:(NSInteger)section
@@ -143,12 +148,23 @@
     if ([cell isKindOfClass:[LTMyClubTableViewCell class]]) {
         [(LTMyClubTableViewCell*)cell setCarClubInfo:(LTUICarMeet*)object];
         [(LTMyClubTableViewCell*)cell showInfoWithEnter];
+        [(LTMyClubTableViewCell*)cell setActionTarget:self];
     } else if ([cell isKindOfClass:[LTCarMeetFeedCell class]]) {
         [(LTCarMeetFeedCell*)cell setCarMeetFeed:(LTUICarMeetFeed *)object];
     } else if ([cell isKindOfClass:[LTSearchRouteTableViewCell class]]) {
         [(LTSearchRouteTableViewCell*)cell setRouteInfo:(LTUIRouteSearchInfo *)object];
     }
     return cell;
+}
+
+- (void) clubTableViewCell:(LTMyClubTableViewCell *)cell toggleActionWithMeet:(LTUICarMeet *)meet
+{
+    LTCarClubMemberJoinReq* req = [LTCarClubMemberJoinReq new];
+    req.carClubId = meet.clubID;
+    req.userId = LTCurrentAccount.accountID;
+    req.uidelegate = self;
+    [MSDefaultSyncCenter performRequest:req];
+    MUAlertShowLoading(@"正在加入...");
 }
 
 @end

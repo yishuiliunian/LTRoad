@@ -32,9 +32,18 @@
     _exitButton.layer.borderColor = LTColorDetailGray().CGColor;
     _exitButton.layer.borderWidth = 1;
     _exitButton.layer.cornerRadius = 2;
+    
+    [_exitButton addTarget:self action:@selector(toggleAction) forControlEvents:UIControlEventTouchUpInside];
+    
     return self;
 }
 
+- (void) toggleAction
+{
+    if ([self.actionTarget respondsToSelector:@selector(clubTableViewCell:toggleActionWithMeet:)]) {
+        [self.actionTarget clubTableViewCell:self toggleActionWithMeet:self.carClubInfo];
+    }
+}
 - (void) showInfoWithEnter
 {
     [_exitButton setTitle:@"加入" forState:UIControlStateNormal];

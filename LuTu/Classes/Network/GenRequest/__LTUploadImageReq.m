@@ -1,23 +1,18 @@
 
-#import "__LTThreadNewReq.h"
+#import "__LTUploadImageReq.h"
 #import <Mantle.h>
-#import "PMNullModel.h"
-@implementation __LTThreadNewReq
+#import "PMUploadImageRsp.h"
+@implementation __LTUploadImageReq
 
 - (NSString*) method
 {
-    return @"/thread/new";
+    return @"/server/image/upload";
 }
 - (bool) loadParamters:(NSError *__autoreleasing *)error
 {
     SendSuperFunctionWithError(loadParamters);
     
-[self addParamter:self.creatorId forKey:@"creatorId"];
-[self addParamter:self.clubId forKey:@"clubId"];
-[self addParamter:self.title forKey:@"title"];
-[self addParamter:self.content forKey:@"content"];
-[self addParamter:self.images forKey:@"images"];
-[self addParamter:self.channel forKey:@"channel"];
+[self addParamter:self.userId forKey:@"userId"];
 
     return YES;
 }
@@ -28,7 +23,7 @@
         retobject = @{@"list":retobject};
     }
     if ([retobject isKindOfClass:[NSNull class]]) {
-        [self didGetMessage:[PMNullModel new]];
+        [self didGetMessage:[PMUploadImageRsp new]];
     } else {
         id list = retobject[@"list"];
         if ([list isKindOfClass:[NSString class]]) {
@@ -38,7 +33,7 @@
                 retobject = dic;
             }
         }
-        PMNullModel* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMNullModel") fromJSONDictionary:retobject error:&error];
+        PMUploadImageRsp* message = [MTLJSONAdapter modelOfClass:NSClassFromString(@"PMUploadImageRsp") fromJSONDictionary:retobject error:&error];
         if (error) {
             [self onError:error];
             return;
@@ -47,7 +42,7 @@
     }
 }
 
-- (void) didGetMessage:(PMNullModel*)message
+- (void) didGetMessage:(PMUploadImageRsp*)message
 {
    [self doUIOnSuccced:message];
 }

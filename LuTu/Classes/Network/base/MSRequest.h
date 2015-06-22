@@ -40,6 +40,8 @@ return NO;\
 - (BOOL) addCommonParamters:(NSError**)error;
 - (void) onError:(NSError*)error;
 - (void) onSuccess:(id)retObject;
+
+- (void) willSendRequest:(NSMutableURLRequest*)request;
 - (BOOL) doRequst;
 
 - (BOOL) loadParamters:(NSError* __autoreleasing*)error;
