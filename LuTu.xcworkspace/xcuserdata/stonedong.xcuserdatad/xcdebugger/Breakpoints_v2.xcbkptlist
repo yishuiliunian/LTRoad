@@ -585,22 +585,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/CarFriend/MyCarClub/LTMyCarClubViewController.m"
-            timestampString = "455339900.716573"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-request:onSucced:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/Network/GenRequest/__LTUserThreadListReq.m"
             timestampString = "455341257.814498"
             startingColumnNumber = "9223372036854775807"
@@ -1178,11 +1162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/UI/DataController/LTTableViewPageDataController.m"
-            timestampString = "456652683.983673"
+            timestampString = "456653939.213826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "-handleNextPageData:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1194,12 +1178,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/UI/DataController/LTTableViewPageDataController.m"
-            timestampString = "456652687.450062"
+            timestampString = "456653939.213826"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "-handleReloadData:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LuTu/Classes/UI/Controllers/Business/CarFriend/MyCarClub/LTMyCarClubViewController.m"
+            timestampString = "456655109.723371"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-request:onSucced:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LuTu/Classes/Network/GenRequest/__LTUserCarClubListReq.m"
+            timestampString = "456655136.938041"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-onSuccess:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

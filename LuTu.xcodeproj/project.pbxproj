@@ -3213,6 +3213,8 @@
 		65A3ECA31B37E34B00BA3048 /* LTMenuItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3ECA11B37E34B00BA3048 /* LTMenuItemTableViewCell.m */; };
 		65A3ECB71B37F09000BA3048 /* MUAlertPool.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A3ECB51B37F09000BA3048 /* MUAlertPool.h */; };
 		65A3ECB81B37F09000BA3048 /* MUAlertPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3ECB61B37F09000BA3048 /* MUAlertPool.m */; };
+		65A3ECBB1B37F9D100BA3048 /* LTErrorBackgrondView.h in Headers */ = {isa = PBXBuildFile; fileRef = 65A3ECB91B37F9D100BA3048 /* LTErrorBackgrondView.h */; };
+		65A3ECBC1B37F9D100BA3048 /* LTErrorBackgrondView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3ECBA1B37F9D100BA3048 /* LTErrorBackgrondView.m */; };
 		65A3F6751AE8C55500BD6B1F /* LTUserDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F6741AE8C55500BD6B1F /* LTUserDataManager.m */; };
 		65A3F6811AE8CF4100BD6B1F /* LTAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3F67F1AE8CF4100BD6B1F /* LTAuthViewController.m */; };
 		65A3F6821AE8CF4100BD6B1F /* LTAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3F6801AE8CF4100BD6B1F /* LTAuthViewController.xib */; };
@@ -8238,6 +8240,8 @@
 		65A3ECA11B37E34B00BA3048 /* LTMenuItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMenuItemTableViewCell.m; sourceTree = "<group>"; };
 		65A3ECB51B37F09000BA3048 /* MUAlertPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUAlertPool.h; sourceTree = "<group>"; };
 		65A3ECB61B37F09000BA3048 /* MUAlertPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUAlertPool.m; sourceTree = "<group>"; };
+		65A3ECB91B37F9D100BA3048 /* LTErrorBackgrondView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTErrorBackgrondView.h; sourceTree = "<group>"; };
+		65A3ECBA1B37F9D100BA3048 /* LTErrorBackgrondView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTErrorBackgrondView.m; sourceTree = "<group>"; };
 		65A3F6731AE8C55500BD6B1F /* LTUserDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUserDataManager.h; sourceTree = "<group>"; };
 		65A3F6741AE8C55500BD6B1F /* LTUserDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUserDataManager.m; sourceTree = "<group>"; };
 		65A3F67E1AE8CF4100BD6B1F /* LTAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAuthViewController.h; sourceTree = "<group>"; };
@@ -8933,6 +8937,8 @@
 				651E2B0B1B07151A000E42F9 /* LTHeadImageView.m */,
 				654FEDFF1B23DF1A004C3046 /* LTTableSectionView.h */,
 				654FEE001B23DF1A004C3046 /* LTTableSectionView.m */,
+				65A3ECB91B37F9D100BA3048 /* LTErrorBackgrondView.h */,
+				65A3ECBA1B37F9D100BA3048 /* LTErrorBackgrondView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -10859,6 +10865,7 @@
 				CDFC0C92C268E7EB65402FCE /* (null) in Headers */,
 				BAD812BC8700872F78C2BE26 /* (null) in Headers */,
 				717E5922029C708449B6C4BE /* (null) in Headers */,
+				65A3ECBB1B37F9D100BA3048 /* LTErrorBackgrondView.h in Headers */,
 				73FB413378CE6E31F57FFE4B /* (null) in Headers */,
 				726DF30E26B998E5167CF6A9 /* (null) in Headers */,
 				AA5D75D4859154FE2695D560 /* (null) in Headers */,
@@ -15515,6 +15522,7 @@
 				64EF082F26C9131353835CAE /* (null) in Sources */,
 				26244CF80E8B72F67C9B2503 /* (null) in Sources */,
 				B9CCDE6E307D6BCE04A2FF90 /* (null) in Sources */,
+				65A3ECBC1B37F9D100BA3048 /* LTErrorBackgrondView.m in Sources */,
 				EA5E24C8346C55052AE2D956 /* (null) in Sources */,
 				87281863B13FA50D7B2DD7AB /* (null) in Sources */,
 				E99E271CA0090F4B347590E0 /* (null) in Sources */,

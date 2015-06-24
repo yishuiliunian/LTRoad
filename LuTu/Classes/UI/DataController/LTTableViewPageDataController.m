@@ -9,6 +9,7 @@
 #import "LTTableViewPageDataController.h"
 #import "LTGlobals.h"
 #import <MJRefresh.h>
+#import "LTErrorBackgrondView.h"
 @implementation LTTableViewPageDataController
 
 - (void) setObjectMapCell:(NSDictionary *)objectMapCell
@@ -47,6 +48,13 @@
 {
     [super handleReloadData:data];
     [_tableViewController.refreshControl endRefreshing];
+    if (data.count) {
+        _tableView.backgroundView = nil;
+    } else {
+        LTErrorBackgrondView* erroBackground = [LTErrorBackgrondView new];
+        erroBackground.message = @"还没有数据欧";
+        _tableView.backgroundView = erroBackground;
+    }
 }
 
 

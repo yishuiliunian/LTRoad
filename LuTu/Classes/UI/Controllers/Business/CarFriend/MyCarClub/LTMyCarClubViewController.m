@@ -9,7 +9,9 @@
 #import "LTMyCarClubViewController.h"
 #import "LTUserCarClubListReq.h"
 #import "LTMyClubTableViewCell.h"
-@interface LTMyCarClubViewController () <MSRequestUIDelegate>
+#import "LTCarClubMemberQuitReq.h"
+#import "MUAlertPool.h"
+@interface LTMyCarClubViewController () <MSRequestUIDelegate, LTClubActionProtocol>
 {
     NSArray* _allCarClubs;
 }
@@ -50,8 +52,13 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    _allCarClubs = object;
-    [self.tableView reloadData];
+    if ([request isKindOfClass:[LTUserCarClubListReq class]]) {
+        _allCarClubs = object;
+        [self.tableView reloadData];
+    } else if ([request isKindOfClass:[LTCarClubMemberQuitReq class]]) {
+       
+        MUAlertShowSuccess(@"您已经成功退出");
+    }
 }
 
 
@@ -72,6 +79,7 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LTMyClubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCarClubViewCellIdentifier forIndexPath:indexPath];
     LTUICarMeet* info = _allCarClubs[indexPath.row];
+    cell.actionTarget = self;
     cell.carClubInfo = info;
     return cell;
 }
@@ -80,5 +88,15 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [LTMyClubTableViewCell layoutCellHeight];
+}
+
+- (void) clubTableViewCell:(LTMyClubTableViewCell *)cell toggleActionWithMeet:(LTUICarMeet *)meet
+{
+    LTCarClubMemberQuitReq* quitReq = [LTCarClubMemberQuitReq new];
+    quitReq.carClubId = meet.clubID;
+    [MSDefaultSyncCenter performRequest:quitReq];
+    MUAlertShowLoading(@"退出中.....");
+    
+
 }
 @end

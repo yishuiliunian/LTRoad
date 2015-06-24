@@ -18,6 +18,7 @@
 #import "LTSelectedRoadViewController.h"
 #import "LTCategoryListReq.h"
 #import "LTGlobals.h"
+#import "LTNotificationTools.h"
 INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 @interface LTDiscoverViewController () <MSRequestUIDelegate>
 {
@@ -26,7 +27,10 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
 @property (nonatomic, assign) LTLayoutType layoutType;
 @end
 @implementation LTDiscoverViewController
-
+- (void) dealloc
+{
+    LTRemoveObserverForCityReload(self);
+}
 - (instancetype) initWithLayoutType:(LTLayoutType)type
 {
     UICollectionViewLayout* layout = [LTDiscoverViewController layoutWithType:type];
@@ -34,6 +38,7 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     if (!self) {
         return self;
     }
+    LTAddObserverForCityReload(self, @selector(reloadAllData));
     return self;
 }
 
