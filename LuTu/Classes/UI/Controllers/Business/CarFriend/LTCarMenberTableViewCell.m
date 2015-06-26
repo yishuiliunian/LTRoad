@@ -29,7 +29,6 @@
 {
     if (_clubMember != clubMember) {
         _clubMember = clubMember;
-        
         //
         [_avatarImageView loadAvatarURL:_clubMember.avatarURL];
         _detaiLabel.text = _clubMember.vihicleModel;

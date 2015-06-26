@@ -1190,16 +1190,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/UI/Controllers/Business/CarFriend/MyCarClub/LTMyCarClubViewController.m"
-            timestampString = "456655109.723371"
+            filePath = "LuTu/Classes/Models/UIModels/LTUIClubMember.m"
+            timestampString = "456846513.82487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-request:onSucced:"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "-initWithServerModel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1209,8 +1209,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/Network/GenRequest/__LTUserCarClubListReq.m"
-            timestampString = "456655136.938041"
+            filePath = "LuTu/Classes/Network/GenRequest/__LTCarClubInfoShowReq.m"
+            timestampString = "456846578.243149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
