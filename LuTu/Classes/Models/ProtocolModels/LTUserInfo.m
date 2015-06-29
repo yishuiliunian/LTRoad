@@ -15,18 +15,25 @@
     return @{
              LTMantleSameMapPair(nickName),
              LTMantleSameMapPair(avatarURL),
-             LTMantleSameMapPair(birthDay)
+             LTMantleSameMapPair(phone),
+             LTMantleSameMapPair(city),
+             LTMantleSameMapPair(drivingYear),
+             LTMantleSameMapPair(status)
              };
 }
-- (instancetype) initWithPMTokenUserInfo:(PMTokenUserInfo*)pUserInfo
+- (instancetype) initWithPMTokenUserInfo:(PMTokenAuthRsp*)pUserInfo
 {
     self = [self init];
     if (!self) {
         return self;
     }
     
-    _nickName = pUserInfo.nick_name;
-    _avatarURL = pUserInfo.avatar_url;
+    _nickName = pUserInfo.name;
+    _avatarURL = pUserInfo.avatarUrl;
+    _phone = pUserInfo.phone;
+    _city = pUserInfo.city;
+    _drivingYear = ENSURE_STR(pUserInfo.drivingYear);
+    _status = pUserInfo.status;
     return self;
 }
 - (void) setNilValueForKey:(NSString *)key

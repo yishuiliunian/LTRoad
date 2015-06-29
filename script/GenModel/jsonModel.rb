@@ -621,4 +621,27 @@ requestModel("LTUploadImageReq") { |m|
   p_string "userId", m
 }
 
+##第三方登陆的接口
+
+model("PMTokenAuthRsp") { |m|
+  string "userId" , m
+  string "name" , m
+  string "city" , m
+  string "phone" , m
+  string "avatarUrl" , m
+  string "drivingYear" , m
+  string "status" , m
+  string "oauthType" , m
+  int64 "createTime" , m
+  bool  "isFirst" , m
+}
+
+requestModel("LTTokenAuthReq") { |m|
+  method "/server/token/auth", m
+  response "PMTokenAuthRsp", m
+  p_string "oAuthOpenId", m
+  p_string "oAuthAccessToken", m
+  p_int64 "oAuthType", m
+}
+
 FindProject()

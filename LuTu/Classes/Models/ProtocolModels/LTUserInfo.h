@@ -7,11 +7,14 @@
 //
 
 #import "MTLModel.h"
-#import "PMToken.h"
+#import "PMTokenAuthRsp.h"
 @interface LTUserInfo : MTLModel <MTLJSONSerializing>
 @property (nonatomic, strong) NSString* nickName;
 @property (nonatomic, strong) NSString* avatarURL;
-@property (nonatomic, strong) NSString* birthDay;
+@property (nonatomic, strong) NSString* phone;
+@property (nonatomic, strong) NSString* city;
+@property (nonatomic, strong) NSString* drivingYear;
+@property (nonatomic, strong) NSString* status;
 
-- (instancetype) initWithPMTokenUserInfo:(PMTokenUserInfo*)pUserInfo;
+- (instancetype) initWithPMTokenUserInfo:(PMTokenAuthRsp*)pUserInfo;
 @end

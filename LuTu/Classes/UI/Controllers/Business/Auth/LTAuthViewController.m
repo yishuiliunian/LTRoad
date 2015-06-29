@@ -8,14 +8,14 @@
 
 #import "LTAuthViewController.h"
 #import <SAReqManager.h>
-#import "LTTokenReq.h"
+#import "LTTokenAuthReq.h"
 #import <extobjc.h>
 #import "MSTokenManager.h"
 #import "LTAccountManager.h"
 #import "LTGlobalViewController.h"
-#import "PMToken.h"
 #import "MSToken.h"
 #import "LTGlobals.h"
+#import "PMTokenAuthRsp.h"
 @interface LTAuthViewController () <MSRequestUIDelegate>
 
 @end
@@ -46,24 +46,26 @@
         if (error) {
             return ;
         }
-        LTTokenReq* req = [LTTokenReq new];
-        req.accessToken = token.token;
-        req.openID = token.openID;
+        LTTokenAuthReq* req = [LTTokenAuthReq new];
+        req.oAuthAccessToken= token.token;
+        req.oAuthOpenId = token.openID;
+        req.oAuthType = 2;
         MSPerformRequestWithDelegateSelf(req);
     }];
 }
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    LTTokenReq* req = (LTTokenReq*)request;
-    PMToken* token = (PMToken*)object;
-    MSToken* serverToken = [[MSToken alloc] initWithAccount:token.userId];
+    LTTokenAuthReq* req = (LTTokenAuthReq*)request;
+    PMTokenAuthRsp* token = (PMTokenAuthRsp*)object;
     
+    MSToken* serverToken = [[MSToken alloc] initWithAccount:token.userId];
     NSDate* experiedDate =  [NSDate dateWithTimeIntervalSinceNow:1000000000];
     serverToken.experiedDate = experiedDate;
     LTAccount* account = [[LTAccount alloc] init];
     account.accountID =ENSURE_STR(token.userId);
-    account.openId = req.openID;
-    account.openAccessToken = req.accessToken;
+    account.openId = req.oAuthOpenId;
+    account.openAccessToken = req.oAuthAccessToken;
+    account.userInfo = [[LTUserInfo alloc] initWithPMTokenUserInfo:token];
     [[LTAccountManager shareManager] reloadAccount:account];
     [MSShareTokenManager cacheToken:serverToken forAccount:account];
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
@@ -74,6 +76,6 @@
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 @end
