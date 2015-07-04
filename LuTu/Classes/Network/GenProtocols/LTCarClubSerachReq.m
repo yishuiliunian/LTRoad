@@ -4,7 +4,7 @@
 @implementation LTCarClubSerachReq
 - (void) didGetMessage:(PMSearchClubInfo*)message
 {
-
+    [self doUIOnSuccced:message];
 }
 @end
 
