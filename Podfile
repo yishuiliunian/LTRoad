@@ -29,6 +29,7 @@ target 'LuTu' do
   pod 'JSBadgeView'
   pod 'SVProgressHUD'
   pod 'LMDropdownView'
+  pod 'RKNotificationHub'
 end
 
 

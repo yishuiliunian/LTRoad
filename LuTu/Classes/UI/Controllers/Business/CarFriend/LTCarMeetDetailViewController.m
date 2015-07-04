@@ -88,10 +88,11 @@
     NSMutableArray* members = [NSMutableArray new];
     for (PMClubMember* m in clubInfo.memberList) {
         LTUIClubMember* member = [[LTUIClubMember alloc] initWithServerModel:m];
-        if (member.type == LTMemberTypeNormal) {
-            [members addObject:member];
-        } else if (member.type == LTMemberTypeManager) {
+        if (member.type == LTMemberTypeManager) {
             [managers addObject:member];
+        } else
+        {
+            [members addObject:member];
         }
     }
     memberControl.managers = managers;

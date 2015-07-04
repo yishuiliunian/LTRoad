@@ -10,8 +10,9 @@
 #import "PMClubMember.h"
 
 typedef enum {
-    LTMemberTypeManager = 2,
-    LTMemberTypeNormal = 1
+    LTMemberTypeUnkow = 2,
+    LTMemberTypeNormal = 1,
+    LTMemberTypeManager = 0,
 }LTMemberType;
 
 @interface LTUIClubMember : NSObject

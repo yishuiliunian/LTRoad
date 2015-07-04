@@ -159,12 +159,14 @@
 
 - (void) clubTableViewCell:(LTMyClubTableViewCell *)cell toggleActionWithMeet:(LTUICarMeet *)meet
 {
+    EnsureAccountBegin
     LTCarClubMemberJoinReq* req = [LTCarClubMemberJoinReq new];
     req.carClubId = meet.clubID;
     req.userId = LTCurrentAccount.accountID;
     req.uidelegate = self;
     [MSDefaultSyncCenter performRequest:req];
     MUAlertShowLoading(@"正在加入...");
+    EnsureAccountEnd
 }
 
 @end

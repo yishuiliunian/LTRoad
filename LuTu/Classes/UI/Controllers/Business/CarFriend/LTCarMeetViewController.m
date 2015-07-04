@@ -14,6 +14,8 @@
 #import "LTAppearenceTools.h"
 #import "LTAddThreadViewController.h"
 #import "UIViewController+Additions.h"
+#import "LTNotificationTools.h"
+#import "LTAccountManager.h"
 @interface LTCarMeetViewController()
 {
     UIScrollView* _scrollView;
@@ -21,6 +23,8 @@
 @property (nonatomic, strong) DZExpandSwipViewController* swipViewController;
 @end
 @implementation LTCarMeetViewController
+
+
 - (void) loadView
 {
     UIScrollView* scrollView = [[UIScrollView alloc] initWithFrame:CGRectLoadViewFrame];
@@ -54,11 +58,13 @@
 }
 - (void) postFeed
 {
+    EnsureAccountBegin
     LTAddThreadViewController* vc = [LTAddThreadViewController new];
     vc.hidesBottomBarWhenPushed = YES;
     vc.allCarClubs = self.swipViewController.expandCollectioViewController.items;
     vc.selectedCarMeet = vc.allCarClubs[0];
     [self.navigationController pushViewController:vc animated:YES];
+    EnsureAccountEnd
     
 }
 - (void) viewWillLayoutSubviews

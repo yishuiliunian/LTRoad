@@ -12,6 +12,7 @@
 #import "LTCarMeetFeedViewController.h"
 #import "LTCarMeetFeedDataController.h"
 #import "LTUserCarClubSimpleListReq.h"
+#import "LTNotificationTools.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -19,7 +20,19 @@
 @end
 
 @implementation DZExpandSwipViewController
-
+- (void) dealloc
+{
+    LTRemoveObserverForAccountLoad(self);
+}
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (!self) {
+        return self;
+    }
+    LTAddObserverForAccountLoad(self, @selector(reloadAllCarClub));
+    return self;
+}
 - (void) lt_addViewController:(UIViewController*)vc
 {
     [vc willMoveToParentViewController:self];

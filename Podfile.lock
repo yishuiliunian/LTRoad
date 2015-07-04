@@ -1,13 +1,13 @@
 PODS:
-  - CocoaLumberjack (2.0.0):
-    - CocoaLumberjack/Default (= 2.0.0)
-    - CocoaLumberjack/Extensions (= 2.0.0)
-  - CocoaLumberjack/Core (2.0.0)
-  - CocoaLumberjack/Default (2.0.0):
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
     - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.0.0):
+  - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
-  - DateTools (1.5.0)
+  - DateTools (1.6.1)
   - DZCache (1.0.9):
     - DZCDNFiles
     - DZGeometryTools
@@ -68,9 +68,10 @@ PODS:
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
   - Masonry (0.6.1)
-  - MJRefresh (2.0.2)
+  - MJRefresh (2.2.0)
   - NSString-UrlEncode (2.0.0)
   - ProtobufObjC (0.0.1)
+  - RKNotificationHub (2.0.0)
   - SAAuth (0.1.1):
     - DZQQLib
     - DZWeChatLib
@@ -100,14 +101,15 @@ DEPENDENCIES:
   - MJRefresh
   - NSString-UrlEncode
   - ProtobufObjC
+  - RKNotificationHub
   - SAAuth
   - SlackTextViewController
   - SVProgressHUD
   - SZTextView
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  DateTools: b93a2c2017747329c6077c7d7e8a75106e23d0d7
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
   DZCache: 4e4c8470c077a84d5fc25e2d8b1337f110fbf9a6
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
   DZGeometryTools: 6a875726d83ae18d5ff593b4cb02af11f947b86c
@@ -127,9 +129,10 @@ SPEC CHECKSUMS:
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 4972309f2f134de9dd312f4dc4a21359b50e6caa
-  MJRefresh: dfaf2303521c1f1ad71f0f9d2fe781ccea3741de
+  MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
+  RKNotificationHub: 4aa3f0579c90caf96c4c0d7ab8e3f5ef5ad90b87
   SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
   SlackTextViewController: ab240cda4c7fe1f70f6c6cf64578f3fea495ce99
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1

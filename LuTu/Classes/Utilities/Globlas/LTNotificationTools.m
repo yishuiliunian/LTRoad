@@ -9,16 +9,20 @@
 #import "LTNotificationTools.h"
 
 
-static NSString* const kLTCityReloadNotification = @"kLTCityReloadNotification";
-
-void LTAddObserverForCityReload(NSObject* ob, SEL selector) {
-    [[NSNotificationCenter defaultCenter] addObserver:ob selector:selector name:kLTCityReloadNotification object:nil];
+#define LTObserverMessage(message) \
+void LTAddObserverFor##message (NSObject* ob, SEL selector) { \
+    [[NSNotificationCenter defaultCenter] addObserver:ob selector:selector name:@""#message object:nil]; \
+}\
+\
+void LTRemoveObserverFor##message (NSObject* ob) {\
+    [[NSNotificationCenter defaultCenter] removeObserver:ob name:@""#message object:nil];\
+}\
+\
+void LTPost##message () {\
+    [[NSNotificationCenter defaultCenter] postNotificationName:@""#message object:nil];\
 }
 
-void LTRemoveObserverForCityReload(NSObject* ob) {
-    [[NSNotificationCenter defaultCenter] removeObserver:ob name:kLTCityReloadNotification object:nil];
-}
 
-void LTPostCityReloadMessage(NSString* cityNew) {
-    [[NSNotificationCenter defaultCenter] postNotificationName:kLTCityReloadNotification object:nil];
-}
+LTObserverMessage(CityReload)
+LTObserverMessage(AccountLoad)
+

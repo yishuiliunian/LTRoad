@@ -23,15 +23,33 @@
 #import "LTMyNewsDataController.h"
 #import "LTMyNewsViewController.h"
 #import "LTMyMessagesDataController.h"
+#import "LTNotificationTools.h"
 @interface LTMineViewController () <MSRequestUIDelegate>
 {
     NSArray* _allActions;
     LTMineTopView* _topView;
 }
+DEFINE_PROPERTY_STRONG(LTActionItem*, dynamicItem);
+DEFINE_PROPERTY_STRONG(LTActionItem*, aboutItem);
 @end
 @implementation LTMineViewController
 
+- (void) dealloc {
+    LTRemoveObserverForAccountLoad(self);
+}
+- (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (!self) {
+        return self;
+    }
+    LTAddObserverForAccountLoad(self, @selector(reloadAllData));
+    return self;
+}
+
+
 static NSString* const kCellIdentifier = @"kCellIdentifier";
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -59,9 +77,11 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 }
 - (void) handleShowMessages
 {
+    EnsureAccountBegin
     LTMyMessagesDataController* messageDataController = [LTMyMessagesDataController new];
     LTMyNewsViewController* vc = [[LTMyNewsViewController alloc] initWithDataController:messageDataController];
     [self.navigationController pushViewController:vc animated:YES];
+    EnsureAccountEnd
 }
 
 - (void) handleShowSettings
@@ -72,45 +92,46 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void) handleTapGestrue:(UITapGestureRecognizer*)tap
 {
     if (tap.state == UIGestureRecognizerStateRecognized) {
-        if (![LTShareAccountManager checkApplicationAuthorization]) {
-            [LTShareAccountManager ensureApplicationAuthorization:^{
-                [self reloadAllData];
-            }];
-        } else {
-            LTEditUserInfoViewController* editUserInfoVC = [LTEditUserInfoViewController new];
-            [self.navigationController pushViewController:editUserInfoVC animated:YES];
-        }
+        EnsureAccountBegin
+        [self reloadAllData];
+        EnsureAccountEnd
     }
 }
 
 - (void) handleShowMyFavorate
 {
+    EnsureAccountBegin
     LTMyFavoriteViewController* fvc = [LTMyFavoriteViewController myFavoriteViewController];
     [self.navigationController pushViewController:fvc animated:YES];
+    EnsureAccountEnd
 }
 - (void) handleShowMyClub
 {
+    EnsureAccountBegin
     LTMyCarClubViewController* clubVC = [[LTMyCarClubViewController alloc]initWithUID:LTCurrentAccount.accountID];
     [self.navigationController pushViewController:clubVC animated:YES];
+    EnsureAccountEnd
 }
 
 - (void) handleShowMyThreads
 {
+    EnsureAccountBegin
     LTMyThreadDataController* dataController = [LTMyThreadDataController new];
     LTCarMeetFeedViewController* feedVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
     [self.navigationController pushViewController:feedVC animated:YES];
+    EnsureAccountEnd
 }
 - (void) reloadAllData
 {
     LTAccount* currentAccount = [LTShareAccountManager currentAccount];
     // reload tableview data
-    LTActionItem* dynamicItem = [[LTActionItem alloc] init];
-    dynamicItem.title = @"我的动态";
+    _dynamicItem = [[LTActionItem alloc] init];
+    _dynamicItem.title = @"我的动态";
     
-    LTActionItem* aboutItem = [[LTActionItem alloc] init];
-    aboutItem.title = @"关于我们";
+    _aboutItem = [[LTActionItem alloc] init];
+    _aboutItem.title = @"关于我们";
     
-    _allActions = @[dynamicItem, aboutItem];
+    _allActions = @[_dynamicItem, _aboutItem];
     
     [self.tableView reloadData];
     
@@ -131,14 +152,24 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     }
 }
 
+
+- (void) handleRemoteUserStatsReqeust:(LTUserStatsListReq*)req message:(PMUserStatsListRsp*)rsp
+{
+    _topView.messageHUB.count = rsp.messageCount;
+    _dynamicItem.detailText = ENSURE_STR(@(rsp.dynamicCount));
+    [self.tableView reloadData];
+    
+}
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
-    
+    if ([request isKindOfClass:[LTUserStatsListReq class]]) {
+        [self handleRemoteUserStatsReqeust:(LTUserStatsListReq*)request message:object];
+    }
 }
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView *)tableView
@@ -156,6 +187,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     LTActionCell* cell = (LTActionCell*)[tableView dequeueReusableCellWithIdentifier:kCellIdentifier forIndexPath:indexPath];
     LTActionItem* item = [_allActions objectAtIndex:indexPath.row];
     cell.textLabel.text = item.title;
+    cell.detailTextLabel.text = item.detailText;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -167,11 +199,18 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    LTActionItem* item = [_allActions objectAtIndex:indexPath.row];
-    if ([item.title isEqualToString:@"我的动态"]) {
-        LTMyNewsDataController* datController = [[LTMyNewsDataController alloc] init];
-        LTMyNewsViewController* viewController = [[LTMyNewsViewController alloc] initWithDataController:datController];
-        [self.navigationController pushViewController:viewController animated:YES];
-    }
+    
+    @weakify(self)
+    
+    [LTShareAccountManager ensureApplicationAuthorization:^{
+        if ([item.title isEqualToString:@"我的动态"]) {
+            @strongify(self)
+            LTMyNewsDataController* datController = [[LTMyNewsDataController alloc] init];
+            LTMyNewsViewController* viewController = [[LTMyNewsViewController alloc] initWithDataController:datController];
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+    }];
+
 }
 @end
 

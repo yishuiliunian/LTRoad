@@ -7,6 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-void LTAddObserverForCityReload(NSObject* ob, SEL selector);
-void LTRemoveObserverForCityReload(NSObject* ob);
-void LTPostCityReloadMessage(NSString* cityNew);
+#define LTExternObserverMessage(msg) \
+void LTAddObserverFor##msg (NSObject* ob, SEL selector);\
+void LTRemoveObserverFor##msg (NSObject* ob);\
+void LTPost##msg ();\
+
+//城市重载
+LTExternObserverMessage(CityReload)
+//
+
+//账号重载
+LTExternObserverMessage(AccountLoad)

@@ -88,6 +88,9 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
 {
     //OK
     if ([self checkApplicationAuthorization]) {
+        if (block) {
+            block();
+        }
         return;
     }
     [[(AppDelegate*)[UIApplication sharedApplication].delegate globalViewController] loadAuthViewController:block];

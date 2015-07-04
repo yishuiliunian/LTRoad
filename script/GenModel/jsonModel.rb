@@ -448,6 +448,10 @@ model("PMUserStatsListRsp") { |m|
   int32 "clubMemberCount" , m
   int32 "threadCount" , m
   string "userName" , m
+  int32 "dynamicCount", m
+  string "message", m
+  int32 "messageCount", m
+  int32 "status", m
 }
 
 requestModel("LTUserStatsListReq") { |r|

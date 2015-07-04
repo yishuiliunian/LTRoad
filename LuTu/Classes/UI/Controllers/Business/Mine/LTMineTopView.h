@@ -21,4 +21,5 @@ DEFINE_PROPERTY_STRONG(LTBackButton*, favarateButton);
 DEFINE_PROPERTY_STRONG(LTBackButton*, feedButton);
 DEFINE_PROPERTY_STRONG(LTBackButton*, carFriendButton);
 DEFINE_PROPERTY_STRONG_UILabel(nickNameLabel);
+DEFINE_PROPERTY_STRONG(RKNotificationHub*, messageHUB);
 @end

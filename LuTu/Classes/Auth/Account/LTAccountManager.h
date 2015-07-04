@@ -9,9 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "LTAccount.h"
 #import "LTAuthViewController.h"
-
+#import <extobjc.h>
 #define LTShareAccountManager  [LTAccountManager shareManager]
 #define LTCurrentAccount [LTShareAccountManager currentAccount]
+
+
+#define EnsureAccountBegin \
+@weakify(self) \
+[LTShareAccountManager ensureApplicationAuthorization:^{ \
+@strongify(self)
+
+#define EnsureAccountEnd  }];
+
 @interface LTAccountManager : NSObject
 @property (nonatomic, strong, readonly) LTAccount* currentAccount;
 + (LTAccountManager*) shareManager;

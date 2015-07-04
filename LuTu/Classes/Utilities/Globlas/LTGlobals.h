@@ -19,11 +19,13 @@
 #import "MSLog.h"
 #import "LTAccountManager.h"
 #import "MUAlertPool.h"
+#import <extobjc.h>
 FOUNDATION_EXTERN NSString* LTCellIdentifierFromClass(Class cla);
 #define LTCellMapPairWithClass(dataCla , cellCla) LTCellIdentifierFromClass([dataCla class]) : [cellCla class]
 FOUNDATION_EXPORT NSArray* LTSpereateStringToArray(NSString* str);
 
-
+#define WEAK_SELF   @weakify(self)
+#define STRONG_SELF @strongify(self)
 
 #define LTMantleMapPair(key, v) @""#key : @""#v
 #define LTMantleSameMapPair(k) LTMantleMapPair(k , k)

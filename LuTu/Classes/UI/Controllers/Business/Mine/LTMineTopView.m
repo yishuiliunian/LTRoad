@@ -61,6 +61,10 @@ static NSString* const kObserverImage = @"image";
     
     [_avatarImageView addObserver:self forKeyPath:kObserverImage options:NSKeyValueObservingOptionNew context:nil];
     
+    //
+    _messageHUB = [[RKNotificationHub alloc] initWithView:_messageButton];
+    [_messageHUB scaleCircleSizeBy:0.7];
+    [_messageHUB moveCircleByX:30 Y:0];
     return self;
 }
 - (void) handleAvatarGetNewImage:(UIImage*) image
