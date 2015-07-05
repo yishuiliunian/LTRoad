@@ -3530,7 +3530,6 @@
 		65E78890954B62DF692E482C /* (null) in Sources */ = {isa = PBXBuildFile; };
 		65EB95F9BB2A0861DEDAD8D9 /* (null) in Headers */ = {isa = PBXBuildFile; };
 		65EDE8F15B6582B630AA43BC /* (null) in Headers */ = {isa = PBXBuildFile; };
-		65F9B60A1B1321830060AC39 /* PMLineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F9B6091B1321830060AC39 /* PMLineSegment.m */; };
 		65FD64AE1AD77B9700FC94E0 /* LKHaneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */; };
 		65FD64C51ADB605300FC94E0 /* LTDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C41ADB605300FC94E0 /* LTDiscoverCell.m */; };
 		65FD64CA1ADB61AF00FC94E0 /* LTRecommendLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD64C91ADB61AF00FC94E0 /* LTRecommendLine.m */; };
@@ -8942,8 +8941,6 @@
 		65DF76AE1B12CBD6001C8470 /* LTAdjustFrameTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTAdjustFrameTable.h; sourceTree = "<group>"; };
 		65DF76AF1B12CBD6001C8470 /* LTAdjustFrameTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTAdjustFrameTable.m; sourceTree = "<group>"; };
 		65E3639766EBE611E464240B /* __LTUploadImageReq.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = __LTUploadImageReq.m; path = GenRequest/__LTUploadImageReq.m; sourceTree = "<group>"; };
-		65F9B6081B1321830060AC39 /* PMLineSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PMLineSegment.h; path = ../PMLineSegment.h; sourceTree = "<group>"; };
-		65F9B6091B1321830060AC39 /* PMLineSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PMLineSegment.m; path = ../PMLineSegment.m; sourceTree = "<group>"; };
 		65FD64AC1AD77B9700FC94E0 /* LKHaneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKHaneke.h; sourceTree = "<group>"; };
 		65FD64AD1AD77B9700FC94E0 /* LKHaneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKHaneke.m; sourceTree = "<group>"; };
 		65FD64C31ADB605300FC94E0 /* LTDiscoverCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTDiscoverCell.h; sourceTree = "<group>"; };
@@ -9582,8 +9579,6 @@
 		6549446D1B0EF9C500E925D8 /* NewModels */ = {
 			isa = PBXGroup;
 			children = (
-				65F9B6081B1321830060AC39 /* PMLineSegment.h */,
-				65F9B6091B1321830060AC39 /* PMLineSegment.m */,
 			);
 			path = NewModels;
 			sourceTree = "<group>";
@@ -14751,7 +14746,6 @@
 				652C4ED21ADE0AEF00570768 /* LTNavigationController.m in Sources */,
 				652FB9291AD23EB60082894E /* MSSyncCenter.m in Sources */,
 				65B2834A1AF8C58A001E85A6 /* LTCarMeetFeedDataController.m in Sources */,
-				65F9B60A1B1321830060AC39 /* PMLineSegment.m in Sources */,
 				65035FE51AE4AE2D00BBEDEB /* LTGlobals.m in Sources */,
 				657D6FFB1ADF79CD00AA5EBA /* LTActionCell.m in Sources */,
 				650C0C4E1AE60F8C008FC2B8 /* PMNoticePOI.m in Sources */,

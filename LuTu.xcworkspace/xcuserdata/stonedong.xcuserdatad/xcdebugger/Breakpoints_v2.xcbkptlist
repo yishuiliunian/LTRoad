@@ -1161,22 +1161,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/Models/UIModels/LTUIClubMember.m"
-            timestampString = "456846513.82487"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "-initWithServerModel:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LuTu/Classes/Network/GenRequest/__LTCarClubInfoShowReq.m"
             timestampString = "456846578.243149"
             startingColumnNumber = "9223372036854775807"
@@ -1360,22 +1344,6 @@
             startingLineNumber = "152"
             endingLineNumber = "152"
             landmarkName = "-doUIOnSuccced:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LuTu/Classes/Models/UIModels/LTUIClubMember.m"
-            timestampString = "457708494.135403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "-initWithServerModel:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
