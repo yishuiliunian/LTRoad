@@ -205,4 +205,3 @@ def requestModel(name)
   r = getJSONRequest(name)
   yield r
 end
-

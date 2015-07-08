@@ -14,6 +14,7 @@
 #import "LTUIRouteSearchInfo.h"
 #import "LTSearchRouteTableViewCell.h"
 #import "LTCarClubMemberJoinReq.h"
+#import "LTNotificationTools.h"
 
 @interface LTSearchDataController () <UITableViewDataSource, MSRequestUIDelegate, LTClubActionProtocol>
 {
@@ -110,6 +111,7 @@
         [self.tableView reloadData];
     } else if ([request isKindOfClass:[LTCarClubMemberJoinReq class]]) {
         MUAlertShowSuccess(@"您已经成功加入");
+        LTPostInjoinClub();
     }
 }
 

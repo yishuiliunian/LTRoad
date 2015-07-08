@@ -13,6 +13,8 @@
 #import "LTCarMeetFeedDataController.h"
 #import "LTUserCarClubSimpleListReq.h"
 #import "LTNotificationTools.h"
+#import "LTAccountManager.h"
+#import "LTGlobals.h"
 @interface DZExpandSwipViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, DZExpandViewControllderDelegate, MSRequestUIDelegate>
 
 @property (nonatomic, strong) UIPageViewController* pageViewController;
@@ -23,6 +25,7 @@
 - (void) dealloc
 {
     LTRemoveObserverForAccountLoad(self);
+    LTRemoveObserverForInjoinClub(self);
 }
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +34,7 @@
         return self;
     }
     LTAddObserverForAccountLoad(self, @selector(reloadAllCarClub));
+    LTAddObserverForInjoinClub(self, @selector(reloadAllCarClub));
     return self;
 }
 - (void) lt_addViewController:(UIViewController*)vc
@@ -62,7 +66,7 @@
 - (void) reloadAllCarClub
 {
     LTUserCarClubSimpleListReq* carClueReq = [LTUserCarClubSimpleListReq new];
-    
+    carClueReq.userId = LTCurrentAccount.accountID;
     MSPerformRequestWithDelegateSelf(carClueReq);
 }
 
@@ -70,7 +74,7 @@
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-
+    MUAlertShowError(error.localizedDescription);
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
@@ -96,6 +100,9 @@
 }
 - (UIViewController*) viewControllerAtIndex:(NSInteger) index
 {
+    if (index >= _expandCollectioViewController.items.count) {
+        return nil;
+    }
     LTUICarMeet* meet = _expandCollectioViewController.items[index];
     NSString* key = meet.key;
     if (!key) {
@@ -175,7 +182,7 @@
         return nil;
     }
     
-    return [self viewControllerAtIndex:index+1];
+    return [self viewControllerAtIndex:index-1];
 }
 
 - (void) pageViewController:(UIPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed

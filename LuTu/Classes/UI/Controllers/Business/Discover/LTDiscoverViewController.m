@@ -163,10 +163,8 @@ INIT_DZ_EXTERN_STRING(kCoverCellIdentifier, kCoverCellIdentifier);
     self.title = @"发现";
     self.naviationBarStyle = LTNavigationStyleTransparency;
 }
-- (void) search
-{
-    
-}
+
+
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;

@@ -18,3 +18,5 @@ LTExternObserverMessage(CityReload)
 
 //账号重载
 LTExternObserverMessage(AccountLoad)
+//
+LTExternObserverMessage(InjoinClub)
