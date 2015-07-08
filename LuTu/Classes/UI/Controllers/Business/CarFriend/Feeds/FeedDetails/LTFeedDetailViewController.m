@@ -111,7 +111,7 @@ static NSString* const KLTThreadLouZHu = @"楼主";
     _headerFeedView.topicHeaderView.roleLabel.text = @"楼主";
     _headerFeedView.topicHeaderView.timeLabel.text = _carFeedInfo.postDate;
     _headerFeedView.feedContentView.contentLabel.text = _carFeedInfo.content;
-    [_headerFeedView.feedContentView.imageView loadFeedBackgroundURL:_carFeedInfo.feedImageURL];
+    [_headerFeedView.feedContentView.imageView loadRemoteURL:_carFeedInfo.feedImageURL placeHolderName:nil];
 //
 }
 - (void) viewWillAppear:(BOOL)animated

@@ -38,7 +38,6 @@
         self.adjustHeight = _contentLabel.adjustHeight + LTLayoutYOffset*2 + _imageView.adjustHeight;
     } else {
         self.adjustHeight = _contentLabel.adjustHeight + LTLayoutYOffset*3 + _imageView.adjustHeight;
-
     }
 }
 
