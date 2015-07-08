@@ -20,3 +20,4 @@ LTExternObserverMessage(CityReload)
 LTExternObserverMessage(AccountLoad)
 //
 LTExternObserverMessage(InjoinClub)
+LTExternObserverMessage(QuitClub)

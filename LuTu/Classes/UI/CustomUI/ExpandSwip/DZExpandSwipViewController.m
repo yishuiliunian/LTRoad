@@ -26,6 +26,7 @@
 {
     LTRemoveObserverForAccountLoad(self);
     LTRemoveObserverForInjoinClub(self);
+    LTRemoveObserverForQuitClub(self);
 }
 - (instancetype) initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +36,7 @@
     }
     LTAddObserverForAccountLoad(self, @selector(reloadAllCarClub));
     LTAddObserverForInjoinClub(self, @selector(reloadAllCarClub));
+    LTAddObserverForQuitClub(self, @selector(reloadAllCarClub));
     return self;
 }
 - (void) lt_addViewController:(UIViewController*)vc

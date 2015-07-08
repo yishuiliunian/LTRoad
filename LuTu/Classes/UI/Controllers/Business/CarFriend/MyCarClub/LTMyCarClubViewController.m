@@ -11,6 +11,8 @@
 #import "LTMyClubTableViewCell.h"
 #import "LTCarClubMemberQuitReq.h"
 #import "MUAlertPool.h"
+#import "LTAccountManager.h"
+#import "LTNotificationTools.h"
 @interface LTMyCarClubViewController () <MSRequestUIDelegate, LTClubActionProtocol>
 {
     NSArray* _allCarClubs;
@@ -40,14 +42,14 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 - (void) reloadAllData
 {
     LTUserCarClubListReq* clubsReq = [LTUserCarClubListReq new];
-    clubsReq.userId = self.uid;
+    clubsReq.userId = LTCurrentAccount.accountID;
     MSPerformRequestWithDelegateSelf(clubsReq);
 
 }
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 
 - (void) request:(MSRequest *)request onSucced:(id)object
@@ -57,7 +59,23 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
         [self.tableView reloadData];
     } else if ([request isKindOfClass:[LTCarClubMemberQuitReq class]]) {
        
+        LTPostQuitClub();
+        LTCarClubMemberQuitReq* req = (LTCarClubMemberQuitReq*)request;
         MUAlertShowSuccess(@"您已经成功退出");
+        NSInteger index = NSNotFound;
+        for (int i = 0; i < _allCarClubs.count; i++) {
+            LTUICarMeet* meet = _allCarClubs[i];
+            if ([meet.clubID isEqualToString:req.carClubId]) {
+                index = i;
+            }
+        }
+        
+        if (index != NSNotFound) {
+            NSMutableArray* clubs = [_allCarClubs mutableCopy];
+            [clubs removeObjectAtIndex:index];
+            _allCarClubs = clubs;
+            [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     }
 }
 
@@ -94,9 +112,8 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
 {
     LTCarClubMemberQuitReq* quitReq = [LTCarClubMemberQuitReq new];
     quitReq.carClubId = meet.clubID;
-    [MSDefaultSyncCenter performRequest:quitReq];
+    quitReq.userId = LTCurrentAccount.accountID;
+    MSPerformRequestWithDelegateSelf(quitReq);
     MUAlertShowLoading(@"退出中.....");
-    
-
 }
 @end

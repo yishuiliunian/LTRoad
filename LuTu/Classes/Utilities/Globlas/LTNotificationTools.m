@@ -26,3 +26,4 @@ void LTPost##message () {\
 LTObserverMessage(CityReload)
 LTObserverMessage(AccountLoad)
 LTObserverMessage(InjoinClub)
+LTObserverMessage(QuitClub)

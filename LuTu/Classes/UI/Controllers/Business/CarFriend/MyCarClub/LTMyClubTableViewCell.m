@@ -34,6 +34,8 @@
     _exitButton.layer.cornerRadius = 2;
     
     [_exitButton addTarget:self action:@selector(toggleAction) forControlEvents:UIControlEventTouchUpInside];
+    //
+    _avatarImageView.layer.masksToBounds = YES;
     
     return self;
 }
