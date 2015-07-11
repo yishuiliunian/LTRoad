@@ -46,6 +46,9 @@
 -(void)awakeFromNib
 {
     [super awakeFromNib];
+    if (![self respondsToSelector:@selector(setNavigationBarWithColor:)]) {
+        return;
+    }
     if (self.color) {
         [self setNavigationBarWithColor:self.color];
     } else {

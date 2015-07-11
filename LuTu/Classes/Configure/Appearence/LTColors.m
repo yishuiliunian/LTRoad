@@ -7,7 +7,7 @@
 //
 
 #import "LTColors.h"
-#import <HexColor.h>
+#import <HexColors.h>
 #import <Mantle.h>
 #define LTColorDefine(name , hex, a) UIColor* LTColor##name()\
 {\
@@ -33,6 +33,7 @@ LTColorDefine(GrayEF, efefef, 1)
 LTColorDefine(GrayF4, f4f4f4, 1)
 LTColorDefine(GrayBB, bbbbbb, 1)
 LTColorDefine(GrayBC, bcbcbc, 1)
+LTColorDefine(ToolbarGray, f6f6f6, 1)
 
 LTColorDefine(GrayNormal, a6a6a6, 1)
 

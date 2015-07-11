@@ -84,6 +84,9 @@ end
 def RequestAddObjectParamters(value, name)
   "[self addParamter:#{value} forKey:@\"#{name}\"];"
 end
+def RequestAddArrayParamters(value, name)
+  "[self addParamterArray:#{value} forKey:@\"#{name}\"];"
+end
 
 class OCObjectRecord < JSONRecord
   def codeOutput
@@ -94,6 +97,7 @@ class OCObjectRecord < JSONRecord
     RequestAddObjectParamters("self.#{@name}", @name)
   end
 end
+
 
 class OCCustomObjectRecord < OCObjectRecord
   def jsonTransformer
@@ -132,6 +136,14 @@ class OCArrayRecord < OCObjectRecord
         return ""
     end
     "#import \"#{@ocClass}.h\" \n"
+  end
+
+  def codeOutput
+      OC_Property_Object(@type, @name)
+  end
+
+  def paramterOutput
+    RequestAddArrayParamters("self.#{@name}", @name)
   end
 end
 

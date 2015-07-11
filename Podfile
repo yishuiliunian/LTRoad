@@ -30,6 +30,8 @@ target 'LuTu' do
   pod 'SVProgressHUD'
   pod 'LMDropdownView'
   pod 'RKNotificationHub'
+  pod "AFNetworking", "~> 2.0"
+  pod 'FCUUID'
 end
 
 

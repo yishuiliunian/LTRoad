@@ -48,9 +48,4 @@
 {
    [self doUIOnSuccced:message];
 }
-
-- (void) didGetRessage:(PMNullModel *)message
-{
-    
-}
 @end

@@ -11,7 +11,7 @@
 
 @property(nonatomic,strong) NSString* content;
 
-@property(nonatomic,strong) NSString* images;
+@property(nonatomic,strong) NSArray* images;
 
 @property(nonatomic,strong) NSString* channel;
 

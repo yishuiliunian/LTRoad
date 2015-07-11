@@ -9,7 +9,7 @@
 #import "LTTagColorManager.h"
 #import <DZSingletonFactory.h>
 #import "LTColors.h"
-#import <HexColor.h>
+#import <HexColors.h>
 @interface LTTagColorManager ()
 {
     NSMutableDictionary* _colorMap;

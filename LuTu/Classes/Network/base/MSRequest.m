@@ -36,6 +36,16 @@
 {
     [self addParamter:[paramter stringValue] forKey:key];
 }
+- (void) addParamterArray:(NSArray*)paramter forKey:(NSString *)key
+{
+    if (!key) {
+        return;
+    }
+    key = [NSString stringWithFormat:@"%@[]",key];
+    for (id x in paramter) {
+        [self addParamter:x forKey:key];
+    }
+}
 - (void) addParamter:(id)paramter forKey:(NSString*)key
 {
     if (!key) {

@@ -107,22 +107,24 @@ static void* kLTNavigationBarStyle = &kLTNavigationBarStyle;
 - (void) loadNavigationBarAppearance:(LTNavigationStyle)style
 {
     LTNavigationBar* bar = (LTNavigationBar*)self.navigationController.navigationBar;
-    [bar setNavigationBarWithColor:[UIColor clearColor]];
-    switch (style) {
-        case LTNavigationStyleBlack:
-        {
-            bar.barBackgroundImage = DZCachedImageByName(@"top_nav_bg");
+    if ([bar isKindOfClass:[LTNavigationBar class]]) {
+        [bar setNavigationBarWithColor:[UIColor clearColor]];
+        switch (style) {
+            case LTNavigationStyleBlack:
+            {
+                bar.barBackgroundImage = DZCachedImageByName(@"top_nav_bg");
+            }
+                break;
+                
+            case LTNavigationStyleTransparency:
+            {
+                
+                bar.barBackgroundImage = imageWithColor([UIColor clearColor]);
+            }
+                break;
+            default:
+                break;
         }
-            break;
-            
-        case LTNavigationStyleTransparency:
-        {
-
-            bar.barBackgroundImage = imageWithColor([UIColor clearColor]);
-        }
-            break;
-        default:
-            break;
     }
 }
 

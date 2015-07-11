@@ -15,6 +15,9 @@
 #import <LMDropdownView.h>
 #import "LTTopActionButton.h"
 #import "MUAlertPool.h"
+#import "UIButton+decorate.h"
+#import "LTUPloadImageManager.h"
+#import "LTImageCollectionViewCell.h"
 @interface LTInputToolbar  : UIView
 DEFINE_PROPERTY_STRONG_UIImageView(backgroudImageView);
 DEFINE_PROPERTY_STRONG_UIButton(imageButton);
@@ -29,6 +32,8 @@ DEFINE_PROPERTY_STRONG_UIButton(imageButton);
     }
     INIT_SELF_SUBVIEW_UIImageView(_backgroudImageView);
     INIT_SUBVIEW_UIButton(self, _imageButton);
+    
+    [_imageButton decorateWithImage:@"pic_cion" highLightImage:@"pic_cion_click" title:nil];
     return self;
 }
 
@@ -41,8 +46,23 @@ DEFINE_PROPERTY_STRONG_UIButton(imageButton);
 }
 @end
 
+static NSString* kImageCellIdentifier = @"xxx";
 
-@interface LTAddThreadViewController () <MSRequestUIDelegate, UITableViewDelegate, UITableViewDataSource, LTToggleActionProtocol>
+@interface LTAddThreadViewController () <MSRequestUIDelegate,
+UITableViewDelegate,
+UITableViewDataSource,
+LTToggleActionProtocol,
+UIActionSheetDelegate,
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate,
+LTUploadManagerDelegate,
+UICollectionViewDelegate,
+UICollectionViewDataSource
+>
+{
+    CGFloat _keyboardHeight;
+    BOOL _tryPost;
+}
 DEFINE_PROPERTY_STRONG(UITextField*, titleTextFiled);
 DEFINE_PROPERTY_STRONG(SZTextView*, contentTextView);
 DEFINE_PROPERTY_STRONG(LTInputToolbar*, inputToolbar);
@@ -50,6 +70,8 @@ DEFINE_PROPERTY_STRONG_UIImageView(lineView);
 DEFINE_PROPERTY_STRONG(UITableView*, menuTableView);
 DEFINE_PROPERTY_STRONG(LMDropdownView*, dropDownView);
 DEFINE_PROPERTY_STRONG(LTTopActionButton*, actionButton);
+DEFINE_PROPERTY_STRONG(LTUPloadImageManager*, uploadImageManager);
+DEFINE_PROPERTY_STRONG(UICollectionView*, selectedImageCollectionView);
 @end
 
 @implementation LTAddThreadViewController
@@ -74,19 +96,25 @@ DEFINE_PROPERTY_STRONG(LTTopActionButton*, actionButton);
 
 - (void) layoutWithKeybordHeight:(CGFloat) height
 {
+    _keyboardHeight = height;
     CGRect contentRect = CGRectShrink(self.view.bounds, height, CGRectMaxYEdge);
     CGRect toolbarRect;
     CGRectDivide(contentRect, &toolbarRect, &contentRect, 44, CGRectMaxYEdge);
     
     CGRect titleRect;
-    CGRect detailRect;
+    CGRect contentTextRect;
+
     CGRect imageScrollRect;
-    CGRectDivide(contentRect, &titleRect, &detailRect, 44, CGRectMinYEdge);
+    CGRectDivide(contentRect, &titleRect, &contentTextRect, 44, CGRectMinYEdge);
     
+    if (_uploadImageManager.allImages.count) {
+        CGRectDivide(contentTextRect, &imageScrollRect, &contentTextRect, 60, CGRectMaxYEdge);
+    }
     
     _inputToolbar.frame = toolbarRect;
     _titleTextFiled.frame = titleRect;
-    _contentTextView.frame = detailRect;
+    _contentTextView.frame = contentTextRect;
+    _selectedImageCollectionView.frame = imageScrollRect;
     _lineView.frame = CGRectMake(0, CGRectGetMaxY(titleRect), CGRectGetViewControllerWidth, 1);
     
 }
@@ -104,13 +132,24 @@ DEFINE_PROPERTY_STRONG(LTTopActionButton*, actionButton);
     INIT_SUBVIEW(self.view, SZTextView, _contentTextView);
     INIT_SUBVIEW(self.view, LTInputToolbar, _inputToolbar);
     INIT_SUBVIEW_UIImageView(self.view, _lineView);
+    
+    
+    //
+    UICollectionViewFlowLayout* layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    layout.itemSize = CGSizeMake(60, 60);
+    _selectedImageCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    _selectedImageCollectionView.dataSource = self;
+    _selectedImageCollectionView.delegate =self;
+    [_selectedImageCollectionView registerClass:[LTImageCollectionViewCell class] forCellWithReuseIdentifier:kImageCellIdentifier];
+    [self.view addSubview:_selectedImageCollectionView];
     //
     _titleTextFiled.placeholder = @"标题";
     _contentTextView.placeholder = @"内容";
     _lineView.backgroundColor = LTColorGrayNormal();
     
     //
-    _inputToolbar.backgroundColor = LTColorGrayNormal();
+    _inputToolbar.backgroundColor = LTColorToolbarGray();
     _menuTableView = [UITableView new];
     _menuTableView.delegate = self;
     _menuTableView.dataSource = self;
@@ -126,7 +165,7 @@ static NSString*  kCellIdentifier = @"kCellIdentifier";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self initAllSubViews];
     
-    UIBarButtonItem* postItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(postFeed)];
+    UIBarButtonItem* postItem = [[UIBarButtonItem alloc] initWithTitle:@"发布" style:UIBarButtonItemStyleDone target:self action:@selector(tryPost)];
     self.navigationItem.rightBarButtonItem = postItem;
 
     // Do any additional setup after loading the view.
@@ -136,8 +175,59 @@ static NSString*  kCellIdentifier = @"kCellIdentifier";
     _actionButton.frame = CGRectMake(0, 0, 400, 44);
     [_actionButton addToggleActionTarget:self];
     self.navigationItem.titleView = _actionButton;
+    //
     
-    
+    [_inputToolbar.imageButton addTarget:self action:@selector(selectImage) forControlEvents:UIControlEventTouchUpInside];
+    //
+    _uploadImageManager = [LTUPloadImageManager new];
+    _uploadImageManager.delgate = self;
+}
+
+- (void) uploadManagerSuccess:(LTUPloadImageManager *)m
+{
+    if (_tryPost) {
+        [self postFeed];
+    }
+}
+
+- (void) uploadManager:(LTUPloadImageManager *)m uploadError:(NSError *)error
+{
+    MUAlertShowError(error.localizedDescription);
+}
+- (void) selectImage
+{
+    UIActionSheet* actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择图片" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相册",@"相机", nil];
+    [actionSheet showInView:self.navigationController.view];
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSString* title = [actionSheet buttonTitleAtIndex:buttonIndex];
+    UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+    if ([title isEqualToString:@"相机"]) {
+        picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    } else if ([title isEqualToString:@"相册"])
+    {
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    picker.delegate = self;
+    [self.navigationController presentViewController:picker animated:YES completion:nil];
+}
+
+
+- (void) imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage* image = info[UIImagePickerControllerOriginalImage];
+    LTUploadImage* upImage = [[LTUploadImage alloc] initWithImage:image];
+    [_uploadImageManager uploadImage:upImage];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    [self layoutWithKeybordHeight:_keyboardHeight];
+    [_selectedImageCollectionView reloadData];
 }
 
 - (void) toggleActionButton:(LTTopActionButton *)sender
@@ -163,12 +253,39 @@ static NSString*  kCellIdentifier = @"kCellIdentifier";
 {
     MUAlertShowSuccess(@"发布成功");
 }
+
+- (void) tryPost
+{
+    if (!_titleTextFiled.text || [_titleTextFiled.text isEqualToString:@""]) {
+        MUAlertShowError(@"标题输一下呗");
+        return;
+    }
+    [self postFeed];
+}
 - (void) postFeed
 {
+    
+    _tryPost = YES;
+    if (_uploadImageManager.uploading) {
+        MUAlertShowLoading(@"正在上传图片");
+        return;
+    }
+    NSMutableArray* array = [NSMutableArray new];
+    for (LTUploadImage* image in _uploadImageManager.allImages) {
+        if (!image.uploaded) {
+            MUAlertShowError(@"还有图片没有上传，不能发布");
+            return;
+        }
+        if (image.imageID) {
+            [array addObject:image.imageID];
+        }
+    }
+    
     LTThreadNewReq* req = [LTThreadNewReq new];
     req.creatorId = LTCurrentAccount.accountID;
     req.clubId = self.selectedCarMeet.clubID;
     req.title = _titleTextFiled.text;
+    req.images = array;
     req.content = _contentTextView.text;
     MSPerformRequestWithDelegateSelf(req);
     MUAlertShowLoading(@"发布中...");
@@ -232,5 +349,25 @@ static NSString*  kCellIdentifier = @"kCellIdentifier";
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44;
+}
+
+//
+
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+- (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return _uploadImageManager.allImages.count;
+}
+
+- (UICollectionViewCell*) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTImageCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:kImageCellIdentifier forIndexPath:indexPath];
+    
+    cell.imageView.image = [_uploadImageManager.allImages[indexPath.row] image];
+    return cell;
 }
 @end

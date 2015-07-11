@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 #import "LTBadgeItem.h"
 #import "PMRouteDetailRsp.h"
-#import "PMLineSegment.h"
 @interface LTLine : NSObject
 @property (nonatomic, strong) NSString* routeName;
 @property (nonatomic, strong) NSString* distance;

@@ -329,7 +329,7 @@ requestModel("LTThreadNewReq") {|r|
   p_string "clubId", r
   p_string "title", r
   p_string "content", r
-  p_string "images", r
+  p_array "images", r
   p_string "channel", r
 }
 
