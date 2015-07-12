@@ -27,7 +27,7 @@
 @property (nonatomic, strong, readonly) LTAccount* currentAccount;
 + (LTAccountManager*) shareManager;
 - (void) reloadAccount:(LTAccount*)account;
-
+- (void) storeAccountToStorage:(LTAccount*)account;
 /**
  *  确保当前有一个账号登陆
  */

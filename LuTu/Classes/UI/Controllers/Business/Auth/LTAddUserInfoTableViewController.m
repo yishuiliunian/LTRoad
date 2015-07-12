@@ -14,10 +14,12 @@
 #import "MUAlertPool.h"
 #import "LTUserInfoCompleteReq.h"
 #import "LTGlobals.h"
-@interface LTAddUserInfoTableViewController () <MSRequestUIDelegate>
+#import <DDCitySelectViewController.h>
+@interface LTAddUserInfoTableViewController () <MSRequestUIDelegate, DDCitySelectViewControllerDelegate, DDCitySelectViewControllerDataSource>
 {
     NSString* _nickName;
     UIButton* _completeButton;
+    NSString* _city;
 }
 @end
 
@@ -48,6 +50,8 @@
     
     //
     self.title = @"个人资料";
+    
+    [self.tableView reloadData];
 }
 
 - (void) viewWillLayoutSubviews
@@ -93,7 +97,7 @@
         infoCell.detailTextLabel.textColor = LTColorDetailGray();
         if (indexPath.row == 1) {
             infoCell.textLabel.text = @"城市";
-            infoCell.detailTextLabel.text = @"";
+            infoCell.detailTextLabel.text = _city;
         }
     } else if ([cell isKindOfClass:[LTInputTableViewCell class]]) {
         LTInputTableViewCell* inputCell = (LTInputTableViewCell*)cell;
@@ -128,16 +132,32 @@
 {
     return 40;
 }
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 1) {
+        DDCitySelectViewController* vc = [[DDCitySelectViewController alloc] init];
+        vc.delegate = self;
+        vc.dataSource = self;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+- (NSArray*) loadHotCity
+{
+    return @[@"深圳"];
+}
+
+- (void) touchResponse:(DDCityInfo *)cityInfo
+{
+    _city = cityInfo.cityNameLoc;
+    [self.tableView reloadData];
+}
 - (void) nickNameChanged:(UITextField*)tx
 {
     _nickName = tx.text;
 }
 
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
 
 - (void) finishInput
 {
@@ -151,13 +171,18 @@
     LTUserInfoCompleteReq* req = [LTUserInfoCompleteReq new];
     req.name = _nickName;
     req.phone = userInfo.phone;
-    req.ctiy = userInfo.city;
+    req.ctiy = _city;
     req.avatarUrl = userInfo.avatarURL;
-    req.drivingYear = userInfo.drivingYear;
+    req.drivingYear = @"1";
     req.userId = account.accountID;
     MSPerformRequestWithDelegateSelf(req);
 
     MUAlertShowLoading(@"补充资料中。。。");
+    
+    userInfo.nickName = _nickName;
+    userInfo.city = _city;
+    account.userInfo = userInfo;
+    [LTShareAccountManager storeAccountToStorage:account];
 }
 
 - (void) request:(MSRequest *)request onError:(NSError *)error
@@ -170,4 +195,5 @@
     MUAlertShowLoading(@"成功");
     [self ltAddUserInfoSuccess];
 }
+
 @end

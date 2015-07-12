@@ -21,7 +21,6 @@ target 'LuTu' do
   pod 'libextobjc'
   pod 'Mantle'
   pod 'FXBlurView'
-  pod 'SlackTextViewController'
   pod 'SZTextView'
   pod 'MJRefresh'
   pod 'InAppSettingsKit'
@@ -33,6 +32,7 @@ target 'LuTu' do
   pod "AFNetworking", "~> 2.0"
   pod 'FCUUID'
   pod 'MSInputScrollViewController'
+  pod 'DDCitySelect'
 end
 
 

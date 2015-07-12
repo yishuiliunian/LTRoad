@@ -15,6 +15,7 @@
     if (!self) {
         return self;
     }
+    self.detailTextLabel.textAlignment = NSTextAlignmentLeft;
     return self;
 }
 
