@@ -32,6 +32,7 @@ target 'LuTu' do
   pod 'RKNotificationHub'
   pod "AFNetworking", "~> 2.0"
   pod 'FCUUID'
+  pod 'MSInputScrollViewController'
 end
 
 

@@ -54,7 +54,7 @@ LTColorDefine(BackgroundGray, f0f3f8, 1)
 LTColorDefine(PointGray, dfdee4, 1)
 
 LTColorDefine(DetailGray, 999999, 1)
-
+LTColorDefine(ButtonBlue, 0098ee, 1)
 
 void ColorLabelWithWhite (UILabel* label) {
     label.textColor = LTColorWhite();

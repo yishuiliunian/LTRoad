@@ -84,8 +84,8 @@ end
 def RequestAddObjectParamters(value, name)
   "[self addParamter:#{value} forKey:@\"#{name}\"];"
 end
-def RequestAddArrayParamters(value, name)
-  "[self addParamterArray:#{value} forKey:@\"#{name}\"];"
+def RequestAddArrayParamters(value, name, subkey)
+  "[self addParamterArray:#{value} subKey:@\"#{subkey}\" forKey:@\"#{name}\"];"
 end
 
 class OCObjectRecord < JSONRecord
@@ -143,7 +143,7 @@ class OCArrayRecord < OCObjectRecord
   end
 
   def paramterOutput
-    RequestAddArrayParamters("self.#{@name}", @name)
+    RequestAddArrayParamters("self.#{@name}", @name ,@ocClass)
   end
 end
 

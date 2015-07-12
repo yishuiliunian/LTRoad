@@ -1,0 +1,13 @@
+//
+//  LTPhoneLoginViewController.h
+//  LuTu
+//
+//  Created by stonedong on 15/7/12.
+//  Copyright (c) 2015年 Road.Inc. All rights reserved.
+//
+
+#import "LTPhoneAuthViewController.h"
+
+@interface LTPhoneLoginViewController : LTPhoneAuthViewController
+
+@end

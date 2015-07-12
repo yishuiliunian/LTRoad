@@ -39,6 +39,6 @@ LTExternColor(BackgroundGray)
 LTExternColor(PointGray)
 LTExternColor(DetailGray)
 LTExternColor(ToolbarGray)
-
+LTExternColor(ButtonBlue)
 
 FOUNDATION_EXTERN void ColorLabelWithWhite(UILabel* label);

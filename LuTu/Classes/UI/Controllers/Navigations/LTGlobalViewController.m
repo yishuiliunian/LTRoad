@@ -19,6 +19,7 @@
 #import "LTRoadViewController.h"
 #import "LTNavigationController.h"
 #import "LTAuthViewController.h"
+#import "LTGuideContainerViewController.h"
 
 @implementation UIViewController (GlobalNavigation)
 
@@ -120,9 +121,9 @@
 
 -  (void) loadAuthViewController:(LTAuthSucceedBlock)block
 {
-    LTAuthViewController* authViewController  = [[LTAuthViewController alloc] initWithNibName:@"LTAuthViewController" bundle:nil];
-    authViewController.succeedBlock = block;
-    LTNavigationController* nav = [[LTNavigationController alloc] initWithRootViewController:authViewController];
+    LTAuthViewController* authViewController  = [[LTAuthViewController alloc] initWithNibName:nil bundle:nil];
+    LTGuideContainerViewController* nav = [[LTGuideContainerViewController alloc] initWithRootViewController:authViewController];
+    nav.succeedBlock = block;
     [self presentViewController:nav animated:YES completion:nil];
 }
 @end

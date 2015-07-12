@@ -193,8 +193,8 @@ def p_string(name, req)
   req.addParamter(r)
 end
 
-def p_array(name, req)
-  r = OCArrayRecord.new("NSArray",name, "NSString")
+def p_array(name, subkey, req)
+  r = OCArrayRecord.new("NSArray",name, subkey)
   req.addParamter(r)
 end
 

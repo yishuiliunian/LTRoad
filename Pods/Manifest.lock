@@ -35,7 +35,7 @@ PODS:
     - DZSinglonFactory
   - DZCDNFiles (1.0.1):
     - DZSinglonFactory
-  - DZGeometryTools (1.0.9)
+  - DZGeometryTools (1.1.2)
   - DZProgrameDefines (1.0.1)
   - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
@@ -92,6 +92,9 @@ PODS:
   - Mantle/extobjc (2.0.2)
   - Masonry (0.6.2)
   - MJRefresh (2.2.0)
+  - MSInputScrollViewController (0.1.4):
+    - DZGeometryTools
+    - DZProgrameDefines
   - NSString-UrlEncode (2.0.0)
   - ProtobufObjC (0.0.1)
   - RKNotificationHub (2.0.1)
@@ -125,6 +128,7 @@ DEPENDENCIES:
   - Mantle
   - Masonry
   - MJRefresh
+  - MSInputScrollViewController
   - NSString-UrlEncode
   - ProtobufObjC
   - RKNotificationHub
@@ -139,7 +143,7 @@ SPEC CHECKSUMS:
   DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
   DZCache: 4e4c8470c077a84d5fc25e2d8b1337f110fbf9a6
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
-  DZGeometryTools: 6a875726d83ae18d5ff593b4cb02af11f947b86c
+  DZGeometryTools: 6dc772e61b6b1e3e00ead6e0adea7a50f95d630a
   DZProgrameDefines: 623dfe81da225994cbba6f1d9ba982d7f5e7f2a5
   DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
@@ -158,6 +162,7 @@ SPEC CHECKSUMS:
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
+  MSInputScrollViewController: 1dd190f4584d2dc71bf53848bda8167ac25456ab
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   RKNotificationHub: d80905a948c79c11673345f807133a0bfd17e320

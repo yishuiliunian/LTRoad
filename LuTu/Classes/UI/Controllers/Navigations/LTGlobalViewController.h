@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LTAuthViewController.h"
+#import "LTGuideContainerViewController.h"
 @class LTGlobalViewController;
 @interface UIViewController (GlobalNavigation)
 @property (nonatomic, strong, readonly) LTGlobalViewController* globalViewController;

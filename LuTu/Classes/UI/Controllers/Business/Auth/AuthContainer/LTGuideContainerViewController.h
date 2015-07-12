@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LTNavigationController.h"
 
-@interface LTGuideContainerViewController : UIViewController
+typedef void (^LTAuthSucceedBlock)();
+@interface LTGuideContainerViewController : LTNavigationController
+@property (nonatomic, strong) LTAuthSucceedBlock succeedBlock;
+@end
 
+
+@interface UIViewController (Auth)
+- (void) ltAuthSuccess;
+- (void) ltAddUserInfoSuccess
+;
 @end

@@ -329,7 +329,7 @@ requestModel("LTThreadNewReq") {|r|
   p_string "clubId", r
   p_string "title", r
   p_string "content", r
-  p_array "images", r
+  p_array "images", "imageId", r
   p_string "channel", r
 }
 
@@ -646,6 +646,23 @@ requestModel("LTTokenAuthReq") { |m|
   p_string "oAuthOpenId", m
   p_string "oAuthAccessToken", m
   p_int64 "oAuthType", m
+}
+
+##手机号码注册
+
+requestModel("LTUserRegisterPhoneReq") { |m|
+    method "/user/registerPhone", m
+    response "PMTokenAuthRsp", m
+    p_string "phone", m
+    p_string "password", m
+}
+##手机号码登陆
+
+requestModel("LTUserLoginPhoneReq") { |m|
+  method "/user/loginPhone", m
+  response  "PMTokenAuthRsp", m
+  p_string "phone", m
+  p_string "password", m
 }
 
 FindProject()

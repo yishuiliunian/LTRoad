@@ -16,7 +16,7 @@
 [self addParamter:self.clubId forKey:@"clubId"];
 [self addParamter:self.title forKey:@"title"];
 [self addParamter:self.content forKey:@"content"];
-[self addParamterArray:self.images forKey:@"images"];
+[self addParamterArray:self.images subKey:@"imageId" forKey:@"images"];
 [self addParamter:self.channel forKey:@"channel"];
 
     return YES;

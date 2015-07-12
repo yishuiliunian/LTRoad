@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "LTAccount.h"
-#import "LTAuthViewController.h"
+#import "LTGuideContainerViewController.h"
 #import <extobjc.h>
+#import "PMTokenAuthRsp.h"
+
 #define LTShareAccountManager  [LTAccountManager shareManager]
 #define LTCurrentAccount [LTShareAccountManager currentAccount]
 
@@ -31,4 +33,6 @@
  */
 - (void) ensureApplicationAuthorization:(LTAuthSucceedBlock)block;
 - (BOOL) checkApplicationAuthorization;
+
+- (void) reloadAccountWithServerRsp:(PMTokenAuthRsp*)token;
 @end

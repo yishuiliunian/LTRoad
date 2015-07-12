@@ -9,6 +9,7 @@
 #import "LTGuideContainerViewController.h"
 #import "LTNavigationController.h"
 #import "LTAuthViewController.h"
+#import "LTAddUserInfoTableViewController.h"
 @interface LTGuideContainerViewController ()
 @property (nonatomic, strong) LTNavigationController* authNavigationController;
 @end
@@ -35,6 +36,29 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
+}
+
+@end
+
+
+@implementation UIViewController(Auth)
+
+- (void) ltAuthSuccess
+{
+    LTAddUserInfoTableViewController* addUserInfoVC = [LTAddUserInfoTableViewController new];
+    [self.navigationController pushViewController:addUserInfoVC animated:YES];
+
+}
+
+- (void) ltAddUserInfoSuccess
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if ([self.navigationController isKindOfClass:[LTGuideContainerViewController class]]) {
+        LTGuideContainerViewController* guide = (LTGuideContainerViewController*)self.navigationController;
+        if (guide.succeedBlock) {
+            guide.succeedBlock();
+        }
+    }
 }
 
 @end

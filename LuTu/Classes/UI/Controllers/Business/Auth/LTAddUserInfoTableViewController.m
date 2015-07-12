@@ -7,21 +7,55 @@
 //
 
 #import "LTAddUserInfoTableViewController.h"
-
-@interface LTAddUserInfoTableViewController ()
-
+#import "LTUserInfoTableViewCell.h"
+#import "LTInputTableViewCell.h"
+#import "LTColors.h"
+#import <DZGeometryTools.h>
+#import "MUAlertPool.h"
+#import "LTUserInfoCompleteReq.h"
+#import "LTGlobals.h"
+@interface LTAddUserInfoTableViewController () <MSRequestUIDelegate>
+{
+    NSString* _nickName;
+    UIButton* _completeButton;
+}
 @end
 
 @implementation LTAddUserInfoTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor clearColor];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     _completeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_completeButton setBackgroundColor:LTColorButtonBlue()];
+    [_completeButton setTitle:@"完成注册" forState:UIControlStateNormal];
+    [_completeButton addTarget:self action:@selector(finishInput) forControlEvents:UIControlEventTouchUpInside];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIView* aView = [UIView new];
+    CGRect rect = self.view.bounds;
+    rect.size.height = 44;
+    aView.frame = rect;
+    [aView addSubview:_completeButton];
+    
+    _completeButton.layer.cornerRadius = CGRectGetHeight(rect)/2;
+    //
+    [_completeButton setTitleColor:LTColorDetailGray() forState:UIControlStateHighlighted];
+    [_completeButton setTitleColor:LTColorDetailGray() forState:UIControlStateSelected];
+    
+    self.tableView.tableFooterView = aView;
+    
+    //
+    self.title = @"个人资料";
+}
+
+- (void) viewWillLayoutSubviews
+{
+    [super viewWillLayoutSubviews];
+    CGRect rect = CGRectMake(0, 0, CGRectGetViewControllerWidth, 44);
+    rect = CGRectCenterSubSize(rect, CGSizeMake(30, 0));
+    _completeButton.frame = rect;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,85 +66,108 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return 2;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSString* key = [@(indexPath.row) stringValue];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:key ];
+    if (!cell) {
+        if (indexPath.row == 0) {
+            cell = [[LTInputTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:key];
+        } else {
+            cell = [[LTUserInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:key];
+        }
+    }
     
-    // Configure the cell...
+    //
+    cell.backgroundColor = LTColorBalckAlpha3();
+    //
+    if ([cell isKindOfClass:[LTUserInfoTableViewCell class]]) {
+        LTUserInfoTableViewCell* infoCell = (LTUserInfoTableViewCell*)cell;
+        infoCell.textLabel.textColor = [UIColor whiteColor];
+        infoCell.detailTextLabel.textColor = LTColorDetailGray();
+        if (indexPath.row == 1) {
+            infoCell.textLabel.text = @"城市";
+            infoCell.detailTextLabel.text = @"";
+        }
+    } else if ([cell isKindOfClass:[LTInputTableViewCell class]]) {
+        LTInputTableViewCell* inputCell = (LTInputTableViewCell*)cell;
+        inputCell.titleLable.text = @"昵称";
+        inputCell.titleLable.textColor = [UIColor whiteColor];
+        inputCell.textField.placeholder = @"请输入昵称";
+        inputCell.textField.textColor = LTColorDetailGray();
+        [inputCell.textField addTarget:self action:@selector(nickNameChanged:) forControlEvents:UIControlEventEditingChanged];
+    }
     
     return cell;
 }
-*/
 
-/*
+- (UIView*) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView* aView = [UIView new];
+    aView.backgroundColor = [UIColor clearColor];
+    return aView;
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+
+- (UIView*) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView* aView = [UIView new];
+    aView.backgroundColor = [UIColor clearColor];
+    return aView;
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return 40;
+}
+- (void) nickNameChanged:(UITextField*)tx
+{
+    _nickName = tx.text;
+}
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Table view delegate
-
-// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here, for example:
-    // Create the next view controller.
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:<#@"Nib name"#> bundle:nil];
+- (void) finishInput
+{
+    if (!_nickName || [_nickName isEqualToString:@""]) {
+        MUAlertShowError(@"请输入昵称");
+        return;
+    }
     
-    // Pass the selected object to the new view controller.
-    
-    // Push the view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    LTAccount* account = LTCurrentAccount;
+    LTUserInfo* userInfo = account.userInfo;
+    LTUserInfoCompleteReq* req = [LTUserInfoCompleteReq new];
+    req.name = _nickName;
+    req.phone = userInfo.phone;
+    req.ctiy = userInfo.city;
+    req.avatarUrl = userInfo.avatarURL;
+    req.drivingYear = userInfo.drivingYear;
+    req.userId = account.accountID;
+    MSPerformRequestWithDelegateSelf(req);
+
+    MUAlertShowLoading(@"补充资料中。。。");
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) request:(MSRequest *)request onError:(NSError *)error
+{
+    MUAlertShowError(error.localizedDescription);
 }
-*/
 
+- (void) request:(MSRequest *)request onSucced:(id)object
+{
+    MUAlertShowLoading(@"成功");
+    [self ltAddUserInfoSuccess];
+}
 @end

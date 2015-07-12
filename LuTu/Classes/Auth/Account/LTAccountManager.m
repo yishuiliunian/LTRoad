@@ -12,7 +12,8 @@
 #import "MSLog.h"
 #import "MSTokenManager.h"
 #import "AppDelegate.h"
-
+#import "LTGlobals.h"
+#import "LTUserInfo.h"
 @interface LTAccountManager ()
 @property (nonatomic, assign) int reloadTokenCount;
 @end
@@ -64,7 +65,19 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
     _currentAccount = [self loadAccountFromStorage];
     return self;
 }
-
+- (void) reloadAccountWithServerRsp:(PMTokenAuthRsp*)token
+{
+    
+    MSToken* serverToken = [[MSToken alloc] initWithAccount:token.userId];
+    NSDate* experiedDate =  [NSDate dateWithTimeIntervalSinceNow:1000000000];
+    serverToken.experiedDate = experiedDate;
+    LTAccount* account = [[LTAccount alloc] init];
+    account.accountID =ENSURE_STR(token.userId);
+    account.userInfo = [[LTUserInfo alloc] initWithPMTokenUserInfo:token];
+    [self reloadAccount:account];
+    [MSShareTokenManager cacheToken:serverToken forAccount:account];
+ 
+}
 - (void) reloadAccount:(LTAccount *)account
 {
     _currentAccount = account;

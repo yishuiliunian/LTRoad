@@ -252,6 +252,7 @@ static NSString*  kCellIdentifier = @"kCellIdentifier";
 - (void) request:(MSRequest *)request onSucced:(id)object
 {
     MUAlertShowSuccess(@"发布成功");
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) tryPost

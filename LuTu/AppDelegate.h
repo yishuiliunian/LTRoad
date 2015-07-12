@@ -11,7 +11,5 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 @property (nonatomic, strong, readonly) LTGlobalViewController* globalViewController;
 @property (strong, nonatomic) UIWindow *window;
-
-
 @end
 

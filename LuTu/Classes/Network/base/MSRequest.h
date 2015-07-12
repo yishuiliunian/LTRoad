@@ -47,7 +47,7 @@ return NO;\
 - (BOOL) loadParamters:(NSError* __autoreleasing*)error;
 - (void) addParamter:(id)paramter forKey:(NSString*)key;
 - (void) addParamterNumber:(NSNumber*)paramter forKey:(NSString *)key;
-- (void) addParamterArray:(NSArray*)paramter forKey:(NSString *)key;
+- (void) addParamterArray:(NSArray*)paramter subKey:(NSString*)subKey forKey:(NSString *)key;
 
 //
 - (void) doUIOnError:(NSError*)error;
