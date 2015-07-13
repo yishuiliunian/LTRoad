@@ -10,6 +10,7 @@
 #import "LTMyFavoriteDataController.h"
 #import "LTUIRouteSearchInfo.h"
 #import "LTRouteDetailViewController.h"
+#import "LTColors.h"
 @interface LTMyFavoriteViewController ()
 
 @end
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"我的收藏";
+    self.view.backgroundColor = LTColorBackgroundGray();
     // Do any additional setup after loading the view.
 }
 

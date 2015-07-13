@@ -10,7 +10,7 @@
 #import <DZProgramDefines.h>
 #import "LTGrowLabel.h"
 #import "LTGrowImageView.h"
-@interface LTFeedContentView : UIView
+@interface LTFeedContentView : UIControl
 DEFINE_PROPERTY_STRONG(LTGrowImageView*,imageView);
 DEFINE_PROPERTY_STRONG(LTGrowLabel*,contentLabel);
 @end

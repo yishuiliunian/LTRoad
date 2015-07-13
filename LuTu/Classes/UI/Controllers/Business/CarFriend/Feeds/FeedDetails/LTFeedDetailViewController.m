@@ -16,7 +16,8 @@
 #import "LTThreadPostListReq.h"
 #import "UIViewController+Additions.h"
 #import "PMThreadPostListRsp.h"
-@interface LTFeedDetailViewController () <LTPostToolBarDelegate, MSRequestUIDelegate>
+#import <MWPhotoBrowser.h>
+@interface LTFeedDetailViewController () <LTPostToolBarDelegate, MSRequestUIDelegate, MWPhotoBrowserDelegate>
 {
     NSMutableDictionary* _allComments;
     LTFeedView* _headerFeedView;
@@ -24,6 +25,8 @@
     LTPostToolBar* _postToolBar;
     
     UISegmentedControl* _navTopSegmentControl;
+    
+    NSArray* _feedPhotos;
 }
 @end
 
@@ -82,6 +85,35 @@ static NSString* const KLTThreadLouZHu = @"楼主";
     
     UIBarButtonItem* item = [self customBarButtonItemWithTarget:self selector:@selector(postComment) image:@"chat" highlightImage:@"chat"];
     self.navigationItem.rightBarButtonItem = item;
+    
+    [_headerFeedView.feedContentView addTarget:self action:@selector(showImages) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void) showImages
+{
+    if (_feedPhotos.count) {
+        MWPhotoBrowser* browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+        browser.displayNavArrows = NO; // Whether to display left and right nav arrows on toolbar (defaults to NO)
+        browser.displaySelectionButtons = NO; // Whether selection buttons are shown on each image (defaults to NO)
+        browser.zoomPhotosToFill = YES; // Images that almost fill the screen will be initially zoomed to fill (defaults to YES)
+        browser.alwaysShowControls = NO; // Allows to control whether the bars and controls are always visible or whether they fade away to show the photo full (defaults to NO)
+        browser.enableGrid = NO; // Whether to allow the viewing of all the photo thumbnails on a grid (defaults to YES)
+        browser.startOnGrid = NO; // Whether to start on the grid of thumbnails instead of the first photo (defaults to NO)
+        browser.autoPlayOnAppear = NO; // Auto-play first video
+        [browser setCurrentPhotoIndex:0];
+        [self.navigationController pushViewController:browser animated:YES];
+    }
+}
+
+- (NSUInteger)numberOfPhotosInPhotoBrowser:(MWPhotoBrowser *)photoBrowser {
+    return _feedPhotos.count;
+}
+
+- (id <MWPhoto>)photoBrowser:(MWPhotoBrowser *)photoBrowser photoAtIndex:(NSUInteger)index {
+    if (index < _feedPhotos.count) {
+        return [_feedPhotos objectAtIndex:index];
+    }
+    return nil;
 }
 
 - (void) postComment
@@ -95,6 +127,15 @@ static NSString* const KLTThreadLouZHu = @"楼主";
         _carFeedInfo = carFeedInfo;
         if ([self isViewLoaded]) {
             [self reloadPostDetail];
+        }
+        
+        if (_carFeedInfo.images.count) {
+            NSMutableArray* array = [NSMutableArray new];
+            for (NSURL* str in _carFeedInfo.images) {
+                MWPhoto* p = [MWPhoto photoWithURL:str];
+                [array addObject:p];
+            }
+            _feedPhotos = array;
         }
     }
 }

@@ -7,7 +7,7 @@
 //
 
 #import "LTMyNewsViewController.h"
-
+#import "LTColors.h"
 @interface LTMyNewsViewController ()
 
 @end
@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = LTColorBackgroundGray();
     // Do any additional setup after loading the view.
 }
 

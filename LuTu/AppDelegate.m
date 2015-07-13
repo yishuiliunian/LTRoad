@@ -10,7 +10,7 @@
 #import "LTGlobalViewController.h"
 #import "LTConfigure.h"
 #import <DZImageCache.h>
-#import <SAAuth/SAReqManager.h>
+#import "SAReqManager.h"
 @interface AppDelegate ()
 
 @end

@@ -11,7 +11,7 @@
 #import <DZImageCache.h>
 #import "LTRoadListReq.h"
 #import <BaiduMapAPI/BMapKit.h>
-#import <SAAuth/SAReqManager.h>
+#import "SAReqManager.h"
 #import "MSLog.h"
 #import "LTAppearenceTools.h"
 #import "LTLocationManager.h"
@@ -20,6 +20,8 @@
 void SetupSocialNetwork()
 {
     [[SAReqManager shareManager] registerWeChatApp:@"wx59f6360bf2a79416" scret:@"37fce920dd26a908b9457463a785307a"];
+    [SAAuthShareManager registerTencentApp:@"1104574933"];
+    [SAAuthShareManager registerWeiboAppID:@"1794232399" secret:@"1792eb3262b7d9405471e22662469b5a"];
 }
  void LTApplicationSetup()
 {

@@ -28,6 +28,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
+  - DACircularProgress (2.3.1)
   - DateTools (1.6.1)
   - DDCitySelect (1.0.1):
     - FCCurrentLocationGeocoder (~> 1.1.10)
@@ -41,11 +42,9 @@ PODS:
     - DZSinglonFactory
   - DZGeometryTools (1.1.2)
   - DZProgrameDefines (1.0.1)
-  - DZQQLib (2.8.1)
   - DZSinglonFactory (1.0.2)
   - DZSwipeViewController (0.2.0):
     - DZGeometryTools
-  - DZWeChatLib (1.5.0)
   - FCCurrentLocationGeocoder (1.1.10):
     - FCIPAddressGeocoder (~> 1.0.0)
   - FCIPAddressGeocoder (1.0.2)
@@ -103,17 +102,21 @@ PODS:
     - Mantle/extobjc (= 2.0.2)
   - Mantle/extobjc (2.0.2)
   - Masonry (0.6.2)
+  - MBProgressHUD (0.9.1)
   - MJRefresh (2.2.0)
   - MSInputScrollViewController (0.1.4):
     - DZGeometryTools
     - DZProgrameDefines
+  - MWPhotoBrowser (2.1.1):
+    - DACircularProgress (~> 2.3)
+    - MBProgressHUD (~> 0.9)
+    - SDWebImage (!= 3.7.2, ~> 3.7)
   - NSString-UrlEncode (2.0.0)
   - ProtobufObjC (0.0.1)
   - RKNotificationHub (2.0.1)
-  - SAAuth (0.1.1):
-    - DZQQLib
-    - DZWeChatLib
-    - JSONModel
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
   - SVProgressHUD (1.1.3)
   - SZTextView (1.2.1)
   - UICKeyChainStore (1.0.5)
@@ -134,6 +137,7 @@ DEPENDENCIES:
   - HexColors
   - InAppSettingsKit
   - JSBadgeView
+  - JSONModel
   - libextobjc
   - LMDropdownView
   - MagicalRecord
@@ -141,26 +145,25 @@ DEPENDENCIES:
   - Masonry
   - MJRefresh
   - MSInputScrollViewController
+  - MWPhotoBrowser
   - NSString-UrlEncode
   - ProtobufObjC
   - RKNotificationHub
-  - SAAuth
   - SVProgressHUD
   - SZTextView
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DateTools: 9bcc89e4f2f9004d8a7a2bd1b49269cf78968e65
   DDCitySelect: cf199c235a9402a4bdf9e62759f9711091a8076e
   DZCache: 4e4c8470c077a84d5fc25e2d8b1337f110fbf9a6
   DZCDNFiles: 4e5d9d3facb81dc783ecda98efc759ee06e5961b
   DZGeometryTools: 6dc772e61b6b1e3e00ead6e0adea7a50f95d630a
   DZProgrameDefines: 623dfe81da225994cbba6f1d9ba982d7f5e7f2a5
-  DZQQLib: 3419d72f780ee1a116d26ae57ca4639185a0f4e1
   DZSinglonFactory: 2b43251e9dcb1053c79a7c776dff5bbe0dea602b
   DZSwipeViewController: de05b0244549d20ee24aeb87c68d20dcae7d3432
-  DZWeChatLib: 9bcf116f483a7d50ae24c7016f187676fab0e2c2
   FCCurrentLocationGeocoder: e3f2cff7ffbbb09a9bc1603e1743650345927938
   FCIPAddressGeocoder: 2622f052eba06c78a707f8b9d9925a406d96ebbd
   FCUUID: 178c3d7907b1399137f1093f9c04ce4825755292
@@ -176,12 +179,14 @@ SPEC CHECKSUMS:
   MagicalRecord: 89eb7d7ead39fb37f01c3d010665ee94d17f8dba
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   MJRefresh: 65a2bf14abb6feeaed8696aa1551f70e15ab0a08
   MSInputScrollViewController: 1dd190f4584d2dc71bf53848bda8167ac25456ab
+  MWPhotoBrowser: ba0d0c09ffda3a7ea10093518738c502c1c7141c
   NSString-UrlEncode: d26eb4378531911d54694733143dd493c1571f5c
   ProtobufObjC: 2e2e5a9d39a3261db9e51f4b90301f17844b08d5
   RKNotificationHub: d80905a948c79c11673345f807133a0bfd17e320
-  SAAuth: a82b0b90bd867e9193300cbc8df759e395855e83
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   SZTextView: 906df45afd3c1b24fc5252088d5ef8061513c238
   UICKeyChainStore: e81dc3b58d56ffaed61ab6669eb97071e53fc377

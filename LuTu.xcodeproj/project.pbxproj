@@ -3902,6 +3902,20 @@
 		655EDCA51B52BAB10023EDF0 /* SLKTypingIndicatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDC911B52BAB10023EDF0 /* SLKTypingIndicatorProtocol.h */; };
 		655EDCA61B52BAB10023EDF0 /* SLKTypingIndicatorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDC921B52BAB10023EDF0 /* SLKTypingIndicatorView.h */; };
 		655EDCA71B52BAB10023EDF0 /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDC931B52BAB10023EDF0 /* SLKTypingIndicatorView.m */; };
+		655EDCB71B53F06C0023EDF0 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 655EDCAA1B53F06B0023EDF0 /* .gitkeep */; };
+		655EDCB81B53F06C0023EDF0 /* SAAuthQQProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCAB1B53F06B0023EDF0 /* SAAuthQQProcess.h */; };
+		655EDCB91B53F06C0023EDF0 /* SAAuthQQProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCAC1B53F06B0023EDF0 /* SAAuthQQProcess.m */; };
+		655EDCBA1B53F06C0023EDF0 /* SAAuthWeChatProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCAD1B53F06B0023EDF0 /* SAAuthWeChatProcess.h */; };
+		655EDCBB1B53F06C0023EDF0 /* SAAuthWeChatProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCAE1B53F06B0023EDF0 /* SAAuthWeChatProcess.m */; };
+		655EDCBC1B53F06C0023EDF0 /* SAReqAuthProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCAF1B53F06B0023EDF0 /* SAReqAuthProcess.h */; };
+		655EDCBD1B53F06C0023EDF0 /* SAReqAuthProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCB01B53F06B0023EDF0 /* SAReqAuthProcess.m */; };
+		655EDCBE1B53F06C0023EDF0 /* SAReqManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCB11B53F06B0023EDF0 /* SAReqManager.h */; };
+		655EDCBF1B53F06C0023EDF0 /* SAReqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCB21B53F06B0023EDF0 /* SAReqManager.m */; };
+		655EDCC01B53F06C0023EDF0 /* SAToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCB31B53F06B0023EDF0 /* SAToken.h */; };
+		655EDCC11B53F06C0023EDF0 /* SAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCB41B53F06C0023EDF0 /* SAToken.m */; };
+		655EDCC21B53F06C0023EDF0 /* SAWeiboAuthProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 655EDCB51B53F06C0023EDF0 /* SAWeiboAuthProcess.h */; };
+		655EDCC31B53F06C0023EDF0 /* SAWeiboAuthProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 655EDCB61B53F06C0023EDF0 /* SAWeiboAuthProcess.m */; };
+		655EDCC51B53F1580023EDF0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655EDCC41B53F1580023EDF0 /* CoreTelephony.framework */; };
 		6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */; };
 		656A3EB6D683264235EE2B6B /* (null) in Headers */ = {isa = PBXBuildFile; };
 		656FB7A4D66E33ABDB8C985E /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -10113,6 +10127,20 @@
 		655EDC911B52BAB10023EDF0 /* SLKTypingIndicatorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorProtocol.h; sourceTree = "<group>"; };
 		655EDC921B52BAB10023EDF0 /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
 		655EDC931B52BAB10023EDF0 /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		655EDCAA1B53F06B0023EDF0 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		655EDCAB1B53F06B0023EDF0 /* SAAuthQQProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAuthQQProcess.h; sourceTree = "<group>"; };
+		655EDCAC1B53F06B0023EDF0 /* SAAuthQQProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAuthQQProcess.m; sourceTree = "<group>"; };
+		655EDCAD1B53F06B0023EDF0 /* SAAuthWeChatProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAAuthWeChatProcess.h; sourceTree = "<group>"; };
+		655EDCAE1B53F06B0023EDF0 /* SAAuthWeChatProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAAuthWeChatProcess.m; sourceTree = "<group>"; };
+		655EDCAF1B53F06B0023EDF0 /* SAReqAuthProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReqAuthProcess.h; sourceTree = "<group>"; };
+		655EDCB01B53F06B0023EDF0 /* SAReqAuthProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReqAuthProcess.m; sourceTree = "<group>"; };
+		655EDCB11B53F06B0023EDF0 /* SAReqManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAReqManager.h; sourceTree = "<group>"; };
+		655EDCB21B53F06B0023EDF0 /* SAReqManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAReqManager.m; sourceTree = "<group>"; };
+		655EDCB31B53F06B0023EDF0 /* SAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAToken.h; sourceTree = "<group>"; };
+		655EDCB41B53F06C0023EDF0 /* SAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAToken.m; sourceTree = "<group>"; };
+		655EDCB51B53F06C0023EDF0 /* SAWeiboAuthProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAWeiboAuthProcess.h; sourceTree = "<group>"; };
+		655EDCB61B53F06C0023EDF0 /* SAWeiboAuthProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAWeiboAuthProcess.m; sourceTree = "<group>"; };
+		655EDCC41B53F1580023EDF0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6562C5891AE5E7F9004713E7 /* LTTagColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTagColorManager.h; sourceTree = "<group>"; };
 		6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTagColorManager.m; sourceTree = "<group>"; };
 		657D6FE51ADE82B800AA5EBA /* LTMineTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMineTopView.h; sourceTree = "<group>"; };
@@ -10441,6 +10469,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655EDCC51B53F1580023EDF0 /* CoreTelephony.framework in Frameworks */,
 				652FB9111AD23DF50082894E /* libc++.dylib in Frameworks */,
 				6585B1591B51359400398325 /* libz.dylib in Frameworks */,
 				6585B1571B51358B00398325 /* libicucore.dylib in Frameworks */,
@@ -11016,6 +11045,34 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		655EDCA81B53F06B0023EDF0 /* SAAuth */ = {
+			isa = PBXGroup;
+			children = (
+				655EDCA91B53F06B0023EDF0 /* Classes */,
+			);
+			path = SAAuth;
+			sourceTree = "<group>";
+		};
+		655EDCA91B53F06B0023EDF0 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				655EDCAA1B53F06B0023EDF0 /* .gitkeep */,
+				655EDCAB1B53F06B0023EDF0 /* SAAuthQQProcess.h */,
+				655EDCAC1B53F06B0023EDF0 /* SAAuthQQProcess.m */,
+				655EDCAD1B53F06B0023EDF0 /* SAAuthWeChatProcess.h */,
+				655EDCAE1B53F06B0023EDF0 /* SAAuthWeChatProcess.m */,
+				655EDCAF1B53F06B0023EDF0 /* SAReqAuthProcess.h */,
+				655EDCB01B53F06B0023EDF0 /* SAReqAuthProcess.m */,
+				655EDCB11B53F06B0023EDF0 /* SAReqManager.h */,
+				655EDCB21B53F06B0023EDF0 /* SAReqManager.m */,
+				655EDCB31B53F06B0023EDF0 /* SAToken.h */,
+				655EDCB41B53F06C0023EDF0 /* SAToken.m */,
+				655EDCB51B53F06C0023EDF0 /* SAWeiboAuthProcess.h */,
+				655EDCB61B53F06C0023EDF0 /* SAWeiboAuthProcess.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		657D6FF51ADF790D00AA5EBA /* items */ = {
 			isa = PBXGroup;
 			children = (
@@ -11315,6 +11372,7 @@
 		659D4B541AC3A293007C2DAF /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				655EDCA81B53F06B0023EDF0 /* SAAuth */,
 				655EDC7C1B52BAB10023EDF0 /* SlackTextViewController */,
 			);
 			path = ThirdLib;
@@ -11712,6 +11770,7 @@
 		EC9FC8B69BF65BF6E0F2FAAD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				655EDCC41B53F1580023EDF0 /* CoreTelephony.framework */,
 				6585B1581B51359400398325 /* libz.dylib */,
 				6585B1561B51358B00398325 /* libicucore.dylib */,
 				65FE5D7E1B3514A200D9C2E5 /* Security.framework */,
@@ -12183,6 +12242,7 @@
 				F96FDA421174DF74212F6229 /* (null) in Headers */,
 				24917411E1E62A417B785C58 /* (null) in Headers */,
 				E3EE3803EDCC5B104595F94C /* (null) in Headers */,
+				655EDCC21B53F06C0023EDF0 /* SAWeiboAuthProcess.h in Headers */,
 				0FF30836A9F2D54B177C86BB /* (null) in Headers */,
 				8F3F427A767577E8D293BEF2 /* (null) in Headers */,
 				926768ED11948320605430FA /* (null) in Headers */,
@@ -13929,6 +13989,7 @@
 				967F709C1C83F8F039B8F155 /* (null) in Headers */,
 				C3728752ECFA846DB47818F6 /* (null) in Headers */,
 				DB9A939A9E7A78C9298EA1D8 /* (null) in Headers */,
+				655EDCBE1B53F06C0023EDF0 /* SAReqManager.h in Headers */,
 				E4AF3B87531DEA133BAAE484 /* (null) in Headers */,
 				E261AC59FF1F72B7713349DD /* (null) in Headers */,
 				1B9E1F931192B08794D6A089 /* (null) in Headers */,
@@ -14089,6 +14150,7 @@
 				8006C1BF35618E3D61FB95A5 /* (null) in Headers */,
 				03580E1F25F9F958372DC40E /* (null) in Headers */,
 				D551B6CD0AAC6EC9932D3CC3 /* (null) in Headers */,
+				655EDCB81B53F06C0023EDF0 /* SAAuthQQProcess.h in Headers */,
 				10843AAFBC4EFBE9C27C296A /* (null) in Headers */,
 				5344E588E213CC6985559138 /* (null) in Headers */,
 				87DAFBB904CE9EF14ADFF08D /* (null) in Headers */,
@@ -14497,6 +14559,7 @@
 				1144D2767864D1EAF4F83A61 /* (null) in Headers */,
 				38BD9C3403B2BCDCCCCDAEDE /* (null) in Headers */,
 				8FAA2C89BDBC1F38442686AE /* (null) in Headers */,
+				655EDCC01B53F06C0023EDF0 /* SAToken.h in Headers */,
 				2E1AA539FE5B36D78B0BE679 /* (null) in Headers */,
 				C4F44F78F21C4AD19E48E0D6 /* (null) in Headers */,
 				2126B670CC9E3C247AA3652F /* (null) in Headers */,
@@ -15507,6 +15570,7 @@
 				8996ADFD328E5A20E41C235D /* (null) in Headers */,
 				F8823C40D77DCD32B3E94F36 /* (null) in Headers */,
 				C7B64DC6677FC407199B163B /* (null) in Headers */,
+				655EDCBA1B53F06C0023EDF0 /* SAAuthWeChatProcess.h in Headers */,
 				69C7D41734E2B75F56F5DF8B /* (null) in Headers */,
 				7A2A96188A36D8E1A4DA299D /* (null) in Headers */,
 				91493A753BAF66248D564029 /* (null) in Headers */,
@@ -16417,6 +16481,7 @@
 				66FDA8FE6D7551BA97808DF9 /* (null) in Headers */,
 				6354FB10BE589AAAF15B18B0 /* (null) in Headers */,
 				6CB1A55CECBE043086934E6C /* (null) in Headers */,
+				655EDCBC1B53F06C0023EDF0 /* SAReqAuthProcess.h in Headers */,
 				0A659D863550B01907478F2A /* (null) in Headers */,
 				BFD0CB3218F225EA9C4C86FC /* (null) in Headers */,
 				115FEE15E16182616712AE6D /* (null) in Headers */,
@@ -16740,6 +16805,7 @@
 			files = (
 				6535653B1B18633600C971F5 /* jsonModel.rb in Resources */,
 				65D1F07E1AC28B34006525D0 /* LaunchScreen.xib in Resources */,
+				655EDCB71B53F06C0023EDF0 /* .gitkeep in Resources */,
 				65D1F07B1AC28B34006525D0 /* Images.xcassets in Resources */,
 				6585B1531B51353400398325 /* ShareSDKFlatShareViewUI.bundle in Resources */,
 				65AE48E41B251BA7008DD36D /* Settings.bundle in Resources */,
@@ -17231,6 +17297,7 @@
 				04AC9A2CD63BF4B23409F3BC /* (null) in Sources */,
 				6606D481C40DA0989FB3F96A /* (null) in Sources */,
 				EE77260803823CBE508B9CFA /* (null) in Sources */,
+				655EDCBB1B53F06C0023EDF0 /* SAAuthWeChatProcess.m in Sources */,
 				724C3DAFF84999D3AA7E7BAF /* (null) in Sources */,
 				0180631EDA29655A4BAF72E9 /* (null) in Sources */,
 				71942E5302A209C35E5A3E03 /* (null) in Sources */,
@@ -17999,6 +18066,7 @@
 				8A4CFBF8EDE34382C755DFA1 /* (null) in Sources */,
 				7C8855BE22128F98ABA7914D /* (null) in Sources */,
 				2223CECC23C0BB479BBA95FC /* (null) in Sources */,
+				655EDCC31B53F06C0023EDF0 /* SAWeiboAuthProcess.m in Sources */,
 				E65753C588D484EC67587DC2 /* (null) in Sources */,
 				FFD71DB8F432EEE5DFBB48EF /* (null) in Sources */,
 				FA9ED6C0D02B6D7459E95655 /* (null) in Sources */,
@@ -19623,6 +19691,7 @@
 				6D582ED22A3EEA51CE0BDFA6 /* (null) in Sources */,
 				7DFD63DFCB969E2A3578E76F /* (null) in Sources */,
 				13811ED2B747B7B2631DCCA3 /* (null) in Sources */,
+				655EDCBF1B53F06C0023EDF0 /* SAReqManager.m in Sources */,
 				23685E18CB010EB275B7B878 /* (null) in Sources */,
 				18DA5A98D166B091FC19E945 /* (null) in Sources */,
 				1BBE83C0E46620CCF40AC14D /* (null) in Sources */,
@@ -20418,6 +20487,7 @@
 				5229C54CCDD2A0EEED33FC03 /* (null) in Sources */,
 				0B67FF24E1A2D1F89454D137 /* (null) in Sources */,
 				9969BD4D0068E07B3BA8E8A8 /* (null) in Sources */,
+				655EDCBD1B53F06C0023EDF0 /* SAReqAuthProcess.m in Sources */,
 				5E26ED96BC064C7CD48ECBFC /* (null) in Sources */,
 				686B45D97969599C6D520EB1 /* (null) in Sources */,
 				2FEE90A2D53D9527D923E2B1 /* (null) in Sources */,
@@ -20616,6 +20686,7 @@
 				D63DB21BC1BBEC5FDA85AE8B /* (null) in Sources */,
 				8CCA2436423EE384ABC042F8 /* (null) in Sources */,
 				D053E3D58D2607650B749DBB /* (null) in Sources */,
+				655EDCB91B53F06C0023EDF0 /* SAAuthQQProcess.m in Sources */,
 				91D80583467034CB1BB04C9D /* (null) in Sources */,
 				32F90206F3350C3BE06BB4D7 /* (null) in Sources */,
 				B044B30490DC0CD7A0BF9A63 /* (null) in Sources */,
@@ -20757,6 +20828,7 @@
 				1000C3583879BB44AA6B7072 /* (null) in Sources */,
 				357B593EF39673E23BBD37EE /* (null) in Sources */,
 				EEAEC3B5AC609A912E65E7B4 /* (null) in Sources */,
+				655EDCC11B53F06C0023EDF0 /* SAToken.m in Sources */,
 				E9510251C5E5B1C94C84060C /* (null) in Sources */,
 				2CDF135BB03A0D92F05627E3 /* (null) in Sources */,
 				2BC0B7CCF3DF403B698981B8 /* (null) in Sources */,

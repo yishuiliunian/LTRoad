@@ -30,7 +30,15 @@
     //
     _imageView.adjustImageSize = CGSizeMake(CGCurrentScreenSize().width - 20, 100);
     _imageView.hnk_cacheFormat = LTHanekeCacheFormatFeedBackground();
+    
     return self;
+}
+
+- (void) handleTapImage:(UITapGestureRecognizer*)tapRecg
+{
+    if (tapRecg.state == UIGestureRecognizerStateRecognized) {
+        
+    }
 }
 - (void) handleAdjustFrame
 {

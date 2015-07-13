@@ -53,6 +53,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"";
     self.view.backgroundColor = [UIColor clearColor];
     _topView = [LTMineTopView new];
     _topView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), _topView.minHeight);
@@ -81,6 +82,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     LTMyMessagesDataController* messageDataController = [LTMyMessagesDataController new];
     LTMyNewsViewController* vc = [[LTMyNewsViewController alloc] initWithDataController:messageDataController];
     [self.navigationController pushViewController:vc animated:YES];
+    vc.title = @"消息";
     EnsureAccountEnd
 }
 
@@ -200,16 +202,15 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
 {
    LTActionItem* item = [_allActions objectAtIndex:indexPath.row];
     
-    @weakify(self)
-    
-    [LTShareAccountManager ensureApplicationAuthorization:^{
-        if ([item.title isEqualToString:@"我的动态"]) {
-            @strongify(self)
-            LTMyNewsDataController* datController = [[LTMyNewsDataController alloc] init];
-            LTMyNewsViewController* viewController = [[LTMyNewsViewController alloc] initWithDataController:datController];
-            [self.navigationController pushViewController:viewController animated:YES];
-        }
-    }];
+    EnsureAccountBegin
+    if ([item.title isEqualToString:@"我的动态"]) {
+        @strongify(self)
+        LTMyNewsDataController* datController = [[LTMyNewsDataController alloc] init];
+        LTMyNewsViewController* viewController = [[LTMyNewsViewController alloc] initWithDataController:datController];
+        [self.navigationController pushViewController:viewController animated:YES];
+        viewController.title = @"我的动态";
+    }
+    EnsureAccountEnd
 
 }
 @end

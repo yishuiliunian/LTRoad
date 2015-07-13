@@ -4,7 +4,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 target 'LuTu' do
-  pod 'SAAuth'
   pod 'DZSinglonFactory'
   pod 'CocoaLumberjack'
   pod 'DZProgrameDefines'
@@ -33,6 +32,8 @@ target 'LuTu' do
   pod 'FCUUID'
   pod 'MSInputScrollViewController'
   pod 'DDCitySelect'
+  pod 'MWPhotoBrowser'
+  pod 'JSONModel'
 end
 
 

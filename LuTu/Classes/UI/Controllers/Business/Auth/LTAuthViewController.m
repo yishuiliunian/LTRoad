@@ -71,31 +71,53 @@ DEFINE_PROPERTY_STRONG_UIImageView(logoImageView);
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)handlePhoneAction:(id)sender
+- (void)handlePhoneAction:(id)sender
 {
     LTPhoneLoginViewController* loginVC = [LTPhoneLoginViewController new];
     [self.navigationController pushViewController:loginVC animated:YES];
 }
 
-- (IBAction)handleWeiboAction:(id)sender {
-    
+- (void) handleSocialToken:(SAToken*)token type:(int)type
+{
+        LTTokenAuthReq* req = [LTTokenAuthReq new];
+        req.oAuthAccessToken= token.token;
+        req.oAuthOpenId = token.openID;
+        req.oAuthType = type;
+        MSPerformRequestWithDelegateSelf(req);
 }
-- (IBAction)handleQQAction:(id)sender {
-    
+- (void)handleWeiboAction:(id)sender {
+    @weakify(self);
+    [SAAuthShareManager requestWeiboAuth:^(SAToken *token, NSError *error) {
+        @strongify(self);
+        if (error) {
+            MUAlertShowError(error.localizedDescription);
+            return ;
+        }
+        [self handleSocialToken:token type:4];
+    }];
 }
-- (IBAction)handleWeixinAction:(id)sender {
+- (void)handleQQAction:(id)sender {
+    @weakify(self);
+    [SAAuthShareManager requestQQAuth:^(SAToken *token, NSError *error) {
+        @strongify(self);
+        if (error) {
+            MUAlertShowError(error.localizedDescription);
+            return ;
+        }
+        [self handleSocialToken:token type:1];
+        
+    }];
+}
+- (void)handleWeixinAction:(id)sender {
     
     @weakify(self);
     [[SAReqManager shareManager] requestWeiXinAuth:^(SAToken *token, NSError *error) {
         @strongify(self);
         if (error) {
+            MUAlertShowError(error.localizedDescription);
             return ;
         }
-        LTTokenAuthReq* req = [LTTokenAuthReq new];
-        req.oAuthAccessToken= token.token;
-        req.oAuthOpenId = token.openID;
-        req.oAuthType = 2;
-        MSPerformRequestWithDelegateSelf(req);
+        [self handleSocialToken:token type:2];
     }];
 }
 - (void) request:(MSRequest *)request onSucced:(id)object
