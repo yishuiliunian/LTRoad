@@ -84,17 +84,47 @@
 
 - (void) locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status
 {
-    [_mapManager stop];
-    [ _mapManager  start:@"oorRwxz7etP9d75hdd4M9uMQ" generalDelegate:nil];
- 
+    BOOL ret =  [ _mapManager  start:@"oorRwxz7etP9d75hdd4M9uMQ" generalDelegate:nil];
+    if (!ret) {
+        NSLog(@",,,,,,,,,,map init faild");
+    }
+    [self setCurrentLocation:manager.location];
 }
 
 - (NSString*) userDistanceToPoint:(PMLinePoint*)point
 {
     BMKMapPoint pUser = BMKMapPointMake(_currentPoint.lat, _currentPoint.lng);
-    BMKMapPoint pAim = BMKMapPointMake(point.lat, point.lng);
+    CLLocationCoordinate2D loc = {point.lat, point.lng};
+    BMKMapPoint pAim =  BMKMapPointForCoordinate(loc);
     
     CLLocationDistance disctance = BMKMetersBetweenMapPoints(pUser, pAim);
     return [NSString stringWithFormat:@"%.2f千米",disctance/1000];
+}
+
+- (void) setCurrentLocation:(CLLocation*)loc
+{
+    PMLinePoint* linePoint = [[PMLinePoint alloc] init];
+    BMKMapPoint point = BMKMapPointForCoordinate(loc.coordinate);
+    linePoint.lat = point.x;
+    linePoint.lng = point.y;
+    _currentPoint = linePoint;
+    [self storeCurrentPoint];
+}
+- (void) locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    if (locations.count) {
+        CLLocation* loc = locations.firstObject;
+        [self setCurrentLocation:loc];
+    }
+}
+
+- (void) startUpdateLocation
+{
+    [_locationManager startUpdatingLocation];
+}
+
+- (void) stopUpdateLocation
+{
+    [_locationManager stopUpdatingLocation];
 }
 @end

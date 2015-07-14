@@ -49,8 +49,8 @@
             NSArray* values = [str componentsSeparatedByString:@","];
             if (values.count == 2) {
                 PMLinePoint* point = [PMLinePoint new];
-                point.lat = [values[0] floatValue];
                 point.lng = [values[0] floatValue];
+                point.lat = [values[1] floatValue];
                 *success = YES;
                 return point;
             }

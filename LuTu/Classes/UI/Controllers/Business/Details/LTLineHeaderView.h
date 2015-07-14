@@ -13,7 +13,7 @@
 #import "DZAdjustHeightTools.h"
 #import "LTRouteInfoView.h"
 extern const CGFloat LTLineHeaderCellHeight;
-@interface LTLineHeaderView : UIView
+@interface LTLineHeaderView : UIView  <BMKMapViewDelegate>
 @property (nonatomic, strong)  BMKMapView* mapView;
 @property (nonatomic, strong, readonly) LTShowContentView* detailContentView;
 @property (nonatomic, strong, readonly) LTLineStartEndView* startEndView;

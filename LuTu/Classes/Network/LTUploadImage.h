@@ -14,6 +14,5 @@
 @property (nonatomic, strong) NSString* key;
 @property (nonatomic, strong) NSString* imageURL;
 @property (nonatomic, strong) NSString* imageID;
-
 - (instancetype) initWithImage:(UIImage*)image;
 @end

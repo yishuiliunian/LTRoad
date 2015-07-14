@@ -80,6 +80,19 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     self.navigationItem.rightBarButtonItems = @[favItem, shareItem];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [_headView.mapView viewWillAppear];
+    _headView.mapView.delegate = self;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_headView.mapView viewWillDisappear];
+    _headView.mapView.delegate = nil;
+}
 - (void) shareCurrentRoute
 {
     
@@ -140,24 +153,39 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     for (int i = 0; i < pois.count; i++) {
         PMRoutePoiInfo* poi = pois[i];
         CLLocationCoordinate2D startC;
-        startC.latitude = 38.213;
-        startC.longitude = 116;
-        
-        
+        startC.latitude = poi.location.lat;
+        startC.longitude = poi.location.lng;
+       
+        if (i == 0) {
+            _headView.mapView.centerCoordinate = startC;
+        }
         BMKPointAnnotation* anno = [BMKPointAnnotation new];
         anno.coordinate = startC;
-        anno.title = @"i是北京";
-        [annotations addObject:anno];
-        
+        anno.title = poi.name;
+        [_headView.mapView addAnnotation:anno];
     }
-    [_headView.mapView addAnnotations:annotations];
-    
-    [_headView.mapView showsUserLocation];
+    [_headView.mapView showAnnotations:annotations animated:YES];
+    [_headView.mapView showMapScaleBar];
 }
 
-- (void)  replaceDataWithPOIS:(NSArray*)pois
+- (BMKAnnotationView*) mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
 {
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
+        BMKPointAnnotation* point = (BMKPointAnnotation*)annotation;
+        BMKPinAnnotationView* view =[[ BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:point.title];
+        view.pinColor = BMKPinAnnotationColorPurple;
+        view.animatesDrop = YES;
+        return view;
+    }
+    return nil;
 }
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self loadMapData];
+}
+
 
 - (void) onHandleRemoteRoteDetail:(PMRouteDetailRsp*)pmline
 {
@@ -179,7 +207,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
 }
 - (void) request:(MSRequest *)request onError:(NSError *)error
 {
-    
+    MUAlertShowError(error.localizedDescription);
 }
 - (void) request:(MSRequest *)request onSucced:(id)object
 {

@@ -13,6 +13,8 @@
 + (LTLocationManager*) shareManager;
 @property (nonatomic, strong, readonly) NSString* currentCity;
 - (NSString*) userDistanceToPoint:(PMLinePoint*)point;
-
 - (void) setup;
+
+- (void) startUpdateLocation;
+- (void) stopUpdateLocation;
 @end

@@ -14,7 +14,7 @@
 #import "AdjustFrame.h"
 const CGFloat  LTLineHeaderCellHeight =410;
 
-@interface LTLineHeaderView () <BMKMapViewDelegate>
+@interface LTLineHeaderView ()
 {
     UIView* _lineView;
 }
@@ -34,13 +34,8 @@ const CGFloat  LTLineHeaderCellHeight =410;
     
     _lineView.backgroundColor = LTColorGrayNormal();
     //
-    _mapView.delegate = self;
-    
     return self;
 }
-
-
-
 - (void) handleAdjustFrame
 {
     self.adjustHeight = 250 + LTLayoutYOffset + LTLinePointViewHeight + LTLayoutYOffset + 60 + _routeInfoView.adjustHeight;
@@ -61,15 +56,5 @@ const CGFloat  LTLineHeaderCellHeight =410;
     _routeInfoView.frame = CGRectMake(0, CGRectGetMaxY(_detailContentView.frame), CGRectGetWidth(self.bounds), _routeInfoView.adjustHeight);
 }
 
-- (BMKAnnotationView*) mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation
-{
-    if ([annotation isKindOfClass:[BMKPointAnnotation class]]) {
-        BMKPointAnnotation* point = (BMKPointAnnotation*)annotation;
-        BMKPinAnnotationView* view =[[ BMKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:point.title];
-        view.pinColor = BMKPinAnnotationColorPurple;
-        view.animatesDrop = YES;
-        return view;
-    }
-    return nil;
-}
+
 @end
