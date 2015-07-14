@@ -121,6 +121,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     LTMyThreadDataController* dataController = [LTMyThreadDataController new];
     LTCarMeetFeedViewController* feedVC = [[LTCarMeetFeedViewController alloc] initWithDataController:dataController];
     [self.navigationController pushViewController:feedVC animated:YES];
+    feedVC.title = @"我的话题";
     EnsureAccountEnd
 }
 - (void) reloadAllData
@@ -145,6 +146,7 @@ static NSString* const kCellIdentifier = @"kCellIdentifier";
     } else
     {
         _topView.nickNameLabel.text = @"未登录";
+        _topView.messageHUB.count = 0;
     }
     
     if (LTCurrentAccount) {

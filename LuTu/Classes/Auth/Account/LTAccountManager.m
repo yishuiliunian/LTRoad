@@ -14,6 +14,7 @@
 #import "AppDelegate.h"
 #import "LTGlobals.h"
 #import "LTUserInfo.h"
+#import "LTNotificationTools.h"
 @interface LTAccountManager ()
 @property (nonatomic, assign) int reloadTokenCount;
 @end
@@ -82,9 +83,9 @@ INIT_DZ_EXTERN_STRING(kMSStorageAccount, MSStorageAccount);
 {
     _currentAccount = account;
     if (_currentAccount) {
-        
+        [self storeAccountToStorage:_currentAccount];
     }
-    [self storeAccountToStorage:_currentAccount];
+    LTPostAccountLoad();
 }
 
 - (BOOL) checkApplicationAuthorization{

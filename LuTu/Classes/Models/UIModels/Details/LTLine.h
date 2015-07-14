@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSString* endPointName;
 @property (nonatomic, strong) NSString* introText;
 @property (nonatomic, strong) NSArray* categoryBadgeArray;
+@property (nonatomic, assign, readonly) BOOL isFave;
 @property (nonatomic, strong, readonly) PMRouteDetailRsp* line;
 - (instancetype) initWithPMLine:(PMRouteDetailRsp*)line;
 @end

@@ -13,6 +13,7 @@
 #import "MUAlertPool.h"
 #import "LTAccountManager.h"
 #import "LTNotificationTools.h"
+#import "LTCarMeetDetailViewController.h"
 @interface LTMyCarClubViewController () <MSRequestUIDelegate, LTClubActionProtocol>
 {
     NSArray* _allCarClubs;
@@ -115,5 +116,12 @@ static NSString* kCarClubViewCellIdentifier = @"kCarClubViewCellIdentifier";
     quitReq.userId = LTCurrentAccount.accountID;
     MSPerformRequestWithDelegateSelf(quitReq);
     MUAlertShowLoading(@"退出中.....");
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LTUICarMeet* carMeet = _allCarClubs[indexPath.row];
+    LTCarMeetDetailViewController* detailVC = [[LTCarMeetDetailViewController alloc] initWithCarClub:carMeet];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 @end

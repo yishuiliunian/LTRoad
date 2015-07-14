@@ -57,7 +57,10 @@ UIImage* LTCarStyleImage(NSString* type) {
     _line = line;
     return self;
 }
-
+- (BOOL)isFave
+{
+    return _line.isFav;
+}
 - (void) setCarStyle:(NSString *)carStyle
 {
     if (_carStyle != carStyle) {

@@ -72,11 +72,19 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     [self loadCells];
     [self configureTableView];
     [self reloadAllData];
-    
+    [self showItemWithFav:NO];
+}
+
+- (void) showItemWithFav:(BOOL)faved
+{
     
     UIBarButtonItem* shareItem = [self customBarButtonItemWithTarget:self selector:@selector(shareCurrentRoute) image:@"top_share" highlightImage:@"top_share_click"];
-    UIBarButtonItem* favItem = [self customBarButtonItemWithTarget:self selector:@selector(addFav) image:@"top_adfav" highlightImage:@"top_adfav_click"];
-    
+    UIBarButtonItem* favItem;
+    if (!faved) {
+        favItem = [self customBarButtonItemWithTarget:self selector:@selector(addFav) image:@"top_adfav" highlightImage:@"top_adfav_click"];
+    } else {
+        favItem = [self customBarButtonItemWithTarget:self selector:@selector(addFav) image:@"top_faved" highlightImage:@"top_adfav_click"];
+    }
     self.navigationItem.rightBarButtonItems = @[favItem, shareItem];
 }
 
@@ -104,6 +112,8 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     favReq.routeId = _routeID;
     favReq.creatorId = LTCurrentAccount.accountID;
     MSPerformRequestWithDelegateSelf(favReq);
+    _uiDataLine.line.isFav = !_uiDataLine.line.isFav;
+    [self showItemWithFav:_uiDataLine.line.isFav];
 }
 
 
@@ -139,6 +149,7 @@ static NSString* const kPOICellIdentifier = @"kPOICellIdentifier";
     _headView.startEndView.endPointView.detailLabel.text = _uiDataLine.endPointName;
     _headView.routeInfoView.badgeContentView.badgeItems = _uiDataLine.categoryBadgeArray;
     [self loadMapData];
+    [self showItemWithFav:_uiDataLine.isFave];
 }
 
 - (void) loadMapData
