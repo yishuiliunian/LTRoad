@@ -17,17 +17,17 @@
 #import "UIViewController+Additions.h"
 #import "PMThreadPostListRsp.h"
 #import <MWPhotoBrowser.h>
+#import "DCCommentView.h"
 @interface LTFeedDetailViewController () <LTPostToolBarDelegate, MSRequestUIDelegate, MWPhotoBrowserDelegate>
 {
     NSMutableDictionary* _allComments;
     LTFeedView* _headerFeedView;
     NSInteger _pageIndex;
     LTPostToolBar* _postToolBar;
-    
     UISegmentedControl* _navTopSegmentControl;
-    
     NSArray* _feedPhotos;
 }
+DEFINE_PROPERTY_STRONG(DCCommentView*, commentView);
 @end
 
 @implementation LTFeedDetailViewController

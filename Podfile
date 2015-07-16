@@ -34,6 +34,7 @@ target 'LuTu' do
   pod 'DDCitySelect'
   pod 'MWPhotoBrowser'
   pod 'JSONModel'
+  pod 'NSString+RemoveEmoji'
 end
 
 

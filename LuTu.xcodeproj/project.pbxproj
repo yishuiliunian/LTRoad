@@ -3994,6 +3994,8 @@
 		655EDCC51B53F1580023EDF0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655EDCC41B53F1580023EDF0 /* CoreTelephony.framework */; };
 		6562C58B1AE5E7F9004713E7 /* LTTagColorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */; };
 		656A3EB6D683264235EE2B6B /* (null) in Headers */ = {isa = PBXBuildFile; };
+		656F7E631B567FBB0050F06B /* DCCommentView.h in Headers */ = {isa = PBXBuildFile; fileRef = 656F7E611B567FBB0050F06B /* DCCommentView.h */; };
+		656F7E641B567FBB0050F06B /* DCCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 656F7E621B567FBB0050F06B /* DCCommentView.m */; };
 		656FB7A4D66E33ABDB8C985E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		65705998012964BC805A290F /* (null) in Sources */ = {isa = PBXBuildFile; };
 		6570EC7E800F0421F8320FAC /* (null) in Sources */ = {isa = PBXBuildFile; };
@@ -10363,6 +10365,8 @@
 		655EDCC41B53F1580023EDF0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6562C5891AE5E7F9004713E7 /* LTTagColorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTTagColorManager.h; sourceTree = "<group>"; };
 		6562C58A1AE5E7F9004713E7 /* LTTagColorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTTagColorManager.m; sourceTree = "<group>"; };
+		656F7E611B567FBB0050F06B /* DCCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCCommentView.h; sourceTree = "<group>"; };
+		656F7E621B567FBB0050F06B /* DCCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCCommentView.m; sourceTree = "<group>"; };
 		657D6FE51ADE82B800AA5EBA /* LTMineTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTMineTopView.h; sourceTree = "<group>"; };
 		657D6FE61ADE82B800AA5EBA /* LTMineTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTMineTopView.m; sourceTree = "<group>"; };
 		657D6FE81ADE832E00AA5EBA /* LTBottomLabelButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBottomLabelButton.h; sourceTree = "<group>"; };
@@ -11510,6 +11514,8 @@
 		659D4B4F1AC3A232007C2DAF /* CustomUI */ = {
 			isa = PBXGroup;
 			children = (
+				656F7E611B567FBB0050F06B /* DCCommentView.h */,
+				656F7E621B567FBB0050F06B /* DCCommentView.m */,
 				652C4ED01ADE0AEF00570768 /* LTNavigationController.h */,
 				652C4ED11ADE0AEF00570768 /* LTNavigationController.m */,
 				652C4ED61ADE0C4200570768 /* UIViewController+MethodSwizzling.h */,
@@ -16385,6 +16391,7 @@
 				55286038A05A38BBD70C666E /* (null) in Headers */,
 				B076C0588B63F4742A2CA16C /* (null) in Headers */,
 				FF8F408B383FDB3A429CE8A7 /* (null) in Headers */,
+				656F7E631B567FBB0050F06B /* DCCommentView.h in Headers */,
 				7FBAC49F4A9FE9B46DD6B91C /* (null) in Headers */,
 				5241877D58CBCF4C4D5BFC93 /* (null) in Headers */,
 				9FE83C3CFE8BE26905E84A50 /* (null) in Headers */,
@@ -18874,6 +18881,7 @@
 				753F61DCD86AB4E9A6E45DEA /* (null) in Sources */,
 				B9856A161D4A1853A1095022 /* (null) in Sources */,
 				84B29C15A697222E831DEEC2 /* (null) in Sources */,
+				656F7E641B567FBB0050F06B /* DCCommentView.m in Sources */,
 				D660FA67156C095E5EA6910B /* (null) in Sources */,
 				E2F22F176B7AD936BD825066 /* (null) in Sources */,
 				8FF6B286CE7E1335E6039AA0 /* (null) in Sources */,

@@ -16,6 +16,7 @@
 @end
 @implementation LTNavigationBar
 
+
 - (instancetype) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -26,11 +27,14 @@
     [self insertSubview:_backgroundImageView atIndex:0];
     return self;
 }
+
 - (void) layoutSubviews
 {
     [super layoutSubviews];
     self.layer.masksToBounds = NO;
     _backgroundImageView.frame = CGRectMake(0, -20, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds) + 20);
+    
+    
 }
 
 - (void) setBarBackgroundImage:(UIImage *)barBackgroundImage

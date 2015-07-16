@@ -14,6 +14,7 @@
 #import "MUAlertPool.h"
 #import "MSTokenManager.h"
 #import "LTAccountManager.h"
+#import <NSString+RemoveEmoji.h>
 @interface MSRequest ()
 
 @end
@@ -59,7 +60,9 @@
         return;
     }
     if ([paramter isKindOfClass:[NSString class]]) {
-        paramter = [(NSString*)paramter URLEncode];
+        NSString* str = (NSString*)paramter;
+        str  = [str removedEmojiString];
+        paramter = [str URLEncode];
     }
     _paramters[key] = paramter;
 }
